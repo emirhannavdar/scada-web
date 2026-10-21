@@ -1,0 +1,72 @@
+{
+  "models": {
+    "landscape": {
+      "downloadBytes": 24538092,
+      "triangles": 838969,
+      "estimatedTextureGPUBytes": 134217728
+    },
+    "gravel_road": {
+      "downloadBytes": 2424456,
+      "triangles": 150222,
+      "estimatedTextureGPUBytes": 0
+    },
+    "solar_panel": {
+      "downloadBytes": 785836,
+      "triangles": 1854,
+      "estimatedTextureGPUBytes": 11184811
+    },
+    "pete": {
+      "downloadBytes": 2907700,
+      "triangles": 53738,
+      "estimatedTextureGPUBytes": 9437184
+    },
+    "walker": {
+      "downloadBytes": 3973108,
+      "triangles": 91610,
+      "estimatedTextureGPUBytes": 24903680
+    },
+    "worker_hat": {
+      "downloadBytes": 30736,
+      "triangles": 1080,
+      "estimatedTextureGPUBytes": 21845
+    },
+    "operator": {
+      "downloadBytes": 3217420,
+      "triangles": 92541,
+      "estimatedTextureGPUBytes": 36350635
+    },
+    "service_pickup": {
+      "downloadBytes": 5148656,
+      "triangles": 21130,
+      "estimatedTextureGPUBytes": 64312661
+    },
+    "simple_house": {
+      "downloadBytes": 3150380,
+      "triangles": 3153,
+      "estimatedTextureGPUBytes": 33554432
+    },
+    "korean_apartment": {
+      "downloadBytes": 7763760,
+      "triangles": 17004,
+      "estimatedTextureGPUBytes": 61516459
+    },
+    "small_villa": {
+      "downloadBytes": 576916,
+      "triangles": 13498,
+      "estimatedTextureGPUBytes": 6990507
+    },
+    "gaming_room": {
+      "downloadBytes": 5996884,
+      "triangles": 278987,
+      "estimatedTextureGPUBytes": 19573419
+    },
+    "gravel_road_lod": {
+      "downloadBytes": 4416084,
+      "triangles": 35455,
+      "estimatedTextureGPUBytes": 22369621
+    }
+  },
+  "totalDownloadBytes": 64930028,
+  "activeDownloadBytes": 64144192,
+  "estimatedTextureGPUBytes": 413248171
+}

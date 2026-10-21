@@ -1,0 +1,5 @@
+import manifest from '@/lib/flight/model-manifest.json';
+import {readFileSync} from 'node:fs';
+import {createModelLoader} from '@/lib/flight/model-loader';
+// Decode the shipped geometry/rig/clips with the production GLTFLoader. Textures need browser image APIs.
+export async function loadTestGLTF(kind:string){const b=readFileSync(new URL('../../../public'+((manifest as Record<string,string>)[kind]??('/assets/models/'+kind+'.glb')),import.meta.url)),n=b.readUInt32LE(12),j=JSON.parse(b.subarray(20,20+n).toString());j.buffers[0].uri='data:application/octet-stream;base64,'+b.subarray(28+n).toString('base64');const clear=(o:unknown)=>{if(!o||typeof o!=='object')return;for(const k of Object.keys(o)){const a=o as Record<string,unknown>;if(/Texture$/.test(k))delete a[k];else clear(a[k])}};clear(j.materials);j.images=[];j.textures=[];if(!globalThis.ProgressEvent)Object.assign(globalThis,{ProgressEvent:class {constructor(_t:string,p:object){Object.assign(this,p)}}});return createModelLoader().parseAsync(JSON.stringify(j),'');}

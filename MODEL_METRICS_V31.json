@@ -1,0 +1,95 @@
+{
+  "models": {
+    "landscape": {
+      "downloadBytes": 10522932,
+      "sourceBytes": 72045368,
+      "triangles": 295777,
+      "sourceTriangles": 838969,
+      "estimatedTextureGPUBytes": 33554430
+    },
+    "gravel_road": {
+      "downloadBytes": 1969140,
+      "sourceBytes": 14213208,
+      "triangles": 72613,
+      "sourceTriangles": 150222,
+      "estimatedTextureGPUBytes": 5592405
+    },
+    "solar_panel": {
+      "downloadBytes": 356432,
+      "sourceBytes": 7292376,
+      "triangles": 1854,
+      "sourceTriangles": 1854,
+      "estimatedTextureGPUBytes": 6990506
+    },
+    "pete": {
+      "downloadBytes": 3794736,
+      "sourceBytes": 7843180,
+      "triangles": 53738,
+      "sourceTriangles": 53738,
+      "estimatedTextureGPUBytes": 7689557
+    },
+    "walker": {
+      "downloadBytes": 4930460,
+      "sourceBytes": 10438668,
+      "triangles": 91610,
+      "sourceTriangles": 91610,
+      "estimatedTextureGPUBytes": 21408425
+    },
+    "worker_hat": {
+      "downloadBytes": 38008,
+      "sourceBytes": 7857876,
+      "triangles": 1080,
+      "sourceTriangles": 53069,
+      "estimatedTextureGPUBytes": 21845
+    },
+    "operator": {
+      "downloadBytes": 1842032,
+      "sourceBytes": 7193136,
+      "triangles": 54814,
+      "sourceTriangles": 92541,
+      "estimatedTextureGPUBytes": 19922943
+    },
+    "service_pickup": {
+      "downloadBytes": 3211528,
+      "sourceBytes": 8775904,
+      "triangles": 19619,
+      "sourceTriangles": 21130,
+      "estimatedTextureGPUBytes": 47535441
+    },
+    "simple_house": {
+      "downloadBytes": 963512,
+      "sourceBytes": 12224540,
+      "triangles": 3153,
+      "sourceTriangles": 3153,
+      "estimatedTextureGPUBytes": 5941930
+    },
+    "korean_apartment": {
+      "downloadBytes": 4070964,
+      "sourceBytes": 12497628,
+      "triangles": 17004,
+      "sourceTriangles": 17004,
+      "estimatedTextureGPUBytes": 22369619
+    },
+    "small_villa": {
+      "downloadBytes": 409460,
+      "sourceBytes": 11958908,
+      "triangles": 5579,
+      "sourceTriangles": 113865,
+      "estimatedTextureGPUBytes": 4543829
+    },
+    "gaming_room": {
+      "downloadBytes": 4060144,
+      "sourceBytes": 25340800,
+      "triangles": 111756,
+      "sourceTriangles": 454703,
+      "estimatedTextureGPUBytes": 28661074
+    }
+  },
+  "totalDownloadBytes": 36169348,
+  "estimatedTextureGPUBytes": 204232004,
+  "comparisonV30": {
+    "modelDownloadBytes": 253106592,
+    "newModelDownloadBytes": 36169348,
+    "reductionPercent": 85.71
+  }
+}

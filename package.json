@@ -1,0 +1,56 @@
+{
+  "name": "scadawatt-website",
+  "version": "101.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env scripts/dev-cms.mjs",
+    "build": "node scripts/cms-catalog.mjs && tsc --noEmit && vite build",
+    "preview": "node --env-file-if-exists=.env server/index.mjs",
+    "test": "vitest run",
+    "test:models": "node scripts/check-model-assets.mjs && vitest run src/test/optimized-scene.test.ts src/test/additional-models.test.ts src/test/model-cache.test.ts",
+    "report": "node scripts/analyze-transfer.mjs",
+    "start": "node --env-file-if-exists=.env server/index.mjs",
+    "cms:setup": "node --env-file-if-exists=.env server/setup.mjs",
+    "cms:reset-password": "node --env-file-if-exists=.env server/setup.mjs --reset",
+    "cms:backup": "node --env-file-if-exists=.env server/backup.mjs",
+    "test:cms": "node --test server/cms.test.mjs server/origin.test.mjs",
+    "test:types": "tsc --noEmit -p tsconfig.test.json"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@tailwindcss/vite": "^4.2.1",
+    "@tanstack/react-query": "^5.101.1",
+    "@tanstack/react-router": "1.170.41",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.575.0",
+    "motion": "^14.2.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-hook-form": "^7.71.2",
+    "recharts": "^2.15.4",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss": "^4.2.1",
+    "three": "^0.180.0",
+    "tw-animate-css": "^1.3.4",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@tanstack/router-plugin": "1.168.42",
+    "@testing-library/jest-dom": "^6.6.0",
+    "@testing-library/react": "^16.0.0",
+    "@types/node": "^22.16.5",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@types/three": "^0.180.0",
+    "@vitejs/plugin-react": "5.1.1",
+    "jsdom": "^20.0.3",
+    "typescript": "^5.8.3",
+    "vite": "7.2.2",
+    "vitest": "^4.1.10"
+  },
+  "engines": {
+    "node": ">=24 <27"
+  }
+}

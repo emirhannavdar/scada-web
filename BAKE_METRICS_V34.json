@@ -1,0 +1,19 @@
+{
+  "landscape": {
+    "before": 24372688,
+    "after": 24539464
+  },
+  "gaming_room": {
+    "before": 6783872,
+    "after": 5996884
+  },
+  "roadTriangles": {
+    "before": 32016,
+    "after": 7958,
+    "error": 0.000998802250251174
+  },
+  "gravel_road_lod": {
+    "before": 4795516,
+    "after": 4416060
+  }
+}

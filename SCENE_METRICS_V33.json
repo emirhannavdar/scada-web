@@ -1,0 +1,57 @@
+{
+  "rows": [
+    {
+      "p": 0.45,
+      "meshes": 639,
+      "triangles": 6565483,
+      "draws": 649,
+      "culling": {
+        "total": 12157,
+        "submitted": 10526
+      }
+    },
+    {
+      "p": 0.6,
+      "meshes": 2,
+      "triangles": 17088,
+      "draws": 2,
+      "culling": {
+        "total": 0,
+        "submitted": 0
+      }
+    },
+    {
+      "p": 0.85,
+      "meshes": 48,
+      "triangles": 374050,
+      "draws": 48,
+      "culling": {
+        "total": 3875,
+        "submitted": 3669
+      }
+    },
+    {
+      "p": 0.96,
+      "meshes": 46,
+      "triangles": 374542,
+      "draws": 46,
+      "culling": {
+        "total": 224,
+        "submitted": 106
+      }
+    }
+  ],
+  "scales": {
+    "imported-residential-houses": [
+      7.475091457366943,
+      8.384716153144836,
+      14.602035999298096
+    ],
+    "imported-small-villas": [
+      17.799999237060547,
+      8.890237808064898,
+      15.155567646026611
+    ]
+  },
+  "buildings": 41
+}

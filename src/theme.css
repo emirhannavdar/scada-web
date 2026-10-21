@@ -1,0 +1,70 @@
+/* Shared site theme. The cinematic image retains its own day/night lighting. */
+html[data-theme="dark"]{color-scheme:dark;--background:#0d1516;--foreground:#e3eae5;--card:#172323;--card-foreground:#e3eae5;--popover:#172323;--popover-foreground:#e3eae5;--secondary:#1d2b2a;--secondary-foreground:#e3eae5;--muted:#1d2b2a;--muted-foreground:#a4b6ad;--accent:#352c22;--accent-foreground:#ffc092;--border:#34423d;--input:#475b50;--paper-2:#14201e;--film-paper:#101b19;--film-ink:#e6ede7;--film-muted:#a3b6a8}
+html[data-theme="dark"] body{background:var(--background);color:var(--foreground)}
+html[data-theme="dark"] :is(.product-experience,.product-detail-hero,.page-editorial,.software-apps){background:#14211e;color:#e3ebe4;border-color:#34483b}
+html[data-theme="dark"] :is(.product-experience-heading>p,.page-editorial p:not(.sw-kicker),.software-app-frame p){color:#b0c2b4}
+html[data-theme="dark"] :is(.product-experience-heading h2 em,.product-experience-heading .film-label){color:#a7bc9c}
+html[data-theme="dark"] :is(.hardware-index,.hardware-preview-shell,.hardware-preview,.hardware-list,.hardware-search){background:#14211e;color:#e3ebe4;border-color:#3a4e3f}
+html[data-theme="dark"] .hardware-row{color:#d6e3d3;border-color:#34483b}
+html[data-theme="dark"] :is(.hardware-row:hover,.hardware-row[aria-pressed="true"]){background:#25372b;color:#fff}
+html[data-theme="dark"] :is(.hardware-row small,.hardware-row-label>span,.hardware-role,.hardware-summary,.hardware-story dt,.hardware-index-heading,.hardware-preview-top,.hardware-number){color:#a5bba2}
+html[data-theme="dark"] .hardware-story{color:#e3ebe4}
+html[data-theme="dark"] .hardware-tagline{color:#c5d6bb}
+html[data-theme="dark"] .hardware-story :is(dl>div,a){border-color:#47604b}
+html[data-theme="dark"] .hardware-search input{background:transparent;color:#e3ebe4}
+html[data-theme="dark"] .hardware-photo{background:radial-gradient(ellipse,#b9c3a31a,transparent 68%)}
+html[data-theme="dark"] :is(.software-app-frame,.software-app-switch button){background:#1e2e29;color:#e5ece5;border-color:#506052}
+html[data-theme="dark"] .technical-table td{border-color:#35483a}
+html[data-theme="dark"] .technical-table td:first-child{color:#afc3ae}
+html[data-theme="dark"] :is(.bg-white,.bg-paper-2){background-color:var(--paper-2)}
+html[data-theme="dark"] :is(.skip-link,input,textarea,select){color:var(--foreground);background-color:var(--card)}
+html[data-theme="dark"] .sw-kicker{color:#ffb27c}
+html[data-theme="dark"] .final-connection{background:#1e2d26;color:#e8ede4}
+html[data-theme="dark"] :is(.connection-bottom,.film-plan-link){color:#bdcbb6;border-color:#52614b}
+html[data-theme="dark"] .contact-orbit{border-color:#8ca57d;color:#ffb17a}
+.language-switch{display:flex;align-items:center;gap:5px;font:10px/1 Scada,Arial,sans-serif;white-space:nowrap;color:#c4cec5}
+.language-switch button{display:grid;place-items:center;min-height:36px;min-width:28px;padding:4px;background:none;border:0;border-bottom:2px solid transparent;color:inherit;font:inherit;opacity:.6}
+.language-switch button[aria-pressed="true"]{opacity:1;color:#ffaf75;border-color:#ffaf75}
+.language-switch button:hover{opacity:1}
+.film-header-actions{gap:20px}
+html[lang="en"] .drone-copy h1{font-size:clamp(62px,7vw,105px)}
+@media(max-width:900px){.film-header-actions{gap:13px}.film-header-chapters{gap:20px}.film-header-inner{gap:20px}}
+@media(max-width:760px){.film-header-actions{gap:9px}.language-switch{gap:1px;font-size:10px}.language-switch button{min-width:25px}.film-menu-trigger{column-gap:10px}.film-header img{max-width:145px}html[lang="en"] .drone-copy h1{font-size:62px}}
+@media(max-width:400px){.film-header-inner{margin-inline:14px;gap:8px}.film-header img{max-width:116px}.film-header-actions{gap:6px}.film-menu-trigger{grid-template-columns:21px}.film-menu-trigger>span{display:none}}
+
+@media(min-width:761px) and (max-width:1000px){.film-header-chapters{display:none}}
+html[data-theme="dark"] :is(.final-connection .film-label,.connection-bottom>p){color:#b7c9ac}
+html[data-theme="dark"] .final-connection .film-label>span{background:#ffb17a}
+html[data-theme="dark"] .film-plan-link>a{color:#f0dfc6}
+html[data-theme="dark"] .connection-bottom>div>a{border-color:#52614b}
+
+/* One palette for all presentation surfaces, in both directions. */
+html[data-theme="light"]{color-scheme:light;--site-surface:#e7e9de;--site-raised:#f4f5ed;--site-text:#23362d;--site-muted:#53664f;--site-line:#a3b399;--site-accent:#a44716;--site-brand:#d3d9c9;--site-header:#edf0e7f7}
+html[data-theme="dark"]{--site-surface:#14211e;--site-raised:#1c2e26;--site-text:#e5ede4;--site-muted:#adbea8;--site-line:#456047;--site-accent:#ffb57d;--site-brand:#3f5840;--site-header:#111d18f7}
+html[data-theme] :is(.film-navigation,.product-experience,.solution-editorial,.film-footer,.corporate-footer,.page-editorial,.software-apps,.product-detail-hero){background:var(--site-surface);color:var(--site-text);border-color:var(--site-line)}
+html[data-theme] :is(.hardware-index,.hardware-preview-shell,.hardware-preview,.hardware-list,.hardware-search){background:var(--site-surface);color:var(--site-text);border-color:var(--site-line)}
+html[data-theme] :is(.solution-app-view,.software-app-frame){background:var(--site-raised);color:var(--site-text)}
+html[data-theme] :is(.solution-editorial-heading .film-label,.solution-editorial-heading>p,.solution-feature-title>p,.solution-feature-bottom>p,.solution-app-bar,.solution-app-view figcaption,.solution-edition,.solution-index-label,.solution-index-label>span,.solution-index [role=tab]>span,.solution-feature-bottom li>span,.film-footer-top address,.film-footer-top>div,.film-footer-bottom,.footer-about,.footer-layout address,.footer-layout a:not(.footer-logo-link),.footer-bottom,.film-navigation-grid>div>p:not(.film-label),.film-navigation-grid>div>a:nth-last-child(-n+2),.film-navigation-grid>nav>a>span){color:var(--site-muted)}
+html[data-theme] :is(.solution-editorial-heading h2 em,.solution-feature-bottom li,.solution-all-link,.solution-feature-link,.solution-index [role=tab],.footer-layout h3){color:var(--site-text)}
+html[data-theme] :is(.solution-index-label,.solution-index [role=tab],.solution-feature-bottom,.solution-feature-link,.film-footer-bottom,.footer-bottom,.film-navigation-grid>nav>a){border-color:var(--site-line)}
+html[data-theme] :is(.solution-index [role=tab][aria-selected=true],.solution-index [role=tab]>svg,.solution-feature-link:hover,.solution-all-link:hover,.film-navigation-grid>nav>a:hover){color:var(--site-accent)}
+html[data-theme] .film-footer-brand{color:var(--site-brand)}
+html[data-theme] .film-navigation-close{color:var(--site-text);border-color:var(--site-line)}
+html[data-theme] .film-header.is-solid{background:var(--site-header);color:var(--site-text);border-color:var(--site-line)}
+html[data-theme] .film-header.is-solid :is(.film-header-chapters,.film-menu-trigger,.global-day-toggle,.language-switch){color:var(--site-text)}
+html[data-theme] .film-header.is-solid .global-day-toggle{border-color:var(--site-line)}
+html[data-theme="light"] .film-header.is-solid .film-brand::after{background:linear-gradient(90deg,#23362d 0 53%,#df620e 53% 100%)}
+html[data-theme="light"] .film-header.is-solid .language-switch button[aria-pressed=true]{color:#a44716;border-color:#a44716}
+html[data-theme] .software-app-switch button{background:var(--site-raised);color:var(--site-text);border-color:var(--site-line)}
+html[data-theme] .software-app-switch button[aria-pressed=true]{background:var(--site-text);color:var(--site-surface)}
+html[data-theme] .film-footer a:hover,html[data-theme] .corporate-footer a:hover{color:var(--site-accent)}
+html[data-theme="light"] :is(.surface-ink:not(.product-detail-hero),.bg-ink-2){--ink-muted:#53664f;background-color:#e0e5d7;color:#23362d}
+html[data-theme="light"] .product-detail-hero{--ink-muted:#53664f}
+html[data-theme="light"] .surface-ink .text-ink-muted{color:#53664f}
+html[data-theme="light"] :is(.surface-ink .text-ink-foreground,.surface-ink .text-primary-foreground){color:#23362d}
+html[data-theme="light"] .surface-ink .bg-signal{color:#23362d}
+html[data-theme="dark"] .software-app-caption{color:#adbea8}
+
+#kesfet{scroll-margin-top:95px}.discovery-placeholder{padding:70px 0;min-height:200px}
+
+.cms-preview-banner{position:fixed;z-index:10000;bottom:18px;left:50%;transform:translateX(-50%);background:#203f31;color:#fff;padding:12px 20px;border-radius:5px;font:12px/1.6 system-ui;box-shadow:0 8px 30px #0003;max-width:calc(100% - 30px);width:max-content}.cms-preview-banner a{color:#f6c691;margin-left:14px;text-decoration:underline}

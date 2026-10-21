@@ -1,0 +1,10 @@
+import {it,expect,vi,afterEach} from 'vitest';
+import {act,cleanup,render,waitFor} from '@testing-library/react';
+import {createRouter,RouterProvider,createBrowserHistory} from '@tanstack/react-router';
+import {QueryClient} from '@tanstack/react-query';
+import {routeTree} from '@/routeTree.gen';
+import {disposeFlightSession} from '@/lib/flight/session';
+const state=vi.hoisted(()=>({mounts:0,dispose:vi.fn()}));
+vi.mock('@/lib/flight/render',()=>({mountFlight:(_c:unknown,_h:unknown,ready:()=>void)=>{state.mounts++;queueMicrotask(ready);return {setProgress(){},setDayNight(){},setPaused(){},setEffectsPaused(){},setScreen(){},resize(){},dispose:state.dispose}}}));
+afterEach(()=>{cleanup();disposeFlightSession();delete document.documentElement.dataset['cmsPreview'];delete document.documentElement.dataset['cmsVisual'];vi.unstubAllGlobals();history.replaceState(null,'','/');state.mounts=0;state.dispose.mockClear()});
+it('navigates the authenticated preview without leaving its document or rebuilding the prepared home scene',async()=>{vi.stubGlobal('WebGL2RenderingContext',class{});document.documentElement.dataset['cmsPreview']='true';document.documentElement.dataset['cmsVisual']='true';const browser=createBrowserHistory(),router=createRouter({routeTree,context:{queryClient:new QueryClient()},history:browser});await router.load();render(<RouterProvider router={router}/>);await waitFor(()=>expect(state.mounts).toBe(1));await act(async()=>{});await act(async()=>{window.dispatchEvent(new CustomEvent('scadawatt:cms-navigate',{detail:'/hakkimizda?cms-preview=1&cms-edit=1'}))});await waitFor(()=>expect(router.state.location.pathname).toBe('/hakkimizda'));expect(state.dispose).not.toHaveBeenCalled();await act(async()=>{window.dispatchEvent(new CustomEvent('scadawatt:cms-navigate',{detail:'/?cms-preview=1&cms-edit=1'}))});await waitFor(()=>expect(router.state.location.pathname).toBe('/'));await act(async()=>{});expect(state.mounts).toBe(1);expect(state.dispose).not.toHaveBeenCalled();browser.destroy()});

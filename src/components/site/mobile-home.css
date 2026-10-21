@@ -1,0 +1,20 @@
+.mobile-home-hero{position:relative;isolation:isolate;overflow:hidden;padding:112px 22px 30px;background:#102c2a;color:#f0f2e9;min-height:calc(100svh - 20px)}
+.mobile-home-grid{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 100% 50%,#c56b3433,transparent 60%),linear-gradient(#c7dfce09 1px,transparent 1px),linear-gradient(90deg,#c7dfce09 1px,transparent 1px);background-size:auto,44px 44px,44px 44px;mask-image:linear-gradient(#000,transparent)}
+.mobile-home-eyebrow{font-size:9px;letter-spacing:.17em;margin:0 0 27px;color:#b5c6bd;font-weight:600}
+.mobile-home-copy h1{font-size:clamp(37px,9.2vw,66px);line-height:1.08;letter-spacing:-.055em;margin:0 0 22px;font-weight:500}
+.mobile-home-copy h1 em{font-style:normal;color:#ffad70}
+.mobile-home-description{max-width:510px;font-size:14px;line-height:1.75;color:#c2d0c9;margin:0 0 24px}
+.mobile-home-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:35px}
+.mobile-home-actions a{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:46px;text-decoration:none;font-size:12px;font-weight:600;padding:12px 15px;border-radius:4px;background:#f29c59;color:#172c27}
+.mobile-home-actions a+ a{background:transparent;color:#f0f2e9;border:1px solid #b7c9bd45}
+.mobile-platform-card{border:1px solid #c4d6ca38;border-radius:10px;padding:14px 12px 0;background:#1e3a35;box-shadow:0 18px 50px #0003;max-width:660px;margin:auto}
+.mobile-platform-caption{display:flex;justify-content:space-between;gap:10px;font-size:8px;letter-spacing:.13em;color:#c1cfc5;padding:0 1px 12px}
+.mobile-platform-screen{overflow:hidden;border:5px solid #071915;border-radius:5px;background:#eaf1ed}
+.mobile-platform-screen img{display:block;width:100%;height:auto;object-fit:contain}
+.mobile-platform-path{display:flex;align-items:center;justify-content:space-between;gap:7px;padding:17px 0;color:#d9e5db}
+.mobile-platform-path span{display:flex;align-items:center;gap:5px;font-size:10px;white-space:nowrap}
+.mobile-platform-path svg{color:#e9a46e;flex-shrink:0}
+.mobile-platform-path i{flex:1;height:1px;background:#9caf9b50;max-width:45px}
+.mobile-home-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:15px;font-size:10px;line-height:1.6;color:#abbfb2;margin-top:26px}
+.mobile-home-bottom a{color:#e9b389;text-decoration:none;min-height:30px}
+@media(max-width:360px){.mobile-home-hero{padding-inline:17px}.mobile-home-copy h1{font-size:35px}.mobile-platform-path span{font-size:9px}}

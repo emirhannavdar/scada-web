@@ -1,0 +1,130 @@
+{
+  "furniture_sofa": {
+    "sourceFile": "large_corner_sectional_sofa.glb",
+    "sourceBytes": 7784968,
+    "preparedBytes": 1640076,
+    "images": [
+      {
+        "sourceDimensions": [
+          2048,
+          2048
+        ],
+        "dimensions": [
+          2048,
+          2048
+        ]
+      },
+      {
+        "sourceDimensions": [
+          2048,
+          2048
+        ],
+        "dimensions": [
+          1024,
+          1024
+        ]
+      }
+    ]
+  },
+  "furniture_table": {
+    "sourceFile": "coffe_table_avarta.glb",
+    "sourceBytes": 3093340,
+    "preparedBytes": 591816,
+    "images": [
+      {
+        "sourceDimensions": [
+          2048,
+          2048
+        ],
+        "dimensions": [
+          1024,
+          1024
+        ]
+      }
+    ]
+  },
+  "furniture_desk": {
+    "sourceFile": "office_desk_-_18mb.glb",
+    "sourceBytes": 10057708,
+    "preparedBytes": 631456,
+    "images": [
+      {
+        "sourceDimensions": [
+          2048,
+          2048
+        ],
+        "dimensions": [
+          1024,
+          1024
+        ]
+      },
+      {
+        "sourceDimensions": [
+          2048,
+          2048
+        ],
+        "dimensions": [
+          1024,
+          1024
+        ]
+      },
+      {
+        "sourceDimensions": [
+          2048,
+          2048
+        ],
+        "dimensions": [
+          1024,
+          1024
+        ]
+      }
+    ]
+  },
+  "furniture_bookshelf": {
+    "sourceFile": "bookshelf_dark_wood_w_books.glb",
+    "sourceBytes": 1717044,
+    "preparedBytes": 549364,
+    "images": [
+      {
+        "sourceDimensions": [
+          256,
+          256
+        ],
+        "dimensions": [
+          256,
+          256
+        ]
+      },
+      {
+        "sourceDimensions": [
+          512,
+          512
+        ],
+        "dimensions": [
+          512,
+          512
+        ]
+      },
+      {
+        "sourceDimensions": [
+          512,
+          256
+        ],
+        "dimensions": [
+          512,
+          256
+        ]
+      },
+      {
+        "sourceDimensions": [
+          1024,
+          1024
+        ],
+        "dimensions": [
+          1024,
+          1024
+        ]
+      }
+    ]
+  }
+}

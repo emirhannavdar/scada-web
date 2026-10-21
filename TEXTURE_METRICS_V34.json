@@ -1,0 +1,235 @@
+{
+  "landscape": {
+    "before": 24538092,
+    "after": 24538092,
+    "verifiedImages": []
+  },
+  "gravel_road": {
+    "before": 2424456,
+    "after": 2424456,
+    "verifiedImages": []
+  },
+  "solar_panel": {
+    "before": 1023428,
+    "after": 785836,
+    "verifiedImages": [
+      {
+        "image": 1,
+        "width": 1024,
+        "height": 1024,
+        "rgbaSHA256": "e1a55ba770efd48b303fa2282b90893ee9531640064472536f89b3a6614d0d0c",
+        "before": 810432,
+        "after": 572806
+      }
+    ]
+  },
+  "pete": {
+    "before": 3036628,
+    "after": 2907700,
+    "verifiedImages": [
+      {
+        "image": 1,
+        "width": 768,
+        "height": 768,
+        "rgbaSHA256": "a02da478a4ad2d1f43591ecd161ae8e0ec168cf163703a8e1ab693e86f4bda29",
+        "before": 902537,
+        "after": 773508
+      }
+    ]
+  },
+  "walker": {
+    "before": 4156352,
+    "after": 3973108,
+    "verifiedImages": [
+      {
+        "image": 2,
+        "width": 128,
+        "height": 128,
+        "rgbaSHA256": "c43510222a87beb5663179a82b10b26cf9fb029272f582b4de95bee3b83e7812",
+        "before": 178,
+        "after": 140
+      },
+      {
+        "image": 4,
+        "width": 768,
+        "height": 768,
+        "rgbaSHA256": "40db0fd4504f393ffffaa5ef320ff01442508582fc6fbf5b3d5c6872e6ab3388",
+        "before": 260624,
+        "after": 213774
+      },
+      {
+        "image": 6,
+        "width": 768,
+        "height": 768,
+        "rgbaSHA256": "65dc891b98d4d6c4457eac357e798dca6f33cf6f53d721ac2dde499f12b86b84",
+        "before": 589840,
+        "after": 453296
+      }
+    ]
+  },
+  "worker_hat": {
+    "before": 30768,
+    "after": 30736,
+    "verifiedImages": [
+      {
+        "image": 0,
+        "width": 64,
+        "height": 64,
+        "rgbaSHA256": "5bf6347dba071effe16c842f3de624a1182d8edfc770428c932d22b3bf2c7647",
+        "before": 90,
+        "after": 54
+      }
+    ]
+  },
+  "operator": {
+    "before": 3415428,
+    "after": 3217420,
+    "verifiedImages": [
+      {
+        "image": 5,
+        "width": 1024,
+        "height": 1024,
+        "rgbaSHA256": "0c31321861894f18b4174e8a9e3ea5e347c600faa74ec13e0ca1e733be51e564",
+        "before": 873026,
+        "after": 674980
+      }
+    ]
+  },
+  "service_pickup": {
+    "before": 5795428,
+    "after": 5148656,
+    "verifiedImages": [
+      {
+        "image": 0,
+        "width": 1024,
+        "height": 1024,
+        "rgbaSHA256": "125fc8bf5eba38b1f7acf0d89f8b7a9fd77e7efa38ef7f7af49304095e54d1f3",
+        "before": 984546,
+        "after": 774626
+      },
+      {
+        "image": 1,
+        "width": 512,
+        "height": 512,
+        "rgbaSHA256": "85222cd6202d65e0135225f9f383d9ee064d8f5724638d2d2ef1da9d62c59246",
+        "before": 6764,
+        "after": 6378
+      },
+      {
+        "image": 3,
+        "width": 1024,
+        "height": 1024,
+        "rgbaSHA256": "6a51567774ee4e4805135c240ae3bc839bfda19e3dee7aec9c739a6a248331ce",
+        "before": 1134145,
+        "after": 1005300
+      },
+      {
+        "image": 7,
+        "width": 1024,
+        "height": 1024,
+        "rgbaSHA256": "da245cbc2838a2c119741d0661bfd7d1e75164d610b7f0042d960dc10d71293e",
+        "before": 370270,
+        "after": 280318
+      },
+      {
+        "image": 9,
+        "width": 1024,
+        "height": 1024,
+        "rgbaSHA256": "ab009cffbfc2fa2bb235f880dd6aeba1c0b4c5cd4147d5bbc7dbde55edae76ad",
+        "before": 970911,
+        "after": 752972
+      }
+    ]
+  },
+  "simple_house": {
+    "before": 3439764,
+    "after": 3150380,
+    "verifiedImages": [
+      {
+        "image": 1,
+        "width": 1024,
+        "height": 1024,
+        "rgbaSHA256": "e7a2fd0e8405a5e70d018d38d431d696f9df2c29a908e39dad3dfd4eb1d6c80b",
+        "before": 624843,
+        "after": 452268
+      },
+      {
+        "image": 2,
+        "width": 1024,
+        "height": 1024,
+        "rgbaSHA256": "4e45f65315730a9a5568f6028094e1b71cb8baa1a2c72a634d7ec7c046efca24",
+        "before": 1887896,
+        "after": 1771012
+      }
+    ]
+  },
+  "korean_apartment": {
+    "before": 8909256,
+    "after": 7763760,
+    "verifiedImages": [
+      {
+        "image": 1,
+        "width": 1024,
+        "height": 1024,
+        "rgbaSHA256": "47c7739446c7f89ed1310e811b369e9b549d914afc994f80b84c8e54c216a247",
+        "before": 524391,
+        "after": 517826
+      },
+      {
+        "image": 2,
+        "width": 1024,
+        "height": 1024,
+        "rgbaSHA256": "f3b797ae02780b2c4a65397fb8b1f5facfcb02b1cabb7d3e5672a4a40eea6f75",
+        "before": 1622621,
+        "after": 1297410
+      },
+      {
+        "image": 6,
+        "width": 1024,
+        "height": 1024,
+        "rgbaSHA256": "bc1f8ab1d0b6957d1bab79838db2fe03c4b9f25485e6c1bb64e86f0134b0087d",
+        "before": 839030,
+        "after": 581826
+      },
+      {
+        "image": 8,
+        "width": 1024,
+        "height": 1024,
+        "rgbaSHA256": "8b0309f997820defc532d4750a7f19041812fce96bea308622ff12c9f3bbc364",
+        "before": 335229,
+        "after": 285482
+      },
+      {
+        "image": 9,
+        "width": 1024,
+        "height": 1024,
+        "rgbaSHA256": "a142c3d9b2024ebff564f6c24740ec5247d896230bd6c605433f65034def15c7",
+        "before": 1955663,
+        "after": 1615280
+      },
+      {
+        "image": 10,
+        "width": 1024,
+        "height": 1024,
+        "rgbaSHA256": "a8929afc9630862815ddcbd5553a14514ea751ce55eb1a02ef3132665943546e",
+        "before": 953182,
+        "after": 786564
+      }
+    ]
+  },
+  "small_villa": {
+    "before": 576916,
+    "after": 576916,
+    "verifiedImages": []
+  },
+  "gaming_room": {
+    "before": 5996884,
+    "after": 5996884,
+    "verifiedImages": []
+  },
+  "gravel_road_lod": {
+    "before": 4416084,
+    "after": 4416084,
+    "verifiedImages": []
+  }
+}

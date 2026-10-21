@@ -1,0 +1,167 @@
+[
+  {
+    "id": "copy.d472aecb66e57a1d",
+    "target": "copy",
+    "source": "Çözüm seçici ve uygulama hikâyelerini keşfedin.",
+    "group": "Ana sayfa metinleri",
+    "label": "Çözüm seçici ve uygulama hikâyelerini keşfedin.",
+    "kind": "text",
+    "default": {
+      "tr": "Çözüm seçici ve uygulama hikâyelerini keşfedin.",
+      "en": "Explore the solution finder and application stories."
+    },
+    "location": "Ana sayfa › Bölüm metinleri",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.0c094d67e927bd83",
+    "target": "copy",
+    "source": "Hedeflenen görünürlük",
+    "group": "Ortak arayüz metinleri",
+    "label": "Hedeflenen görünürlük",
+    "kind": "text",
+    "default": {
+      "tr": "Hedeflenen görünürlük",
+      "en": "Intended visibility"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.274434f811905296",
+    "target": "copy",
+    "source": "UYGULAMA HİKÂYELERİ",
+    "group": "Ortak arayüz metinleri",
+    "label": "UYGULAMA HİKÂYELERİ",
+    "kind": "text",
+    "default": {
+      "tr": "UYGULAMA HİKÂYELERİ",
+      "en": "APPLICATION STORIES"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.39f5f69b62b72e24",
+    "target": "copy",
+    "source": "İhtiyaç",
+    "group": "Ortak arayüz metinleri",
+    "label": "İhtiyaç",
+    "kind": "text",
+    "default": {
+      "tr": "İhtiyaç",
+      "en": "Requirement"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.598fa4e19b44f533",
+    "target": "copy",
+    "source": "Uygulama hikâyeleri",
+    "group": "Ortak arayüz metinleri",
+    "label": "Uygulama hikâyeleri",
+    "kind": "text",
+    "default": {
+      "tr": "Uygulama hikâyeleri",
+      "en": "Application stories"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.77a493ac29ff3d62",
+    "target": "copy",
+    "source": "Görsel gerçek uygulama ekranıdır; bu senaryonun canlı ölçümü veya müşteri sahası değildir.",
+    "group": "Ortak arayüz metinleri",
+    "label": "Görsel gerçek uygulama ekranıdır; bu senaryonun canlı ölçümü veya müşteri sahası değildir.",
+    "kind": "text",
+    "default": {
+      "tr": "Görsel gerçek uygulama ekranıdır; bu senaryonun canlı ölçümü veya müşteri sahası değildir.",
+      "en": "This is an actual application image, not a live measurement or customer site for this scenario."
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.82056cded7c2bdb5",
+    "target": "copy",
+    "source": "İlgili çözümü inceleyin",
+    "group": "Ortak arayüz metinleri",
+    "label": "İlgili çözümü inceleyin",
+    "kind": "text",
+    "default": {
+      "tr": "İlgili çözümü inceleyin",
+      "en": "Explore the related solution"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.9b4a1f0939429081",
+    "target": "copy",
+    "source": "TEMSİLİ SENARYO",
+    "group": "Ortak arayüz metinleri",
+    "label": "TEMSİLİ SENARYO",
+    "kind": "text",
+    "default": {
+      "tr": "TEMSİLİ SENARYO",
+      "en": "ILLUSTRATIVE SCENARIO"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.a11456a9b28b052a",
+    "target": "copy",
+    "source": "İhtiyaçtan izleme yaklaşımına uzanan üç temsili uygulama. Bunlar müşteri referansı veya doğrulanmış proje sonucu değildir.",
+    "group": "Ortak arayüz metinleri",
+    "label": "İhtiyaçtan izleme yaklaşımına uzanan üç temsili uygulama. Bunlar müşteri referansı veya do",
+    "kind": "text",
+    "default": {
+      "tr": "İhtiyaçtan izleme yaklaşımına uzanan üç temsili uygulama. Bunlar müşteri referansı veya doğrulanmış proje sonucu değildir.",
+      "en": "Three illustrative applications, from requirements to monitoring approach. These are not client references or verified project results."
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.c6fd2ad9354aad9c",
+    "target": "copy",
+    "source": "Teknolojinin sahadaki karşılığı.",
+    "group": "Ortak arayüz metinleri",
+    "label": "Teknolojinin sahadaki karşılığı.",
+    "kind": "text",
+    "default": {
+      "tr": "Teknolojinin sahadaki karşılığı.",
+      "en": "Technology in the field."
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.f1a01b6a892c290a",
+    "target": "copy",
+    "source": "Yaklaşım",
+    "group": "Ortak arayüz metinleri",
+    "label": "Yaklaşım",
+    "kind": "text",
+    "default": {
+      "tr": "Yaklaşım",
+      "en": "Approach"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  }
+]

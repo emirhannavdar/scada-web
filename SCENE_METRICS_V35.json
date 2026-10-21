@@ -1,0 +1,117 @@
+{
+  "rows": [
+    {
+      "p": 0.45,
+      "meshes": 641,
+      "triangles": 2663405,
+      "draws": 651,
+      "culling": {
+        "total": 12261,
+        "submitted": 10526
+      }
+    },
+    {
+      "p": 0.6,
+      "meshes": 2,
+      "triangles": 17088,
+      "draws": 2,
+      "culling": {
+        "total": 0,
+        "submitted": 0
+      }
+    },
+    {
+      "p": 0.85,
+      "meshes": 12,
+      "triangles": 2164,
+      "draws": 12,
+      "culling": {
+        "total": 151,
+        "submitted": 149
+      }
+    },
+    {
+      "p": 0.96,
+      "meshes": 46,
+      "triangles": 374542,
+      "draws": 46,
+      "culling": {
+        "total": 224,
+        "submitted": 106
+      }
+    }
+  ],
+  "scales": [
+    {
+      "width": 10,
+      "height": 5.5,
+      "depth": 12
+    },
+    {
+      "width": 15,
+      "height": 9,
+      "depth": 14
+    },
+    {
+      "width": 12,
+      "height": 5.5,
+      "depth": 12
+    },
+    {
+      "width": 10,
+      "height": 5.5,
+      "depth": 13
+    },
+    {
+      "width": 11,
+      "height": 5.5,
+      "depth": 12
+    },
+    {
+      "width": 12,
+      "height": 5.5,
+      "depth": 13
+    },
+    {
+      "width": 15,
+      "height": 9,
+      "depth": 14
+    },
+    {
+      "width": 11,
+      "height": 5.5,
+      "depth": 13
+    },
+    {
+      "width": 12,
+      "height": 5.5,
+      "depth": 12
+    },
+    {
+      "width": 10,
+      "height": 5.5,
+      "depth": 13
+    },
+    {
+      "width": 11,
+      "height": 5.5,
+      "depth": 12
+    },
+    {
+      "width": 12,
+      "height": 5.5,
+      "depth": 13
+    },
+    {
+      "width": 10,
+      "height": 5.5,
+      "depth": 12
+    },
+    {
+      "width": 11,
+      "height": 5.5,
+      "depth": 13
+    }
+  ],
+  "buildings": 14
+}
