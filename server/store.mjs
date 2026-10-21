@@ -1,3 +1,4 @@
+import {reviseTextValues,reviseCollectionTexts} from './text-revision.mjs';
 import { DEVICE_KEY, checkDevice, deviceContent } from "./device-content.mjs";
 import { DESIGN_KEY, emptyDesign, validateDesign } from "../shared/design.mjs";
 import { COLLECTION_KEY, makeCollections, validateCollections } from "./collections.mjs";
@@ -95,7 +96,7 @@ export function openStore(directory, catalogPath = new URL("./catalog.json", imp
         if (!byId.has(f.legacyId)) delete result[f.legacyId];
       }
     }
-    return result;
+    return reviseTextValues(result);
   }
   function split(raw) {
     const values = migrate(raw);
@@ -105,7 +106,7 @@ export function openStore(directory, catalogPath = new URL("./catalog.json", imp
     return values;
   }
   function effective(raw) {
-    return raw[COLLECTION_KEY] ?? makeCollections(catalog, split(raw));
+    return reviseCollectionTexts(raw[COLLECTION_KEY] ?? makeCollections(catalog, split(raw)));
   }
   function state(device) {
     device = checkDevice(device);
@@ -454,7 +455,7 @@ export function openStore(directory, catalogPath = new URL("./catalog.json", imp
             ...v,
           };
         }),
-      collections: collections ?? makeCollections(catalog, values),
+      collections: reviseCollectionTexts(collections ?? makeCollections(catalog, values)),
     };
   }
 

@@ -14,16 +14,16 @@ export const Route = createFileRoute("/scada-yazilimi")({
 });
 const caps = [
     { icon: LineChart, t: "Çok noktadan üretim verisi", d: "Evirici, analizör ve sayaç verileri eş zamanlı karşılaştırılır; en doğru üretim raporu oluşur." },
-    { icon: Gauge, t: "Limit yönetimi", d: "Evirici ve saha limitleri anlık takip edilir, ceza riskleri önlenir." },
+    { icon: Gauge, t: "Limit yönetimi", d: "Evirici ve saha limitleri anlık takip edilir, ceza riski azaltılır." },
     { icon: Waves, t: "Kompanzasyon kontrolü", d: "Reaktif güç sürekli izlenir; limit aşımında kompanzasyon kontrol edilir." },
     { icon: Receipt, t: "Fatura doğrulama", d: "Saatlik veriler üzerinden fatura doğrulaması yapılır." },
-    { icon: ShieldCheck, t: "PTF ve piyasa kontrolü", d: "Piyasa fiyatları ve PTF kontrolleriyle santral optimum seviyede yönetilir." },
+    { icon: ShieldCheck, t: "Piyasa takas fiyatı (PTF)", d: "Piyasa takas fiyatı (PTF) üretim verisiyle birlikte izlenir; üretiminizin değeri net görünür." },
     { icon: Bell, t: "Anlık bildirimler", d: "SMS, e-posta, iOS ve Android üzerinden alarm ve gün sonu raporları." },
 ];
 function Scada() {
     _useLocale();
     return (<>
-      <PageHero eyebrow={_tx("SCADA Yaz\u0131l\u0131m\u0131")} title={_tx("ScadaWatt SCADA yaz\u0131l\u0131m\u0131.")} lead={_tx("\u00D6l\u00E7\u00FCm, izleme, analiz ve enerji y\u00F6netimi i\u00E7in geli\u015Ftirilen yaz\u0131l\u0131m yakla\u015F\u0131m\u0131n\u0131 ke\u015Ffedin.")}/>
+      <PageHero eyebrow={_tx("SCADA Yaz\u0131l\u0131m\u0131")} title={_tx("ScadaWatt SCADA yaz\u0131l\u0131m\u0131.")} lead={_tx("ScadaWatt yazılımının ölçüm, izleme, analiz ve enerji yönetimi araçlarını keşfedin.")}/>
       <ApplicationGallery />
       <section className="py-24 md:py-36">
         <div className="mx-auto max-w-7xl px-6">
@@ -37,6 +37,6 @@ function Scada() {
           </div>
         </div>
       </section>
-      <section className="surface-ink py-16"><div className="sw-wrap"><h2 className="text-3xl font-medium">{_tx("\u0130zleme aray\u00FCz\u00FC yakla\u015F\u0131m\u0131")}</h2><p className="mt-4 mb-8 text-sm text-ink-muted">{_tx("A\u015Fa\u011F\u0131daki \u00F6rnek aray\u00FCz temsili verilerle \u00E7al\u0131\u015F\u0131r. Ger\u00E7ek uygulama ekran\u0131 veya canl\u0131 veri de\u011Fildir.")}</p><DemoDashboard /></div></section>
+      <section className="surface-ink py-16"><div className="sw-wrap"><h2 className="text-3xl font-medium">{_tx("İzleme arayüzü")}</h2><p className="mt-4 mb-8 text-sm text-ink-muted">{_tx("A\u015Fa\u011F\u0131daki \u00F6rnek aray\u00FCz temsili verilerle \u00E7al\u0131\u015F\u0131r. Ger\u00E7ek uygulama ekran\u0131 veya canl\u0131 veri de\u011Fildir.")}</p><DemoDashboard /></div></section>
     </>);
 }

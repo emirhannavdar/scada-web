@@ -1,3 +1,4 @@
+import {textRevision} from '../server/text-revision.mjs';
 /** Build the editor schema from the existing source. No credentials or runtime data. */
 import ts from 'typescript';
 import {visibleLiteral} from './visible-copy.mjs';
@@ -42,4 +43,6 @@ fields.sort((a,b)=>a.group.localeCompare(b.group,'tr')||a.id.localeCompare(b.id)
 for(const f of JSON.parse(readFileSync('server/retired-fields.json','utf8')))if(!fields.some(item=>item.id===f.id))fields.push(f);
 const translateValue=v=>typeof v==='string'?(en[v.trim().replace(/\s+/g,' ')]||v):Array.isArray(v)?v.map(translateValue):v&&typeof v==='object'?Object.fromEntries(Object.entries(v).map(([k,x])=>[k,translateValue(x)])):v;
 const baseCollections={products:data.products.map(p=>{const specs=data.productSpecifications[p.slug]||[];return {...p,specifications:specs,en:translateValue({...p,specifications:specs})}}),solutions:data.solutions.map(s=>{const presentation=data.solutionPresentation[s.slug];const extra={image:'/assets/screens/'+(presentation?.screenId||'overview-detail')+'.webp',headline:presentation?.headline||s.title,caption:presentation?.caption||''};return {...s,...extra,featured:['enerji-yonetimi','uzaktan-izleme','yenilenebilir-enerji','limit-yonetimi','kompanzasyon','zero-injection'].includes(s.slug),en:translateValue({...s,...extra})}}),plans:data.plans.map((p,i)=>({...p,id:['nano','standart','pro'][i]||'plan-'+i,comparison:data.comparison.map(row=>row[i+1]??'—'),en:translateValue({...p,comparison:data.comparison.map(row=>row[i+1]??'—')})}))};
+// Preserve editor field identities when source copy changes.
+for(const change of textRevision.changes){if(change.id.startsWith('copy.')){const field=fields.find(f=>f.target==='copy'&&f.source===change.value.tr);if(field)field.id=change.id;}}
 const schemaHash=hash(JSON.stringify(fields));writeFileSync('server/catalog.json',JSON.stringify({schemaHash,fields,baseCollections,comparisonLabels:data.comparison.map(row=>row[0])},null,2)+'\n');console.log('CMS içerik alanları: '+fields.length);

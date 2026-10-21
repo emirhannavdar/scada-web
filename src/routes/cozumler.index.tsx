@@ -6,7 +6,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { solutions } from "@/content/site";
 import { seo } from "@/lib/seo";
 export const Route = createFileRoute("/cozumler/")({
-    head: () => seo("Çözümler", "GES uzaktan izleme, limit yönetimi, kompanzasyon, Zero Injection, planlı üretim durdurma ve anlık bildirim çözümleri."),
+    head: () => seo("Çözümler", "GES uzaktan izleme, limit yönetimi, kompanzasyon, zero injection, planlı yük atma, saatlik mahsuplaşma takibi ve anlık bildirim çözümleri."),
     component: Solutions,
 });
 function Solutions() {

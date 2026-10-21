@@ -1,5 +1,5 @@
 {
-  "schemaHash": "c5c449e181a289c0",
+  "schemaHash": "128f4cf8c400e90f",
   "fields": [
     {
       "id": "copy.0b2bdd94b1824426",
@@ -167,14 +167,14 @@
       "label": "Açıklama metni",
       "kind": "text",
       "default": {
-        "tr": "Sahaya doğru alçalıyoruz. Panel sıralarının hemen üzerinden geçiyor, aşağıdaki çalışan ekibi ve toprak yolları izleyerek eviriciye ilerliyoruz.",
-        "en": "We descend towards the site, passing just above the panel rows and following the field team and service roads towards the inverter."
+        "tr": "Bir santralin ne kadar ürettiği kadar, ne üretmediği de önemlidir. ScadaWatt sahadaki her cihazı izleyerek bu sorunun cevabını verir.",
+        "en": "What a plant doesn't generate matters as much as what it does. ScadaWatt monitors every device on site to answer that question."
       },
       "stage": 0,
       "location": "Ana sayfa › 3D yolculuk › 01 Saha",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk açılış başlangıç güneş panel saha",
-      "legacyId": "copy.7fd756cd682ffd2f"
+      "legacyId": "copy.d015d92e6da8b0fc"
     },
     {
       "id": "data.fieldJourney.0.detail",
@@ -188,14 +188,14 @@
       "label": "“Bu aşamada ne oluyor?” açıklaması",
       "kind": "text",
       "default": {
-        "tr": "Saha ve çevre yapıları, gönderilen fotoğraftan ilhamla modellenmiştir. Birebir tesis veya coğrafi konum iddiası yoktur.",
-        "en": "The site and surrounding structures are modelled with inspiration from the supplied photograph. They do not claim to reproduce an actual installation or geographic location."
+        "tr": "Panellerin ürettiği enerji sahadaki eviriciler, analizörler, sayaçlar ve sensörler tarafından ölçülür. ScadaWatt'ın izleme süreci bu ölçümlerle başlar.",
+        "en": "The energy produced by the panels is measured by inverters, analysers, meters and sensors on site. ScadaWatt's monitoring starts with these measurements."
       },
       "stage": 0,
       "location": "Ana sayfa › 3D yolculuk › 01 Saha",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk açılış başlangıç güneş panel saha",
-      "legacyId": "copy.d94f93510770f178"
+      "legacyId": "copy.f61e8bf6baa88909"
     },
     {
       "id": "data.fieldJourney.0.title",
@@ -209,14 +209,14 @@
       "label": "Ana başlık",
       "kind": "text",
       "default": {
-        "tr": "Verinin izinden.",
-        "en": "Verinin izinden."
+        "tr": "Her şey sahada başlar.",
+        "en": "It all starts in the field."
       },
       "stage": 0,
       "location": "Ana sayfa › 3D yolculuk › 01 Saha",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk açılış başlangıç güneş panel saha",
-      "legacyId": "copy.e0469aa384d7b20d"
+      "legacyId": "copy.0035678aafb94560"
     },
     {
       "id": "data.fieldJourney.1.body",
@@ -230,14 +230,14 @@
       "label": "Açıklama metni",
       "kind": "text",
       "default": {
-        "tr": "Panellerin ürettiği doğru akım, eviricide alternatif akıma dönüştürülür. Ölçümler, üretimi anlamanın kaynaklarından biridir.",
-        "en": "The direct current produced by the panels is converted into alternating current by the inverter. Measurements help explain how the plant is generating energy."
+        "tr": "Panellerden gelen enerji eviricide şebekeye hazır hale gelir. ScadaWatt her eviricinin ne kadar ürettiğini, hangi durumda olduğunu ve arıza verip vermediğini sürekli izler. Gerektiğinde üretim limitini de eviriciye kendisi iletir.",
+        "en": "Energy from the panels is made grid-ready in the inverter. ScadaWatt continuously tracks how much each inverter generates, its operating status and any faults. When needed, it also sends the generation limit to the inverter itself."
       },
       "stage": 1,
       "location": "Ana sayfa › 3D yolculuk › 02 Evirici",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk evirici inverter invertör",
-      "legacyId": "copy.11a68a8d502d95a8"
+      "legacyId": "copy.35e978f86bdca386"
     },
     {
       "id": "data.fieldJourney.1.detail",
@@ -251,14 +251,14 @@
       "label": "“Bu aşamada ne oluyor?” açıklaması",
       "kind": "text",
       "default": {
-        "tr": "Evirici dışarıdan gösterilir. Kamera gövdeye girmez; kapak açılmaz.",
-        "en": "The inverter is shown from the outside. The camera does not enter the enclosure, and the cover stays closed."
+        "tr": "ScadaWatt eviricilerle Modbus RTU/TCP ve SunSpec üzerinden haberleşir; anlık güç, üretim, durum ve arıza bilgilerini okur. MPPT-dize verisi sunan eviricilerde performans dize bazında da izlenir.",
+        "en": "ScadaWatt communicates with inverters over Modbus RTU/TCP and SunSpec, reading real-time power, generation, status and fault data. Where inverters provide MPPT/string data, performance is also tracked string by string."
       },
       "stage": 1,
       "location": "Ana sayfa › 3D yolculuk › 02 Evirici",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk evirici inverter invertör",
-      "legacyId": "copy.9ddccd23c17dd3fa"
+      "legacyId": "copy.ce96ceea4fa45005"
     },
     {
       "id": "data.fieldJourney.1.title",
@@ -272,14 +272,14 @@
       "label": "Ana başlık",
       "kind": "text",
       "default": {
-        "tr": "Eviricinin yanındayız.",
-        "en": "Alongside the inverter."
+        "tr": "Eviricileriniz hep gözünüzün önünde.",
+        "en": "Your inverters, always in view."
       },
       "stage": 1,
       "location": "Ana sayfa › 3D yolculuk › 02 Evirici",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk evirici inverter invertör",
-      "legacyId": "copy.902acece74c565e8"
+      "legacyId": "copy.c29e416708b00bcd"
     },
     {
       "id": "data.fieldJourney.2.body",
@@ -293,14 +293,14 @@
       "label": "Açıklama metni",
       "kind": "text",
       "default": {
-        "tr": "Paneller arasındaki toprak yolda yer alan köşke yaklaşıyoruz. Önce yapıyı dışarıdan görüyor, ardından açılan servis kapılarından pano alanına ilerliyoruz.",
-        "en": "We approach the kiosk on the service road between the panel arrays. First we see the exterior, then move through the opening service doors towards the control panel."
+        "tr": "Evirici, analizör, sayaç, sensör... Sahadaki bütün veri kaynakları ScadaWatt ile buluşur.",
+        "en": "Inverters, analysers, meters, sensors... Every data source on site comes together in ScadaWatt."
       },
       "stage": 2,
       "location": "Ana sayfa › 3D yolculuk › 03 Köşk",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk köşk pano trafo",
-      "legacyId": "copy.b2fc345f685f9b84"
+      "legacyId": "copy.0617b86f82b73a9b"
     },
     {
       "id": "data.fieldJourney.2.detail",
@@ -314,14 +314,14 @@
       "label": "“Bu aşamada ne oluyor?” açıklaması",
       "kind": "text",
       "default": {
-        "tr": "Köşk referans fotoğraflarındaki gövde, çatı saçağı, metal kapılar ve havalandırma detaylarından esinlenerek modellenmiştir. Evirici ziyareti sonrasında kamera doğrudan köşke yönelir. Sahnenin bu bölümünde evirici ile köşk arasında kablo gösterilmez.",
-        "en": "The kiosk takes inspiration from the enclosure, roof overhang, metal doors and ventilation details in the reference photographs. After the inverter, the camera moves directly to the kiosk. No cable is shown between them in this part of the scene."
+        "tr": "Köşkteki panoda ScadaWatt veri toplama cihazı, RS485 ve Ethernet hatları üzerinden sahadaki cihazlara bağlanır. LOMR-07H şebeke izleme rölesi de bu noktada şebekeyi izler ve arıza anında tesisi korur.",
+        "en": "In the kiosk panel, the ScadaWatt data acquisition device connects to field devices over RS485 and Ethernet. The LOMR-07H grid monitoring relay also sits here, watching the grid and protecting the plant when a fault occurs."
       },
       "stage": 2,
       "location": "Ana sayfa › 3D yolculuk › 03 Köşk",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk köşk pano trafo",
-      "legacyId": "copy.30e778cadbfaec8e"
+      "legacyId": "copy.f796071eea70cd81"
     },
     {
       "id": "data.fieldJourney.2.title",
@@ -335,14 +335,14 @@
       "label": "Ana başlık",
       "kind": "text",
       "default": {
-        "tr": "Köşke ilerliyoruz.",
-        "en": "Approaching the kiosk."
+        "tr": "Sahanın kontrol noktası.",
+        "en": "The site's control point."
       },
       "stage": 2,
       "location": "Ana sayfa › 3D yolculuk › 03 Köşk",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk köşk pano trafo",
-      "legacyId": "copy.9a1f7c9025ed6361"
+      "legacyId": "copy.13cdd6eb78000aa4"
     },
     {
       "id": "data.fieldJourney.3.body",
@@ -356,14 +356,14 @@
       "label": "Açıklama metni",
       "kind": "text",
       "default": {
-        "tr": "S3000i, köşkün içindeki panoda yer alıyor. Farklı kaynaklardan gelen verileri topluyor, işliyor ve depoluyor. Şimdi bu veriyi uzaktaki ekrana taşıyan yolculuğa devam ediyoruz.",
-        "en": "S3000i sits inside the kiosk’s control panel, collecting, processing and storing data from different sources. We now follow the journey that brings this data to a remote screen."
+        "tr": "ScadaWatt farklı marka ve modeldeki cihazlarla aynı anda haberleşir. Veriyi sahada işler. İnternet bağlantısı kesilse bile kaydetmeye devam eder, bağlantı geri geldiğinde eksik kalan veriyi tamamlar.",
+        "en": "ScadaWatt communicates with devices of different brands and models at the same time and processes data on site. If the internet connection drops, it keeps recording and fills in the gaps once the connection is restored."
       },
       "stage": 3,
       "location": "Ana sayfa › 3D yolculuk › 04 ScadaWatt",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk scadawatt s3000i cihaz pano",
-      "legacyId": "copy.10b01fa38497e78e"
+      "legacyId": "copy.248711bcabb2d0f9"
     },
     {
       "id": "data.fieldJourney.3.detail",
@@ -377,14 +377,14 @@
       "label": "“Bu aşamada ne oluyor?” açıklaması",
       "kind": "text",
       "default": {
-        "tr": "S3000i dış görünümü gerçek ürün fotoğrafından esinlenmiştir. Cihazın kendi gövdesine girilmez veya kapağı açılmaz. Kamera köşkten çıktıktan sonra servis kapıları kapanır; sahadan sonra küresel kablo çizilmez.",
-        "en": "The S3000i exterior is inspired by the actual product photograph. The camera does not enter the device or open its cover. The kiosk doors close as the camera leaves; no global cable is shown after the site."
+        "tr": "Okunan veriler sahada işlenip kaydedilir, ardından ScadaWatt platformuna gönderilir. Zero injection, planlı yük atma ve kompanzasyon gibi kontrol senaryoları da sahadaki bu cihaz üzerinden yürütülür.",
+        "en": "Data is processed and stored on site, then sent to the ScadaWatt platform. Control scenarios such as zero injection, scheduled load shedding and power factor correction also run on this device."
       },
       "stage": 3,
       "location": "Ana sayfa › 3D yolculuk › 04 ScadaWatt",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk scadawatt s3000i cihaz pano",
-      "legacyId": "copy.79ea08e8742c49c5"
+      "legacyId": "copy.4189dc6db93696b1"
     },
     {
       "id": "data.fieldJourney.3.title",
@@ -398,14 +398,14 @@
       "label": "Ana başlık",
       "kind": "text",
       "default": {
-        "tr": "Panonun içindeki teknoloji.",
-        "en": "Technology inside the panel."
+        "tr": "Veri burada toplanır.",
+        "en": "This is where data comes together."
       },
       "stage": 3,
       "location": "Ana sayfa › 3D yolculuk › 04 ScadaWatt",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk scadawatt s3000i cihaz pano",
-      "legacyId": "copy.9df6c4400540d669"
+      "legacyId": "copy.2b31a7ab1c18aed1"
     },
     {
       "id": "data.fieldJourney.4.body",
@@ -419,14 +419,14 @@
       "label": "Açıklama metni",
       "kind": "text",
       "default": {
-        "tr": "Türkiye’deki sahadan yükseliyoruz. Dünya üzerinde tek bir kısa yay boyunca ABD’deki operatöre doğru ilerliyoruz.",
-        "en": "We rise above the site in Türkiye and follow a single short arc across the globe towards an operator in the USA."
+        "tr": "Sahadan çıkan veri, güvenli bir bağlantıyla birkaç saniye içinde ScadaWatt platformuna ulaşır.",
+        "en": "Data leaving the site reaches the ScadaWatt platform over a secure connection within seconds."
       },
       "stage": 4,
       "location": "Ana sayfa › 3D yolculuk › 05 Dünya",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk dünya uzay türkiye abd amerika",
-      "legacyId": "copy.5876c9fdf66f503d"
+      "legacyId": "copy.8312e486f00a6a89"
     },
     {
       "id": "data.fieldJourney.4.detail",
@@ -440,14 +440,14 @@
       "label": "“Bu aşamada ne oluyor?” açıklaması",
       "kind": "text",
       "default": {
-        "tr": "Dünya sabit kalır; kamera 39° Kuzey / 35,5° Doğu ile 38° Kuzey / 97° Batı arasındaki kısa yayı izler. Bunlar ülke sınırları içindeki temsili noktalardır; gerçek müşteri veya internet rotası gösterilmez.",
-        "en": "The Earth remains still as the camera follows the short arc between 39° N / 35.5° E and 38° N / 97° W. These are representative points within each country, not an actual customer location or internet route."
+        "tr": "Sahadan gelen veri platformda saklanır; saatlik ve günlük üretim, mahsuplaşma ve raporlar burada hesaplanır. OSOS sayaç verisi ve piyasa takas fiyatları (PTF) da aynı platformda birleşir.",
+        "en": "Field data is stored on the platform, where hourly and daily generation, net-metering settlement and reports are calculated. OSOS meter data and market clearing prices (PTF) are brought together on the same platform."
       },
       "stage": 4,
       "location": "Ana sayfa › 3D yolculuk › 05 Dünya",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk dünya uzay türkiye abd amerika",
-      "legacyId": "copy.597cdc25f153e881"
+      "legacyId": "copy.77af21bc7588e48b"
     },
     {
       "id": "data.fieldJourney.4.title",
@@ -461,14 +461,14 @@
       "label": "Ana başlık",
       "kind": "text",
       "default": {
-        "tr": "Mesafenin ötesinde.",
-        "en": "Beyond distance."
+        "tr": "Mesafenin önemi yok.",
+        "en": "Distance doesn't matter."
       },
       "stage": 4,
       "location": "Ana sayfa › 3D yolculuk › 05 Dünya",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk dünya uzay türkiye abd amerika",
-      "legacyId": "copy.d809496af1c43b20"
+      "legacyId": "copy.00eb76df86483d81"
     },
     {
       "id": "data.fieldJourney.5.body",
@@ -482,14 +482,14 @@
       "label": "Açıklama metni",
       "kind": "text",
       "default": {
-        "tr": "Gece tarafında otoyollar, yerleşimler ve bölgesel ışık ağı beliriyor. Yolculuk, operatörün bulunduğu yaşam alanına doğru daralıyor.",
-        "en": "Highways, settlements and regional lights emerge on the night side. The journey narrows towards the operator’s neighbourhood."
+        "tr": "Sahanız başka bir şehirde, hatta başka bir kıtada olabilir. Mesafeler takibe engel değil.",
+        "en": "Your site may be in another city, or even on another continent. Distance is no barrier to monitoring."
       },
       "stage": 5,
       "location": "Ana sayfa › 3D yolculuk › 06 Ülke",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk ülke bölge amerika abd",
-      "legacyId": "copy.47afbe54622e951f"
+      "legacyId": "copy.2a10a271436e462b"
     },
     {
       "id": "data.fieldJourney.5.detail",
@@ -503,14 +503,14 @@
       "label": "“Bu aşamada ne oluyor?” açıklaması",
       "kind": "text",
       "default": {
-        "tr": "ABD’deki şehir ve ev temsili olarak modellenmiştir. Konum, ana kara sınırları içinde seçilmiştir; belirli bir müşterinin gerçek adresi gösterilmez.",
-        "en": "The US city and home are representative models. The location lies within the contiguous United States and does not identify an actual customer address."
+        "tr": "ScadaWatt'a internet bağlantısı olan her yerden erişebilirsiniz. Sahanın bulunduğu yer ile sizin bulunduğunuz yer arasındaki mesafe izlemeyi etkilemez.",
+        "en": "ScadaWatt can be accessed from anywhere with an internet connection. The distance between you and your site makes no difference to monitoring."
       },
       "stage": 5,
       "location": "Ana sayfa › 3D yolculuk › 06 Ülke",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk ülke bölge amerika abd",
-      "legacyId": "copy.94b4e559c9bc6d08"
+      "legacyId": "copy.56797198fd4dcaea"
     },
     {
       "id": "data.fieldJourney.5.title",
@@ -524,14 +524,14 @@
       "label": "Ana başlık",
       "kind": "text",
       "default": {
-        "tr": "Başka bir yerde.",
-        "en": "Somewhere else."
+        "tr": "Hangi ülkede olursanız olun.",
+        "en": "Wherever you are in the world."
       },
       "stage": 5,
       "location": "Ana sayfa › 3D yolculuk › 06 Ülke",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk ülke bölge amerika abd",
-      "legacyId": "copy.e30d213089959ae9"
+      "legacyId": "copy.164e0640f330376e"
     },
     {
       "id": "data.fieldJourney.6.body",
@@ -545,14 +545,14 @@
       "label": "Açıklama metni",
       "kind": "text",
       "default": {
-        "tr": "Işıklı caddeler, park cepleri, araçlar ve farklı yapı ölçekleri belirginleşiyor. Aynı saha bilgisi, çok uzaktaki bir ekranda okunabilir.",
-        "en": "Illuminated streets, pocket parks, vehicles and buildings of different scales come into view. The same field data can be read on a screen far away."
+        "tr": "Yönetim, işletme ve bakım ekipleri farklı şehirlerde olsa da aynı veriyi görür. Herkes kendi yetkisi kadarına erişir, kararlar ortak bir tablo üzerinden alınır.",
+        "en": "Management, operations and maintenance teams see the same data, even from different cities. Everyone accesses what their role allows, and decisions are made from a shared picture."
       },
       "stage": 6,
       "location": "Ana sayfa › 3D yolculuk › 07 Şehir",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk şehir cadde binalar",
-      "legacyId": "copy.caf5c6b10c37eba5"
+      "legacyId": "copy.48422e34cc40e047"
     },
     {
       "id": "data.fieldJourney.6.detail",
@@ -566,14 +566,14 @@
       "label": "“Bu aşamada ne oluyor?” açıklaması",
       "kind": "text",
       "default": {
-        "tr": "Şehir, farklı yükseklikteki binalar, park alanları, araçlar ve cadde ışıklarıyla oluşturulmuş özgün bir 3B yerleşimdir.",
-        "en": "The city is an original 3D environment, with buildings of varying heights, parks, vehicles and street lighting."
+        "tr": "Kullanıcılar şirket ve saha bazında yetkilendirilir. Yatırımcı, EPC firması ve bakım ekibi aynı santrali kendi yetkileri ölçüsünde izler.",
+        "en": "Users are authorised by company and by site. Investors, EPC contractors and maintenance teams monitor the same plant within the limits of their own permissions."
       },
       "stage": 6,
       "location": "Ana sayfa › 3D yolculuk › 07 Şehir",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk şehir cadde binalar",
-      "legacyId": "copy.ca783f9caf814624"
+      "legacyId": "copy.4e29677b6a08aa9d"
     },
     {
       "id": "data.fieldJourney.6.title",
@@ -587,14 +587,14 @@
       "label": "Ana başlık",
       "kind": "text",
       "default": {
-        "tr": "Şehre yaklaşıyoruz.",
-        "en": "Approaching the city."
+        "tr": "Ekibinizle aynı ekrana bakın.",
+        "en": "Look at the same screen as your team."
       },
       "stage": 6,
       "location": "Ana sayfa › 3D yolculuk › 07 Şehir",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk şehir cadde binalar",
-      "legacyId": "copy.d57809b87a07b9b9"
+      "legacyId": "copy.c13a827ff957cfd8"
     },
     {
       "id": "data.fieldJourney.7.body",
@@ -608,14 +608,14 @@
       "label": "Açıklama metni",
       "kind": "text",
       "default": {
-        "tr": "Şehirden mahalle ölçeğine iniyoruz: yol, park, apartman ve küçük yaşam cepleri arasından aydınlık pencereye ilerliyoruz.",
-        "en": "We descend from the city into the neighbourhood, following roads, parks and residential buildings towards the illuminated window."
+        "tr": "ScadaWatt'a hem web panelinden hem mobil uygulamadan ulaşabilirsiniz. Bilgisayar başında olmanız gerekmez.",
+        "en": "Access ScadaWatt from the web platform or the mobile app. You don't need to be at a desk."
       },
       "stage": 7,
       "location": "Ana sayfa › 3D yolculuk › 08 Mahalle",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk mahalle bina pencere",
-      "legacyId": "copy.93af42d6f9c0500b"
+      "legacyId": "copy.3a000d2fa83a9a40"
     },
     {
       "id": "data.fieldJourney.7.detail",
@@ -629,14 +629,14 @@
       "label": "“Bu aşamada ne oluyor?” açıklaması",
       "kind": "text",
       "default": {
-        "tr": "Yaklaşma rotası hedef binanın önündeki açık koridoru takip eder; bina içinden rastgele kesilerek geçmez.",
-        "en": "The approach follows the clear corridor in front of the target building, rather than cutting through buildings at random."
+        "tr": "Web paneli ile iOS ve Android mobil uygulama aynı veriyi gösterir. Saha durumu, canlı üretim ve alarmlar her iki tarafta da görülebilir.",
+        "en": "The web platform and the iOS and Android apps show the same data. Site status, live generation and alarms are available on both."
       },
       "stage": 7,
       "location": "Ana sayfa › 3D yolculuk › 08 Mahalle",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk mahalle bina pencere",
-      "legacyId": "copy.6215b977cf74ed02"
+      "legacyId": "copy.56776b5f9ba9dede"
     },
     {
       "id": "data.fieldJourney.7.title",
@@ -650,14 +650,14 @@
       "label": "Ana başlık",
       "kind": "text",
       "default": {
-        "tr": "Bir mahalle. Bir bina.",
-        "en": "Bir mahalle. Bir bina."
+        "tr": "Ofiste ya da yolda.",
+        "en": "At the office or on the move."
       },
       "stage": 7,
       "location": "Ana sayfa › 3D yolculuk › 08 Mahalle",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk mahalle bina pencere",
-      "legacyId": "copy.91df6ae8326ea97e"
+      "legacyId": "copy.6c70985f692476e5"
     },
     {
       "id": "data.fieldJourney.8.body",
@@ -671,14 +671,14 @@
       "label": "Açıklama metni",
       "kind": "text",
       "default": {
-        "tr": "Pencerenin ardında çalışan bir operatör. Kamera omzunun yanından masadaki monitöre yaklaşıyor.",
-        "en": "An operator is working beyond the window. The camera approaches the desk monitor from beside their shoulder."
+        "tr": "Sahada bir sorun çıktığında ScadaWatt sizi SMS ve e-postayla hemen haberdar eder. Her akşam günün üretim özeti telefonunuza gelir.",
+        "en": "If a problem occurs on site, ScadaWatt notifies you immediately by SMS and email. Every evening, a summary of the day's generation arrives on your phone."
       },
       "stage": 8,
       "location": "Ana sayfa › 3D yolculuk › 09 Ev",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk operatör ev oda masa",
-      "legacyId": "copy.fb4847cd424f61cc"
+      "legacyId": "copy.cbdfc0d884e3e6f9"
     },
     {
       "id": "data.fieldJourney.8.detail",
@@ -692,14 +692,14 @@
       "label": "“Bu aşamada ne oluyor?” açıklaması",
       "kind": "text",
       "default": {
-        "tr": "İnsan, çalışma masası ve koltuk/TV içeren ev ortamı modellenmiştir. Monitördeki görüntü gönderilen gerçek ScadaWatt arayüzüdür; canlı bağlantı değildir.",
-        "en": "The operator, desk and home setting with a sofa and TV are modelled. The monitor displays the supplied ScadaWatt interface image, not a live connection."
+        "tr": "Bildirimler, tekrar eden mesajları sınırlayan kurallarla gönderilir; aynı arıza için art arda mesaj yağmaz, önemli uyarılar gözden kaçmaz.",
+        "en": "Notifications follow rules that limit repeat messages, so you are not flooded by the same fault and important alerts stand out."
       },
       "stage": 8,
       "location": "Ana sayfa › 3D yolculuk › 09 Ev",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk operatör ev oda masa",
-      "legacyId": "copy.17a52fe9badab0a7"
+      "legacyId": "copy.07d6ed4f2b3e187b"
     },
     {
       "id": "data.fieldJourney.8.title",
@@ -713,14 +713,14 @@
       "label": "Ana başlık",
       "kind": "text",
       "default": {
-        "tr": "Saha, ekranında.",
-        "en": "The field, on screen."
+        "tr": "Mesai bitince de haberiniz olur.",
+        "en": "You stay informed after hours."
       },
       "stage": 8,
       "location": "Ana sayfa › 3D yolculuk › 09 Ev",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk operatör ev oda masa",
-      "legacyId": "copy.e04c60302c0d8f07"
+      "legacyId": "copy.44ec80912519e483"
     },
     {
       "id": "data.fieldJourney.9.body",
@@ -734,14 +734,14 @@
       "label": "Açıklama metni",
       "kind": "text",
       "default": {
-        "tr": "Sahaları karşılaştırın, üretim eğrilerini inceleyin. Yolculuğun sonunda gerçek ScadaWatt ekranındasınız.",
-        "en": "Compare sites and examine generation curves. At the end of the journey, you’re looking at actual ScadaWatt screens."
+        "tr": "Sahalarınızı karşılaştırın, üretim eğrilerini inceleyin, kayıpları erkenden fark edin. Yolculuğun sonunda gördüğünüz ekran, ScadaWatt'ın kendisi.",
+        "en": "Compare your sites, examine generation curves and spot losses early. The screen at the end of the journey is ScadaWatt itself."
       },
       "stage": 9,
       "location": "Ana sayfa › 3D yolculuk › 10 Ekran",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk monitör ekran bilgisayar final",
-      "legacyId": "copy.05cef53501c62c8d"
+      "legacyId": "copy.930b664b4eeeddf9"
     },
     {
       "id": "data.fieldJourney.9.detail",
@@ -755,14 +755,14 @@
       "label": "“Bu aşamada ne oluyor?” açıklaması",
       "kind": "text",
       "default": {
-        "tr": "Monitörde ScadaWatt genel görünümü sabit olarak gösterilir. Kamera monitöre ulaştığında yolculuk tamamlanır; aşağı kaydırarak donanımları, çözümleri ve uygulama görsellerini inceleyebilirsiniz. Bu tanıtım sahaya komut göndermez.",
-        "en": "The monitor displays the ScadaWatt overview as a fixed image. The journey ends when the camera reaches the monitor; scroll down to explore hardware, solutions and application images. This presentation sends no commands to field devices."
+        "tr": "Monitörde gördüğünüz, ScadaWatt'ın gerçek genel görünüm ekranıdır. Aşağı kaydırarak donanımları, çözümleri ve uygulama ekranlarını inceleyebilirsiniz.",
+        "en": "The monitor shows the actual ScadaWatt overview screen. Scroll down to explore the hardware, solutions and application screens."
       },
       "stage": 9,
       "location": "Ana sayfa › 3D yolculuk › 10 Ekran",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk monitör ekran bilgisayar final",
-      "legacyId": "copy.1ada910735dc711c"
+      "legacyId": "copy.e7b268d865bfa629"
     },
     {
       "id": "data.fieldJourney.9.title",
@@ -776,14 +776,14 @@
       "label": "Ana başlık",
       "kind": "text",
       "default": {
-        "tr": "Artık bütününü görün.",
-        "en": "See the complete picture."
+        "tr": "Bütün tablo önünüzde.",
+        "en": "The full picture, in front of you."
       },
       "stage": 9,
       "location": "Ana sayfa › 3D yolculuk › 10 Ekran",
       "page": "/",
       "keywords": "animasyon simülasyon simulasyon 3d yolculuk monitör ekran bilgisayar final",
-      "legacyId": "copy.341b515ba1bc74e4"
+      "legacyId": "copy.12494458165e22e8"
     },
     {
       "id": "copy.1e813ddd7b0c9a09",
@@ -1329,8 +1329,8 @@
       "label": "Enerji Yönetimi / 1 / Metin / 1",
       "kind": "text",
       "default": {
-        "tr": "ScadaWatt, ölçüm verilerini izleme, raporlama ve kontrol ihtiyaçlarıyla bir araya getirir. Üretim ve tüketim görünürlüğü, limit takibi ve reaktif güç değerlendirmesi enerji yönetiminin farklı parçalarıdır.",
-        "en": "ScadaWatt connects measurement data with monitoring, reporting and control requirements. Visibility into generation and consumption, limit monitoring and reactive power analysis all contribute to energy management."
+        "tr": "ScadaWatt üretim, tüketim, limit ve reaktif güç verilerini aynı platformda toplar. OSOS sayaç verisi, saatlik mahsuplaşma takibi ve piyasa takas fiyatlarıyla (PTF) enerjinin hem teknik hem ticari tarafını birlikte görürsünüz.",
+        "en": "ScadaWatt brings generation, consumption, limit and reactive power data together on one platform. With OSOS meter data, hourly net-metering tracking and market clearing prices (PTF), you see both the technical and commercial side of your energy."
       },
       "page": "/",
       "location": "Ana sayfa › Çözümler"
@@ -1348,8 +1348,8 @@
       "label": "Enerji Yönetimi / 1 / Metin / 2",
       "kind": "text",
       "default": {
-        "tr": "Uygulanacak kapsam, saha cihazları ve seçilen hizmetlere göre birlikte değerlendirilir.",
-        "en": "The scope is assessed together, based on field devices and the selected services."
+        "tr": "Saatlik mahsuplaşma takibi sunan altyapımız, 15 dakikalık uzlaştırma dönemine geçişe uygun şekilde hazırlanmaktadır.",
+        "en": "Our hourly net-metering infrastructure is being prepared for the transition to 15-minute settlement periods."
       },
       "page": "/",
       "location": "Ana sayfa › Çözümler"
@@ -1460,8 +1460,8 @@
       "label": "Uzaktan İzleme / 2 / Metin / 1",
       "kind": "text",
       "default": {
-        "tr": "Saha cihazlarından gelen veriler, veri toplama ve haberleşme teknolojileri üzerinden ScadaWatt yazılımına taşınır. İzleme ve raporlama ihtiyaçları cihaz ve saha kapsamına göre belirlenir.",
-        "en": "Data acquisition and communication technologies transfer field device data to ScadaWatt software. Monitoring and reporting requirements depend on the devices and site scope."
+        "tr": "Evirici, analizör, sayaç ve sensör verileri ScadaWatt veri toplama cihazı üzerinden platforma aktarılır. Cihaz durumları, haberleşme kesintileri ve alarmlar web panelinden ve mobil uygulamadan takip edilir.",
+        "en": "Data from inverters, analysers, meters and sensors is transferred to the platform through the ScadaWatt data acquisition device. Device status, communication outages and alarms can be followed on the web platform and mobile app."
       },
       "page": "/",
       "location": "Ana sayfa › Çözümler"
@@ -1572,8 +1572,8 @@
       "label": "Yenilenebilir Enerji / 3 / Metin / 1",
       "kind": "text",
       "default": {
-        "tr": "Yenilenebilir enerji üretiminde ölçüm, performans analizi ve kontrol verileri önemlidir. ScadaWatt’ın GES izleme ürünü, üretim verilerini yazılım üzerinden değerlendirmeye odaklanır.",
-        "en": "Measurement, performance analysis and control data are essential to renewable generation. ScadaWatt’s solar PV monitoring product focuses on evaluating generation data through software."
+        "tr": "Güneş enerji santrallerinde üretimi doğru ölçmek, performansı izlemek ve gerektiğinde sahaya müdahale edebilmek gerekir. ScadaWatt bu üç ihtiyacı tek platformda karşılar.",
+        "en": "Solar power plants need accurate generation measurement, performance monitoring and the ability to act on site when necessary. ScadaWatt meets all three on one platform."
       },
       "page": "/",
       "location": "Ana sayfa › Çözümler"
@@ -1947,7 +1947,7 @@
       "label": "Limit Yönetimi / 5 / Kısa açıklama",
       "kind": "text",
       "default": {
-        "tr": "Evirici ve saha limitlerini anlık takip edin, ceza risklerini ortadan kaldırın.",
+        "tr": "Evirici ve saha limitlerini anlık takip edin, ceza riskini azaltın.",
         "en": "Monitor inverter and site limits in real time and reduce the risk of penalties."
       },
       "page": "/",
@@ -1984,8 +1984,8 @@
       "label": "Kompanzasyon Takibi ve Kontrolü / 6 / Metin / 1",
       "kind": "text",
       "default": {
-        "tr": "Reaktif güç değerleri sürekli izlenir. Limit aşımlarında ScadaWatt kompanzasyon sistemini kontrol ederek ceza risklerinin oluşmasını engeller.",
-        "en": "ScadaWatt continuously monitors reactive power and controls the power factor correction system when limits are exceeded, helping prevent penalty risks."
+        "tr": "Reaktif güç değerleri sürekli izlenir. Limit aşımlarında ScadaWatt kompanzasyon sistemini kontrol ederek reaktif ceza riskini azaltır.",
+        "en": "Reactive power is monitored continuously. When limits are exceeded, ScadaWatt controls the power factor correction system to reduce the risk of reactive penalties."
       },
       "page": "/",
       "location": "Ana sayfa › Çözümler"
@@ -2003,8 +2003,8 @@
       "label": "Kompanzasyon Takibi ve Kontrolü / 6 / Metin / 2",
       "kind": "text",
       "default": {
-        "tr": "Saatlik veriler üzerinden fatura doğrulaması yapılarak hatalı faturaların önüne geçilir.",
-        "en": "Electricity bills are checked against hourly data to help detect billing errors."
+        "tr": "Saatlik veriler üzerinden fatura doğrulaması yapılır; hatalı faturalar kolayca fark edilir.",
+        "en": "Bills are checked against hourly data, making billing errors easy to spot."
       },
       "page": "/",
       "location": "Ana sayfa › Çözümler"
@@ -2115,8 +2115,8 @@
       "label": "Zero Injection / 7 / Metin / 1",
       "kind": "text",
       "default": {
-        "tr": "Zero Injection modülü ile eviriciler dinamik olarak PID kontrol edilir, tüketim değerleriniz ölçülür ve tüketim kadar üretim yapılır.",
-        "en": "The Zero Injection module dynamically controls inverters using PID control. Consumption is measured and generation is adjusted to match demand."
+        "tr": "Zero Injection modülü tesisin anlık tüketimini ölçer ve evirici gücünü buna göre sürekli ayarlar; üretim tüketimi aşmaz.",
+        "en": "The Zero Injection module measures the facility's real-time consumption and continuously adjusts inverter output to match it, so generation never exceeds consumption."
       },
       "page": "/",
       "location": "Ana sayfa › Çözümler"
@@ -2153,8 +2153,8 @@
       "label": "Zero Injection / 7 / Özellikler / 1",
       "kind": "text",
       "default": {
-        "tr": "Dinamik PID evirici kontrolü",
-        "en": "Dynamic PID inverter control"
+        "tr": "Dinamik evirici güç kontrolü",
+        "en": "Dynamic inverter power control"
       },
       "page": "/",
       "location": "Ana sayfa › Çözümler"
@@ -2243,11 +2243,11 @@
         "0"
       ],
       "group": "Çözümler",
-      "label": "Planlı Üretim Durdurma / 8 / Metin / 1",
+      "label": "Planlı Yük Atma / 8 / Metin / 1",
       "kind": "text",
       "default": {
-        "tr": "Planlı üretim durdurma modülü ile yük atma süreçleri otonom hale gelir; talimatlar manuel müdahaleye gerek kalmadan sahaya uygulanır.",
-        "en": "The scheduled generation curtailment module automates load shedding, applying instructions to the site without manual intervention."
+        "tr": "Planlı yük atma talimatları ScadaWatt üzerinden tanımlanır ve belirlenen saatte sahaya otomatik uygulanır; ekibin sahaya gitmesine gerek kalmaz.",
+        "en": "Scheduled load-shedding instructions are defined in ScadaWatt and applied to the site automatically at the set time, with no need to send a team on site."
       },
       "page": "/",
       "location": "Ana sayfa › Çözümler"
@@ -2262,11 +2262,11 @@
         "1"
       ],
       "group": "Çözümler",
-      "label": "Planlı Üretim Durdurma / 8 / Metin / 2",
+      "label": "Planlı Yük Atma / 8 / Metin / 2",
       "kind": "text",
       "default": {
-        "tr": "PRO pakette acil durdurma eylemi ve sahaya fiziksel müdahale imkânı da bulunur.",
-        "en": "PRO also includes emergency shutdown and physical site intervention capabilities."
+        "tr": "PRO pakette acil durdurma eylemi ve hücrenin uzaktan açılıp kapatılması da bulunur.",
+        "en": "PRO also includes emergency shutdown and remote opening and closing of the switchgear cell."
       },
       "page": "/",
       "location": "Ana sayfa › Çözümler"
@@ -2281,11 +2281,11 @@
         "0"
       ],
       "group": "Çözümler",
-      "label": "Planlı Üretim Durdurma / 8 / Özellikler / 1",
+      "label": "Planlı Yük Atma / 8 / Özellikler / 1",
       "kind": "text",
       "default": {
-        "tr": "Otonom yük atma",
-        "en": "Autonomous load shedding"
+        "tr": "Otomatik yük atma",
+        "en": "Automatic load shedding"
       },
       "page": "/",
       "location": "Ana sayfa › Çözümler"
@@ -2300,11 +2300,11 @@
         "1"
       ],
       "group": "Çözümler",
-      "label": "Planlı Üretim Durdurma / 8 / Özellikler / 2",
+      "label": "Planlı Yük Atma / 8 / Özellikler / 2",
       "kind": "text",
       "default": {
         "tr": "Acil durdurma eylemi (PRO)",
-        "en": "Acil durdurma eylemi (PRO)"
+        "en": "Emergency shutdown (PRO)"
       },
       "page": "/",
       "location": "Ana sayfa › Çözümler"
@@ -2319,11 +2319,11 @@
         "2"
       ],
       "group": "Çözümler",
-      "label": "Planlı Üretim Durdurma / 8 / Özellikler / 3",
+      "label": "Planlı Yük Atma / 8 / Özellikler / 3",
       "kind": "text",
       "default": {
-        "tr": "Sahaya fiziksel müdahale (PRO)",
-        "en": "Physical site intervention (PRO)"
+        "tr": "Uzaktan hücre açma / kapama (PRO)",
+        "en": "Remote switchgear cell open / close (PRO)"
       },
       "page": "/",
       "location": "Ana sayfa › Çözümler"
@@ -2337,11 +2337,11 @@
         "short"
       ],
       "group": "Çözümler",
-      "label": "Planlı Üretim Durdurma / 8 / Kısa açıklama",
+      "label": "Planlı Yük Atma / 8 / Kısa açıklama",
       "kind": "text",
       "default": {
-        "tr": "Yük atma süreçlerini otonom hale getirin.",
-        "en": "Automate load-shedding processes."
+        "tr": "Planlı yük atma talimatlarını sahaya otomatik uygulayın.",
+        "en": "Apply scheduled load-shedding instructions to the site automatically."
       },
       "page": "/",
       "location": "Ana sayfa › Çözümler"
@@ -2355,11 +2355,11 @@
         "title"
       ],
       "group": "Çözümler",
-      "label": "Planlı Üretim Durdurma / 8 / Başlık",
+      "label": "Planlı Yük Atma / 8 / Başlık",
       "kind": "text",
       "default": {
-        "tr": "Planlı Üretim Durdurma",
-        "en": "Scheduled Generation Curtailment"
+        "tr": "Planlı Yük Atma",
+        "en": "Scheduled Load Shedding"
       },
       "page": "/",
       "location": "Ana sayfa › Çözümler"
@@ -3195,7 +3195,7 @@
       "kind": "text",
       "default": {
         "tr": "Telefon",
-        "en": "Telefon"
+        "en": "Phone"
       },
       "location": "İletişim › Talep formu",
       "page": "/iletisim"
@@ -3239,8 +3239,8 @@
       "label": "Deneyim",
       "kind": "text",
       "default": {
-        "tr": "Markamızın çıkış ürünü olan ScadaWatt izleme otomasyonu, güneş enerjisi sektöründe kazandığımız tecrübeyi somut çözümlere dönüştürmektedir.",
-        "en": "Our founding product, ScadaWatt monitoring automation, turns our experience in the solar energy sector into practical solutions."
+        "tr": "Markamızın ilk ürünü olan ScadaWatt izleme sistemi, güneş enerjisi sahalarında edindiğimiz deneyimin ürünüdür.",
+        "en": "ScadaWatt monitoring, our first product, grew out of hands-on experience in solar power plants."
       },
       "page": "/hakkimizda",
       "location": "Hakkımızda › Hakkımızda"
@@ -3256,8 +3256,8 @@
       "label": "Ana başlık",
       "kind": "text",
       "default": {
-        "tr": "Akıllı enerji yönetimiyle mükemmel çözümler sunuyoruz.",
-        "en": "Delivering exceptional solutions through intelligent energy management."
+        "tr": "Santralinizi uzaktan, eksiksiz ve doğru veriyle yönetin.",
+        "en": "Manage your plant remotely, with complete and accurate data."
       },
       "page": "/hakkimizda",
       "location": "Hakkımızda › Hakkımızda"
@@ -3307,8 +3307,8 @@
       "label": "Davet",
       "kind": "text",
       "default": {
-        "tr": "ScadaWatt ekosisteminde yerinizi alarak, santrallerinizde enerji yönetimini en üst seviyeye taşımaya hazır mısınız?",
-        "en": "Ready to join the ScadaWatt ecosystem and take energy management at your plants to the next level?"
+        "tr": "Santrallerinizi ScadaWatt ile izlemeye hazır mısınız? Sahanızı ve ihtiyacınızı konuşmak için bize ulaşın.",
+        "en": "Ready to monitor your plants with ScadaWatt? Get in touch to talk about your site and what you need."
       },
       "page": "/hakkimizda",
       "location": "Hakkımızda › Hakkımızda"
@@ -3438,8 +3438,8 @@
       "label": "Özel çözümler",
       "kind": "text",
       "default": {
-        "tr": "Ek modüllerimiz sayesinde müşterilerimizin özel ihtiyaçlarını ürüne dönüştürerek, tamamen kişiselleştirilmiş çözümler sunuyoruz.",
-        "en": "With additional modules, we turn our customers’ specific requirements into fully tailored solutions."
+        "tr": "Müşterilerimizin özel ihtiyaçlarını ek modüllerle ürüne dönüştürüyor, sahaya özel çözümler geliştiriyoruz.",
+        "en": "We turn our customers' specific requirements into product features through additional modules, building solutions around each site."
       },
       "page": "/hakkimizda",
       "location": "Hakkımızda › Hakkımızda"
@@ -3489,8 +3489,8 @@
       "label": "3",
       "kind": "text",
       "default": {
-        "tr": "Reaktif güç ve kompanzasyon takibiyle enerji kalitesini kontrol etme, cezaları önleme",
-        "en": "Monitor reactive power and power factor correction to manage power quality and avoid penalties"
+        "tr": "Reaktif güç ve kompanzasyon takibiyle enerji kalitesini kontrol etme, ceza riskini azaltma",
+        "en": "Monitor reactive power and power factor correction to manage power quality and reduce penalty risk"
       },
       "page": "/hakkimizda",
       "location": "Hakkımızda › Hakkımızda"
@@ -3523,8 +3523,8 @@
       "label": "5",
       "kind": "text",
       "default": {
-        "tr": "Piyasa fiyatları ve PTF kontrolleriyle santrali optimum seviyede yönetme",
-        "en": "Manage plant operations with market prices and market clearing price monitoring"
+        "tr": "Piyasa takas fiyatını (PTF) üretim verisiyle birlikte izleyerek santrali daha bilinçli yönetme",
+        "en": "Manage the plant more effectively by tracking market clearing prices (PTF) alongside generation data"
       },
       "page": "/hakkimizda",
       "location": "Hakkımızda › Hakkımızda"
@@ -3555,8 +3555,8 @@
       "label": "vision",
       "kind": "text",
       "default": {
-        "tr": "Milyarlarca veriyi saniyeler içinde analiz ederek kayıpları kazanca çevirmek.",
-        "en": "Turning losses into value by analysing billions of data points in seconds."
+        "tr": "Sahadaki her ölçümü anlamlı bilgiye dönüştürerek kayıpları kazanca çevirmek.",
+        "en": "Turning every field measurement into insight, and losses into gains."
       },
       "page": "/hakkimizda",
       "location": "Hakkımızda › Hakkımızda"
@@ -4166,7 +4166,7 @@
       "kind": "text",
       "default": {
         "tr": "Mesaj:",
-        "en": "Mesaj:"
+        "en": "Message:"
       },
       "location": "İletişim › Talep formu",
       "page": "/iletisim"
@@ -4278,7 +4278,7 @@
       "kind": "text",
       "default": {
         "tr": "Zero Injection aktif · şebekeye 0 kW",
-        "en": "Zero Export active · 0 kW to the grid"
+        "en": "Zero Injection active · 0 kW to the grid"
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -4293,6 +4293,20 @@
       "default": {
         "tr": "arasında bağlantı kuruyoruz.",
         "en": "with energy management."
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
+      "id": "copy.8b2160b866e78acf",
+      "target": "copy",
+      "source": "Sahadaki her cihazı izleyin, veriyi anlamlı bilgiye dönüştürün. İşletmenize uygun izleme ve kontrol kapsamını birlikte belirleyelim.",
+      "group": "Ortak arayüz metinleri",
+      "label": "Sahadaki her cihazı izleyin, veriyi anlamlı bilgiye dönüştürün. İşletmenize uygun izleme v",
+      "kind": "text",
+      "default": {
+        "tr": "Sahadaki her cihazı izleyin, veriyi anlamlı bilgiye dönüştürün. İşletmenize uygun izleme ve kontrol kapsamını birlikte belirleyelim.",
+        "en": "Monitor every device on site and turn data into insight. Let's define the right monitoring and control scope for your operations together."
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -4522,20 +4536,6 @@
       "page": "/"
     },
     {
-      "id": "copy.30e2af384186b57f",
-      "target": "copy",
-      "source": "__proto__",
-      "group": "Ortak arayüz metinleri",
-      "label": "__proto__",
-      "kind": "text",
-      "default": {
-        "tr": "__proto__",
-        "en": {}
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
       "id": "copy.33a381ca3901fed9",
       "target": "copy",
       "source": "SCADA yazılımı",
@@ -4559,6 +4559,20 @@
       "default": {
         "tr": "Gezinme menüsünü kapat",
         "en": "Close navigation menu"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
+      "id": "copy.bcd2cdbe9acc49e3",
+      "target": "copy",
+      "source": "Planlı yük atma talimatı yok",
+      "group": "Ortak arayüz metinleri",
+      "label": "Planlı yük atma talimatı yok",
+      "kind": "text",
+      "default": {
+        "tr": "Planlı yük atma talimatı yok",
+        "en": "No scheduled load-shedding instruction"
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -4718,6 +4732,20 @@
       "page": "/"
     },
     {
+      "id": "copy.41b19e22056fb4ce",
+      "target": "copy",
+      "source": "Donanımlar",
+      "group": "Ortak arayüz metinleri",
+      "label": "Donanımlar",
+      "kind": "text",
+      "default": {
+        "tr": "Donanımlar",
+        "en": "Hardware"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
       "id": "copy.420bc306b0d0a804",
       "target": "copy",
       "source": "Türkiye: Gece · ABD: Gündüz",
@@ -4830,6 +4858,20 @@
       "page": "/iletisim"
     },
     {
+      "id": "copy.47e27080f9ac6276",
+      "target": "copy",
+      "source": "çevrimiçi",
+      "group": "Ortak arayüz metinleri",
+      "label": "çevrimiçi",
+      "kind": "text",
+      "default": {
+        "tr": "çevrimiçi",
+        "en": "online"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
       "id": "copy.489a38bb4ae9f8f6",
       "target": "copy",
       "source": "Ana menü",
@@ -4839,6 +4881,20 @@
       "default": {
         "tr": "Ana menü",
         "en": "Main navigation"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
+      "id": "copy.48a1b9fc14605e0d",
+      "target": "copy",
+      "source": "uygulama ekranı",
+      "group": "Ortak arayüz metinleri",
+      "label": "uygulama ekranı",
+      "kind": "text",
+      "default": {
+        "tr": "uygulama ekranı",
+        "en": "application screen"
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -4867,6 +4923,20 @@
       "default": {
         "tr": "Veri toplama",
         "en": "Data acquisition"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
+      "id": "copy.4b876ec839d75c82",
+      "target": "copy",
+      "source": "ürün bilgileri",
+      "group": "Ortak arayüz metinleri",
+      "label": "ürün bilgileri",
+      "kind": "text",
+      "default": {
+        "tr": "ürün bilgileri",
+        "en": "product information"
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -5614,20 +5684,6 @@
       "page": "/"
     },
     {
-      "id": "copy.8b2160b866e78acf",
-      "target": "copy",
-      "source": "Enerji verisini anlamlandırın. Cihazlarınızı izleyin. İşletmenizin ihtiyacına uygun izleme ve kontrol kapsamını keşfedin.",
-      "group": "Ortak arayüz metinleri",
-      "label": "Enerji verisini anlamlandırın. Cihazlarınızı izleyin. İşletmenizin ihtiyacına uygun izleme",
-      "kind": "text",
-      "default": {
-        "tr": "Enerji verisini anlamlandırın. Cihazlarınızı izleyin. İşletmenizin ihtiyacına uygun izleme ve kontrol kapsamını keşfedin.",
-        "en": "Turn energy data into insight. Monitor your devices. Explore monitoring and control options tailored to your operations."
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
       "id": "copy.8c19cd26dace9122",
       "target": "copy",
       "source": "SCADAWATT UYGULAMALARI",
@@ -5763,6 +5819,20 @@
       "default": {
         "tr": "Mobil uygulama ekranlarını, üretim verisi ve bildirim deneyimini keşfedin.",
         "en": "Discover the mobile app, with generation insights and notifications on the go."
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
+      "id": "copy.c2e2c1c9b4262de2",
+      "target": "copy",
+      "source": "Üretim takibi, performans analizi ve raporlamayı web arayüzünden keşfedin.",
+      "group": "Ortak arayüz metinleri",
+      "label": "Üretim takibi, performans analizi ve raporlamayı web arayüzünden keşfedin.",
+      "kind": "text",
+      "default": {
+        "tr": "Üretim takibi, performans analizi ve raporlamayı web arayüzünden keşfedin.",
+        "en": "Explore generation monitoring, performance analysis and reporting on the web platform."
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -5917,6 +5987,34 @@
       "default": {
         "tr": "Sahadaki veri ile enerji yönetimi",
         "en": "Connecting field data"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
+      "id": "copy.9c5838b40caf0b8e",
+      "target": "copy",
+      "source": "info@scadawatt.com",
+      "group": "Ortak arayüz metinleri",
+      "label": "info@scadawatt.com",
+      "kind": "text",
+      "default": {
+        "tr": "info@scadawatt.com",
+        "en": "info@scadawatt.com"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
+      "id": "copy.9d9c74cc63e7ffb0",
+      "target": "copy",
+      "source": "gerçek ürün fotoğrafı",
+      "group": "Ortak arayüz metinleri",
+      "label": "gerçek ürün fotoğrafı",
+      "kind": "text",
+      "default": {
+        "tr": "gerçek ürün fotoğrafı",
+        "en": "actual product photo"
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -6188,6 +6286,20 @@
       "page": "/"
     },
     {
+      "id": "copy.ae973cbc8e13a0a8",
+      "target": "copy",
+      "source": "SCADAWATT / DİJİTAL ENERJİ",
+      "group": "Ortak arayüz metinleri",
+      "label": "SCADAWATT / DİJİTAL ENERJİ",
+      "kind": "text",
+      "default": {
+        "tr": "SCADAWATT / DİJİTAL ENERJİ",
+        "en": "SCADAWATT / DIGITAL ENERGY"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
       "id": "copy.aedf0b904faffd61",
       "target": "copy",
       "source": "02 / ENERJİNİN DÖNÜŞÜMÜ",
@@ -6384,20 +6496,6 @@
       "page": "/"
     },
     {
-      "id": "copy.bcd2cdbe9acc49e3",
-      "target": "copy",
-      "source": "Planlı üretim durdurma talimatı yok",
-      "group": "Ortak arayüz metinleri",
-      "label": "Planlı üretim durdurma talimatı yok",
-      "kind": "text",
-      "default": {
-        "tr": "Planlı üretim durdurma talimatı yok",
-        "en": "No scheduled generation curtailment instruction"
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
       "id": "copy.c0ac2fc1164be18d",
       "target": "copy",
       "source": "Donanım seçimi",
@@ -6421,20 +6519,6 @@
       "default": {
         "tr": "Yazılım, elektronik ve AR-GE.",
         "en": "Software, electronics and R&D."
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
-      "id": "copy.c2e2c1c9b4262de2",
-      "target": "copy",
-      "source": "Üretim, performans analizi ve raporlama yaklaşımını web arayüzü üzerinden keşfedin.",
-      "group": "Ortak arayüz metinleri",
-      "label": "Üretim, performans analizi ve raporlama yaklaşımını web arayüzü üzerinden keşfedin.",
-      "kind": "text",
-      "default": {
-        "tr": "Üretim, performans analizi ve raporlama yaklaşımını web arayüzü üzerinden keşfedin.",
-        "en": "Explore generation monitoring, performance analysis and reporting through the web platform."
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -6560,7 +6644,7 @@
       "kind": "text",
       "default": {
         "tr": "Sistem yükleniyor...",
-        "en": "Sistem yükleniyor..."
+        "en": "Loading system..."
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -6860,19 +6944,6 @@
       "page": "/"
     },
     {
-      "id": "copy.e3c1703abf8a6b3d",
-      "target": "copy",
-      "source": "constructor",
-      "group": "Ortak arayüz metinleri",
-      "label": "constructor",
-      "kind": "text",
-      "default": {
-        "tr": "constructor"
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
       "id": "copy.e4631509de96a102",
       "target": "copy",
       "source": "Limit aşımı",
@@ -7025,6 +7096,20 @@
       },
       "location": "İletişim › Talep formu",
       "page": "/iletisim"
+    },
+    {
+      "id": "copy.f463b54275f35ca4",
+      "target": "copy",
+      "source": "Ana sayfa",
+      "group": "Ortak arayüz metinleri",
+      "label": "Ana sayfa",
+      "kind": "text",
+      "default": {
+        "tr": "Ana sayfa",
+        "en": "Home"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
     },
     {
       "id": "copy.f6766bb4c6c43381",
@@ -7812,8 +7897,8 @@
       "label": "10 / 1",
       "kind": "text",
       "default": {
-        "tr": "Sahaya fiziksel müdahale",
-        "en": "Physical site intervention"
+        "tr": "Uzaktan hücre açma / kapama",
+        "en": "Remote switchgear cell open / close"
       },
       "page": "/paketler",
       "location": "Paket karşılaştırması › Paket karşılaştırması"
@@ -8223,8 +8308,8 @@
       "label": "PRO / 3 / Hizmetler / 4",
       "kind": "text",
       "default": {
-        "tr": "Sahaya fiziksel müdahale",
-        "en": "Physical site intervention"
+        "tr": "Uzaktan hücre açma / kapama",
+        "en": "Remote switchgear cell open / close"
       },
       "page": "/paketler",
       "location": "Paketler › Paketler"
@@ -8504,6 +8589,20 @@
       "page": "/"
     },
     {
+      "id": "copy.cbe6daac6c45e956",
+      "target": "copy",
+      "source": "Piyasa takas fiyatı (PTF)",
+      "group": "Sayfa metinleri",
+      "label": "Piyasa takas fiyatı (PTF)",
+      "kind": "text",
+      "default": {
+        "tr": "Piyasa takas fiyatı (PTF)",
+        "en": "Market clearing price (PTF)"
+      },
+      "location": "SCADA Yazılımı › Sayfa metinleri",
+      "page": "/scada-yazilimi"
+    },
+    {
       "id": "copy.3ad6db752c2bd2bd",
       "target": "copy",
       "source": "Veriyi görünür, yönetimi bütüncül kılıyoruz.",
@@ -8672,20 +8771,6 @@
       "page": "/urunler"
     },
     {
-      "id": "copy.567a803ffe80b72e",
-      "target": "copy",
-      "source": "Ölçüm, izleme, analiz ve enerji yönetimi için geliştirilen yazılım yaklaşımını keşfedin.",
-      "group": "Sayfa metinleri",
-      "label": "Ölçüm, izleme, analiz ve enerji yönetimi için geliştirilen yazılım yaklaşımını keşfedin.",
-      "kind": "text",
-      "default": {
-        "tr": "Ölçüm, izleme, analiz ve enerji yönetimi için geliştirilen yazılım yaklaşımını keşfedin.",
-        "en": "Explore software designed for measurement, monitoring, analysis and energy management."
-      },
-      "location": "SCADA Yazılımı › Sayfa metinleri",
-      "page": "/scada-yazilimi"
-    },
-    {
       "id": "copy.56acfb16a69b28f0",
       "target": "copy",
       "source": "Saha deneyiminden doğan teknoloji.",
@@ -8728,18 +8813,18 @@
       "page": "/"
     },
     {
-      "id": "copy.5dc80f6117ee88ae",
+      "id": "copy.edd46101bfe5b045",
       "target": "copy",
-      "source": "ScadaWatt: sahadaki ölçümden yazılım ekranına veri toplama, SCADA ve enerji yönetimi teknolojileri.",
+      "source": "İzleme arayüzü",
       "group": "Sayfa metinleri",
-      "label": "ScadaWatt: sahadaki ölçümden yazılım ekranına veri toplama, SCADA ve enerji yönetimi tekno",
+      "label": "İzleme arayüzü",
       "kind": "text",
       "default": {
-        "tr": "ScadaWatt: sahadaki ölçümden yazılım ekranına veri toplama, SCADA ve enerji yönetimi teknolojileri.",
-        "en": "ScadaWatt: data acquisition, SCADA and energy management technologies connecting field measurements with software."
+        "tr": "İzleme arayüzü",
+        "en": "The monitoring interface"
       },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
+      "location": "SCADA Yazılımı › Sayfa metinleri",
+      "page": "/scada-yazilimi"
     },
     {
       "id": "copy.60529803e0f91fc2",
@@ -8798,18 +8883,18 @@
       "page": "/hakkimizda"
     },
     {
-      "id": "copy.6e7a2c67ea1aebe3",
+      "id": "copy.6ba738b4d6c03d68",
       "target": "copy",
-      "source": "Piyasa fiyatları ve PTF kontrolleriyle santral optimum seviyede yönetilir.",
+      "source": "Yönetime dön",
       "group": "Sayfa metinleri",
-      "label": "Piyasa fiyatları ve PTF kontrolleriyle santral optimum seviyede yönetilir.",
+      "label": "Yönetime dön",
       "kind": "text",
       "default": {
-        "tr": "Piyasa fiyatları ve PTF kontrolleriyle santral optimum seviyede yönetilir.",
-        "en": "Market prices and market clearing prices help optimise plant operations."
+        "tr": "Yönetime dön",
+        "en": "Back to admin"
       },
-      "location": "SCADA Yazılımı › Sayfa metinleri",
-      "page": "/scada-yazilimi"
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
     },
     {
       "id": "copy.700b4f32ea33379e",
@@ -8826,6 +8911,20 @@
       "page": "/hakkimizda"
     },
     {
+      "id": "copy.5dc80f6117ee88ae",
+      "target": "copy",
+      "source": "ScadaWatt: güneş enerji santralleri için uzaktan izleme, SCADA, veri toplama ve enerji yönetimi çözümleri.",
+      "group": "Sayfa metinleri",
+      "label": "ScadaWatt: güneş enerji santralleri için uzaktan izleme, SCADA, veri toplama ve enerji yön",
+      "kind": "text",
+      "default": {
+        "tr": "ScadaWatt: güneş enerji santralleri için uzaktan izleme, SCADA, veri toplama ve enerji yönetimi çözümleri.",
+        "en": "ScadaWatt: remote monitoring, SCADA, data acquisition and energy management solutions for solar power plants."
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
       "id": "copy.772d892609486663",
       "target": "copy",
       "source": "6698 sayılı KVKK kapsamında ScadaWatt aydınlatma metni.",
@@ -8838,6 +8937,20 @@
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
+    },
+    {
+      "id": "copy.567a803ffe80b72e",
+      "target": "copy",
+      "source": "ScadaWatt yazılımının ölçüm, izleme, analiz ve enerji yönetimi araçlarını keşfedin.",
+      "group": "Sayfa metinleri",
+      "label": "ScadaWatt yazılımının ölçüm, izleme, analiz ve enerji yönetimi araçlarını keşfedin.",
+      "kind": "text",
+      "default": {
+        "tr": "ScadaWatt yazılımının ölçüm, izleme, analiz ve enerji yönetimi araçlarını keşfedin.",
+        "en": "Explore ScadaWatt's tools for measurement, monitoring, analysis and energy management."
+      },
+      "location": "SCADA Yazılımı › Sayfa metinleri",
+      "page": "/scada-yazilimi"
     },
     {
       "id": "copy.79e8fa56fa116df1",
@@ -8866,20 +8979,6 @@
       },
       "location": "Paketler › Sayfa metinleri",
       "page": "/paketler"
-    },
-    {
-      "id": "copy.7a51dfe26ca90faf",
-      "target": "copy",
-      "source": "GES uzaktan izleme, limit yönetimi, kompanzasyon, Zero Injection, planlı üretim durdurma ve anlık bildirim çözümleri.",
-      "group": "Sayfa metinleri",
-      "label": "GES uzaktan izleme, limit yönetimi, kompanzasyon, Zero Injection, planlı üretim durdurma v",
-      "kind": "text",
-      "default": {
-        "tr": "GES uzaktan izleme, limit yönetimi, kompanzasyon, Zero Injection, planlı üretim durdurma ve anlık bildirim çözümleri.",
-        "en": "Remote solar PV monitoring, limit management, power factor correction, Zero Injection, scheduled generation curtailment and real-time notifications."
-      },
-      "location": "Çözümler › Sayfa metinleri",
-      "page": "/cozumler"
     },
     {
       "id": "copy.7a55557c955f3ad4",
@@ -9006,20 +9105,6 @@
       },
       "location": "Çözümler › Sayfa metinleri",
       "page": "/cozumler"
-    },
-    {
-      "id": "copy.9355fe56ba78a82f",
-      "target": "copy",
-      "source": "ScadaWatt S3000i veri toplama cihazı, S4000MC çok amaçlı kontrol cihazı ve LOMR-07H şebeke arıza rölesi.",
-      "group": "Sayfa metinleri",
-      "label": "ScadaWatt S3000i veri toplama cihazı, S4000MC çok amaçlı kontrol cihazı ve LOMR-07H şebeke",
-      "kind": "text",
-      "default": {
-        "tr": "ScadaWatt S3000i veri toplama cihazı, S4000MC çok amaçlı kontrol cihazı ve LOMR-07H şebeke arıza rölesi.",
-        "en": "ScadaWatt S3000i data acquisition device, S4000MC versatile control device and LOMR-07H grid fault relay."
-      },
-      "location": "Ürünler › Sayfa metinleri",
-      "page": "/urunler"
     },
     {
       "id": "copy.94dc843746793318",
@@ -9176,6 +9261,20 @@
       "page": "/urunler"
     },
     {
+      "id": "copy.7a51dfe26ca90faf",
+      "target": "copy",
+      "source": "GES uzaktan izleme, limit yönetimi, kompanzasyon, zero injection, planlı yük atma, saatlik mahsuplaşma takibi ve anlık bildirim çözümleri.",
+      "group": "Sayfa metinleri",
+      "label": "GES uzaktan izleme, limit yönetimi, kompanzasyon, zero injection, planlı yük atma, saatlik",
+      "kind": "text",
+      "default": {
+        "tr": "GES uzaktan izleme, limit yönetimi, kompanzasyon, zero injection, planlı yük atma, saatlik mahsuplaşma takibi ve anlık bildirim çözümleri.",
+        "en": "Remote solar PV monitoring, limit management, power factor correction, zero injection, scheduled load shedding, hourly net-metering tracking and real-time notifications."
+      },
+      "location": "Çözümler › Sayfa metinleri",
+      "page": "/cozumler"
+    },
+    {
       "id": "copy.b9f468466c93ddb4",
       "target": "copy",
       "source": "Sahadan ekranınıza.",
@@ -9274,32 +9373,18 @@
       "page": "/paketler"
     },
     {
-      "id": "copy.ca684059b36f267e",
+      "id": "copy.cb4fb68918cf762b",
       "target": "copy",
-      "source": "Evirici ve saha limitleri anlık takip edilir, ceza riskleri önlenir.",
+      "source": "Taslak önizlemesi · Ziyaretçiler bu değişiklikleri görmez.",
       "group": "Sayfa metinleri",
-      "label": "Evirici ve saha limitleri anlık takip edilir, ceza riskleri önlenir.",
+      "label": "Taslak önizlemesi · Ziyaretçiler bu değişiklikleri görmez.",
       "kind": "text",
       "default": {
-        "tr": "Evirici ve saha limitleri anlık takip edilir, ceza riskleri önlenir.",
-        "en": "Inverter and site limits are monitored in real time to help prevent penalty risks."
+        "tr": "Taslak önizlemesi · Ziyaretçiler bu değişiklikleri görmez.",
+        "en": "Draft preview · Visitors cannot see these changes."
       },
-      "location": "SCADA Yazılımı › Sayfa metinleri",
-      "page": "/scada-yazilimi"
-    },
-    {
-      "id": "copy.cbe6daac6c45e956",
-      "target": "copy",
-      "source": "PTF ve piyasa kontrolü",
-      "group": "Sayfa metinleri",
-      "label": "PTF ve piyasa kontrolü",
-      "kind": "text",
-      "default": {
-        "tr": "PTF ve piyasa kontrolü",
-        "en": "Market prices and clearing prices"
-      },
-      "location": "SCADA Yazılımı › Sayfa metinleri",
-      "page": "/scada-yazilimi"
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
     },
     {
       "id": "copy.ccbc38216345b81c",
@@ -9386,6 +9471,20 @@
       "page": "/paketler"
     },
     {
+      "id": "copy.ca684059b36f267e",
+      "target": "copy",
+      "source": "Evirici ve saha limitleri anlık takip edilir, ceza riski azaltılır.",
+      "group": "Sayfa metinleri",
+      "label": "Evirici ve saha limitleri anlık takip edilir, ceza riski azaltılır.",
+      "kind": "text",
+      "default": {
+        "tr": "Evirici ve saha limitleri anlık takip edilir, ceza riski azaltılır.",
+        "en": "Inverter and site limits are monitored in real time to reduce penalty risk."
+      },
+      "location": "SCADA Yazılımı › Sayfa metinleri",
+      "page": "/scada-yazilimi"
+    },
+    {
       "id": "copy.dc125f66ba54b942",
       "target": "copy",
       "source": "Çerez nedir",
@@ -9398,6 +9497,20 @@
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
+    },
+    {
+      "id": "copy.9355fe56ba78a82f",
+      "target": "copy",
+      "source": "ScadaWatt S3000i veri toplama cihazı, S4000MC çok amaçlı kontrol cihazı ve LOMR-07H şebeke izleme rölesi.",
+      "group": "Sayfa metinleri",
+      "label": "ScadaWatt S3000i veri toplama cihazı, S4000MC çok amaçlı kontrol cihazı ve LOMR-07H şebeke",
+      "kind": "text",
+      "default": {
+        "tr": "ScadaWatt S3000i veri toplama cihazı, S4000MC çok amaçlı kontrol cihazı ve LOMR-07H şebeke izleme rölesi.",
+        "en": "ScadaWatt S3000i data acquisition device, S4000MC versatile control device and LOMR-07H grid monitoring relay."
+      },
+      "location": "Ürünler › Sayfa metinleri",
+      "page": "/urunler"
     },
     {
       "id": "copy.e082c92dc673b416",
@@ -9456,6 +9569,20 @@
       "page": "/scada-yazilimi"
     },
     {
+      "id": "copy.6e7a2c67ea1aebe3",
+      "target": "copy",
+      "source": "Piyasa takas fiyatı (PTF) üretim verisiyle birlikte izlenir; üretiminizin değeri net görünür.",
+      "group": "Sayfa metinleri",
+      "label": "Piyasa takas fiyatı (PTF) üretim verisiyle birlikte izlenir; üretiminizin değeri net görün",
+      "kind": "text",
+      "default": {
+        "tr": "Piyasa takas fiyatı (PTF) üretim verisiyle birlikte izlenir; üretiminizin değeri net görünür.",
+        "en": "Market clearing prices (PTF) are tracked alongside generation data, so the value of your output is clear."
+      },
+      "location": "SCADA Yazılımı › Sayfa metinleri",
+      "page": "/scada-yazilimi"
+    },
+    {
       "id": "copy.ed19d3565d88891a",
       "target": "copy",
       "source": "İşleme amaçları ve hukuki sebepler",
@@ -9482,20 +9609,6 @@
       },
       "location": "Ürünler › Sayfa metinleri",
       "page": "/urunler"
-    },
-    {
-      "id": "copy.edd46101bfe5b045",
-      "target": "copy",
-      "source": "İzleme arayüzü yaklaşımı",
-      "group": "Sayfa metinleri",
-      "label": "İzleme arayüzü yaklaşımı",
-      "kind": "text",
-      "default": {
-        "tr": "İzleme arayüzü yaklaşımı",
-        "en": "The monitoring interface"
-      },
-      "location": "SCADA Yazılımı › Sayfa metinleri",
-      "page": "/scada-yazilimi"
     },
     {
       "id": "copy.f1378c53adc5cf5d",
@@ -9928,7 +10041,7 @@
       "kind": "text",
       "default": {
         "tr": "3 Adet 8A/250 VAC",
-        "en": "3 Adet 8A/250 VAC"
+        "en": "3 × 8 A / 250 VAC"
       },
       "page": "/urunler",
       "location": "Teknik özellikler › Teknik özellikler"
@@ -10117,8 +10230,8 @@
       "label": "Çekirdek Saat Hızı / s3000i / 5 / Değer",
       "kind": "text",
       "default": {
-        "tr": "700 Mhz",
-        "en": "700 Mhz"
+        "tr": "700 MHz",
+        "en": "700 MHz"
       },
       "page": "/urunler",
       "location": "Teknik özellikler › Teknik özellikler"
@@ -10497,8 +10610,8 @@
       "label": "Çekirdek Saat Hızı / s4000mc / 5 / Değer",
       "kind": "text",
       "default": {
-        "tr": "700 Mhz",
-        "en": "700 Mhz"
+        "tr": "700 MHz",
+        "en": "700 MHz"
       },
       "page": "/urunler",
       "location": "Teknik özellikler › Teknik özellikler"
@@ -10715,8 +10828,8 @@
       "label": "Canlı izleme / 2 / Metin",
       "kind": "text",
       "default": {
-        "tr": "Sahaların haberleşme ve durum bilgilerini birlikte inceleyin. Bu görüntü, gönderilen uygulama ekranının sabit bir kaydıdır.",
-        "en": "Review site communication and status together. This image is a static capture of the supplied application screen."
+        "tr": "Tüm sahaların haberleşme ve çalışma durumunu tek ekranda izleyin. Bağlantısı kopan ya da arıza veren saha hemen öne çıkar.",
+        "en": "Monitor the communication and operating status of every site on one screen. Sites that lose connection or report a fault stand out immediately."
       },
       "page": "/",
       "location": "Ana sayfa › Uygulama ekranları"
@@ -10751,8 +10864,8 @@
       "label": "Eviriciler / 3 / Metin",
       "kind": "text",
       "default": {
-        "tr": "Toplam üretimin kaynağına inin. Eviricileri ayrı ayrı görmek, saha seviyesindeki bilgiyi cihaz seviyesinde okumayı sağlar.",
-        "en": "See where total generation comes from. Viewing individual inverters takes you from site-level insight to device-level detail."
+        "tr": "Saha üretiminin kaynağına inin. Her eviricinin gücünü, durumunu ve üretimini ayrı ayrı görün.",
+        "en": "Drill down to the source of site generation. See the power, status and output of each inverter individually."
       },
       "page": "/",
       "location": "Ana sayfa › Uygulama ekranları"
@@ -10787,8 +10900,8 @@
       "label": "Üretimler / 4 / Metin",
       "kind": "text",
       "default": {
-        "tr": "Üretim kayıtlarını dönemlere göre inceleyin. Anlık güç ile zaman içinde biriken enerji farklı büyüklüklerdir.",
-        "en": "Review generation records by period. Instantaneous power and accumulated energy are different quantities."
+        "tr": "Üretim kayıtlarını gün, ay ve yıl bazında inceleyin; dönemleri ve sahaları karşılaştırın.",
+        "en": "Review generation by day, month and year, and compare periods and sites."
       },
       "page": "/",
       "location": "Ana sayfa › Uygulama ekranları"
@@ -10823,8 +10936,8 @@
       "label": "Alarm arşivi / 5 / Metin",
       "kind": "text",
       "default": {
-        "tr": "Aktif ve geçmiş alarmları birlikte görün. Bir uyarıyı anlamak için olayın zamanı, kaynağı ve durumu birlikte değerlendirilir.",
-        "en": "Review active and historical alarms together. Understanding an alert means considering its time, source and status."
+        "tr": "Aktif ve geçmiş alarmları tek listede görün. Her alarmın ne zaman başladığı, hangi cihazdan geldiği ve ne zaman kapandığı kayıt altındadır.",
+        "en": "See active and past alarms in one list. When each alarm started, which device raised it and when it cleared are all recorded."
       },
       "page": "/",
       "location": "Ana sayfa › Uygulama ekranları"
@@ -10967,8 +11080,8 @@
       "label": "Bölgesel görünüm / 9 / Metin",
       "kind": "text",
       "default": {
-        "tr": "Farklı bölgelerdeki sahaları bir araya getiren gerçek ScadaWatt ekranı. Görseldeki değerler çekim anına aittir.",
-        "en": "An actual ScadaWatt screen bringing together sites across regions. Values reflect the time of capture."
+        "tr": "Farklı bölgelerdeki sahalarınızı tek ekranda toplayın. Görseldeki değerler ekran görüntüsünün alındığı ana aittir.",
+        "en": "Bring sites from different regions together on one screen. Values shown reflect the moment the screenshot was taken."
       },
       "page": "/",
       "location": "Ana sayfa › Uygulama ekranları"
@@ -11387,8 +11500,8 @@
       "label": "S3000i / 1 / Açıklama",
       "kind": "text",
       "default": {
-        "tr": "S3000i, ekosistemimizin veri toplama ve işleme konusunda temel unsurudur. Farklı sensörlerden ve saha cihazlarından aldığı verileri analiz eder, depolar ve ScadaWatt platformuna iletir.",
-        "en": "S3000i is the foundation of data acquisition and processing in our ecosystem. It analyses and stores data from sensors and field devices, then transfers it to the ScadaWatt platform."
+        "tr": "S3000i, ScadaWatt ekosisteminin sahadaki merkezidir. Evirici, analizör, sayaç ve sensörlerden veriyi okur, sahada işler ve saklar, ardından ScadaWatt platformuna iletir. İnternet bağlantısı kesildiğinde kayda devam eder.",
+        "en": "S3000i is the heart of the ScadaWatt ecosystem on site. It reads data from inverters, analysers, meters and sensors, processes and stores it locally, then sends it to the ScadaWatt platform. If the internet connection drops, it keeps recording."
       },
       "page": "/urunler",
       "location": "Ürünler › Ürünler"
@@ -11647,8 +11760,8 @@
       "label": "LOMR-07H / 3 / Açıklama",
       "kind": "text",
       "default": {
-        "tr": "LOMR-07H, şebeke arızası durumunda rölelerini tetikler. Röle çıkışları kumanda panoları da kullanılarak tesis ile şebeke arasındaki bağlantının güvenli şekilde yönetilmesini sağlar.",
-        "en": "LOMR-07H triggers its relays when a grid fault occurs. Its relay outputs, together with control panels, allow the connection between the plant and the grid to be managed safely."
+        "tr": "LOMR-07H şebekenin gerilim ve frekansını sürekli ölçer. Arıza algıladığında röle çıkışlarını tetikler ve kumanda panosu üzerinden tesisin şebeke bağlantısının güvenli şekilde ayrılmasını sağlar. RS485 Modbus ile ScadaWatt'a bağlanır.",
+        "en": "LOMR-07H continuously measures grid voltage and frequency. When it detects a fault, it triggers its relay outputs so that the plant can be safely disconnected from the grid through the control panel. It connects to ScadaWatt via RS485 Modbus."
       },
       "page": "/urunler",
       "location": "Ürünler › Ürünler"
@@ -11845,7 +11958,7 @@
         "name": "ScadaWatt S3000i",
         "image": "/assets/s3000i.webp",
         "tagline": "Ekosistemin veri toplama ve işleme merkezi",
-        "summary": "S3000i, ekosistemimizin veri toplama ve işleme konusunda temel unsurudur. Farklı sensörlerden ve saha cihazlarından aldığı verileri analiz eder, depolar ve ScadaWatt platformuna iletir.",
+        "summary": "S3000i, ScadaWatt ekosisteminin sahadaki merkezidir. Evirici, analizör, sayaç ve sensörlerden veriyi okur, sahada işler ve saklar, ardından ScadaWatt platformuna iletir. İnternet bağlantısı kesildiğinde kayda devam eder.",
         "role": "Veri toplama · İşleme · Depolama",
         "hotspots": [
           {
@@ -11883,7 +11996,7 @@
           },
           {
             "name": "Çekirdek Saat Hızı",
-            "value": "700 Mhz"
+            "value": "700 MHz"
           },
           {
             "name": "Dahili Gerçek Zamanlı Saat",
@@ -11912,7 +12025,7 @@
           "name": "ScadaWatt S3000i",
           "image": "/assets/s3000i.webp",
           "tagline": "The ecosystem’s data acquisition and processing hub",
-          "summary": "S3000i is the foundation of data acquisition and processing in our ecosystem. It analyses and stores data from sensors and field devices, then transfers it to the ScadaWatt platform.",
+          "summary": "S3000i is the heart of the ScadaWatt ecosystem on site. It reads data from inverters, analysers, meters and sensors, processes and stores it locally, then sends it to the ScadaWatt platform. If the internet connection drops, it keeps recording.",
           "role": "Data acquisition · Processing · Storage",
           "hotspots": [
             {
@@ -11950,7 +12063,7 @@
             },
             {
               "name": "CPU Clock Speed",
-              "value": "700 Mhz"
+              "value": "700 MHz"
             },
             {
               "name": "Integrated Real-Time Clock",
@@ -12014,7 +12127,7 @@
           },
           {
             "name": "Çekirdek Saat Hızı",
-            "value": "700 Mhz"
+            "value": "700 MHz"
           },
           {
             "name": "Dahili Gerçek Zamanlı Saat",
@@ -12060,7 +12173,7 @@
             },
             {
               "name": "CPU Clock Speed",
-              "value": "700 Mhz"
+              "value": "700 MHz"
             },
             {
               "name": "Integrated Real-Time Clock",
@@ -12075,7 +12188,7 @@
         "name": "ScadaWatt LOMR-07H",
         "image": "/assets/lomr.webp",
         "tagline": "Şebeke arızasında tesis koruması",
-        "summary": "LOMR-07H, şebeke arızası durumunda rölelerini tetikler. Röle çıkışları kumanda panoları da kullanılarak tesis ile şebeke arasındaki bağlantının güvenli şekilde yönetilmesini sağlar.",
+        "summary": "LOMR-07H şebekenin gerilim ve frekansını sürekli ölçer. Arıza algıladığında röle çıkışlarını tetikler ve kumanda panosu üzerinden tesisin şebeke bağlantısının güvenli şekilde ayrılmasını sağlar. RS485 Modbus ile ScadaWatt'a bağlanır.",
         "role": "Şebeke arıza algılama · Röle tetikleme",
         "hotspots": [
           {
@@ -12137,7 +12250,7 @@
           "name": "ScadaWatt LOMR-07H",
           "image": "/assets/lomr.webp",
           "tagline": "Plant protection during grid faults",
-          "summary": "LOMR-07H triggers its relays when a grid fault occurs. Its relay outputs, together with control panels, allow the connection between the plant and the grid to be managed safely.",
+          "summary": "LOMR-07H continuously measures grid voltage and frequency. When it detects a fault, it triggers its relay outputs so that the plant can be safely disconnected from the grid through the control panel. It connects to ScadaWatt via RS485 Modbus.",
           "role": "Grid fault detection · Relay activation",
           "hotspots": [
             {
@@ -12190,7 +12303,7 @@
             },
             {
               "name": "Relay Output",
-              "value": "3 Adet 8A/250 VAC"
+              "value": "3 × 8 A / 250 VAC"
             }
           ]
         }
@@ -12202,8 +12315,8 @@
         "title": "Enerji Yönetimi",
         "short": "Üretim, tüketim ve enerji kalitesi verilerini birlikte değerlendirin.",
         "body": [
-          "ScadaWatt, ölçüm verilerini izleme, raporlama ve kontrol ihtiyaçlarıyla bir araya getirir. Üretim ve tüketim görünürlüğü, limit takibi ve reaktif güç değerlendirmesi enerji yönetiminin farklı parçalarıdır.",
-          "Uygulanacak kapsam, saha cihazları ve seçilen hizmetlere göre birlikte değerlendirilir."
+          "ScadaWatt üretim, tüketim, limit ve reaktif güç verilerini aynı platformda toplar. OSOS sayaç verisi, saatlik mahsuplaşma takibi ve piyasa takas fiyatlarıyla (PTF) enerjinin hem teknik hem ticari tarafını birlikte görürsünüz.",
+          "Saatlik mahsuplaşma takibi sunan altyapımız, 15 dakikalık uzlaştırma dönemine geçişe uygun şekilde hazırlanmaktadır."
         ],
         "points": [
           "Üretim ve tüketim takibi",
@@ -12219,8 +12332,8 @@
           "title": "Energy Management",
           "short": "Bring generation, consumption and power quality data together.",
           "body": [
-            "ScadaWatt connects measurement data with monitoring, reporting and control requirements. Visibility into generation and consumption, limit monitoring and reactive power analysis all contribute to energy management.",
-            "The scope is assessed together, based on field devices and the selected services."
+            "ScadaWatt brings generation, consumption, limit and reactive power data together on one platform. With OSOS meter data, hourly net-metering tracking and market clearing prices (PTF), you see both the technical and commercial side of your energy.",
+            "Our hourly net-metering infrastructure is being prepared for the transition to 15-minute settlement periods."
           ],
           "points": [
             "Generation and consumption monitoring",
@@ -12237,7 +12350,7 @@
         "title": "Uzaktan İzleme",
         "short": "Ölçümleri, cihaz durumlarını ve alarmları yazılım üzerinden takip edin.",
         "body": [
-          "Saha cihazlarından gelen veriler, veri toplama ve haberleşme teknolojileri üzerinden ScadaWatt yazılımına taşınır. İzleme ve raporlama ihtiyaçları cihaz ve saha kapsamına göre belirlenir."
+          "Evirici, analizör, sayaç ve sensör verileri ScadaWatt veri toplama cihazı üzerinden platforma aktarılır. Cihaz durumları, haberleşme kesintileri ve alarmlar web panelinden ve mobil uygulamadan takip edilir."
         ],
         "points": [
           "Cihaz verileri",
@@ -12253,7 +12366,7 @@
           "title": "Remote Monitoring",
           "short": "Track measurements, device status and alarms through the software.",
           "body": [
-            "Data acquisition and communication technologies transfer field device data to ScadaWatt software. Monitoring and reporting requirements depend on the devices and site scope."
+            "Data from inverters, analysers, meters and sensors is transferred to the platform through the ScadaWatt data acquisition device. Device status, communication outages and alarms can be followed on the web platform and mobile app."
           ],
           "points": [
             "Device data",
@@ -12270,7 +12383,7 @@
         "title": "Yenilenebilir Enerji",
         "short": "Üretim sistemlerinde veri toplama ve yazılım teknolojileri.",
         "body": [
-          "Yenilenebilir enerji üretiminde ölçüm, performans analizi ve kontrol verileri önemlidir. ScadaWatt’ın GES izleme ürünü, üretim verilerini yazılım üzerinden değerlendirmeye odaklanır.",
+          "Güneş enerji santrallerinde üretimi doğru ölçmek, performansı izlemek ve gerektiğinde sahaya müdahale edebilmek gerekir. ScadaWatt bu üç ihtiyacı tek platformda karşılar.",
           "Diğer kaynaklar için cihaz uyumluluğu ve uygulanabilecek kapsam proje özelinde değerlendirilmelidir."
         ],
         "points": [
@@ -12287,7 +12400,7 @@
           "title": "Renewable Energy",
           "short": "Data acquisition and software technologies for generation systems.",
           "body": [
-            "Measurement, performance analysis and control data are essential to renewable generation. ScadaWatt’s solar PV monitoring product focuses on evaluating generation data through software.",
+            "Solar power plants need accurate generation measurement, performance monitoring and the ability to act on site when necessary. ScadaWatt meets all three on one platform.",
             "For other energy sources, device compatibility and the available scope must be assessed for each project."
           ],
           "points": [
@@ -12340,7 +12453,7 @@
       {
         "slug": "limit-yonetimi",
         "title": "Limit Yönetimi",
-        "short": "Evirici ve saha limitlerini anlık takip edin, ceza risklerini ortadan kaldırın.",
+        "short": "Evirici ve saha limitlerini anlık takip edin, ceza riskini azaltın.",
         "body": [
           "Evirici ve saha limitleriniz anlık olarak takip edilir. Operasyonel hatalar nedeniyle oluşabilecek limit aşımları ve ceza riskleri önceden yakalanır.",
           "PRO pakette limitler yalnızca görüntülenmez; ScadaWatt üzerinden doğrudan yönetilir."
@@ -12377,8 +12490,8 @@
         "title": "Kompanzasyon Takibi ve Kontrolü",
         "short": "Reaktif güç sürekli izlenir; limit aşımlarında kompanzasyon otomatik kontrol edilir.",
         "body": [
-          "Reaktif güç değerleri sürekli izlenir. Limit aşımlarında ScadaWatt kompanzasyon sistemini kontrol ederek ceza risklerinin oluşmasını engeller.",
-          "Saatlik veriler üzerinden fatura doğrulaması yapılarak hatalı faturaların önüne geçilir."
+          "Reaktif güç değerleri sürekli izlenir. Limit aşımlarında ScadaWatt kompanzasyon sistemini kontrol ederek reaktif ceza riskini azaltır.",
+          "Saatlik veriler üzerinden fatura doğrulaması yapılır; hatalı faturalar kolayca fark edilir."
         ],
         "points": [
           "Reaktif güç izleme",
@@ -12394,8 +12507,8 @@
           "title": "Power Factor Correction Monitoring and Control",
           "short": "Reactive power is continuously monitored, with correction controlled automatically when limits are exceeded.",
           "body": [
-            "ScadaWatt continuously monitors reactive power and controls the power factor correction system when limits are exceeded, helping prevent penalty risks.",
-            "Electricity bills are checked against hourly data to help detect billing errors."
+            "Reactive power is monitored continuously. When limits are exceeded, ScadaWatt controls the power factor correction system to reduce the risk of reactive penalties.",
+            "Bills are checked against hourly data, making billing errors easy to spot."
           ],
           "points": [
             "Reactive power monitoring",
@@ -12412,11 +12525,11 @@
         "title": "Zero Injection",
         "short": "Tüketim kadar üretim: şebeke yönüne enerji gitmez.",
         "body": [
-          "Zero Injection modülü ile eviriciler dinamik olarak PID kontrol edilir, tüketim değerleriniz ölçülür ve tüketim kadar üretim yapılır.",
+          "Zero Injection modülü tesisin anlık tüketimini ölçer ve evirici gücünü buna göre sürekli ayarlar; üretim tüketimi aşmaz.",
           "Böylece şebeke yönüne enerji gitmemesi sağlanır. Tüm süreç ScadaWatt ekranları ve raporlarıyla izlenir ve yönetilir."
         ],
         "points": [
-          "Dinamik PID evirici kontrolü",
+          "Dinamik evirici güç kontrolü",
           "Anlık tüketim ölçümü",
           "Şebekeye sıfır enjeksiyon"
         ],
@@ -12429,11 +12542,11 @@
           "title": "Zero Injection",
           "short": "Generate what you consume, without exporting power to the grid.",
           "body": [
-            "The Zero Injection module dynamically controls inverters using PID control. Consumption is measured and generation is adjusted to match demand.",
+            "The Zero Injection module measures the facility's real-time consumption and continuously adjusts inverter output to match it, so generation never exceeds consumption.",
             "This prevents power from being exported to the grid. The process is monitored and managed through ScadaWatt screens and reports."
           ],
           "points": [
-            "Dynamic PID inverter control",
+            "Dynamic inverter power control",
             "Real-time consumption measurement",
             "Zero export to the grid"
           ],
@@ -12444,36 +12557,36 @@
       },
       {
         "slug": "planli-uretim-durdurma",
-        "title": "Planlı Üretim Durdurma",
-        "short": "Yük atma süreçlerini otonom hale getirin.",
+        "title": "Planlı Yük Atma",
+        "short": "Planlı yük atma talimatlarını sahaya otomatik uygulayın.",
         "body": [
-          "Planlı üretim durdurma modülü ile yük atma süreçleri otonom hale gelir; talimatlar manuel müdahaleye gerek kalmadan sahaya uygulanır.",
-          "PRO pakette acil durdurma eylemi ve sahaya fiziksel müdahale imkânı da bulunur."
+          "Planlı yük atma talimatları ScadaWatt üzerinden tanımlanır ve belirlenen saatte sahaya otomatik uygulanır; ekibin sahaya gitmesine gerek kalmaz.",
+          "PRO pakette acil durdurma eylemi ve hücrenin uzaktan açılıp kapatılması da bulunur."
         ],
         "points": [
-          "Otonom yük atma",
+          "Otomatik yük atma",
           "Acil durdurma eylemi (PRO)",
-          "Sahaya fiziksel müdahale (PRO)"
+          "Uzaktan hücre açma / kapama (PRO)"
         ],
         "image": "/assets/screens/overview-detail.webp",
-        "headline": "Planlı Üretim Durdurma",
+        "headline": "Planlı Yük Atma",
         "caption": "",
         "featured": false,
         "en": {
           "slug": "planli-uretim-durdurma",
-          "title": "Scheduled Generation Curtailment",
-          "short": "Automate load-shedding processes.",
+          "title": "Scheduled Load Shedding",
+          "short": "Apply scheduled load-shedding instructions to the site automatically.",
           "body": [
-            "The scheduled generation curtailment module automates load shedding, applying instructions to the site without manual intervention.",
-            "PRO also includes emergency shutdown and physical site intervention capabilities."
+            "Scheduled load-shedding instructions are defined in ScadaWatt and applied to the site automatically at the set time, with no need to send a team on site.",
+            "PRO also includes emergency shutdown and remote opening and closing of the switchgear cell."
           ],
           "points": [
-            "Autonomous load shedding",
-            "Acil durdurma eylemi (PRO)",
-            "Physical site intervention (PRO)"
+            "Automatic load shedding",
+            "Emergency shutdown (PRO)",
+            "Remote switchgear cell open / close (PRO)"
           ],
           "image": "/assets/screens/overview-detail.webp",
-          "headline": "Scheduled Generation Curtailment",
+          "headline": "Scheduled Load Shedding",
           "caption": ""
         }
       },
@@ -12619,7 +12732,7 @@
           "Standart paketteki tüm hizmetler",
           "Evirici limit yönetimi",
           "Acil durdurma eylemi",
-          "Sahaya fiziksel müdahale"
+          "Uzaktan hücre açma / kapama"
         ],
         "id": "pro",
         "comparison": [
@@ -12641,7 +12754,7 @@
             "All services in the STANDART plan",
             "Inverter limit control",
             "Emergency shutdown",
-            "Physical site intervention"
+            "Remote switchgear cell open / close"
           ],
           "comparison": [
             "Multiple brands",
@@ -12669,6 +12782,6 @@
     "Evirici limit görüntüleme",
     "Evirici limit yönetimi",
     "Acil durdurma eylemi",
-    "Sahaya fiziksel müdahale"
+    "Uzaktan hücre açma / kapama"
   ]
 }
