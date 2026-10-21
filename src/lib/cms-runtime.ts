@@ -1,3 +1,4 @@
+import {setPreviewReview} from "./cms-review-state";
 import type { VisualWorkspace } from "./cms-visual-model";
 import { refreshCmsContent } from "./i18n";
 import { setCmsDesign, type SiteDesign } from "./cms-design";
@@ -7,6 +8,7 @@ import { applyRuntimeFields, resetRuntimeContent } from "@/content/site";
 import { setCmsEntries, type CmsEntry } from "./cms-state";
 type ContentPayload = {
   entries: CmsEntry[];
+  review?: VisualWorkspace;
   collections?: CmsCollections;
   design?: SiteDesign;
   variants?: Record<"desktop" | "mobile", ContentPayload>;
@@ -38,6 +40,7 @@ export async function initializeContent() {
       throw Object.assign(Error("İçerik yüklenemedi."), { status: response.status });
     const payload = (await response.json()) as ContentPayload;
     if (!Array.isArray(payload.entries)) throw Error("Geçersiz içerik.");
+    if(preview && payload.review)setPreviewReview(payload.review,params.get("cms-edit")!=="1");
     const media = window.matchMedia("(max-width:760px)");
     function apply() {
       const active = payload.variants?.[media.matches ? "mobile" : "desktop"] ?? payload;

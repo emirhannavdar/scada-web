@@ -1,5 +1,5 @@
 {
-  "schemaHash": "128f4cf8c400e90f",
+  "schemaHash": "cd10d2517d54d42a",
   "fields": [
     {
       "id": "copy.0b2bdd94b1824426",
@@ -4312,20 +4312,6 @@
       "page": "/"
     },
     {
-      "id": "copy.205b83fe6061deb7",
-      "target": "copy",
-      "source": "Keşif bölümleri",
-      "group": "Ortak arayüz metinleri",
-      "label": "Keşif bölümleri",
-      "kind": "text",
-      "default": {
-        "tr": "Keşif bölümleri",
-        "en": "Explore the experience"
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
       "id": "copy.20e891ba4100ed3d",
       "target": "copy",
       "source": "ScadaWatt gerçek uygulama ekranı",
@@ -4433,20 +4419,6 @@
       "default": {
         "tr": "Santral seçimi",
         "en": "Select a site"
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
-      "id": "copy.296ccc7ac21e386c",
-      "target": "copy",
-      "source": "Başlangıç",
-      "group": "Ortak arayüz metinleri",
-      "label": "Başlangıç",
-      "kind": "text",
-      "default": {
-        "tr": "Başlangıç",
-        "en": "Start"
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -4797,20 +4769,6 @@
       "default": {
         "tr": "Bağlantı, ağ ve cihaz erişimi kontrol edilmelidir.",
         "en": "Check the connection, network and device access."
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
-      "id": "copy.461ceac9dab62228",
-      "target": "copy",
-      "source": "Keşif araçları",
-      "group": "Ortak arayüz metinleri",
-      "label": "Keşif araçları",
-      "kind": "text",
-      "default": {
-        "tr": "Keşif araçları",
-        "en": "Discovery tools"
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -5875,20 +5833,6 @@
       "default": {
         "tr": "Operatörün limit ve kurulum kapsamını incelemesi bekleniyor.",
         "en": "The operator is expected to review the limit and installation scope."
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
-      "id": "copy.96d41558e1834f21",
-      "target": "copy",
-      "source": "Veri yolculuğu",
-      "group": "Ortak arayüz metinleri",
-      "label": "Veri yolculuğu",
-      "kind": "text",
-      "default": {
-        "tr": "Veri yolculuğu",
-        "en": "Data journey"
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"

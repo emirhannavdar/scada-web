@@ -578,7 +578,7 @@ export function VisualEditor({
             }}
           >
             <Navigation size={15} />
-            Gezin
+            Önizleme
           </button>
         </div>
         <select

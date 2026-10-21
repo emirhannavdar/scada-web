@@ -380,13 +380,13 @@ export function openStore(directory, catalogPath = new URL("./catalog.json", imp
     const row = db.prepare("SELECT * FROM approval_requests WHERE id=?").get(id);
     if (!row) throw new CmsError(404, "Onay talebi bulunamadı.");
     const snapshot = JSON.parse(row.body);
-    return payload(
+    return {...payload(
       snapshot.values,
       "approval-" + row.id,
       snapshot.collections,
       snapshot.design,
       true,
-    );
+    ),device:row.device};
   }
   function reviewApproval(id, decision, comment, reviewer) {
     if (!["approved", "revision", "rejected"].includes(decision))

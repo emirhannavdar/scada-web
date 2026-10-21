@@ -15,3 +15,6 @@ describe("App routing", () => {
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
 });
+
+import {products,solutions} from '@/content/site';
+it('matches every public page and each product/solution URL',()=>{const router=createRouter({routeTree,context:{queryClient:new QueryClient()}});for(const path of ['/', '/cozumler','/urunler','/scada-yazilimi','/paketler','/hakkimizda','/iletisim','/gizlilik','/cerez','/kvkk',...products.map(p=>'/urunler/'+p.slug),...solutions.map(s=>'/cozumler/'+s.slug)]){const matches=router.matchRoutes(path);expect(matches.at(-1)?.routeId,path).not.toBe(rootRouteId);expect(matches.at(-1)?.globalNotFound,path).not.toBe(true);}});

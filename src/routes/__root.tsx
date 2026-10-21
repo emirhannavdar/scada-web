@@ -2,6 +2,7 @@ import { translate as _tx, useLocale as _useLocale } from '@/lib/i18n';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Outlet, Link, createRootRouteWithContext, useRouterState, useNavigate } from '@tanstack/react-router';
 import {lazy,Suspense} from 'react';
+const PreviewReview=lazy(()=>import("@/components/admin/PreviewReview").then(m=>({default:m.PreviewReview})));
 const VisualBridge=lazy(()=>import('@/components/admin/VisualBridge').then(m=>({default:m.VisualBridge})));
 import { useEffect } from 'react';
 import { ExperienceProvider } from '@/components/site/ExperienceContext';
@@ -38,5 +39,5 @@ function RootComponent() {
  for(const item of meta){if(item&&'property' in item&&'content' in item){document.querySelector(`meta[property="${item.property}"]`)?.setAttribute('content',_tx(String(item.content)));}}
     }, [matches, language]);
     if(admin)return <QueryClientProvider client={queryClient}><Outlet/></QueryClientProvider>;
-    return <QueryClientProvider client={queryClient}><ExperienceProvider><a className="skip-link" href="#main">{_tx("\u0130\u00E7eri\u011Fe ge\u00E7")}</a><SiteHeader />{document.documentElement.dataset['cmsPreview']==='true'&&<div className="cms-preview-banner">{_tx("Taslak önizlemesi · Ziyaretçiler bu değişiklikleri görmez.")} <a href="/admin">{_tx("Yönetime dön")}</a></div>}<main id="main"><Outlet /></main><SiteFooter /><SiteDesign path={path}/>{document.documentElement.dataset['cmsVisual']==='true'&&<Suspense fallback={null}><VisualBridge/></Suspense>}</ExperienceProvider></QueryClientProvider>;
+    return <QueryClientProvider client={queryClient}><ExperienceProvider><a className="skip-link" href="#main">{_tx("\u0130\u00E7eri\u011Fe ge\u00E7")}</a><SiteHeader />{document.documentElement.dataset['cmsPreview']==='true'&&<div className="cms-preview-banner">{_tx("Taslak önizlemesi · Ziyaretçiler bu değişiklikleri görmez.")} <a href="/admin">{_tx("Yönetime dön")}</a></div>}<main id="main"><Outlet /></main><SiteFooter /><SiteDesign path={path}/>{document.documentElement.dataset['cmsPreview']==='true'&&<Suspense fallback={null}><PreviewReview/></Suspense>}{document.documentElement.dataset['cmsVisual']==='true'&&<Suspense fallback={null}><VisualBridge/></Suspense>}</ExperienceProvider></QueryClientProvider>;
 }

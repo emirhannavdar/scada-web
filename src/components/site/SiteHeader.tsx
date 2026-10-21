@@ -15,15 +15,7 @@ export function SiteHeader() {
   const path = useRouterState({ select: (s) => s.location.pathname });
   const home = path === "/";
   const [scrolled, setScrolled] = useState(false);
-  const [mobile, setMobile] = useState(() => typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches);
-  useEffect(() => {
-    const query = window.matchMedia("(max-width: 767px)");
-    const change = () => setMobile(query.matches);
-    query.addEventListener("change", change);
-    change();
-    return () => query.removeEventListener("change", change);
-  }, []);
-  const mobileLinks = [
+  const pageLinks = [
     { to: "/", tr: "Ana sayfa", en: "Home" },
     { to: "/cozumler", tr: "Çözümler", en: "Solutions" },
     { to: "/urunler", tr: "Donanımlar", en: "Hardware" },
@@ -65,14 +57,6 @@ export function SiteHeader() {
       document.removeEventListener("keydown", key);
     };
   }, [menuOpen, setMenuOpen]);
-  const chapters = [
-    ["Başlangıç", "#enerji"],
-    ["Veri yolculuğu", "#teknoloji"],
-    ["Donanım", "#donanim"],
-    ["Yazılım", "#yazilim"],
-    ["Çözümler", "#cozumler"],
-    ["Keşif araçları", "#kesfet"],
-  ];
   function close() {
     setMenuOpen(false);
     trigger.current?.focus();
@@ -84,17 +68,15 @@ export function SiteHeader() {
           <Link to="/" className="film-brand" aria-label={_tx("ScadaWatt ana sayfa")}>
             <CmsImage src={images.wordmark} alt={_tx("ScadaWatt")} width="196" height="56" />
           </Link>
-          <nav className="film-header-chapters" aria-label={_tx("Ke\u015Fif b\u00F6l\u00FCmleri")}>
-            {_tx(
-              chapters.slice(1, 4).map(([label, anchor]) => (
-                <Link to="/" hash={anchor!.slice(1)} key={anchor}>
-                  {_tx(label)}
-                </Link>
-              )),
-            )}
+          <nav className="film-header-chapters" aria-label={_tx("Ana menü")}>
+            {pageLinks.slice(1, 4).map(item => (
+              <Link to={item.to} key={item.to} aria-current={path === item.to ? "page" : undefined}>
+                {_tx(language === "en" ? item.en : item.tr)}
+              </Link>
+            ))}
           </nav>
           <div className="film-header-actions">
-            <Link className="film-header-contact" to="/iletisim" search={{ tur: "demo" }}>
+            <Link className="film-header-contact" to="/iletisim">
               {_tx("\u0130leti\u015Fim ")}
               <ArrowUpRight size={15} />
             </Link>
@@ -168,29 +150,13 @@ export function SiteHeader() {
               </button>
               <div className="film-wrap film-navigation-grid">
                 <nav aria-label={_tx("Ana men\u00FC")}>
-                  {mobile ? mobileLinks.map((item, i) => (
+                  {pageLinks.map((item, i) => (
                     <Link to={item.to} key={item.to} onClick={close} aria-current={path === item.to ? "page" : undefined}>
                       <span>{String(i + 1).padStart(2, "0")}</span>
-                      {language === "en" ? item.en : item.tr}
+                      {_tx(language === "en" ? item.en : item.tr)}
                       <ArrowUpRight size={36} />
                     </Link>
-                  )) : _tx(
-                    chapters.map(([label, anchor], i) => (
-                      <Link
-                        to="/"
-                        hash={anchor!.slice(1)}
-                        key={anchor}
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        <span>
-                          {_tx("0")}
-                          {_tx(i + 1)}
-                        </span>
-                        {_tx(label)}
-                        <ArrowUpRight size={36} />
-                      </Link>
-                    )),
-                  )}
+                  ))}
                 </nav>
                 <div>
                   <p className="film-label">{_tx("SCADAWATT / ANKARA")}</p>

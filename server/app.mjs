@@ -302,6 +302,10 @@ export function createCmsApp({
         }
         if (path === "/api/cms/preview" && method === "GET") {
           auth(req);
+          const reviewPayload = (p, requestedDevice) => {
+            const device = p.device || requestedDevice || "desktop", baseline=store.state(device);
+            return {...p,review:{...baseline,device,values:Object.fromEntries(p.entries.map(e=>[e.id,{tr:e.tr,en:e.en}])),collections:p.collections,design:p.design,catalog:store.catalog}};
+          };
           const device = checkDevice(url.searchParams.get("device")),
             version = url.searchParams.get("version"),
             approval = url.searchParams.get("approval");
@@ -309,25 +313,25 @@ export function createCmsApp({
             root(req);
             const parsed = Number(approval);
             if (!Number.isSafeInteger(parsed)) fail(400, "Geçersiz onay talebi.");
-            return send(res, 200, store.approvalPayload(parsed));
+            return send(res, 200, reviewPayload(store.approvalPayload(parsed), device));
           }
           if (version !== null) {
             root(req);
             const parsed = Number(version);
             if (!Number.isSafeInteger(parsed)) fail(400, "Geçersiz sürüm.");
-            return send(res, 200, store.historyPayload(parsed, device));
+            return send(res, 200, reviewPayload(store.historyPayload(parsed, device),device));
           }
           const s = store.state(device);
           return send(
             res,
             200,
-            store.payload(
+            reviewPayload(store.payload(
               s.values,
               "draft-" + s.revision,
               s.collections,
               s.design,
               Boolean(device),
-            ),
+            ),device),
           );
         }
         if (path === "/api/cms/draft" && method === "PUT") {
