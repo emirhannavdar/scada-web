@@ -12,11 +12,14 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as CerezRouteImport } from './routes/cerez'
+import { Route as DemoRouteImport } from './routes/demo'
 import { Route as GizlilikRouteImport } from './routes/gizlilik'
 import { Route as HakkimizdaRouteImport } from './routes/hakkimizda'
 import { Route as IletisimRouteImport } from './routes/iletisim'
+import { Route as KullanimKosullariRouteImport } from './routes/kullanim-kosullari'
 import { Route as KvkkRouteImport } from './routes/kvkk'
 import { Route as PaketlerRouteImport } from './routes/paketler'
+import { Route as SahaYapilandiriciRouteImport } from './routes/saha-yapilandirici'
 import { Route as ScadaYazilimiRouteImport } from './routes/scada-yazilimi'
 import { Route as CozumlerIndexRouteImport } from './routes/cozumler.index'
 import { Route as CozumlerSlugRouteImport } from './routes/cozumler.$slug'
@@ -38,6 +41,11 @@ const CerezRoute = CerezRouteImport.update({
   path: '/cerez',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DemoRoute = DemoRouteImport.update({
+  id: '/demo',
+  path: '/demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GizlilikRoute = GizlilikRouteImport.update({
   id: '/gizlilik',
   path: '/gizlilik',
@@ -53,6 +61,11 @@ const IletisimRoute = IletisimRouteImport.update({
   path: '/iletisim',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KullanimKosullariRoute = KullanimKosullariRouteImport.update({
+  id: '/kullanim-kosullari',
+  path: '/kullanim-kosullari',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KvkkRoute = KvkkRouteImport.update({
   id: '/kvkk',
   path: '/kvkk',
@@ -61,6 +74,11 @@ const KvkkRoute = KvkkRouteImport.update({
 const PaketlerRoute = PaketlerRouteImport.update({
   id: '/paketler',
   path: '/paketler',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SahaYapilandiriciRoute = SahaYapilandiriciRouteImport.update({
+  id: '/saha-yapilandirici',
+  path: '/saha-yapilandirici',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ScadaYazilimiRoute = ScadaYazilimiRouteImport.update({
@@ -93,11 +111,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/cerez': typeof CerezRoute
+  '/demo': typeof DemoRoute
   '/gizlilik': typeof GizlilikRoute
   '/hakkimizda': typeof HakkimizdaRoute
   '/iletisim': typeof IletisimRoute
+  '/kullanim-kosullari': typeof KullanimKosullariRoute
   '/kvkk': typeof KvkkRoute
   '/paketler': typeof PaketlerRoute
+  '/saha-yapilandirici': typeof SahaYapilandiriciRoute
   '/scada-yazilimi': typeof ScadaYazilimiRoute
   '/cozumler/$slug': typeof CozumlerSlugRoute
   '/urunler/$slug': typeof UrunlerSlugRoute
@@ -108,11 +129,14 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/cerez': typeof CerezRoute
+  '/demo': typeof DemoRoute
   '/gizlilik': typeof GizlilikRoute
   '/hakkimizda': typeof HakkimizdaRoute
   '/iletisim': typeof IletisimRoute
+  '/kullanim-kosullari': typeof KullanimKosullariRoute
   '/kvkk': typeof KvkkRoute
   '/paketler': typeof PaketlerRoute
+  '/saha-yapilandirici': typeof SahaYapilandiriciRoute
   '/scada-yazilimi': typeof ScadaYazilimiRoute
   '/cozumler/$slug': typeof CozumlerSlugRoute
   '/urunler/$slug': typeof UrunlerSlugRoute
@@ -124,11 +148,14 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/cerez': typeof CerezRoute
+  '/demo': typeof DemoRoute
   '/gizlilik': typeof GizlilikRoute
   '/hakkimizda': typeof HakkimizdaRoute
   '/iletisim': typeof IletisimRoute
+  '/kullanim-kosullari': typeof KullanimKosullariRoute
   '/kvkk': typeof KvkkRoute
   '/paketler': typeof PaketlerRoute
+  '/saha-yapilandirici': typeof SahaYapilandiriciRoute
   '/scada-yazilimi': typeof ScadaYazilimiRoute
   '/cozumler/$slug': typeof CozumlerSlugRoute
   '/urunler/$slug': typeof UrunlerSlugRoute
@@ -141,11 +168,14 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/cerez'
+    | '/demo'
     | '/gizlilik'
     | '/hakkimizda'
     | '/iletisim'
+    | '/kullanim-kosullari'
     | '/kvkk'
     | '/paketler'
+    | '/saha-yapilandirici'
     | '/scada-yazilimi'
     | '/cozumler/$slug'
     | '/urunler/$slug'
@@ -156,11 +186,14 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/cerez'
+    | '/demo'
     | '/gizlilik'
     | '/hakkimizda'
     | '/iletisim'
+    | '/kullanim-kosullari'
     | '/kvkk'
     | '/paketler'
+    | '/saha-yapilandirici'
     | '/scada-yazilimi'
     | '/cozumler/$slug'
     | '/urunler/$slug'
@@ -171,11 +204,14 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/cerez'
+    | '/demo'
     | '/gizlilik'
     | '/hakkimizda'
     | '/iletisim'
+    | '/kullanim-kosullari'
     | '/kvkk'
     | '/paketler'
+    | '/saha-yapilandirici'
     | '/scada-yazilimi'
     | '/cozumler/$slug'
     | '/urunler/$slug'
@@ -187,11 +223,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
   CerezRoute: typeof CerezRoute
+  DemoRoute: typeof DemoRoute
   GizlilikRoute: typeof GizlilikRoute
   HakkimizdaRoute: typeof HakkimizdaRoute
   IletisimRoute: typeof IletisimRoute
+  KullanimKosullariRoute: typeof KullanimKosullariRoute
   KvkkRoute: typeof KvkkRoute
   PaketlerRoute: typeof PaketlerRoute
+  SahaYapilandiriciRoute: typeof SahaYapilandiriciRoute
   ScadaYazilimiRoute: typeof ScadaYazilimiRoute
   CozumlerSlugRoute: typeof CozumlerSlugRoute
   UrunlerSlugRoute: typeof UrunlerSlugRoute
@@ -222,6 +261,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CerezRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/demo': {
+      id: '/demo'
+      path: '/demo'
+      fullPath: '/demo'
+      preLoaderRoute: typeof DemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gizlilik': {
       id: '/gizlilik'
       path: '/gizlilik'
@@ -243,6 +289,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IletisimRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kullanim-kosullari': {
+      id: '/kullanim-kosullari'
+      path: '/kullanim-kosullari'
+      fullPath: '/kullanim-kosullari'
+      preLoaderRoute: typeof KullanimKosullariRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kvkk': {
       id: '/kvkk'
       path: '/kvkk'
@@ -255,6 +308,13 @@ declare module '@tanstack/react-router' {
       path: '/paketler'
       fullPath: '/paketler'
       preLoaderRoute: typeof PaketlerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/saha-yapilandirici': {
+      id: '/saha-yapilandirici'
+      path: '/saha-yapilandirici'
+      fullPath: '/saha-yapilandirici'
+      preLoaderRoute: typeof SahaYapilandiriciRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/scada-yazilimi': {
@@ -299,11 +359,14 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   CerezRoute: CerezRoute,
+  DemoRoute: DemoRoute,
   GizlilikRoute: GizlilikRoute,
   HakkimizdaRoute: HakkimizdaRoute,
   IletisimRoute: IletisimRoute,
+  KullanimKosullariRoute: KullanimKosullariRoute,
   KvkkRoute: KvkkRoute,
   PaketlerRoute: PaketlerRoute,
+  SahaYapilandiriciRoute: SahaYapilandiriciRoute,
   ScadaYazilimiRoute: ScadaYazilimiRoute,
   CozumlerSlugRoute: CozumlerSlugRoute,
   UrunlerSlugRoute: UrunlerSlugRoute,

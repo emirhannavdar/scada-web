@@ -1,3 +1,4 @@
+import {OrderedPageSections} from '@/components/site/OrderedPageSections';
 import {translate as _tx,useLocale as _useLocale} from '@/lib/i18n';
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
@@ -12,7 +13,7 @@ export const Route = createFileRoute("/cozumler/")({
 function Solutions() {
     _useLocale();
     return (<>
-      <PageHero eyebrow={_tx("\u00C7\u00F6z\u00FCmler")} title={_tx("Enerji ve veri i\u00E7in \u00E7\u00F6z\u00FCmler.")} lead={_tx("Enerji y\u00F6netimi, uzaktan izleme, \u00FCretim analizi ve saha kontrol\u00FC i\u00E7in ScadaWatt \u00E7\u00F6z\u00FCmlerini ke\u015Ffedin.")}/>
+      <PageHero eyebrow={_tx("\u00C7\u00F6z\u00FCmler")} title={_tx("Enerji ve veri i\u00E7in \u00E7\u00F6z\u00FCmler.")} lead={_tx("Enerji y\u00F6netimi, uzaktan izleme, \u00FCretim analizi ve saha kontrol\u00FC i\u00E7in ScadaWatt \u00E7\u00F6z\u00FCmlerini ke\u015Ffedin.")}/><OrderedPageSections path="/cozumler">
       <section data-cms-collection="solutions" className="py-24">
         <div className="mx-auto max-w-7xl px-6">
           {_tx(solutions.map((s, i) => (<Reveal key={s.slug}>
@@ -27,5 +28,5 @@ function Solutions() {
             </Reveal>)))}
         </div>
       </section>
-    </>);
+    </OrderedPageSections></>);
 }

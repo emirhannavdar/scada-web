@@ -1,0 +1,11 @@
+export type Pair={tr:string;en:string};
+export type FaqItem={id:string;question:Pair;answer:Pair;enabled:boolean};
+export type ReviewItem={id:string;name:string;company:string;quote:Pair;image:string;enabled:boolean;consentConfirmed:boolean};
+export type GoogleReviews={enabled:boolean;automatic:boolean;url:string;placeId:string;businessName:string;label:Pair};
+export type Community={version:1;faq:{enabled:boolean;title:Pair;kicker:Pair;pages:string[];items:FaqItem[]};reviews:{enabled:boolean;title:Pair;intro:Pair;pages:string[];google:GoogleReviews;items:ReviewItem[]}};
+export const COMMUNITY_FIELD:string;
+export const defaultCommunity:Community;
+export function validateCommunity(value:unknown,imageAllowed?:(value:string)=>boolean):Community;
+export function parseCommunity(value:string):Community;
+export function validGoogleUrl(value:string):boolean;
+export function googleReviewHref(value:GoogleReviews):string;

@@ -1,3 +1,5 @@
+export const communityContent={definition:'{}'};
+export const configuratorContent={definition:'{}'};
 export const images={web:"/assets/web.webp",app:"/assets/app.webp",logo:"/assets/scadawatt-mini-logo.png",wordmark:"/assets/scadawatt-logo.png"};
 
 export const contact = {
@@ -391,7 +393,7 @@ export const aboutCompany={
 
 /** Server-authorised content is applied once, before routes load. Geometry is untouched. */
 export function applyRuntimeFields(entries:{path?:string[];tr:string|boolean}[]){
- const roots:Record<string,unknown>={images,contact,fieldJourney,aboutPoints,solutions,products,plans,comparison,nav,productSpecifications,screenGallery,solutionPresentation,discoveryGoals,applicationStories,aboutCompany};
+ const roots:Record<string,unknown>={communityContent,configuratorContent,images,contact,fieldJourney,aboutPoints,solutions,products,plans,comparison,nav,productSpecifications,screenGallery,solutionPresentation,discoveryGoals,applicationStories,aboutCompany};
  for(const entry of entries){const path=entry.path;if(!path?.length||path.some(k=>[{},'prototype',undefined].includes(k)))continue;
   if(path.length===1){if(path[0]==='slogan')slogan=String(entry.tr);if(path[0]==='vision')vision=String(entry.tr);continue}
   let current=roots[path[0]!] as Record<string,unknown>|undefined;
@@ -401,6 +403,6 @@ export function applyRuntimeFields(entries:{path?:string[];tr:string|boolean}[])
 }
 
 /** Preserve exported root identities while replacing device-specific content on resize. */
-const runtimeRoots={images,contact,fieldJourney,aboutPoints,solutions,products,plans,comparison,nav,productSpecifications,screenGallery,solutionPresentation,discoveryGoals,applicationStories,aboutCompany};
+const runtimeRoots={communityContent,configuratorContent,images,contact,fieldJourney,aboutPoints,solutions,products,plans,comparison,nav,productSpecifications,screenGallery,solutionPresentation,discoveryGoals,applicationStories,aboutCompany};
 const initialRuntime=structuredClone(runtimeRoots),initialSlogan=slogan,initialVision=vision;
 export function resetRuntimeContent(){for(const [key,target] of Object.entries(runtimeRoots)){const source=structuredClone(initialRuntime[key as keyof typeof initialRuntime]);if(Array.isArray(target))(target as unknown[]).splice(0,target.length,...source as unknown[]);else{for(const name of Object.keys(target))delete (target as Record<string,unknown>)[name];Object.assign(target,source)}}slogan=initialSlogan;vision=initialVision;}

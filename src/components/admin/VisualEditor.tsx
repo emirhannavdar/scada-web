@@ -1,3 +1,7 @@
+import {CommunityEditor} from './CommunityEditor';
+import {COMMUNITY_FIELD} from '../../../shared/community.mjs';
+import {ConfiguratorEditor} from './ConfiguratorEditor';
+import {CONFIGURATOR_FIELD} from '@/lib/configurator-engine';
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowLeft,
@@ -83,6 +87,8 @@ export function VisualEditor({
 }) {
   const [saved, setSaved] = useState(initial),
     [draft, setDraft] = useState(initial),
+    [configuratorOpen,setConfiguratorOpen]=useState(false),
+    [communityOpen,setCommunityOpen]=useState(false),
     [mode, setMode] = useState<"edit" | "browse">("edit"),
     [language, setLanguage] = useState<"tr" | "en">("tr"),
     [path, setPath] = useState("/"),
@@ -412,7 +418,7 @@ export function VisualEditor({
     setFrameVersion((v) => v + 1);
   }
   async function saveDraft() {
-    if (recordEditing) throw Error("Önce açık kayıtta Listeye uygula düğmesini kullanın.");
+    if (recordEditing) throw Error("Önce açık düzenlemeyi taslağa uygulayın.");
     if (!dirty) return saved;
     const result = await api<Omit<VisualWorkspace, "catalog">>("draft", csrf, {
       method: "PUT",
@@ -453,7 +459,7 @@ export function VisualEditor({
     );
   }
   async function navigate(next: string) {
-    if (recordEditing) throw Error("Önce açık kayıtta Listeye uygula düğmesini kullanın.");
+    if (recordEditing) throw Error("Önce açık düzenlemeyi taslağa uygulayın.");
     if (dirty) await saveDraft();
     position.current = 0;
     restore.current = 0;
@@ -591,6 +597,7 @@ export function VisualEditor({
               "/paketler",
               "/scada-yazilimi",
               "/hakkimizda",
+              "/saha-yapilandirici",
               "/iletisim",
             ].includes(path)
               ? path
@@ -605,6 +612,7 @@ export function VisualEditor({
             "/paketler",
             "/scada-yazilimi",
             "/hakkimizda",
+            "/saha-yapilandirici",
             "/iletisim",
           ].includes(path) && <option value="">Detay sayfası</option>}
           {[
@@ -614,6 +622,7 @@ export function VisualEditor({
             ["/paketler", "Paketler"],
             ["/scada-yazilimi", "SCADA Yazılımı"],
             ["/hakkimizda", "Hakkımızda"],
+            ["/saha-yapilandirici", "Saha yapılandırıcısı"],
             ["/iletisim", "İletişim"],
           ].map(([url, label]) => (
             <option key={url} value={url}>
@@ -821,6 +830,7 @@ export function VisualEditor({
         >
           Tasarım / renkler
         </button>
+        <button onClick={()=>setCommunityOpen(true)}>SSS ve yorum ayarları</button><button onClick={()=>setConfiguratorOpen(true)}>Saha yapılandırıcısı ayarları</button>
         <span className="visual-draft-label">
           <i />
           {mobile ? "Mobil" : "Masaüstü"} taslağı · Sadece bu görünüm değişir
@@ -880,6 +890,8 @@ export function VisualEditor({
           </div>
         )}
       </div>
+      {communityOpen&&<div className="cfg-admin-modal" role="dialog" aria-modal="true" aria-label="SSS ve yorum ayarları"><section><CommunityEditor csrf={csrf} value={String((draft.values[COMMUNITY_FIELD]??draft.catalog.fields.find(f=>f.id===COMMUNITY_FIELD)?.default)?.tr??"{}")} onApply={value=>setDraft(old=>({...old,values:{...old.values,[COMMUNITY_FIELD]:{tr:value,en:value}}}))} onCancel={()=>setCommunityOpen(false)} onEditingChange={setRecordEditing}/></section></div>}
+      {configuratorOpen&&<div className="cfg-admin-modal" role="dialog" aria-modal="true" aria-label="Saha yapılandırıcısı ayarları"><section><ConfiguratorEditor value={String((draft.values[CONFIGURATOR_FIELD]??draft.catalog.fields.find(f=>f.id===CONFIGURATOR_FIELD)?.default)?.tr??"{}")} onApply={value=>setDraft(old=>({...old,values:{...old.values,[CONFIGURATOR_FIELD]:{tr:value,en:value}}}))} onCancel={()=>setConfiguratorOpen(false)} onEditingChange={setRecordEditing}/></section></div>}
       {(target || collection || designOpen) && (
         <aside
           className={`visual-drawer ${collection ? "is-collection" : ""}`}
@@ -925,7 +937,7 @@ export function VisualEditor({
               </div>
             )}
             {inspector === "design" && !collection ? (
-              <DesignEditor
+              <DesignEditor path={path}
                 design={draft.design ?? emptyDesign()}
                 selected={selectedDesign}
                 selections={selectedDesigns}

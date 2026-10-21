@@ -121,3 +121,16 @@ test('preview comparisons stay authenticated and use the selected approval snaps
  const snapshot=(await f.call('/api/cms/preview?approval='+approval.id)).json;
  assert.equal(snapshot.review.values[field].tr,'Yeni inceleme metni');assert.equal(snapshot.review.device,'desktop');
  }finally{await f.close()}});
+
+test('configurator definitions validate, remain device-specific and only become public after root publication',async()=>{const {CONFIGURATOR_FIELD,defaultConfigurator}=await import('../shared/configurator.mjs');const f=await fixture();try{
+ await f.store.createAdmin('admin@example.com','Long-Test-Password-4901');await f.login();
+ const schema=structuredClone(defaultConfigurator);schema.questions[0].type='multi';schema.questions[0].defaultValue=[];schema.questions[0].required=false;
+ for(let i=0;i<35;i++)schema.questions.push({id:'custom'+i,section:'facility',label:{tr:'Özel soru '+i,en:'Custom question '+i},help:{tr:'Açıklama '.repeat(20),en:'Description '.repeat(20)},type:'text',enabled:true,required:false,defaultValue:'',options:[]});
+ const text=JSON.stringify(schema);assert.ok(text.length>12000);
+ let response=await f.call('/api/cms/draft',{method:'PUT',data:{device:'mobile',revision:0,values:{[CONFIGURATOR_FIELD]:{tr:text,en:text}}}});assert.equal(response.response.status,200,JSON.stringify(response.json));
+ assert.equal(f.store.state('desktop').values[CONFIGURATOR_FIELD],undefined);
+ const before=(await f.call('/api/content')).json;assert.equal(JSON.parse(before.variants.mobile.entries.find(e=>e.id===CONFIGURATOR_FIELD).tr).questions[0].type,'single');
+ const published=await f.call('/api/cms/publish',{method:'POST',data:{device:'mobile',revision:response.json.revision,note:'Yapılandırıcı'}});assert.equal(published.response.status,200,JSON.stringify(published.json));
+ const publicData=(await f.call('/api/content')).json;const entry=publicData.variants.mobile.entries.find(e=>e.id===CONFIGURATOR_FIELD);assert.equal(JSON.parse(entry.tr).questions[0].type,'multi');assert.equal(JSON.parse(publicData.variants.desktop.entries.find(e=>e.id===CONFIGURATOR_FIELD).tr).questions[0].type,'single');
+ const bad=structuredClone(schema);bad.questions[1].id=bad.questions[0].id;const raw=JSON.stringify(bad);response=await f.call('/api/cms/draft',{method:'PUT',data:{device:'mobile',revision:published.json.revision,values:{[CONFIGURATOR_FIELD]:{tr:raw,en:raw}}}});assert.equal(response.response.status,400);
+ }finally{await f.close()}});

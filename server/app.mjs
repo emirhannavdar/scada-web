@@ -1,3 +1,6 @@
+import {createGoogleReviewsService} from './google-reviews.mjs';
+import {createMailService} from './mail.mjs';
+import {renderPage,sitemap,siteOrigin,sendText,compression} from './seo.mjs';
 import { checkDevice } from "./device-content.mjs";
 import http from "node:http";
 import { originPolicy } from "./origin.mjs";
@@ -67,6 +70,13 @@ function fileResponse(req, res, file, { immutable = false, privateFile = false }
   }
   if (!stat.isFile()) return false;
   res.setHeader("Content-Type", mime[extname(file).toLowerCase()] || "application/octet-stream");
+  if(!req.headers.range && /\.(js|css)$/.test(file)){
+    res.setHeader('Vary','Accept-Encoding');
+    const accepted=compression(req.headers['accept-encoding']);
+    const suffix=accepted==='br'?'.br':accepted==='gzip'?'.gz':'';
+    if(suffix&&existsSync(file+suffix)){file+=suffix;stat=statSync(file);res.setHeader('Content-Encoding',suffix==='.br'?'br':'gzip');}
+  }
+
   res.setHeader(
     "Cache-Control",
     privateFile ? "no-store" : immutable ? "public, max-age=31536000, immutable" : "no-cache",
@@ -124,9 +134,13 @@ export function createCmsApp({
   distDir = "dist",
   origin = process.env["CMS_ORIGIN"] || "",
   secureCookies = process.env["CMS_COOKIE_SECURE"] === "1",
+  mailTransportFactory,
+  googleReviewsFetch,
 } = {}) {
   const store = openStore(dataDir),
     dist = resolve(distDir);
+  const mail=createMailService(store,{transportFactory:mailTransportFactory});
+  const googleReviews=createGoogleReviewsService(store,{fetcher:googleReviewsFetch});
   let hashing = 0;
   const cookie = (token, age) =>
     `sw_admin=${token}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${age}${secureCookies ? "; Secure" : ""}`;
@@ -180,6 +194,25 @@ export function createCmsApp({
       if (path.startsWith("/api/")) {
         res.setHeader("Cache-Control", "no-store");
         res.setHeader("X-Robots-Tag", "noindex, nofollow");
+        if(path==='/api/contact'&&method==='POST'){
+          checkOrigin(req);
+          if(req.headers['x-scadawatt-request']!=='contact')fail(400,'Talep doğrulanamadı.');
+          mail.rate('contact:ingress:'+(req.socket.remoteAddress||'unknown'),60,600000);
+          return send(res,200,await mail.submit(await body(req),req.socket.remoteAddress||'unknown'));
+        }
+        if(path==='/api/google-reviews'&&method==='GET'){
+          const language=url.searchParams.get('lang')==='en'?'en':'tr';
+          const device=checkDevice(url.searchParams.get('device')||'desktop');
+          if(req.headers['sec-fetch-site']==='cross-site')fail(403,'İstek doğrulanamadı.');
+          return send(res,200,await googleReviews.publicReviews(device,language,req.socket.remoteAddress||'unknown'));
+        }
+        if(path==='/api/cms/google-reviews'&&method==='GET'){root(req);return send(res,200,googleReviews.read());}
+        if(path==='/api/cms/google-reviews'&&method==='PUT'){root(req,true);return send(res,200,googleReviews.save(await body(req)));}
+        if(path==='/api/cms/google-reviews/test'&&method==='POST'){root(req,true);googleReviews.rate('google:test',5,600000);return send(res,200,await googleReviews.load('tr'));}
+        if(path==='/api/cms/mail-settings'&&method==='GET'){root(req);return send(res,200,mail.read());}
+        if(path==='/api/cms/mail-settings'&&method==='PUT'){root(req,true);return send(res,200,mail.save(await body(req)));}
+        if(path==='/api/cms/mail-settings/verify'&&method==='POST'){root(req,true);mail.rate('mail:verify',10,600000);return send(res,200,await mail.verify());}
+        if(path==='/api/cms/mail-settings/test'&&method==='POST'){root(req,true);mail.rate('mail:test',5,600000);return send(res,200,await mail.test());}
         if (path === "/api/content" && method === "GET") {
           const s = store.state("desktop");
           res.setHeader("Cache-Control", "no-cache");
@@ -529,6 +562,17 @@ export function createCmsApp({
           "Content-Security-Policy",
           "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
         );
+      if(path==='/robots.txt')return sendText(req,res,process.env.SITE_INDEXABLE==='1'?'User-agent: *\nDisallow: /admin\nDisallow: /api/\nDisallow: /*?*cms-\nSitemap: '+siteOrigin()+'/sitemap.xml\n':'User-agent: *\nDisallow: /\n','text/plain; charset=utf-8');
+      if(path==='/sitemap.xml')return sendText(req,res,sitemap(store),'application/xml; charset=utf-8');
+      if(path==='/demo'){res.writeHead(301,{Location:'/saha-yapilandirici'});return res.end();}
+      if((!extname(path)||path==='/index.html')&&existsSync(join(dist,'index.html'))){
+        const privatePage=path.startsWith('/admin')||url.searchParams.has('cms-preview')||url.searchParams.has('cms-edit');
+        const rendered=renderPage(readFileSync(join(dist,'index.html'),'utf8'),path==='/index.html'?'/':path,store,privatePage);
+        if(rendered.noindex)res.setHeader('X-Robots-Tag','noindex, nofollow');
+        if(privatePage)res.setHeader('Cache-Control','no-store');
+        sendText(req,res,rendered.html,'text/html; charset=utf-8',rendered.status);
+        return;
+      }
       const decoded = decodeURIComponent(path);
       if (decoded.includes("\0") || decoded.includes("\\")) fail(404, "Sayfa bulunamadı.");
       const file = resolve(dist, "." + decoded);

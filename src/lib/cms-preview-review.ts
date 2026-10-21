@@ -1,3 +1,5 @@
+import {COMMUNITY_FIELD,parseCommunity} from '../../shared/community.mjs';
+import {CONFIGURATOR_FIELD,parseConfigurator} from './configurator-engine';
 import {getLanguage} from './i18n';
 import {cmsChanges,stable,type CmsChange} from './cms-changes';
 import {safeSelector} from './cms-design';
@@ -30,7 +32,19 @@ export function installReviewMarks(workspace:VisualWorkspace,changes:CmsChange[]
   const found=field?targets.filter(target=>target.id===field):values.flatMap(value=>visualFieldMatches(targets,value,context));
   for(const target of found)for(const change of byTarget.get(target.id)??[])add(element,change);
  }
- for(const change of changes){const p=change.designPath;
+ for(const change of changes){
+  if(change.field===COMMUNITY_FIELD){
+   const before=parseCommunity(String(change.before.value)),after=parseCommunity(String(change.after.value));
+   for(const node of document.querySelectorAll<HTMLElement>('[data-community-record]')){const [kind,id]=node.dataset['communityRecord']!.split(':');if(kind==='faq'||kind==='reviews'){if(stable(before[kind].items.find(i=>i.id===id))!==stable(after[kind].items.find(i=>i.id===id)))add(node,change);}}
+   for(const node of document.querySelectorAll<HTMLElement>('[data-community-setting]')){const keys=node.dataset['communitySetting']!.split('.');const read=(obj:unknown)=>keys.reduce((v:any,key)=>v?.[key],obj);if(stable(read(before))!==stable(read(after)))add(node,change);}
+  }
+  if(change.field===CONFIGURATOR_FIELD&&path==='/saha-yapilandirici'){
+   const before=parseConfigurator(change.before.value),after=parseConfigurator(change.after.value);
+   for(const node of document.querySelectorAll<HTMLElement>('[data-config-question]')){const id=node.dataset['configQuestion'];if(stable(before.questions.find(q=>q.id===id))!==stable(after.questions.find(q=>q.id===id)))add(node,change);}
+   for(const node of document.querySelectorAll<HTMLElement>('[data-config-step]')){const id=node.dataset['configStep'];if(stable(before.sections.find(q=>q.id===id))!==stable(after.sections.find(q=>q.id===id)))add(node,change);}
+   for(const node of document.querySelectorAll<HTMLElement>('[data-config-setting]')){const key=node.dataset['configSetting'] as keyof typeof after;if(stable(before[key])!==stable(after[key]))add(node,change);}
+  }
+  const p=change.designPath;
   if(p?.[0]==='elements'){
    const element=workspace.design?.elements[p[1]!]??workspace.publishedDesign?.elements[p[1]!];
    if(element?.page!==path||!safeSelector(element.selector))continue;

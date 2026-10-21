@@ -1,3 +1,5 @@
+import {COMMUNITY_FIELD,validateCommunity,defaultCommunity} from '../shared/community.mjs';
+import {CONFIGURATOR_FIELD,validateConfigurator} from '../shared/configurator.mjs';
 import {reviseTextValues,reviseCollectionTexts} from './text-revision.mjs';
 import { DEVICE_KEY, checkDevice, deviceContent } from "./device-content.mjs";
 import { DESIGN_KEY, emptyDesign, validateDesign } from "../shared/design.mjs";
@@ -96,6 +98,14 @@ export function openStore(directory, catalogPath = new URL("./catalog.json", imp
         if (!byId.has(f.legacyId)) delete result[f.legacyId];
       }
     }
+    // Preserve earlier inline FAQ edits when moving to the structured manager.
+    if(!Object.hasOwn(result,COMMUNITY_FIELD)){
+      const definition=structuredClone(defaultCommunity);let changed=false;
+      const copy=(pair,alternates=[])=>{const field=catalog.fields.find(f=>f.target==='copy'&&[pair.tr,...alternates].includes(f.source));const value=field&&result[field.id];if(value&&typeof value.tr==='string'&&typeof value.en==='string'){pair.tr=value.tr;pair.en=value.en;changed=true;}};
+      copy(definition.faq.title);copy(definition.faq.kicker);
+      for(const item of definition.faq.items){copy(item.question);copy(item.answer,[item.answer.tr.replace('talebinizi','talep taslağınızı')]);}
+      if(changed){const text=JSON.stringify(definition);result[COMMUNITY_FIELD]={tr:text,en:text};}
+    }
     return reviseTextValues(result);
   }
   function split(raw) {
@@ -141,6 +151,16 @@ export function openStore(directory, catalogPath = new URL("./catalog.json", imp
       const f = byId.get(id);
       if (!f || !v || typeof v !== "object" || Array.isArray(v))
         throw new CmsError(400, "Bilinmeyen içerik alanı.");
+      if(f.id===COMMUNITY_FIELD){
+        if(typeof v.tr!=='string'||v.tr.length>450000||v.en!==v.tr)throw new CmsError(400,'SSS / yorum verisi geçersiz.');
+        try{const clean=JSON.stringify(validateCommunity(JSON.parse(v.tr),imageAllowed));result[id]={tr:clean,en:clean};}catch(error){throw new CmsError(400,error.message);}
+        continue;
+      }
+      if(f.id===CONFIGURATOR_FIELD){
+        if(typeof v.tr!=="string"||v.tr.length>250000||v.en!==v.tr)throw new CmsError(400,"Yapılandırıcı verisi geçersiz.");
+        try{const clean=JSON.stringify(validateConfigurator(JSON.parse(v.tr)));result[id]={tr:clean,en:clean};}catch(error){throw new CmsError(400,error.message);}
+        continue;
+      }
       if (f.kind === "boolean") {
         if (typeof v.tr !== "boolean") throw new CmsError(400, "Geçersiz seçenek.");
         result[id] = { tr: v.tr, en: v.tr };

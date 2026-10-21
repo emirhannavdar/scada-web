@@ -150,6 +150,7 @@ export function cmsChanges(workspace: VisualWorkspace): CmsChange[] {
     currentDesign.homeOrder.map((id) => sectionNames[id] || id),
     "order",
   );
+  for(const page of new Set([...Object.keys(publishedDesign.pageOrders||{}),...Object.keys(currentDesign.pageOrders||{})])) addDesign(["pageOrders",page],page+" / bölüm sırası",publishedDesign.pageOrders?.[page],currentDesign.pageOrders?.[page],"order");
   if (!workspace.collections || !workspace.publishedCollections) return changes;
   for (const kind of ["products", "solutions", "plans"] as const) {
     const current = workspace.collections[kind],
@@ -242,7 +243,8 @@ export function revertCmsChange(workspace: VisualWorkspace, change: CmsChange): 
     const design = structuredClone(workspace.design ?? emptyDesign()),
       published = workspace.publishedDesign ?? emptyDesign(),
       [root, key, profile, prop] = change.designPath;
-    if (root === "homeOrder") design.homeOrder = [...published.homeOrder];
+    if (root === "pageOrders") {design.pageOrders={...design.pageOrders};if(published.pageOrders?.[key!])design.pageOrders[key!]=[...published.pageOrders[key!]!];else delete design.pageOrders[key!]}
+    else if (root === "homeOrder") design.homeOrder = [...published.homeOrder];
     else if (root === "palette" && key && profile) {
       const theme = key as "light" | "dark";
       if (published.palette[theme][profile] !== undefined)

@@ -1,5 +1,6 @@
+import {PAGE_SECTIONS} from "./page-sections.mjs";
 export const DESIGN_KEY = "@design";
-export const HOME_SECTIONS = ["hardware", "solutions", "discovery", "contact"];
+export const HOME_SECTIONS = PAGE_SECTIONS["/"];
 export const STYLE_BOUNDS = {
   fontSize: [8, 160],
   fontWeight: [100, 900],
@@ -41,6 +42,7 @@ export function emptyDesign() {
     palette: { light: {}, dark: {} },
     elements: {},
     homeOrder: [...HOME_SECTIONS],
+    pageOrders: {},
   };
 }
 export function designKey(page, selector, fragment) {
@@ -87,7 +89,7 @@ export function validateDesign(input) {
         fail("Altı haneli HEX renk kullanın.");
       return value.toLowerCase();
     };
-  checkKeys(input, ["version", "palette", "elements", "homeOrder"]);
+  checkKeys(input, ["version", "palette", "elements", "homeOrder", "pageOrders"]);
   if (input.version !== 1) fail("Tasarım sürümü geçersiz.");
   const out = emptyDesign();
   checkKeys(input.palette, ["light", "dark"]);
@@ -98,12 +100,21 @@ export function validateDesign(input) {
   }
   if (
     !Array.isArray(input.homeOrder) ||
-    input.homeOrder.length !== HOME_SECTIONS.length ||
-    new Set(input.homeOrder).size !== HOME_SECTIONS.length ||
+    ![4, HOME_SECTIONS.length].includes(input.homeOrder.length) ||
+    new Set(input.homeOrder).size !== input.homeOrder.length ||
     input.homeOrder.some((id) => !HOME_SECTIONS.includes(id))
   )
     fail("Ana sayfa bölüm sırası geçersiz.");
-  out.homeOrder = [...input.homeOrder];
+  if (!["hardware","solutions","discovery","contact"].every(id=>input.homeOrder.includes(id))) fail("Ana sayfa bölümleri eksik.");
+  out.homeOrder = [...input.homeOrder,...HOME_SECTIONS.filter(id=>!input.homeOrder.includes(id))];
+  if (input.pageOrders !== undefined) {
+    if (!object(input.pageOrders)) fail("Bölüm sırası geçersiz.");
+    for (const [path,ids] of Object.entries(input.pageOrders)) {
+      const allowed=PAGE_SECTIONS[path];
+      if(path==="/" || !allowed || !Array.isArray(ids) || ids.length!==allowed.length || new Set(ids).size!==ids.length || ids.some(id=>!allowed.includes(id))) fail("Sayfa bölüm sırası geçersiz.");
+      out.pageOrders[path]=[...ids];
+    }
+  }
   if (!object(input.elements) || Object.keys(input.elements).length > 600)
     fail("En fazla 600 öğenin tasarımı değiştirilebilir.");
   for (const [key, entry] of Object.entries(input.elements)) {

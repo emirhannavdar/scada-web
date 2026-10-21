@@ -20,6 +20,7 @@ export function SiteHeader() {
     { to: "/cozumler", tr: "Çözümler", en: "Solutions" },
     { to: "/urunler", tr: "Donanımlar", en: "Hardware" },
     { to: "/scada-yazilimi", tr: "SCADA yazılımı", en: "SCADA software" },
+    { to: "/saha-yapilandirici", tr: "Saha yapılandırıcısı", en: "Site configurator" },
     { to: "/paketler", tr: "İzleme planları", en: "Monitoring plans" },
     { to: "/hakkimizda", tr: "Hakkımızda", en: "About us" },
     { to: "/iletisim", tr: "İletişim", en: "Contact" },
@@ -69,15 +70,15 @@ export function SiteHeader() {
             <CmsImage src={images.wordmark} alt={_tx("ScadaWatt")} width="196" height="56" />
           </Link>
           <nav className="film-header-chapters" aria-label={_tx("Ana menü")}>
-            {pageLinks.slice(1, 4).map(item => (
+            {pageLinks.filter(item=>["/cozumler","/scada-yazilimi","/saha-yapilandirici"].includes(item.to)).map(item => (
               <Link to={item.to} key={item.to} aria-current={path === item.to ? "page" : undefined}>
-                {_tx(language === "en" ? item.en : item.tr)}
+                {_tx(item.tr)}
               </Link>
             ))}
           </nav>
           <div className="film-header-actions">
-            <Link className="film-header-contact" to="/iletisim">
-              {_tx("\u0130leti\u015Fim ")}
+            <Link className="film-header-contact" to="/iletisim" search={{tur:'demo'}}>
+              {_tx("Demo talep et")}
               <ArrowUpRight size={15} />
             </Link>
             <button
@@ -153,7 +154,7 @@ export function SiteHeader() {
                   {pageLinks.map((item, i) => (
                     <Link to={item.to} key={item.to} onClick={close} aria-current={path === item.to ? "page" : undefined}>
                       <span>{String(i + 1).padStart(2, "0")}</span>
-                      {_tx(language === "en" ? item.en : item.tr)}
+                      {_tx(item.tr)}
                       <ArrowUpRight size={36} />
                     </Link>
                   ))}

@@ -1,3 +1,4 @@
+import {OrderedPageSections} from '@/components/site/OrderedPageSections';
 import {translate as _tx,useLocale as _useLocale} from '@/lib/i18n';
 import { ApplicationGallery } from '@/components/site/ApplicationGallery';
 import { createFileRoute } from "@tanstack/react-router";
@@ -23,7 +24,7 @@ const caps = [
 function Scada() {
     _useLocale();
     return (<>
-      <PageHero eyebrow={_tx("SCADA Yaz\u0131l\u0131m\u0131")} title={_tx("ScadaWatt SCADA yaz\u0131l\u0131m\u0131.")} lead={_tx("ScadaWatt yazılımının ölçüm, izleme, analiz ve enerji yönetimi araçlarını keşfedin.")}/>
+      <PageHero eyebrow={_tx("SCADA Yaz\u0131l\u0131m\u0131")} title={_tx("ScadaWatt SCADA yaz\u0131l\u0131m\u0131.")} lead={_tx("ScadaWatt yazılımının ölçüm, izleme, analiz ve enerji yönetimi araçlarını keşfedin.")}/><OrderedPageSections path="/scada-yazilimi">
       <ApplicationGallery />
       <section className="py-24 md:py-36">
         <div className="mx-auto max-w-7xl px-6">
@@ -38,5 +39,5 @@ function Scada() {
         </div>
       </section>
       <section className="surface-ink py-16"><div className="sw-wrap"><h2 className="text-3xl font-medium">{_tx("İzleme arayüzü")}</h2><p className="mt-4 mb-8 text-sm text-ink-muted">{_tx("A\u015Fa\u011F\u0131daki \u00F6rnek aray\u00FCz temsili verilerle \u00E7al\u0131\u015F\u0131r. Ger\u00E7ek uygulama ekran\u0131 veya canl\u0131 veri de\u011Fildir.")}</p><DemoDashboard /></div></section>
-    </>);
+    </OrderedPageSections></>);
 }

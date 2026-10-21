@@ -1,0 +1,9 @@
+export type Bilingual={tr:string;en:string};
+export type Answer=string|number|boolean|string[];
+export type QuestionOption={id:string;label:Bilingual;solutions:string[];hardware:string[]};
+export type ConfigQuestion={id:string;section:string;label:Bilingual;help:Bilingual;type:'single'|'multi'|'select'|'text'|'number'|'checkbox';enabled:boolean;required:boolean;defaultValue:Answer;options:QuestionOption[];min?:number;max?:number;maxLength?:number;minLength?:number;integer?:boolean;minChoices?:number;maxChoices?:number;when?:{question:string;option:string}};
+export type ConfiguratorDefinition={version:1;title:Bilingual;intro:Bilingual;resultTitle:Bilingual;resultIntro:Bilingual;submitLabel:Bilingual;notice:Bilingual;submitType:'bilgi'|'demo'|'teklif';showSummary:boolean;showDiagram:boolean;showHardware:boolean;baseSolutions:string[];baseHardware:string[];sections:{id:string;title:Bilingual}[];questions:ConfigQuestion[];flow:{title:Bilingual;detail:Bilingual}[]};
+export const CONFIGURATOR_FIELD:string;
+export const defaultConfigurator:ConfiguratorDefinition;
+export function validateConfigurator(value:unknown):ConfiguratorDefinition;
+export function parseConfigurator(value:unknown):ConfiguratorDefinition;

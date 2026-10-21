@@ -1,0 +1,5 @@
+Bu yayın notu v111 ile güncellenmiştir. Güncel talimatlar V111-KURULUM.txt dosyasındadır.
+Form artık sunucudan e-posta gönderir; root hesabından SMTP bağlantısı yapılandırılmalıdır.
+Canlı indeksleme ayarları: SITE_URL=https://scadawatt.com ve SITE_INDEXABLE=1
+Test sürümünde indekslemeyi kapalı tutun; gerçek yayına hazır olduğunuzda açın.
+KVKK metninin şirket bilgileriyle hukuki onayı gereklidir.
