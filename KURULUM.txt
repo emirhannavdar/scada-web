@@ -1,5 +1,0 @@
-Sunucuyu Ctrl+C ile durdurun. ZIP içeriğini mevcut proje klasörünün İÇİNE çıkartın; aynı dosyaları değiştirin. npm.cmd start ile başlatın. Tarayıcıda Ctrl+F5 yapın. npm ci veya build gerekmez.
-
-Önizlemede işaretli öğeye fareyle veya dokunarak basılı tutunca ilgili değişikliğin yayındaki eski hâli aynı yerde gösterilir. Bırakınca güncel taslak geri gelir. Alttaki eski/yeni karşılaştırma kutusu kaldırılmıştır. Eski görseller önceden yüklenir. Değişen öğeye basmak bağlantıyı açmaz.
-Pointer iptali, odak kaybı, Escape, sekmenin gizlenmesi veya önizlemeden çıkış eski görünümü sonlandırır. Karşılaştırma yalnızca geçici görünümü değiştirir; taslak, yayın ve veritabanı yazılmaz. Bağımsız diğer alanların değişiklikleri korunur. Mobil/masaüstü ayrımı ve TR/EN/tema desteği korunmuştur.
-15 hedefli test ve üretim derlemesi başarılı.

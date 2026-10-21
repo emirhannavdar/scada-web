@@ -1,5 +1,0 @@
-Sunucuyu Ctrl+C ile durdurun. ZIP içeriğini mevcut proje klasörünün İÇİNE çıkartıp dosyaları değiştirin. npm.cmd start çalıştırın; tarayıcıda Ctrl+F5 yapın.
-Build veya npm ci gerekmez.
-
-Masaüstü ve mobil ana menü artık aynı gerçek sayfalara bağlanır. Üst kısayollar Çözümler, Donanımlar ve SCADA yazılımı sayfalarını açar. İletişim bağlantısı demo talebini otomatik seçmez. Demo talep butonları korunmuştur.
-Tüm genel sayfa adresleri ve ürün/çözüm detay adresleri kontrol edildi. 5 gezinme testi ve üretim derlemesi başarılı. Animasyon, metin revizyonları, CMS verileri ve tasarım ayarları korunur.

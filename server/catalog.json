@@ -1,5 +1,5 @@
 {
-  "schemaHash": "cd10d2517d54d42a",
+  "schemaHash": "4639f1c5d84be347",
   "fields": [
     {
       "id": "copy.0b2bdd94b1824426",
@@ -9565,8 +9565,8 @@
         "tr": "Sayfa bulunamadı.",
         "en": "Page not found."
       },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
+      "location": "Çözümler › Sayfa metinleri",
+      "page": "/cozumler"
     },
     {
       "id": "copy.f637502c209f80f5",
