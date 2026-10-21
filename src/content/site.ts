@@ -1,3 +1,5 @@
+export const communityContent={definition:'{}'};
+export const configuratorContent={definition:'{}'};
 export const images={web:"/assets/web.webp",app:"/assets/app.webp",logo:"/assets/scadawatt-mini-logo.png",wordmark:"/assets/scadawatt-logo.png"};
 
 export const contact = {
@@ -10,14 +12,14 @@ export const contact = {
 };
 
 export let slogan = "Bugün Ne Kaybettiğinizi Biliyor musunuz?";
-export let vision = "Milyarlarca veriyi saniyeler içinde analiz ederek kayıpları kazanca çevirmek.";
+export let vision = "Sahadaki her ölçümü anlamlı bilgiye dönüştürerek kayıpları kazanca çevirmek.";
 
 export const aboutPoints = [
   "Santrallerinizdeki tüm ekipmanları tek bir platformdan uzaktan izleme ve kontrol",
   "Üretim ve tüketimi analiz ederek verimliliği artırma, kayıpları en aza indirme",
-  "Reaktif güç ve kompanzasyon takibiyle enerji kalitesini kontrol etme, cezaları önleme",
+  "Reaktif güç ve kompanzasyon takibiyle enerji kalitesini kontrol etme, ceza riskini azaltma",
   "Saatlik veriler üzerinden fatura doğrulama",
-  "Piyasa fiyatları ve PTF kontrolleriyle santrali optimum seviyede yönetme",
+  "Piyasa takas fiyatını (PTF) üretim verisiyle birlikte izleyerek santrali daha bilinçli yönetme",
 ];
 
 export type Solution = {
@@ -33,9 +35,9 @@ export type Solution = {
 };
 
 export const solutions: Solution[] = [
- {slug:'enerji-yonetimi',title:'Enerji Yönetimi',short:'Üretim, tüketim ve enerji kalitesi verilerini birlikte değerlendirin.',body:['ScadaWatt, ölçüm verilerini izleme, raporlama ve kontrol ihtiyaçlarıyla bir araya getirir. Üretim ve tüketim görünürlüğü, limit takibi ve reaktif güç değerlendirmesi enerji yönetiminin farklı parçalarıdır.','Uygulanacak kapsam, saha cihazları ve seçilen hizmetlere göre birlikte değerlendirilir.'],points:['Üretim ve tüketim takibi','Enerji kalitesi ve reaktif güç','Limit takibi ve raporlama']},
- {slug:'uzaktan-izleme',title:'Uzaktan İzleme',short:'Ölçümleri, cihaz durumlarını ve alarmları yazılım üzerinden takip edin.',body:['Saha cihazlarından gelen veriler, veri toplama ve haberleşme teknolojileri üzerinden ScadaWatt yazılımına taşınır. İzleme ve raporlama ihtiyaçları cihaz ve saha kapsamına göre belirlenir.'],points:['Cihaz verileri','Alarm ve bildirim','Web ve mobil görünüm']},
- {slug:'yenilenebilir-enerji',title:'Yenilenebilir Enerji',short:'Üretim sistemlerinde veri toplama ve yazılım teknolojileri.',body:['Yenilenebilir enerji üretiminde ölçüm, performans analizi ve kontrol verileri önemlidir. ScadaWatt’ın GES izleme ürünü, üretim verilerini yazılım üzerinden değerlendirmeye odaklanır.','Diğer kaynaklar için cihaz uyumluluğu ve uygulanabilecek kapsam proje özelinde değerlendirilmelidir.'],points:['Üretim verileri','Performans takibi','Saha cihazlarıyla haberleşme']},
+ {slug:'enerji-yonetimi',title:'Enerji Yönetimi',short:'Üretim, tüketim ve enerji kalitesi verilerini birlikte değerlendirin.',body:["ScadaWatt üretim, tüketim, limit ve reaktif güç verilerini aynı platformda toplar. OSOS sayaç verisi, saatlik mahsuplaşma takibi ve piyasa takas fiyatlarıyla (PTF) enerjinin hem teknik hem ticari tarafını birlikte görürsünüz.","Saatlik mahsuplaşma takibi sunan altyapımız, 15 dakikalık uzlaştırma dönemine geçişe uygun şekilde hazırlanmaktadır."],points:['Üretim ve tüketim takibi','Enerji kalitesi ve reaktif güç','Limit takibi ve raporlama']},
+ {slug:'uzaktan-izleme',title:'Uzaktan İzleme',short:'Ölçümleri, cihaz durumlarını ve alarmları yazılım üzerinden takip edin.',body:["Evirici, analizör, sayaç ve sensör verileri ScadaWatt veri toplama cihazı üzerinden platforma aktarılır. Cihaz durumları, haberleşme kesintileri ve alarmlar web panelinden ve mobil uygulamadan takip edilir."],points:['Cihaz verileri','Alarm ve bildirim','Web ve mobil görünüm']},
+ {slug:'yenilenebilir-enerji',title:'Yenilenebilir Enerji',short:'Üretim sistemlerinde veri toplama ve yazılım teknolojileri.',body:["Güneş enerji santrallerinde üretimi doğru ölçmek, performansı izlemek ve gerektiğinde sahaya müdahale edebilmek gerekir. ScadaWatt bu üç ihtiyacı tek platformda karşılar.",'Diğer kaynaklar için cihaz uyumluluğu ve uygulanabilecek kapsam proje özelinde değerlendirilmelidir.'],points:['Üretim verileri','Performans takibi','Saha cihazlarıyla haberleşme']},
   {
     slug: "ges-izleme",
     title: "GES Uzaktan İzleme",
@@ -49,7 +51,7 @@ export const solutions: Solution[] = [
   {
     slug: "limit-yonetimi",
     title: "Limit Yönetimi",
-    short: "Evirici ve saha limitlerini anlık takip edin, ceza risklerini ortadan kaldırın.",
+    short: "Evirici ve saha limitlerini anlık takip edin, ceza riskini azaltın.",
     body: [
       "Evirici ve saha limitleriniz anlık olarak takip edilir. Operasyonel hatalar nedeniyle oluşabilecek limit aşımları ve ceza riskleri önceden yakalanır.",
       "PRO pakette limitler yalnızca görüntülenmez; ScadaWatt üzerinden doğrudan yönetilir.",
@@ -61,8 +63,8 @@ export const solutions: Solution[] = [
     title: "Kompanzasyon Takibi ve Kontrolü",
     short: "Reaktif güç sürekli izlenir; limit aşımlarında kompanzasyon otomatik kontrol edilir.",
     body: [
-      "Reaktif güç değerleri sürekli izlenir. Limit aşımlarında ScadaWatt kompanzasyon sistemini kontrol ederek ceza risklerinin oluşmasını engeller.",
-      "Saatlik veriler üzerinden fatura doğrulaması yapılarak hatalı faturaların önüne geçilir.",
+      "Reaktif güç değerleri sürekli izlenir. Limit aşımlarında ScadaWatt kompanzasyon sistemini kontrol ederek reaktif ceza riskini azaltır.",
+      "Saatlik veriler üzerinden fatura doğrulaması yapılır; hatalı faturalar kolayca fark edilir.",
     ],
     points: ["Reaktif güç izleme", "Otomatik kompanzasyon kontrolü", "Saatlik fatura doğrulama"],
   },
@@ -71,20 +73,20 @@ export const solutions: Solution[] = [
     title: "Zero Injection",
     short: "Tüketim kadar üretim: şebeke yönüne enerji gitmez.",
     body: [
-      "Zero Injection modülü ile eviriciler dinamik olarak PID kontrol edilir, tüketim değerleriniz ölçülür ve tüketim kadar üretim yapılır.",
+      "Zero Injection modülü tesisin anlık tüketimini ölçer ve evirici gücünü buna göre sürekli ayarlar; üretim tüketimi aşmaz.",
       "Böylece şebeke yönüne enerji gitmemesi sağlanır. Tüm süreç ScadaWatt ekranları ve raporlarıyla izlenir ve yönetilir.",
     ],
-    points: ["Dinamik PID evirici kontrolü", "Anlık tüketim ölçümü", "Şebekeye sıfır enjeksiyon"],
+    points: ["Dinamik evirici güç kontrolü", "Anlık tüketim ölçümü", "Şebekeye sıfır enjeksiyon"],
   },
   {
     slug: "planli-uretim-durdurma",
-    title: "Planlı Üretim Durdurma",
-    short: "Yük atma süreçlerini otonom hale getirin.",
+    title: "Planlı Yük Atma",
+    short: "Planlı yük atma talimatlarını sahaya otomatik uygulayın.",
     body: [
-      "Planlı üretim durdurma modülü ile yük atma süreçleri otonom hale gelir; talimatlar manuel müdahaleye gerek kalmadan sahaya uygulanır.",
-      "PRO pakette acil durdurma eylemi ve sahaya fiziksel müdahale imkânı da bulunur.",
+      "Planlı yük atma talimatları ScadaWatt üzerinden tanımlanır ve belirlenen saatte sahaya otomatik uygulanır; ekibin sahaya gitmesine gerek kalmaz.",
+      "PRO pakette acil durdurma eylemi ve hücrenin uzaktan açılıp kapatılması da bulunur.",
     ],
-    points: ["Otonom yük atma", "Acil durdurma eylemi (PRO)", "Sahaya fiziksel müdahale (PRO)"],
+    points: ["Otomatik yük atma", "Acil durdurma eylemi (PRO)", "Uzaktan hücre açma / kapama (PRO)"],
   },
   {
     slug: "bildirimler",
@@ -117,7 +119,7 @@ export const products: Product[] = [
     image: "/assets/s3000i.webp",
     tagline: "Ekosistemin veri toplama ve işleme merkezi",
     summary:
-      "S3000i, ekosistemimizin veri toplama ve işleme konusunda temel unsurudur. Farklı sensörlerden ve saha cihazlarından aldığı verileri analiz eder, depolar ve ScadaWatt platformuna iletir.",
+      "S3000i, ScadaWatt ekosisteminin sahadaki merkezidir. Evirici, analizör, sayaç ve sensörlerden veriyi okur, sahada işler ve saklar, ardından ScadaWatt platformuna iletir. İnternet bağlantısı kesildiğinde kayda devam eder.",
     role: "Veri toplama · İşleme · Depolama",
     hotspots: [
       { x: 30, y: 40, label: "Saha cihazlarıyla haberleşme" },
@@ -146,7 +148,7 @@ export const products: Product[] = [
     image: "/assets/lomr.webp",
     tagline: "Şebeke arızasında tesis koruması",
     summary:
-      "LOMR-07H, şebeke arızası durumunda rölelerini tetikler. Röle çıkışları kumanda panoları da kullanılarak tesis ile şebeke arasındaki bağlantının güvenli şekilde yönetilmesini sağlar.",
+      "LOMR-07H şebekenin gerilim ve frekansını sürekli ölçer. Arıza algıladığında röle çıkışlarını tetikler ve kumanda panosu üzerinden tesisin şebeke bağlantısının güvenli şekilde ayrılmasını sağlar. RS485 Modbus ile ScadaWatt'a bağlanır.",
     role: "Şebeke arıza algılama · Röle tetikleme",
     hotspots: [
       { x: 40, y: 42, label: "Şebeke arızası algılama" },
@@ -179,7 +181,7 @@ export const plans: Plan[] = [
   {
     name: "PRO",
     term: "Yıllık abonelik",
-    features: ["Standart paketteki tüm hizmetler", "Evirici limit yönetimi", "Acil durdurma eylemi", "Sahaya fiziksel müdahale"],
+    features: ["Standart paketteki tüm hizmetler", "Evirici limit yönetimi", "Acil durdurma eylemi", "Uzaktan hücre açma / kapama"],
   },
 ];
 
@@ -194,7 +196,7 @@ export const comparison: [string, boolean | string, boolean | string, boolean | 
   ["Evirici limit görüntüleme", false, true, true],
   ["Evirici limit yönetimi", false, false, true],
   ["Acil durdurma eylemi", false, false, true],
-  ["Sahaya fiziksel müdahale", false, false, true],
+  ["Uzaktan hücre açma / kapama", false, false, true],
 ];
 
 export const nav = [
@@ -226,7 +228,7 @@ export const productSpecifications:Record<string,{name:string;value:string}[]>={
     },
     {
       "name": "Çekirdek Saat Hızı",
-      "value": "700 Mhz"
+      "value": "700 MHz"
     },
     {
       "name": "Dahili Gerçek Zamanlı Saat",
@@ -268,7 +270,7 @@ export const productSpecifications:Record<string,{name:string;value:string}[]>={
     },
     {
       "name": "Çekirdek Saat Hızı",
-      "value": "700 Mhz"
+      "value": "700 MHz"
     },
     {
       "name": "Dahili Gerçek Zamanlı Saat",
@@ -323,26 +325,26 @@ export const productSpecifications:Record<string,{name:string;value:string}[]>={
 // User-supplied real screenshots and example field; no live telemetry.
 export const screenGallery = [
  {id:'overview-detail',title:'Genel görünüm',text:'Sahaları aynı ekranda karşılaştırın. Güç eğrisi ve dönemsel üretim, tek bir sayının arkasındaki değişimi gösterir.'},
- {id:'live',title:'Canlı izleme',text:'Sahaların haberleşme ve durum bilgilerini birlikte inceleyin. Bu görüntü, gönderilen uygulama ekranının sabit bir kaydıdır.'},
- {id:'inverters',title:'Eviriciler',text:'Toplam üretimin kaynağına inin. Eviricileri ayrı ayrı görmek, saha seviyesindeki bilgiyi cihaz seviyesinde okumayı sağlar.'},
- {id:'production',title:'Üretimler',text:'Üretim kayıtlarını dönemlere göre inceleyin. Anlık güç ile zaman içinde biriken enerji farklı büyüklüklerdir.'},
- {id:'alarms',title:'Alarm arşivi',text:'Aktif ve geçmiş alarmları birlikte görün. Bir uyarıyı anlamak için olayın zamanı, kaynağı ve durumu birlikte değerlendirilir.'},
+ {id:'live',title:'Canlı izleme',text:"Tüm sahaların haberleşme ve çalışma durumunu tek ekranda izleyin. Bağlantısı kopan ya da arıza veren saha hemen öne çıkar."},
+ {id:'inverters',title:'Eviriciler',text:"Saha üretiminin kaynağına inin. Her eviricinin gücünü, durumunu ve üretimini ayrı ayrı görün."},
+ {id:'production',title:'Üretimler',text:"Üretim kayıtlarını gün, ay ve yıl bazında inceleyin; dönemleri ve sahaları karşılaştırın."},
+ {id:'alarms',title:'Alarm arşivi',text:"Aktif ve geçmiş alarmları tek listede görün. Her alarmın ne zaman başladığı, hangi cihazdan geldiği ve ne zaman kapandığı kayıt altındadır."},
  {id:'limits',title:'Limit yönetimi',text:'Evirici ve saha limitlerini izleyin. Kontrol olanakları, kurulumun ve seçilen hizmetin kapsamına bağlıdır.'},
  {id:'site-devices',title:'Saha cihazları',text:'Saha içindeki cihazları ve bağlantı bilgilerini inceleyin. Her ölçümün hangi kaynaktan geldiğini bilmek, doğru yorumun başlangıcıdır.'},
  {id:'site-alarms',title:'Saha olayları',text:'Seçilen sahanın durum ve olay kayıtlarına odaklanın. Genel görünümden sahaya, sahadan ayrıntıya ilerleyin.'},
- {id:'overview',title:'Bölgesel görünüm',text:'Farklı bölgelerdeki sahaları bir araya getiren gerçek ScadaWatt ekranı. Görseldeki değerler çekim anına aittir.'},
+ {id:'overview',title:'Bölgesel görünüm',text:"Farklı bölgelerdeki sahalarınızı tek ekranda toplayın. Görseldeki değerler ekran görüntüsünün alındığı ana aittir."},
 ] as const;
 export const fieldJourney = [
- {short:'Saha',eyebrow:'01 / ÜRETİMİN BAŞLADIĞI YER',title:'Verinin izinden.',body:'Sahaya doğru alçalıyoruz. Panel sıralarının hemen üzerinden geçiyor, aşağıdaki çalışan ekibi ve toprak yolları izleyerek eviriciye ilerliyoruz.',detail:'Saha ve çevre yapıları, gönderilen fotoğraftan ilhamla modellenmiştir. Birebir tesis veya coğrafi konum iddiası yoktur.',tag:'GÜNDÜZ / SAHA'},
- {short:'Evirici',eyebrow:'02 / ENERJİNİN DÖNÜŞÜMÜ',title:'Eviricinin yanındayız.',body:'Panellerin ürettiği doğru akım, eviricide alternatif akıma dönüştürülür. Ölçümler, üretimi anlamanın kaynaklarından biridir.',detail:'Evirici dışarıdan gösterilir. Kamera gövdeye girmez; kapak açılmaz.',tag:'EVİRİCİ / DIŞ GÖRÜNÜM'},
- {short:'Köşk',eyebrow:'03 / SAHANIN KONTROL NOKTASI',title:'Köşke ilerliyoruz.',body:'Paneller arasındaki toprak yolda yer alan köşke yaklaşıyoruz. Önce yapıyı dışarıdan görüyor, ardından açılan servis kapılarından pano alanına ilerliyoruz.',detail:'Köşk referans fotoğraflarındaki gövde, çatı saçağı, metal kapılar ve havalandırma detaylarından esinlenerek modellenmiştir. Evirici ziyareti sonrasında kamera doğrudan köşke yönelir. Sahnenin bu bölümünde evirici ile köşk arasında kablo gösterilmez.',tag:'KÖŞK / PANO ALANI'},
- {short:'ScadaWatt',eyebrow:'04 / VERİNİN TOPLANDIĞI YER',title:'Panonun içindeki teknoloji.',body:'S3000i, köşkün içindeki panoda yer alıyor. Farklı kaynaklardan gelen verileri topluyor, işliyor ve depoluyor. Şimdi bu veriyi uzaktaki ekrana taşıyan yolculuğa devam ediyoruz.',detail:'S3000i dış görünümü gerçek ürün fotoğrafından esinlenmiştir. Cihazın kendi gövdesine girilmez veya kapağı açılmaz. Kamera köşkten çıktıktan sonra servis kapıları kapanır; sahadan sonra küresel kablo çizilmez.',tag:'SCADAWATT / S3000i'},
- {short:'Dünya',eyebrow:'05 / DAHA GENİŞ BİR BAKIŞ',title:'Mesafenin ötesinde.',body:'Türkiye’deki sahadan yükseliyoruz. Dünya üzerinde tek bir kısa yay boyunca ABD’deki operatöre doğru ilerliyoruz.',detail:'Dünya sabit kalır; kamera 39° Kuzey / 35,5° Doğu ile 38° Kuzey / 97° Batı arasındaki kısa yayı izler. Bunlar ülke sınırları içindeki temsili noktalardır; gerçek müşteri veya internet rotası gösterilmez.',tag:'YÖRÜNGE / GÜNDÜZDEN GECEYE'},
- {short:'Ülke',eyebrow:'06 / GECE TARAFINDA',title:'Başka bir yerde.',body:'Gece tarafında otoyollar, yerleşimler ve bölgesel ışık ağı beliriyor. Yolculuk, operatörün bulunduğu yaşam alanına doğru daralıyor.',detail:'ABD’deki şehir ve ev temsili olarak modellenmiştir. Konum, ana kara sınırları içinde seçilmiştir; belirli bir müşterinin gerçek adresi gösterilmez.',tag:'GECE / BÖLGESEL ÖLÇEK'},
- {short:'Şehir',eyebrow:'07 / ŞEHRİN IŞIKLARI',title:'Şehre yaklaşıyoruz.',body:'Işıklı caddeler, park cepleri, araçlar ve farklı yapı ölçekleri belirginleşiyor. Aynı saha bilgisi, çok uzaktaki bir ekranda okunabilir.',detail:'Şehir, farklı yükseklikteki binalar, park alanları, araçlar ve cadde ışıklarıyla oluşturulmuş özgün bir 3B yerleşimdir.',tag:'GECE / ŞEHİR'},
- {short:'Mahalle',eyebrow:'08 / DAHA YAKINDAN',title:'Bir mahalle. Bir bina.',body:'Şehirden mahalle ölçeğine iniyoruz: yol, park, apartman ve küçük yaşam cepleri arasından aydınlık pencereye ilerliyoruz.',detail:'Yaklaşma rotası hedef binanın önündeki açık koridoru takip eder; bina içinden rastgele kesilerek geçmez.',tag:'MAHALLE / OFİS BİNASI'},
- {short:'Ev',eyebrow:'09 / OPERATÖRÜN YANINDAYIZ',title:'Saha, ekranında.',body:'Pencerenin ardında çalışan bir operatör. Kamera omzunun yanından masadaki monitöre yaklaşıyor.',detail:'İnsan, çalışma masası ve koltuk/TV içeren ev ortamı modellenmiştir. Monitördeki görüntü gönderilen gerçek ScadaWatt arayüzüdür; canlı bağlantı değildir.',tag:'ÜST KAT / OPERATÖR MASASI'},
- {short:'Ekran',eyebrow:'10 / SCADAWATT ARAYÜZÜ',title:'Artık bütününü görün.',body:'Sahaları karşılaştırın, üretim eğrilerini inceleyin. Yolculuğun sonunda gerçek ScadaWatt ekranındasınız.',detail:'Monitörde ScadaWatt genel görünümü sabit olarak gösterilir. Kamera monitöre ulaştığında yolculuk tamamlanır; aşağı kaydırarak donanımları, çözümleri ve uygulama görsellerini inceleyebilirsiniz. Bu tanıtım sahaya komut göndermez.',tag:'SCADAWATT / GERÇEK ARAYÜZ'},
+ {short:'Saha',eyebrow:'01 / ÜRETİMİN BAŞLADIĞI YER',title:"Her şey sahada başlar.",body:"Bir santralin ne kadar ürettiği kadar, ne üretmediği de önemlidir. ScadaWatt sahadaki her cihazı izleyerek bu sorunun cevabını verir.",detail:"Panellerin ürettiği enerji sahadaki eviriciler, analizörler, sayaçlar ve sensörler tarafından ölçülür. ScadaWatt'ın izleme süreci bu ölçümlerle başlar.",tag:'GÜNDÜZ / SAHA'},
+ {short:'Evirici',eyebrow:'02 / ENERJİNİN DÖNÜŞÜMÜ',title:"Eviricileriniz hep gözünüzün önünde.",body:"Panellerden gelen enerji eviricide şebekeye hazır hale gelir. ScadaWatt her eviricinin ne kadar ürettiğini, hangi durumda olduğunu ve arıza verip vermediğini sürekli izler. Gerektiğinde üretim limitini de eviriciye kendisi iletir.",detail:"ScadaWatt eviricilerle Modbus RTU/TCP ve SunSpec üzerinden haberleşir; anlık güç, üretim, durum ve arıza bilgilerini okur. MPPT-dize verisi sunan eviricilerde performans dize bazında da izlenir.",tag:'EVİRİCİ / DIŞ GÖRÜNÜM'},
+ {short:'Köşk',eyebrow:'03 / SAHANIN KONTROL NOKTASI',title:"Sahanın kontrol noktası.",body:"Evirici, analizör, sayaç, sensör... Sahadaki bütün veri kaynakları ScadaWatt ile buluşur.",detail:"Köşkteki panoda ScadaWatt veri toplama cihazı, RS485 ve Ethernet hatları üzerinden sahadaki cihazlara bağlanır. LOMR-07H şebeke izleme rölesi de bu noktada şebekeyi izler ve arıza anında tesisi korur.",tag:'KÖŞK / PANO ALANI'},
+ {short:'ScadaWatt',eyebrow:'04 / VERİNİN TOPLANDIĞI YER',title:"Veri burada toplanır.",body:"ScadaWatt farklı marka ve modeldeki cihazlarla aynı anda haberleşir. Veriyi sahada işler. İnternet bağlantısı kesilse bile kaydetmeye devam eder, bağlantı geri geldiğinde eksik kalan veriyi tamamlar.",detail:"Okunan veriler sahada işlenip kaydedilir, ardından ScadaWatt platformuna gönderilir. Zero injection, planlı yük atma ve kompanzasyon gibi kontrol senaryoları da sahadaki bu cihaz üzerinden yürütülür.",tag:'SCADAWATT / S3000i'},
+ {short:'Dünya',eyebrow:'05 / DAHA GENİŞ BİR BAKIŞ',title:"Mesafenin önemi yok.",body:"Sahadan çıkan veri, güvenli bir bağlantıyla birkaç saniye içinde ScadaWatt platformuna ulaşır.",detail:"Sahadan gelen veri platformda saklanır; saatlik ve günlük üretim, mahsuplaşma ve raporlar burada hesaplanır. OSOS sayaç verisi ve piyasa takas fiyatları (PTF) da aynı platformda birleşir.",tag:'YÖRÜNGE / GÜNDÜZDEN GECEYE'},
+ {short:'Ülke',eyebrow:'06 / GECE TARAFINDA',title:"Hangi ülkede olursanız olun.",body:"Sahanız başka bir şehirde, hatta başka bir kıtada olabilir. Mesafeler takibe engel değil.",detail:"ScadaWatt'a internet bağlantısı olan her yerden erişebilirsiniz. Sahanın bulunduğu yer ile sizin bulunduğunuz yer arasındaki mesafe izlemeyi etkilemez.",tag:'GECE / BÖLGESEL ÖLÇEK'},
+ {short:'Şehir',eyebrow:'07 / ŞEHRİN IŞIKLARI',title:"Ekibinizle aynı ekrana bakın.",body:"Yönetim, işletme ve bakım ekipleri farklı şehirlerde olsa da aynı veriyi görür. Herkes kendi yetkisi kadarına erişir, kararlar ortak bir tablo üzerinden alınır.",detail:"Kullanıcılar şirket ve saha bazında yetkilendirilir. Yatırımcı, EPC firması ve bakım ekibi aynı santrali kendi yetkileri ölçüsünde izler.",tag:'GECE / ŞEHİR'},
+ {short:'Mahalle',eyebrow:'08 / DAHA YAKINDAN',title:"Ofiste ya da yolda.",body:"ScadaWatt'a hem web panelinden hem mobil uygulamadan ulaşabilirsiniz. Bilgisayar başında olmanız gerekmez.",detail:"Web paneli ile iOS ve Android mobil uygulama aynı veriyi gösterir. Saha durumu, canlı üretim ve alarmlar her iki tarafta da görülebilir.",tag:'MAHALLE / OFİS BİNASI'},
+ {short:'Ev',eyebrow:'09 / OPERATÖRÜN YANINDAYIZ',title:"Mesai bitince de haberiniz olur.",body:"Sahada bir sorun çıktığında ScadaWatt sizi SMS ve e-postayla hemen haberdar eder. Her akşam günün üretim özeti telefonunuza gelir.",detail:"Bildirimler, tekrar eden mesajları sınırlayan kurallarla gönderilir; aynı arıza için art arda mesaj yağmaz, önemli uyarılar gözden kaçmaz.",tag:'ÜST KAT / OPERATÖR MASASI'},
+ {short:'Ekran',eyebrow:'10 / SCADAWATT ARAYÜZÜ',title:"Bütün tablo önünüzde.",body:"Sahalarınızı karşılaştırın, üretim eğrilerini inceleyin, kayıpları erkenden fark edin. Yolculuğun sonunda gördüğünüz ekran, ScadaWatt'ın kendisi.",detail:"Monitörde gördüğünüz, ScadaWatt'ın gerçek genel görünüm ekranıdır. Aşağı kaydırarak donanımları, çözümleri ve uygulama ekranlarını inceleyebilirsiniz.",tag:'SCADAWATT / GERÇEK ARAYÜZ'},
 ] as const;
 
 /** Editorial selection uses supplied, existing application views; no fabricated live metrics. */
@@ -376,11 +378,11 @@ export const applicationStories:ApplicationStory[]=[
 ];
 
 export const aboutCompany={
- headline:'Akıllı enerji yönetimiyle mükemmel çözümler sunuyoruz.',
+ headline:"Santralinizi uzaktan, eksiksiz ve doğru veriyle yönetin.",
  introduction:'ScadaWatt, güneş enerji santralleriniz için uzaktan izleme ve kontrol sistemleri geliştiren elektronik temelli bir yazılım ve AR-GE şirketidir.',
- experience:'Markamızın çıkış ürünü olan ScadaWatt izleme otomasyonu, güneş enerjisi sektöründe kazandığımız tecrübeyi somut çözümlere dönüştürmektedir.',
- tailored:'Ek modüllerimiz sayesinde müşterilerimizin özel ihtiyaçlarını ürüne dönüştürerek, tamamen kişiselleştirilmiş çözümler sunuyoruz.',
- invitation:'ScadaWatt ekosisteminde yerinizi alarak, santrallerinizde enerji yönetimini en üst seviyeye taşımaya hazır mısınız?',
+ experience:"Markamızın ilk ürünü olan ScadaWatt izleme sistemi, güneş enerjisi sahalarında edindiğimiz deneyimin ürünüdür.",
+ tailored:"Müşterilerimizin özel ihtiyaçlarını ek modüllerle ürüne dönüştürüyor, sahaya özel çözümler geliştiriyoruz.",
+ invitation:"Santrallerinizi ScadaWatt ile izlemeye hazır mısınız? Sahanızı ve ihtiyacınızı konuşmak için bize ulaşın.",
  image:'/assets/about-mobile.png',
  pillars:[
   {title:'Yazılım',body:'Sahadan gelen verileri izleme, analiz ve raporlama ekranlarında bir araya getiriyoruz.'},
@@ -391,8 +393,8 @@ export const aboutCompany={
 
 /** Server-authorised content is applied once, before routes load. Geometry is untouched. */
 export function applyRuntimeFields(entries:{path?:string[];tr:string|boolean}[]){
- const roots:Record<string,unknown>={images,contact,fieldJourney,aboutPoints,solutions,products,plans,comparison,nav,productSpecifications,screenGallery,solutionPresentation,discoveryGoals,applicationStories,aboutCompany};
- for(const entry of entries){const path=entry.path;if(!path?.length||path.some(k=>['__proto__','prototype','constructor'].includes(k)))continue;
+ const roots:Record<string,unknown>={communityContent,configuratorContent,images,contact,fieldJourney,aboutPoints,solutions,products,plans,comparison,nav,productSpecifications,screenGallery,solutionPresentation,discoveryGoals,applicationStories,aboutCompany};
+ for(const entry of entries){const path=entry.path;if(!path?.length||path.some(k=>[{},'prototype',undefined].includes(k)))continue;
   if(path.length===1){if(path[0]==='slogan')slogan=String(entry.tr);if(path[0]==='vision')vision=String(entry.tr);continue}
   let current=roots[path[0]!] as Record<string,unknown>|undefined;
   for(const part of path.slice(1,-1)){current=current?.[part] as Record<string,unknown>|undefined}
@@ -401,6 +403,6 @@ export function applyRuntimeFields(entries:{path?:string[];tr:string|boolean}[])
 }
 
 /** Preserve exported root identities while replacing device-specific content on resize. */
-const runtimeRoots={images,contact,fieldJourney,aboutPoints,solutions,products,plans,comparison,nav,productSpecifications,screenGallery,solutionPresentation,discoveryGoals,applicationStories,aboutCompany};
+const runtimeRoots={communityContent,configuratorContent,images,contact,fieldJourney,aboutPoints,solutions,products,plans,comparison,nav,productSpecifications,screenGallery,solutionPresentation,discoveryGoals,applicationStories,aboutCompany};
 const initialRuntime=structuredClone(runtimeRoots),initialSlogan=slogan,initialVision=vision;
 export function resetRuntimeContent(){for(const [key,target] of Object.entries(runtimeRoots)){const source=structuredClone(initialRuntime[key as keyof typeof initialRuntime]);if(Array.isArray(target))(target as unknown[]).splice(0,target.length,...source as unknown[]);else{for(const name of Object.keys(target))delete (target as Record<string,unknown>)[name];Object.assign(target,source)}}slogan=initialSlogan;vision=initialVision;}

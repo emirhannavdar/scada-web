@@ -1,3 +1,4 @@
+import {OrderedPageSections} from '@/components/site/OrderedPageSections';
 import {CmsImage} from '@/components/site/CmsImage';
 import {translate as _tx,useLocale as _useLocale} from '@/lib/i18n';
 import { createFileRoute, Link } from "@tanstack/react-router";
@@ -8,13 +9,13 @@ import { Reveal } from "@/components/site/Reveal";
 import { products } from "@/content/site";
 import { seo } from "@/lib/seo";
 export const Route = createFileRoute("/urunler/")({
-    head: () => seo("Ürünler", "ScadaWatt S3000i veri toplama cihazı, S4000MC çok amaçlı kontrol cihazı ve LOMR-07H şebeke arıza rölesi."),
+    head: () => seo("Ürünler", "ScadaWatt S3000i veri toplama cihazı, S4000MC çok amaçlı kontrol cihazı ve LOMR-07H şebeke izleme rölesi."),
     component: ProductsPage,
 });
 function ProductsPage() {
     _useLocale();
     return (<>
-      <PageHero eyebrow={_tx("\u00DCr\u00FCnler")} title={_tx("Sahada \u00E7al\u0131\u015Fan donan\u0131m.")} lead={_tx("T\u00FCm ScadaWatt cihazlar\u0131 \u00F6m\u00FCr boyu yaz\u0131l\u0131m g\u00FCncellemesiyle gelir.")}/>
+      <PageHero eyebrow={_tx("\u00DCr\u00FCnler")} title={_tx("Sahada \u00E7al\u0131\u015Fan donan\u0131m.")} lead={_tx("T\u00FCm ScadaWatt cihazlar\u0131 \u00F6m\u00FCr boyu yaz\u0131l\u0131m g\u00FCncellemesiyle gelir.")}/><OrderedPageSections path="/urunler">
       <section data-cms-collection="products" className="py-24">
         <div className="mx-auto grid max-w-7xl gap-6 px-6 md:grid-cols-2 lg:grid-cols-3">
           {_tx(products.map((p, i) => (<Reveal key={p.slug} delay={i * 0.1}>
@@ -36,5 +37,5 @@ function ProductsPage() {
             </Reveal>)))}
         </div>
       </section>
-    </>);
+    </OrderedPageSections></>);
 }

@@ -1,0 +1,1587 @@
+{
+  "changes": [
+    {
+      "id": "data.fieldJourney.0.detail",
+      "old": {
+        "tr": "Saha ve çevre yapıları, gönderilen fotoğraftan ilhamla modellenmiştir. Birebir tesis veya coğrafi konum iddiası yoktur.",
+        "en": "The site and surrounding structures are modelled with inspiration from the supplied photograph. They do not claim to reproduce an actual installation or geographic location."
+      },
+      "value": {
+        "tr": "Panellerin ürettiği enerji sahadaki eviriciler, analizörler, sayaçlar ve sensörler tarafından ölçülür. ScadaWatt'ın izleme süreci bu ölçümlerle başlar.",
+        "en": "The energy produced by the panels is measured by inverters, analysers, meters and sensors on site. ScadaWatt's monitoring starts with these measurements."
+      }
+    },
+    {
+      "id": "data.fieldJourney.0.body",
+      "old": {
+        "tr": "Sahaya doğru alçalıyoruz. Panel sıralarının hemen üzerinden geçiyor, aşağıdaki çalışan ekibi ve toprak yolları izleyerek eviriciye ilerliyoruz.",
+        "en": "We descend towards the site, passing just above the panel rows and following the field team and service roads towards the inverter."
+      },
+      "value": {
+        "tr": "Bir santralin ne kadar ürettiği kadar, ne üretmediği de önemlidir. ScadaWatt sahadaki her cihazı izleyerek bu sorunun cevabını verir.",
+        "en": "What a plant doesn't generate matters as much as what it does. ScadaWatt monitors every device on site to answer that question."
+      }
+    },
+    {
+      "id": "data.fieldJourney.0.title",
+      "old": {
+        "tr": "Verinin izinden.",
+        "en": "Verinin izinden."
+      },
+      "value": {
+        "tr": "Her şey sahada başlar.",
+        "en": "It all starts in the field."
+      }
+    },
+    {
+      "id": "data.fieldJourney.9.detail",
+      "old": {
+        "tr": "Monitörde ScadaWatt genel görünümü sabit olarak gösterilir. Kamera monitöre ulaştığında yolculuk tamamlanır; aşağı kaydırarak donanımları, çözümleri ve uygulama görsellerini inceleyebilirsiniz. Bu tanıtım sahaya komut göndermez.",
+        "en": "The monitor displays the ScadaWatt overview as a fixed image. The journey ends when the camera reaches the monitor; scroll down to explore hardware, solutions and application images. This presentation sends no commands to field devices."
+      },
+      "value": {
+        "tr": "Monitörde gördüğünüz, ScadaWatt'ın gerçek genel görünüm ekranıdır. Aşağı kaydırarak donanımları, çözümleri ve uygulama ekranlarını inceleyebilirsiniz.",
+        "en": "The monitor shows the actual ScadaWatt overview screen. Scroll down to explore the hardware, solutions and application screens."
+      }
+    },
+    {
+      "id": "data.fieldJourney.9.body",
+      "old": {
+        "tr": "Sahaları karşılaştırın, üretim eğrilerini inceleyin. Yolculuğun sonunda gerçek ScadaWatt ekranındasınız.",
+        "en": "Compare sites and examine generation curves. At the end of the journey, you’re looking at actual ScadaWatt screens."
+      },
+      "value": {
+        "tr": "Sahalarınızı karşılaştırın, üretim eğrilerini inceleyin, kayıpları erkenden fark edin. Yolculuğun sonunda gördüğünüz ekran, ScadaWatt'ın kendisi.",
+        "en": "Compare your sites, examine generation curves and spot losses early. The screen at the end of the journey is ScadaWatt itself."
+      }
+    },
+    {
+      "id": "data.fieldJourney.9.title",
+      "old": {
+        "tr": "Artık bütününü görün.",
+        "en": "See the complete picture."
+      },
+      "value": {
+        "tr": "Bütün tablo önünüzde.",
+        "en": "The full picture, in front of you."
+      }
+    },
+    {
+      "id": "data.fieldJourney.1.detail",
+      "old": {
+        "tr": "Evirici dışarıdan gösterilir. Kamera gövdeye girmez; kapak açılmaz.",
+        "en": "The inverter is shown from the outside. The camera does not enter the enclosure, and the cover stays closed."
+      },
+      "value": {
+        "tr": "ScadaWatt eviricilerle Modbus RTU/TCP ve SunSpec üzerinden haberleşir; anlık güç, üretim, durum ve arıza bilgilerini okur. MPPT-dize verisi sunan eviricilerde performans dize bazında da izlenir.",
+        "en": "ScadaWatt communicates with inverters over Modbus RTU/TCP and SunSpec, reading real-time power, generation, status and fault data. Where inverters provide MPPT/string data, performance is also tracked string by string."
+      }
+    },
+    {
+      "id": "data.fieldJourney.1.body",
+      "old": {
+        "tr": "Panellerin ürettiği doğru akım, eviricide alternatif akıma dönüştürülür. Ölçümler, üretimi anlamanın kaynaklarından biridir.",
+        "en": "The direct current produced by the panels is converted into alternating current by the inverter. Measurements help explain how the plant is generating energy."
+      },
+      "value": {
+        "tr": "Panellerden gelen enerji eviricide şebekeye hazır hale gelir. ScadaWatt her eviricinin ne kadar ürettiğini, hangi durumda olduğunu ve arıza verip vermediğini sürekli izler. Gerektiğinde üretim limitini de eviriciye kendisi iletir.",
+        "en": "Energy from the panels is made grid-ready in the inverter. ScadaWatt continuously tracks how much each inverter generates, its operating status and any faults. When needed, it also sends the generation limit to the inverter itself."
+      }
+    },
+    {
+      "id": "data.fieldJourney.1.title",
+      "old": {
+        "tr": "Eviricinin yanındayız.",
+        "en": "Alongside the inverter."
+      },
+      "value": {
+        "tr": "Eviricileriniz hep gözünüzün önünde.",
+        "en": "Your inverters, always in view."
+      }
+    },
+    {
+      "id": "data.fieldJourney.2.detail",
+      "old": {
+        "tr": "Köşk referans fotoğraflarındaki gövde, çatı saçağı, metal kapılar ve havalandırma detaylarından esinlenerek modellenmiştir. Evirici ziyareti sonrasında kamera doğrudan köşke yönelir. Sahnenin bu bölümünde evirici ile köşk arasında kablo gösterilmez.",
+        "en": "The kiosk takes inspiration from the enclosure, roof overhang, metal doors and ventilation details in the reference photographs. After the inverter, the camera moves directly to the kiosk. No cable is shown between them in this part of the scene."
+      },
+      "value": {
+        "tr": "Köşkteki panoda ScadaWatt veri toplama cihazı, RS485 ve Ethernet hatları üzerinden sahadaki cihazlara bağlanır. LOMR-07H şebeke izleme rölesi de bu noktada şebekeyi izler ve arıza anında tesisi korur.",
+        "en": "In the kiosk panel, the ScadaWatt data acquisition device connects to field devices over RS485 and Ethernet. The LOMR-07H grid monitoring relay also sits here, watching the grid and protecting the plant when a fault occurs."
+      }
+    },
+    {
+      "id": "data.fieldJourney.2.body",
+      "old": {
+        "tr": "Paneller arasındaki toprak yolda yer alan köşke yaklaşıyoruz. Önce yapıyı dışarıdan görüyor, ardından açılan servis kapılarından pano alanına ilerliyoruz.",
+        "en": "We approach the kiosk on the service road between the panel arrays. First we see the exterior, then move through the opening service doors towards the control panel."
+      },
+      "value": {
+        "tr": "Evirici, analizör, sayaç, sensör... Sahadaki bütün veri kaynakları ScadaWatt ile buluşur.",
+        "en": "Inverters, analysers, meters, sensors... Every data source on site comes together in ScadaWatt."
+      }
+    },
+    {
+      "id": "data.fieldJourney.2.title",
+      "old": {
+        "tr": "Köşke ilerliyoruz.",
+        "en": "Approaching the kiosk."
+      },
+      "value": {
+        "tr": "Sahanın kontrol noktası.",
+        "en": "The site's control point."
+      }
+    },
+    {
+      "id": "data.fieldJourney.3.detail",
+      "old": {
+        "tr": "S3000i dış görünümü gerçek ürün fotoğrafından esinlenmiştir. Cihazın kendi gövdesine girilmez veya kapağı açılmaz. Kamera köşkten çıktıktan sonra servis kapıları kapanır; sahadan sonra küresel kablo çizilmez.",
+        "en": "The S3000i exterior is inspired by the actual product photograph. The camera does not enter the device or open its cover. The kiosk doors close as the camera leaves; no global cable is shown after the site."
+      },
+      "value": {
+        "tr": "Okunan veriler sahada işlenip kaydedilir, ardından ScadaWatt platformuna gönderilir. Zero injection, planlı yük atma ve kompanzasyon gibi kontrol senaryoları da sahadaki bu cihaz üzerinden yürütülür.",
+        "en": "Data is processed and stored on site, then sent to the ScadaWatt platform. Control scenarios such as zero injection, scheduled load shedding and power factor correction also run on this device."
+      }
+    },
+    {
+      "id": "data.fieldJourney.3.body",
+      "old": {
+        "tr": "S3000i, köşkün içindeki panoda yer alıyor. Farklı kaynaklardan gelen verileri topluyor, işliyor ve depoluyor. Şimdi bu veriyi uzaktaki ekrana taşıyan yolculuğa devam ediyoruz.",
+        "en": "S3000i sits inside the kiosk’s control panel, collecting, processing and storing data from different sources. We now follow the journey that brings this data to a remote screen."
+      },
+      "value": {
+        "tr": "ScadaWatt farklı marka ve modeldeki cihazlarla aynı anda haberleşir. Veriyi sahada işler. İnternet bağlantısı kesilse bile kaydetmeye devam eder, bağlantı geri geldiğinde eksik kalan veriyi tamamlar.",
+        "en": "ScadaWatt communicates with devices of different brands and models at the same time and processes data on site. If the internet connection drops, it keeps recording and fills in the gaps once the connection is restored."
+      }
+    },
+    {
+      "id": "data.fieldJourney.3.title",
+      "old": {
+        "tr": "Panonun içindeki teknoloji.",
+        "en": "Technology inside the panel."
+      },
+      "value": {
+        "tr": "Veri burada toplanır.",
+        "en": "This is where data comes together."
+      }
+    },
+    {
+      "id": "data.fieldJourney.4.detail",
+      "old": {
+        "tr": "Dünya sabit kalır; kamera 39° Kuzey / 35,5° Doğu ile 38° Kuzey / 97° Batı arasındaki kısa yayı izler. Bunlar ülke sınırları içindeki temsili noktalardır; gerçek müşteri veya internet rotası gösterilmez.",
+        "en": "The Earth remains still as the camera follows the short arc between 39° N / 35.5° E and 38° N / 97° W. These are representative points within each country, not an actual customer location or internet route."
+      },
+      "value": {
+        "tr": "Sahadan gelen veri platformda saklanır; saatlik ve günlük üretim, mahsuplaşma ve raporlar burada hesaplanır. OSOS sayaç verisi ve piyasa takas fiyatları (PTF) da aynı platformda birleşir.",
+        "en": "Field data is stored on the platform, where hourly and daily generation, net-metering settlement and reports are calculated. OSOS meter data and market clearing prices (PTF) are brought together on the same platform."
+      }
+    },
+    {
+      "id": "data.fieldJourney.4.body",
+      "old": {
+        "tr": "Türkiye’deki sahadan yükseliyoruz. Dünya üzerinde tek bir kısa yay boyunca ABD’deki operatöre doğru ilerliyoruz.",
+        "en": "We rise above the site in Türkiye and follow a single short arc across the globe towards an operator in the USA."
+      },
+      "value": {
+        "tr": "Sahadan çıkan veri, güvenli bir bağlantıyla birkaç saniye içinde ScadaWatt platformuna ulaşır.",
+        "en": "Data leaving the site reaches the ScadaWatt platform over a secure connection within seconds."
+      }
+    },
+    {
+      "id": "data.fieldJourney.4.title",
+      "old": {
+        "tr": "Mesafenin ötesinde.",
+        "en": "Beyond distance."
+      },
+      "value": {
+        "tr": "Mesafenin önemi yok.",
+        "en": "Distance doesn't matter."
+      }
+    },
+    {
+      "id": "data.fieldJourney.5.detail",
+      "old": {
+        "tr": "ABD’deki şehir ve ev temsili olarak modellenmiştir. Konum, ana kara sınırları içinde seçilmiştir; belirli bir müşterinin gerçek adresi gösterilmez.",
+        "en": "The US city and home are representative models. The location lies within the contiguous United States and does not identify an actual customer address."
+      },
+      "value": {
+        "tr": "ScadaWatt'a internet bağlantısı olan her yerden erişebilirsiniz. Sahanın bulunduğu yer ile sizin bulunduğunuz yer arasındaki mesafe izlemeyi etkilemez.",
+        "en": "ScadaWatt can be accessed from anywhere with an internet connection. The distance between you and your site makes no difference to monitoring."
+      }
+    },
+    {
+      "id": "data.fieldJourney.5.body",
+      "old": {
+        "tr": "Gece tarafında otoyollar, yerleşimler ve bölgesel ışık ağı beliriyor. Yolculuk, operatörün bulunduğu yaşam alanına doğru daralıyor.",
+        "en": "Highways, settlements and regional lights emerge on the night side. The journey narrows towards the operator’s neighbourhood."
+      },
+      "value": {
+        "tr": "Sahanız başka bir şehirde, hatta başka bir kıtada olabilir. Mesafeler takibe engel değil.",
+        "en": "Your site may be in another city, or even on another continent. Distance is no barrier to monitoring."
+      }
+    },
+    {
+      "id": "data.fieldJourney.5.title",
+      "old": {
+        "tr": "Başka bir yerde.",
+        "en": "Somewhere else."
+      },
+      "value": {
+        "tr": "Hangi ülkede olursanız olun.",
+        "en": "Wherever you are in the world."
+      }
+    },
+    {
+      "id": "data.fieldJourney.6.detail",
+      "old": {
+        "tr": "Şehir, farklı yükseklikteki binalar, park alanları, araçlar ve cadde ışıklarıyla oluşturulmuş özgün bir 3B yerleşimdir.",
+        "en": "The city is an original 3D environment, with buildings of varying heights, parks, vehicles and street lighting."
+      },
+      "value": {
+        "tr": "Kullanıcılar şirket ve saha bazında yetkilendirilir. Yatırımcı, EPC firması ve bakım ekibi aynı santrali kendi yetkileri ölçüsünde izler.",
+        "en": "Users are authorised by company and by site. Investors, EPC contractors and maintenance teams monitor the same plant within the limits of their own permissions."
+      }
+    },
+    {
+      "id": "data.fieldJourney.6.body",
+      "old": {
+        "tr": "Işıklı caddeler, park cepleri, araçlar ve farklı yapı ölçekleri belirginleşiyor. Aynı saha bilgisi, çok uzaktaki bir ekranda okunabilir.",
+        "en": "Illuminated streets, pocket parks, vehicles and buildings of different scales come into view. The same field data can be read on a screen far away."
+      },
+      "value": {
+        "tr": "Yönetim, işletme ve bakım ekipleri farklı şehirlerde olsa da aynı veriyi görür. Herkes kendi yetkisi kadarına erişir, kararlar ortak bir tablo üzerinden alınır.",
+        "en": "Management, operations and maintenance teams see the same data, even from different cities. Everyone accesses what their role allows, and decisions are made from a shared picture."
+      }
+    },
+    {
+      "id": "data.fieldJourney.6.title",
+      "old": {
+        "tr": "Şehre yaklaşıyoruz.",
+        "en": "Approaching the city."
+      },
+      "value": {
+        "tr": "Ekibinizle aynı ekrana bakın.",
+        "en": "Look at the same screen as your team."
+      }
+    },
+    {
+      "id": "data.fieldJourney.7.detail",
+      "old": {
+        "tr": "Yaklaşma rotası hedef binanın önündeki açık koridoru takip eder; bina içinden rastgele kesilerek geçmez.",
+        "en": "The approach follows the clear corridor in front of the target building, rather than cutting through buildings at random."
+      },
+      "value": {
+        "tr": "Web paneli ile iOS ve Android mobil uygulama aynı veriyi gösterir. Saha durumu, canlı üretim ve alarmlar her iki tarafta da görülebilir.",
+        "en": "The web platform and the iOS and Android apps show the same data. Site status, live generation and alarms are available on both."
+      }
+    },
+    {
+      "id": "data.fieldJourney.7.body",
+      "old": {
+        "tr": "Şehirden mahalle ölçeğine iniyoruz: yol, park, apartman ve küçük yaşam cepleri arasından aydınlık pencereye ilerliyoruz.",
+        "en": "We descend from the city into the neighbourhood, following roads, parks and residential buildings towards the illuminated window."
+      },
+      "value": {
+        "tr": "ScadaWatt'a hem web panelinden hem mobil uygulamadan ulaşabilirsiniz. Bilgisayar başında olmanız gerekmez.",
+        "en": "Access ScadaWatt from the web platform or the mobile app. You don't need to be at a desk."
+      }
+    },
+    {
+      "id": "data.fieldJourney.7.title",
+      "old": {
+        "tr": "Bir mahalle. Bir bina.",
+        "en": "Bir mahalle. Bir bina."
+      },
+      "value": {
+        "tr": "Ofiste ya da yolda.",
+        "en": "At the office or on the move."
+      }
+    },
+    {
+      "id": "data.fieldJourney.8.detail",
+      "old": {
+        "tr": "İnsan, çalışma masası ve koltuk/TV içeren ev ortamı modellenmiştir. Monitördeki görüntü gönderilen gerçek ScadaWatt arayüzüdür; canlı bağlantı değildir.",
+        "en": "The operator, desk and home setting with a sofa and TV are modelled. The monitor displays the supplied ScadaWatt interface image, not a live connection."
+      },
+      "value": {
+        "tr": "Bildirimler, tekrar eden mesajları sınırlayan kurallarla gönderilir; aynı arıza için art arda mesaj yağmaz, önemli uyarılar gözden kaçmaz.",
+        "en": "Notifications follow rules that limit repeat messages, so you are not flooded by the same fault and important alerts stand out."
+      }
+    },
+    {
+      "id": "data.fieldJourney.8.body",
+      "old": {
+        "tr": "Pencerenin ardında çalışan bir operatör. Kamera omzunun yanından masadaki monitöre yaklaşıyor.",
+        "en": "An operator is working beyond the window. The camera approaches the desk monitor from beside their shoulder."
+      },
+      "value": {
+        "tr": "Sahada bir sorun çıktığında ScadaWatt sizi SMS ve e-postayla hemen haberdar eder. Her akşam günün üretim özeti telefonunuza gelir.",
+        "en": "If a problem occurs on site, ScadaWatt notifies you immediately by SMS and email. Every evening, a summary of the day's generation arrives on your phone."
+      }
+    },
+    {
+      "id": "data.fieldJourney.8.title",
+      "old": {
+        "tr": "Saha, ekranında.",
+        "en": "The field, on screen."
+      },
+      "value": {
+        "tr": "Mesai bitince de haberiniz olur.",
+        "en": "You stay informed after hours."
+      }
+    },
+    {
+      "id": "copy.8b2160b866e78acf",
+      "old": {
+        "tr": "Enerji verisini anlamlandırın. Cihazlarınızı izleyin. İşletmenizin ihtiyacına uygun izleme ve kontrol kapsamını keşfedin.",
+        "en": "Turn energy data into insight. Monitor your devices. Explore monitoring and control options tailored to your operations."
+      },
+      "value": {
+        "tr": "Sahadaki her cihazı izleyin, veriyi anlamlı bilgiye dönüştürün. İşletmenize uygun izleme ve kontrol kapsamını birlikte belirleyelim.",
+        "en": "Monitor every device on site and turn data into insight. Let's define the right monitoring and control scope for your operations together."
+      }
+    },
+    {
+      "id": "copy.cc02e7dc1a85c579",
+      "old": {
+        "tr": "Sistem yükleniyor...",
+        "en": "Sistem yükleniyor..."
+      },
+      "value": {
+        "tr": "Sistem yükleniyor...",
+        "en": "Loading system..."
+      }
+    },
+    {
+      "id": "copy.5dc80f6117ee88ae",
+      "old": {
+        "tr": "ScadaWatt: sahadaki ölçümden yazılım ekranına veri toplama, SCADA ve enerji yönetimi teknolojileri.",
+        "en": "ScadaWatt: data acquisition, SCADA and energy management technologies connecting field measurements with software."
+      },
+      "value": {
+        "tr": "ScadaWatt: güneş enerji santralleri için uzaktan izleme, SCADA, veri toplama ve enerji yönetimi çözümleri.",
+        "en": "ScadaWatt: remote monitoring, SCADA, data acquisition and energy management solutions for solar power plants."
+      }
+    },
+    {
+      "id": "data.screenGallery.4.text",
+      "old": {
+        "tr": "Aktif ve geçmiş alarmları birlikte görün. Bir uyarıyı anlamak için olayın zamanı, kaynağı ve durumu birlikte değerlendirilir.",
+        "en": "Review active and historical alarms together. Understanding an alert means considering its time, source and status."
+      },
+      "value": {
+        "tr": "Aktif ve geçmiş alarmları tek listede görün. Her alarmın ne zaman başladığı, hangi cihazdan geldiği ve ne zaman kapandığı kayıt altındadır.",
+        "en": "See active and past alarms in one list. When each alarm started, which device raised it and when it cleared are all recorded."
+      }
+    },
+    {
+      "id": "data.screenGallery.8.text",
+      "old": {
+        "tr": "Farklı bölgelerdeki sahaları bir araya getiren gerçek ScadaWatt ekranı. Görseldeki değerler çekim anına aittir.",
+        "en": "An actual ScadaWatt screen bringing together sites across regions. Values reflect the time of capture."
+      },
+      "value": {
+        "tr": "Farklı bölgelerdeki sahalarınızı tek ekranda toplayın. Görseldeki değerler ekran görüntüsünün alındığı ana aittir.",
+        "en": "Bring sites from different regions together on one screen. Values shown reflect the moment the screenshot was taken."
+      }
+    },
+    {
+      "id": "data.screenGallery.1.text",
+      "old": {
+        "tr": "Sahaların haberleşme ve durum bilgilerini birlikte inceleyin. Bu görüntü, gönderilen uygulama ekranının sabit bir kaydıdır.",
+        "en": "Review site communication and status together. This image is a static capture of the supplied application screen."
+      },
+      "value": {
+        "tr": "Tüm sahaların haberleşme ve çalışma durumunu tek ekranda izleyin. Bağlantısı kopan ya da arıza veren saha hemen öne çıkar.",
+        "en": "Monitor the communication and operating status of every site on one screen. Sites that lose connection or report a fault stand out immediately."
+      }
+    },
+    {
+      "id": "data.screenGallery.2.text",
+      "old": {
+        "tr": "Toplam üretimin kaynağına inin. Eviricileri ayrı ayrı görmek, saha seviyesindeki bilgiyi cihaz seviyesinde okumayı sağlar.",
+        "en": "See where total generation comes from. Viewing individual inverters takes you from site-level insight to device-level detail."
+      },
+      "value": {
+        "tr": "Saha üretiminin kaynağına inin. Her eviricinin gücünü, durumunu ve üretimini ayrı ayrı görün.",
+        "en": "Drill down to the source of site generation. See the power, status and output of each inverter individually."
+      }
+    },
+    {
+      "id": "data.screenGallery.3.text",
+      "old": {
+        "tr": "Üretim kayıtlarını dönemlere göre inceleyin. Anlık güç ile zaman içinde biriken enerji farklı büyüklüklerdir.",
+        "en": "Review generation records by period. Instantaneous power and accumulated energy are different quantities."
+      },
+      "value": {
+        "tr": "Üretim kayıtlarını gün, ay ve yıl bazında inceleyin; dönemleri ve sahaları karşılaştırın.",
+        "en": "Review generation by day, month and year, and compare periods and sites."
+      }
+    },
+    {
+      "id": "copy.7a51dfe26ca90faf",
+      "old": {
+        "tr": "GES uzaktan izleme, limit yönetimi, kompanzasyon, Zero Injection, planlı üretim durdurma ve anlık bildirim çözümleri.",
+        "en": "Remote solar PV monitoring, limit management, power factor correction, Zero Injection, scheduled generation curtailment and real-time notifications."
+      },
+      "value": {
+        "tr": "GES uzaktan izleme, limit yönetimi, kompanzasyon, zero injection, planlı yük atma, saatlik mahsuplaşma takibi ve anlık bildirim çözümleri.",
+        "en": "Remote solar PV monitoring, limit management, power factor correction, zero injection, scheduled load shedding, hourly net-metering tracking and real-time notifications."
+      }
+    },
+    {
+      "id": "data.solutions.0.body.0",
+      "old": {
+        "tr": "ScadaWatt, ölçüm verilerini izleme, raporlama ve kontrol ihtiyaçlarıyla bir araya getirir. Üretim ve tüketim görünürlüğü, limit takibi ve reaktif güç değerlendirmesi enerji yönetiminin farklı parçalarıdır.",
+        "en": "ScadaWatt connects measurement data with monitoring, reporting and control requirements. Visibility into generation and consumption, limit monitoring and reactive power analysis all contribute to energy management."
+      },
+      "value": {
+        "tr": "ScadaWatt üretim, tüketim, limit ve reaktif güç verilerini aynı platformda toplar. OSOS sayaç verisi, saatlik mahsuplaşma takibi ve piyasa takas fiyatlarıyla (PTF) enerjinin hem teknik hem ticari tarafını birlikte görürsünüz.",
+        "en": "ScadaWatt brings generation, consumption, limit and reactive power data together on one platform. With OSOS meter data, hourly net-metering tracking and market clearing prices (PTF), you see both the technical and commercial side of your energy."
+      }
+    },
+    {
+      "id": "data.solutions.0.body.1",
+      "old": {
+        "tr": "Uygulanacak kapsam, saha cihazları ve seçilen hizmetlere göre birlikte değerlendirilir.",
+        "en": "The scope is assessed together, based on field devices and the selected services."
+      },
+      "value": {
+        "tr": "Saatlik mahsuplaşma takibi sunan altyapımız, 15 dakikalık uzlaştırma dönemine geçişe uygun şekilde hazırlanmaktadır.",
+        "en": "Our hourly net-metering infrastructure is being prepared for the transition to 15-minute settlement periods."
+      }
+    },
+    {
+      "id": "data.solutions.5.body.0",
+      "old": {
+        "tr": "Reaktif güç değerleri sürekli izlenir. Limit aşımlarında ScadaWatt kompanzasyon sistemini kontrol ederek ceza risklerinin oluşmasını engeller.",
+        "en": "ScadaWatt continuously monitors reactive power and controls the power factor correction system when limits are exceeded, helping prevent penalty risks."
+      },
+      "value": {
+        "tr": "Reaktif güç değerleri sürekli izlenir. Limit aşımlarında ScadaWatt kompanzasyon sistemini kontrol ederek reaktif ceza riskini azaltır.",
+        "en": "Reactive power is monitored continuously. When limits are exceeded, ScadaWatt controls the power factor correction system to reduce the risk of reactive penalties."
+      }
+    },
+    {
+      "id": "data.solutions.5.body.1",
+      "old": {
+        "tr": "Saatlik veriler üzerinden fatura doğrulaması yapılarak hatalı faturaların önüne geçilir.",
+        "en": "Electricity bills are checked against hourly data to help detect billing errors."
+      },
+      "value": {
+        "tr": "Saatlik veriler üzerinden fatura doğrulaması yapılır; hatalı faturalar kolayca fark edilir.",
+        "en": "Bills are checked against hourly data, making billing errors easy to spot."
+      }
+    },
+    {
+      "id": "data.solutions.4.short",
+      "old": {
+        "tr": "Evirici ve saha limitlerini anlık takip edin, ceza risklerini ortadan kaldırın.",
+        "en": "Monitor inverter and site limits in real time and reduce the risk of penalties."
+      },
+      "value": {
+        "tr": "Evirici ve saha limitlerini anlık takip edin, ceza riskini azaltın.",
+        "en": "Monitor inverter and site limits in real time and reduce the risk of penalties."
+      }
+    },
+    {
+      "id": "data.solutions.7.body.0",
+      "old": {
+        "tr": "Planlı üretim durdurma modülü ile yük atma süreçleri otonom hale gelir; talimatlar manuel müdahaleye gerek kalmadan sahaya uygulanır.",
+        "en": "The scheduled generation curtailment module automates load shedding, applying instructions to the site without manual intervention."
+      },
+      "value": {
+        "tr": "Planlı yük atma talimatları ScadaWatt üzerinden tanımlanır ve belirlenen saatte sahaya otomatik uygulanır; ekibin sahaya gitmesine gerek kalmaz.",
+        "en": "Scheduled load-shedding instructions are defined in ScadaWatt and applied to the site automatically at the set time, with no need to send a team on site."
+      }
+    },
+    {
+      "id": "data.solutions.7.body.1",
+      "old": {
+        "tr": "PRO pakette acil durdurma eylemi ve sahaya fiziksel müdahale imkânı da bulunur.",
+        "en": "PRO also includes emergency shutdown and physical site intervention capabilities."
+      },
+      "value": {
+        "tr": "PRO pakette acil durdurma eylemi ve hücrenin uzaktan açılıp kapatılması da bulunur.",
+        "en": "PRO also includes emergency shutdown and remote opening and closing of the switchgear cell."
+      }
+    },
+    {
+      "id": "data.solutions.7.points.0",
+      "old": {
+        "tr": "Otonom yük atma",
+        "en": "Autonomous load shedding"
+      },
+      "value": {
+        "tr": "Otomatik yük atma",
+        "en": "Automatic load shedding"
+      }
+    },
+    {
+      "id": "data.solutions.7.points.1",
+      "old": {
+        "tr": "Acil durdurma eylemi (PRO)",
+        "en": "Acil durdurma eylemi (PRO)"
+      },
+      "value": {
+        "tr": "Acil durdurma eylemi (PRO)",
+        "en": "Emergency shutdown (PRO)"
+      }
+    },
+    {
+      "id": "data.solutions.7.points.2",
+      "old": {
+        "tr": "Sahaya fiziksel müdahale (PRO)",
+        "en": "Physical site intervention (PRO)"
+      },
+      "value": {
+        "tr": "Uzaktan hücre açma / kapama (PRO)",
+        "en": "Remote switchgear cell open / close (PRO)"
+      }
+    },
+    {
+      "id": "data.solutions.7.short",
+      "old": {
+        "tr": "Yük atma süreçlerini otonom hale getirin.",
+        "en": "Automate load-shedding processes."
+      },
+      "value": {
+        "tr": "Planlı yük atma talimatlarını sahaya otomatik uygulayın.",
+        "en": "Apply scheduled load-shedding instructions to the site automatically."
+      }
+    },
+    {
+      "id": "data.solutions.7.title",
+      "old": {
+        "tr": "Planlı Üretim Durdurma",
+        "en": "Scheduled Generation Curtailment"
+      },
+      "value": {
+        "tr": "Planlı Yük Atma",
+        "en": "Scheduled Load Shedding"
+      }
+    },
+    {
+      "id": "data.solutions.1.body.0",
+      "old": {
+        "tr": "Saha cihazlarından gelen veriler, veri toplama ve haberleşme teknolojileri üzerinden ScadaWatt yazılımına taşınır. İzleme ve raporlama ihtiyaçları cihaz ve saha kapsamına göre belirlenir.",
+        "en": "Data acquisition and communication technologies transfer field device data to ScadaWatt software. Monitoring and reporting requirements depend on the devices and site scope."
+      },
+      "value": {
+        "tr": "Evirici, analizör, sayaç ve sensör verileri ScadaWatt veri toplama cihazı üzerinden platforma aktarılır. Cihaz durumları, haberleşme kesintileri ve alarmlar web panelinden ve mobil uygulamadan takip edilir.",
+        "en": "Data from inverters, analysers, meters and sensors is transferred to the platform through the ScadaWatt data acquisition device. Device status, communication outages and alarms can be followed on the web platform and mobile app."
+      }
+    },
+    {
+      "id": "data.solutions.2.body.0",
+      "old": {
+        "tr": "Yenilenebilir enerji üretiminde ölçüm, performans analizi ve kontrol verileri önemlidir. ScadaWatt’ın GES izleme ürünü, üretim verilerini yazılım üzerinden değerlendirmeye odaklanır.",
+        "en": "Measurement, performance analysis and control data are essential to renewable generation. ScadaWatt’s solar PV monitoring product focuses on evaluating generation data through software."
+      },
+      "value": {
+        "tr": "Güneş enerji santrallerinde üretimi doğru ölçmek, performansı izlemek ve gerektiğinde sahaya müdahale edebilmek gerekir. ScadaWatt bu üç ihtiyacı tek platformda karşılar.",
+        "en": "Solar power plants need accurate generation measurement, performance monitoring and the ability to act on site when necessary. ScadaWatt meets all three on one platform."
+      }
+    },
+    {
+      "id": "data.solutions.6.body.0",
+      "old": {
+        "tr": "Zero Injection modülü ile eviriciler dinamik olarak PID kontrol edilir, tüketim değerleriniz ölçülür ve tüketim kadar üretim yapılır.",
+        "en": "The Zero Injection module dynamically controls inverters using PID control. Consumption is measured and generation is adjusted to match demand."
+      },
+      "value": {
+        "tr": "Zero Injection modülü tesisin anlık tüketimini ölçer ve evirici gücünü buna göre sürekli ayarlar; üretim tüketimi aşmaz.",
+        "en": "The Zero Injection module measures the facility's real-time consumption and continuously adjusts inverter output to match it, so generation never exceeds consumption."
+      }
+    },
+    {
+      "id": "data.solutions.6.points.0",
+      "old": {
+        "tr": "Dinamik PID evirici kontrolü",
+        "en": "Dynamic PID inverter control"
+      },
+      "value": {
+        "tr": "Dinamik evirici güç kontrolü",
+        "en": "Dynamic inverter power control"
+      }
+    },
+    {
+      "id": "data.aboutPoints.2",
+      "old": {
+        "tr": "Reaktif güç ve kompanzasyon takibiyle enerji kalitesini kontrol etme, cezaları önleme",
+        "en": "Monitor reactive power and power factor correction to manage power quality and avoid penalties"
+      },
+      "value": {
+        "tr": "Reaktif güç ve kompanzasyon takibiyle enerji kalitesini kontrol etme, ceza riskini azaltma",
+        "en": "Monitor reactive power and power factor correction to manage power quality and reduce penalty risk"
+      }
+    },
+    {
+      "id": "data.aboutPoints.4",
+      "old": {
+        "tr": "Piyasa fiyatları ve PTF kontrolleriyle santrali optimum seviyede yönetme",
+        "en": "Manage plant operations with market prices and market clearing price monitoring"
+      },
+      "value": {
+        "tr": "Piyasa takas fiyatını (PTF) üretim verisiyle birlikte izleyerek santrali daha bilinçli yönetme",
+        "en": "Manage the plant more effectively by tracking market clearing prices (PTF) alongside generation data"
+      }
+    },
+    {
+      "id": "data.aboutCompany.headline",
+      "old": {
+        "tr": "Akıllı enerji yönetimiyle mükemmel çözümler sunuyoruz.",
+        "en": "Delivering exceptional solutions through intelligent energy management."
+      },
+      "value": {
+        "tr": "Santralinizi uzaktan, eksiksiz ve doğru veriyle yönetin.",
+        "en": "Manage your plant remotely, with complete and accurate data."
+      }
+    },
+    {
+      "id": "data.aboutCompany.invitation",
+      "old": {
+        "tr": "ScadaWatt ekosisteminde yerinizi alarak, santrallerinizde enerji yönetimini en üst seviyeye taşımaya hazır mısınız?",
+        "en": "Ready to join the ScadaWatt ecosystem and take energy management at your plants to the next level?"
+      },
+      "value": {
+        "tr": "Santrallerinizi ScadaWatt ile izlemeye hazır mısınız? Sahanızı ve ihtiyacınızı konuşmak için bize ulaşın.",
+        "en": "Ready to monitor your plants with ScadaWatt? Get in touch to talk about your site and what you need."
+      }
+    },
+    {
+      "id": "data.aboutCompany.experience",
+      "old": {
+        "tr": "Markamızın çıkış ürünü olan ScadaWatt izleme otomasyonu, güneş enerjisi sektöründe kazandığımız tecrübeyi somut çözümlere dönüştürmektedir.",
+        "en": "Our founding product, ScadaWatt monitoring automation, turns our experience in the solar energy sector into practical solutions."
+      },
+      "value": {
+        "tr": "Markamızın ilk ürünü olan ScadaWatt izleme sistemi, güneş enerjisi sahalarında edindiğimiz deneyimin ürünüdür.",
+        "en": "ScadaWatt monitoring, our first product, grew out of hands-on experience in solar power plants."
+      }
+    },
+    {
+      "id": "data.aboutCompany.tailored",
+      "old": {
+        "tr": "Ek modüllerimiz sayesinde müşterilerimizin özel ihtiyaçlarını ürüne dönüştürerek, tamamen kişiselleştirilmiş çözümler sunuyoruz.",
+        "en": "With additional modules, we turn our customers’ specific requirements into fully tailored solutions."
+      },
+      "value": {
+        "tr": "Müşterilerimizin özel ihtiyaçlarını ek modüllerle ürüne dönüştürüyor, sahaya özel çözümler geliştiriyoruz.",
+        "en": "We turn our customers' specific requirements into product features through additional modules, building solutions around each site."
+      }
+    },
+    {
+      "id": "data.vision",
+      "old": {
+        "tr": "Milyarlarca veriyi saniyeler içinde analiz ederek kayıpları kazanca çevirmek.",
+        "en": "Turning losses into value by analysing billions of data points in seconds."
+      },
+      "value": {
+        "tr": "Sahadaki her ölçümü anlamlı bilgiye dönüştürerek kayıpları kazanca çevirmek.",
+        "en": "Turning every field measurement into insight, and losses into gains."
+      }
+    },
+    {
+      "id": "copy.1863dd745d43280a",
+      "old": {
+        "tr": "Mesaj:",
+        "en": "Mesaj:"
+      },
+      "value": {
+        "tr": "Mesaj:",
+        "en": "Message:"
+      }
+    },
+    {
+      "id": "copy.fa6906d76ee94d4e",
+      "old": {
+        "tr": "Telefon",
+        "en": "Telefon"
+      },
+      "value": {
+        "tr": "Telefon",
+        "en": "Phone"
+      }
+    },
+    {
+      "id": "data.plans.2.features.3",
+      "old": {
+        "tr": "Sahaya fiziksel müdahale",
+        "en": "Physical site intervention"
+      },
+      "value": {
+        "tr": "Uzaktan hücre açma / kapama",
+        "en": "Remote switchgear cell open / close"
+      }
+    },
+    {
+      "id": "data.comparison.9.0",
+      "old": {
+        "tr": "Sahaya fiziksel müdahale",
+        "en": "Physical site intervention"
+      },
+      "value": {
+        "tr": "Uzaktan hücre açma / kapama",
+        "en": "Remote switchgear cell open / close"
+      }
+    },
+    {
+      "id": "copy.567a803ffe80b72e",
+      "old": {
+        "tr": "Ölçüm, izleme, analiz ve enerji yönetimi için geliştirilen yazılım yaklaşımını keşfedin.",
+        "en": "Explore software designed for measurement, monitoring, analysis and energy management."
+      },
+      "value": {
+        "tr": "ScadaWatt yazılımının ölçüm, izleme, analiz ve enerji yönetimi araçlarını keşfedin.",
+        "en": "Explore ScadaWatt's tools for measurement, monitoring, analysis and energy management."
+      }
+    },
+    {
+      "id": "copy.edd46101bfe5b045",
+      "old": {
+        "tr": "İzleme arayüzü yaklaşımı",
+        "en": "The monitoring interface"
+      },
+      "value": {
+        "tr": "İzleme arayüzü",
+        "en": "The monitoring interface"
+      }
+    },
+    {
+      "id": "copy.6e7a2c67ea1aebe3",
+      "old": {
+        "tr": "Piyasa fiyatları ve PTF kontrolleriyle santral optimum seviyede yönetilir.",
+        "en": "Market prices and market clearing prices help optimise plant operations."
+      },
+      "value": {
+        "tr": "Piyasa takas fiyatı (PTF) üretim verisiyle birlikte izlenir; üretiminizin değeri net görünür.",
+        "en": "Market clearing prices (PTF) are tracked alongside generation data, so the value of your output is clear."
+      }
+    },
+    {
+      "id": "copy.ca684059b36f267e",
+      "old": {
+        "tr": "Evirici ve saha limitleri anlık takip edilir, ceza riskleri önlenir.",
+        "en": "Inverter and site limits are monitored in real time to help prevent penalty risks."
+      },
+      "value": {
+        "tr": "Evirici ve saha limitleri anlık takip edilir, ceza riski azaltılır.",
+        "en": "Inverter and site limits are monitored in real time to reduce penalty risk."
+      }
+    },
+    {
+      "id": "copy.cbe6daac6c45e956",
+      "old": {
+        "tr": "PTF ve piyasa kontrolü",
+        "en": "Market prices and clearing prices"
+      },
+      "value": {
+        "tr": "Piyasa takas fiyatı (PTF)",
+        "en": "Market clearing price (PTF)"
+      }
+    },
+    {
+      "id": "copy.1d40e3db0f0e306c",
+      "old": {
+        "tr": "Zero Injection aktif · şebekeye 0 kW",
+        "en": "Zero Export active · 0 kW to the grid"
+      },
+      "value": {
+        "tr": "Zero Injection aktif · şebekeye 0 kW",
+        "en": "Zero Injection active · 0 kW to the grid"
+      }
+    },
+    {
+      "id": "copy.bcd2cdbe9acc49e3",
+      "old": {
+        "tr": "Planlı üretim durdurma talimatı yok",
+        "en": "No scheduled generation curtailment instruction"
+      },
+      "value": {
+        "tr": "Planlı yük atma talimatı yok",
+        "en": "No scheduled load-shedding instruction"
+      }
+    },
+    {
+      "id": "copy.c2e2c1c9b4262de2",
+      "old": {
+        "tr": "Üretim, performans analizi ve raporlama yaklaşımını web arayüzü üzerinden keşfedin.",
+        "en": "Explore generation monitoring, performance analysis and reporting through the web platform."
+      },
+      "value": {
+        "tr": "Üretim takibi, performans analizi ve raporlamayı web arayüzünden keşfedin.",
+        "en": "Explore generation monitoring, performance analysis and reporting on the web platform."
+      }
+    },
+    {
+      "id": "copy.9355fe56ba78a82f",
+      "old": {
+        "tr": "ScadaWatt S3000i veri toplama cihazı, S4000MC çok amaçlı kontrol cihazı ve LOMR-07H şebeke arıza rölesi.",
+        "en": "ScadaWatt S3000i data acquisition device, S4000MC versatile control device and LOMR-07H grid fault relay."
+      },
+      "value": {
+        "tr": "ScadaWatt S3000i veri toplama cihazı, S4000MC çok amaçlı kontrol cihazı ve LOMR-07H şebeke izleme rölesi.",
+        "en": "ScadaWatt S3000i data acquisition device, S4000MC versatile control device and LOMR-07H grid monitoring relay."
+      }
+    },
+    {
+      "id": "data.products.2.summary",
+      "old": {
+        "tr": "LOMR-07H, şebeke arızası durumunda rölelerini tetikler. Röle çıkışları kumanda panoları da kullanılarak tesis ile şebeke arasındaki bağlantının güvenli şekilde yönetilmesini sağlar.",
+        "en": "LOMR-07H triggers its relays when a grid fault occurs. Its relay outputs, together with control panels, allow the connection between the plant and the grid to be managed safely."
+      },
+      "value": {
+        "tr": "LOMR-07H şebekenin gerilim ve frekansını sürekli ölçer. Arıza algıladığında röle çıkışlarını tetikler ve kumanda panosu üzerinden tesisin şebeke bağlantısının güvenli şekilde ayrılmasını sağlar. RS485 Modbus ile ScadaWatt'a bağlanır.",
+        "en": "LOMR-07H continuously measures grid voltage and frequency. When it detects a fault, it triggers its relay outputs so that the plant can be safely disconnected from the grid through the control panel. It connects to ScadaWatt via RS485 Modbus."
+      }
+    },
+    {
+      "id": "data.productSpecifications.lomr-07h.9.value",
+      "old": {
+        "tr": "3 Adet 8A/250 VAC",
+        "en": "3 Adet 8A/250 VAC"
+      },
+      "value": {
+        "tr": "3 Adet 8A/250 VAC",
+        "en": "3 × 8 A / 250 VAC"
+      }
+    },
+    {
+      "id": "data.products.0.summary",
+      "old": {
+        "tr": "S3000i, ekosistemimizin veri toplama ve işleme konusunda temel unsurudur. Farklı sensörlerden ve saha cihazlarından aldığı verileri analiz eder, depolar ve ScadaWatt platformuna iletir.",
+        "en": "S3000i is the foundation of data acquisition and processing in our ecosystem. It analyses and stores data from sensors and field devices, then transfers it to the ScadaWatt platform."
+      },
+      "value": {
+        "tr": "S3000i, ScadaWatt ekosisteminin sahadaki merkezidir. Evirici, analizör, sayaç ve sensörlerden veriyi okur, sahada işler ve saklar, ardından ScadaWatt platformuna iletir. İnternet bağlantısı kesildiğinde kayda devam eder.",
+        "en": "S3000i is the heart of the ScadaWatt ecosystem on site. It reads data from inverters, analysers, meters and sensors, processes and stores it locally, then sends it to the ScadaWatt platform. If the internet connection drops, it keeps recording."
+      }
+    },
+    {
+      "id": "data.productSpecifications.s4000mc.4.value",
+      "old": {
+        "tr": "700 Mhz",
+        "en": "700 Mhz"
+      },
+      "value": {
+        "tr": "700 MHz",
+        "en": "700 MHz"
+      }
+    }
+  ],
+  "tr": {
+    "Saha ve çevre yapıları, gönderilen fotoğraftan ilhamla modellenmiştir. Birebir tesis veya coğrafi konum iddiası yoktur.": "Panellerin ürettiği enerji sahadaki eviriciler, analizörler, sayaçlar ve sensörler tarafından ölçülür. ScadaWatt'ın izleme süreci bu ölçümlerle başlar.",
+    "Sahaya doğru alçalıyoruz. Panel sıralarının hemen üzerinden geçiyor, aşağıdaki çalışan ekibi ve toprak yolları izleyerek eviriciye ilerliyoruz.": "Bir santralin ne kadar ürettiği kadar, ne üretmediği de önemlidir. ScadaWatt sahadaki her cihazı izleyerek bu sorunun cevabını verir.",
+    "Verinin izinden.": "Her şey sahada başlar.",
+    "Monitörde ScadaWatt genel görünümü sabit olarak gösterilir. Kamera monitöre ulaştığında yolculuk tamamlanır; aşağı kaydırarak donanımları, çözümleri ve uygulama görsellerini inceleyebilirsiniz. Bu tanıtım sahaya komut göndermez.": "Monitörde gördüğünüz, ScadaWatt'ın gerçek genel görünüm ekranıdır. Aşağı kaydırarak donanımları, çözümleri ve uygulama ekranlarını inceleyebilirsiniz.",
+    "Sahaları karşılaştırın, üretim eğrilerini inceleyin. Yolculuğun sonunda gerçek ScadaWatt ekranındasınız.": "Sahalarınızı karşılaştırın, üretim eğrilerini inceleyin, kayıpları erkenden fark edin. Yolculuğun sonunda gördüğünüz ekran, ScadaWatt'ın kendisi.",
+    "Artık bütününü görün.": "Bütün tablo önünüzde.",
+    "Evirici dışarıdan gösterilir. Kamera gövdeye girmez; kapak açılmaz.": "ScadaWatt eviricilerle Modbus RTU/TCP ve SunSpec üzerinden haberleşir; anlık güç, üretim, durum ve arıza bilgilerini okur. MPPT-dize verisi sunan eviricilerde performans dize bazında da izlenir.",
+    "Panellerin ürettiği doğru akım, eviricide alternatif akıma dönüştürülür. Ölçümler, üretimi anlamanın kaynaklarından biridir.": "Panellerden gelen enerji eviricide şebekeye hazır hale gelir. ScadaWatt her eviricinin ne kadar ürettiğini, hangi durumda olduğunu ve arıza verip vermediğini sürekli izler. Gerektiğinde üretim limitini de eviriciye kendisi iletir.",
+    "Eviricinin yanındayız.": "Eviricileriniz hep gözünüzün önünde.",
+    "Köşk referans fotoğraflarındaki gövde, çatı saçağı, metal kapılar ve havalandırma detaylarından esinlenerek modellenmiştir. Evirici ziyareti sonrasında kamera doğrudan köşke yönelir. Sahnenin bu bölümünde evirici ile köşk arasında kablo gösterilmez.": "Köşkteki panoda ScadaWatt veri toplama cihazı, RS485 ve Ethernet hatları üzerinden sahadaki cihazlara bağlanır. LOMR-07H şebeke izleme rölesi de bu noktada şebekeyi izler ve arıza anında tesisi korur.",
+    "Paneller arasındaki toprak yolda yer alan köşke yaklaşıyoruz. Önce yapıyı dışarıdan görüyor, ardından açılan servis kapılarından pano alanına ilerliyoruz.": "Evirici, analizör, sayaç, sensör... Sahadaki bütün veri kaynakları ScadaWatt ile buluşur.",
+    "Köşke ilerliyoruz.": "Sahanın kontrol noktası.",
+    "S3000i dış görünümü gerçek ürün fotoğrafından esinlenmiştir. Cihazın kendi gövdesine girilmez veya kapağı açılmaz. Kamera köşkten çıktıktan sonra servis kapıları kapanır; sahadan sonra küresel kablo çizilmez.": "Okunan veriler sahada işlenip kaydedilir, ardından ScadaWatt platformuna gönderilir. Zero injection, planlı yük atma ve kompanzasyon gibi kontrol senaryoları da sahadaki bu cihaz üzerinden yürütülür.",
+    "S3000i, köşkün içindeki panoda yer alıyor. Farklı kaynaklardan gelen verileri topluyor, işliyor ve depoluyor. Şimdi bu veriyi uzaktaki ekrana taşıyan yolculuğa devam ediyoruz.": "ScadaWatt farklı marka ve modeldeki cihazlarla aynı anda haberleşir. Veriyi sahada işler. İnternet bağlantısı kesilse bile kaydetmeye devam eder, bağlantı geri geldiğinde eksik kalan veriyi tamamlar.",
+    "Panonun içindeki teknoloji.": "Veri burada toplanır.",
+    "Dünya sabit kalır; kamera 39° Kuzey / 35,5° Doğu ile 38° Kuzey / 97° Batı arasındaki kısa yayı izler. Bunlar ülke sınırları içindeki temsili noktalardır; gerçek müşteri veya internet rotası gösterilmez.": "Sahadan gelen veri platformda saklanır; saatlik ve günlük üretim, mahsuplaşma ve raporlar burada hesaplanır. OSOS sayaç verisi ve piyasa takas fiyatları (PTF) da aynı platformda birleşir.",
+    "Türkiye’deki sahadan yükseliyoruz. Dünya üzerinde tek bir kısa yay boyunca ABD’deki operatöre doğru ilerliyoruz.": "Sahadan çıkan veri, güvenli bir bağlantıyla birkaç saniye içinde ScadaWatt platformuna ulaşır.",
+    "Mesafenin ötesinde.": "Mesafenin önemi yok.",
+    "ABD’deki şehir ve ev temsili olarak modellenmiştir. Konum, ana kara sınırları içinde seçilmiştir; belirli bir müşterinin gerçek adresi gösterilmez.": "ScadaWatt'a internet bağlantısı olan her yerden erişebilirsiniz. Sahanın bulunduğu yer ile sizin bulunduğunuz yer arasındaki mesafe izlemeyi etkilemez.",
+    "Gece tarafında otoyollar, yerleşimler ve bölgesel ışık ağı beliriyor. Yolculuk, operatörün bulunduğu yaşam alanına doğru daralıyor.": "Sahanız başka bir şehirde, hatta başka bir kıtada olabilir. Mesafeler takibe engel değil.",
+    "Başka bir yerde.": "Hangi ülkede olursanız olun.",
+    "Şehir, farklı yükseklikteki binalar, park alanları, araçlar ve cadde ışıklarıyla oluşturulmuş özgün bir 3B yerleşimdir.": "Kullanıcılar şirket ve saha bazında yetkilendirilir. Yatırımcı, EPC firması ve bakım ekibi aynı santrali kendi yetkileri ölçüsünde izler.",
+    "Işıklı caddeler, park cepleri, araçlar ve farklı yapı ölçekleri belirginleşiyor. Aynı saha bilgisi, çok uzaktaki bir ekranda okunabilir.": "Yönetim, işletme ve bakım ekipleri farklı şehirlerde olsa da aynı veriyi görür. Herkes kendi yetkisi kadarına erişir, kararlar ortak bir tablo üzerinden alınır.",
+    "Şehre yaklaşıyoruz.": "Ekibinizle aynı ekrana bakın.",
+    "Yaklaşma rotası hedef binanın önündeki açık koridoru takip eder; bina içinden rastgele kesilerek geçmez.": "Web paneli ile iOS ve Android mobil uygulama aynı veriyi gösterir. Saha durumu, canlı üretim ve alarmlar her iki tarafta da görülebilir.",
+    "Şehirden mahalle ölçeğine iniyoruz: yol, park, apartman ve küçük yaşam cepleri arasından aydınlık pencereye ilerliyoruz.": "ScadaWatt'a hem web panelinden hem mobil uygulamadan ulaşabilirsiniz. Bilgisayar başında olmanız gerekmez.",
+    "Bir mahalle. Bir bina.": "Ofiste ya da yolda.",
+    "İnsan, çalışma masası ve koltuk/TV içeren ev ortamı modellenmiştir. Monitördeki görüntü gönderilen gerçek ScadaWatt arayüzüdür; canlı bağlantı değildir.": "Bildirimler, tekrar eden mesajları sınırlayan kurallarla gönderilir; aynı arıza için art arda mesaj yağmaz, önemli uyarılar gözden kaçmaz.",
+    "Pencerenin ardında çalışan bir operatör. Kamera omzunun yanından masadaki monitöre yaklaşıyor.": "Sahada bir sorun çıktığında ScadaWatt sizi SMS ve e-postayla hemen haberdar eder. Her akşam günün üretim özeti telefonunuza gelir.",
+    "Saha, ekranında.": "Mesai bitince de haberiniz olur.",
+    "Enerji verisini anlamlandırın. Cihazlarınızı izleyin. İşletmenizin ihtiyacına uygun izleme ve kontrol kapsamını keşfedin.": "Sahadaki her cihazı izleyin, veriyi anlamlı bilgiye dönüştürün. İşletmenize uygun izleme ve kontrol kapsamını birlikte belirleyelim.",
+    "ScadaWatt: sahadaki ölçümden yazılım ekranına veri toplama, SCADA ve enerji yönetimi teknolojileri.": "ScadaWatt: güneş enerji santralleri için uzaktan izleme, SCADA, veri toplama ve enerji yönetimi çözümleri.",
+    "Aktif ve geçmiş alarmları birlikte görün. Bir uyarıyı anlamak için olayın zamanı, kaynağı ve durumu birlikte değerlendirilir.": "Aktif ve geçmiş alarmları tek listede görün. Her alarmın ne zaman başladığı, hangi cihazdan geldiği ve ne zaman kapandığı kayıt altındadır.",
+    "Farklı bölgelerdeki sahaları bir araya getiren gerçek ScadaWatt ekranı. Görseldeki değerler çekim anına aittir.": "Farklı bölgelerdeki sahalarınızı tek ekranda toplayın. Görseldeki değerler ekran görüntüsünün alındığı ana aittir.",
+    "Sahaların haberleşme ve durum bilgilerini birlikte inceleyin. Bu görüntü, gönderilen uygulama ekranının sabit bir kaydıdır.": "Tüm sahaların haberleşme ve çalışma durumunu tek ekranda izleyin. Bağlantısı kopan ya da arıza veren saha hemen öne çıkar.",
+    "Toplam üretimin kaynağına inin. Eviricileri ayrı ayrı görmek, saha seviyesindeki bilgiyi cihaz seviyesinde okumayı sağlar.": "Saha üretiminin kaynağına inin. Her eviricinin gücünü, durumunu ve üretimini ayrı ayrı görün.",
+    "Üretim kayıtlarını dönemlere göre inceleyin. Anlık güç ile zaman içinde biriken enerji farklı büyüklüklerdir.": "Üretim kayıtlarını gün, ay ve yıl bazında inceleyin; dönemleri ve sahaları karşılaştırın.",
+    "GES uzaktan izleme, limit yönetimi, kompanzasyon, Zero Injection, planlı üretim durdurma ve anlık bildirim çözümleri.": "GES uzaktan izleme, limit yönetimi, kompanzasyon, zero injection, planlı yük atma, saatlik mahsuplaşma takibi ve anlık bildirim çözümleri.",
+    "ScadaWatt, ölçüm verilerini izleme, raporlama ve kontrol ihtiyaçlarıyla bir araya getirir. Üretim ve tüketim görünürlüğü, limit takibi ve reaktif güç değerlendirmesi enerji yönetiminin farklı parçalarıdır.": "ScadaWatt üretim, tüketim, limit ve reaktif güç verilerini aynı platformda toplar. OSOS sayaç verisi, saatlik mahsuplaşma takibi ve piyasa takas fiyatlarıyla (PTF) enerjinin hem teknik hem ticari tarafını birlikte görürsünüz.",
+    "Uygulanacak kapsam, saha cihazları ve seçilen hizmetlere göre birlikte değerlendirilir.": "Saatlik mahsuplaşma takibi sunan altyapımız, 15 dakikalık uzlaştırma dönemine geçişe uygun şekilde hazırlanmaktadır.",
+    "Reaktif güç değerleri sürekli izlenir. Limit aşımlarında ScadaWatt kompanzasyon sistemini kontrol ederek ceza risklerinin oluşmasını engeller.": "Reaktif güç değerleri sürekli izlenir. Limit aşımlarında ScadaWatt kompanzasyon sistemini kontrol ederek reaktif ceza riskini azaltır.",
+    "Saatlik veriler üzerinden fatura doğrulaması yapılarak hatalı faturaların önüne geçilir.": "Saatlik veriler üzerinden fatura doğrulaması yapılır; hatalı faturalar kolayca fark edilir.",
+    "Evirici ve saha limitlerini anlık takip edin, ceza risklerini ortadan kaldırın.": "Evirici ve saha limitlerini anlık takip edin, ceza riskini azaltın.",
+    "Planlı üretim durdurma modülü ile yük atma süreçleri otonom hale gelir; talimatlar manuel müdahaleye gerek kalmadan sahaya uygulanır.": "Planlı yük atma talimatları ScadaWatt üzerinden tanımlanır ve belirlenen saatte sahaya otomatik uygulanır; ekibin sahaya gitmesine gerek kalmaz.",
+    "PRO pakette acil durdurma eylemi ve sahaya fiziksel müdahale imkânı da bulunur.": "PRO pakette acil durdurma eylemi ve hücrenin uzaktan açılıp kapatılması da bulunur.",
+    "Otonom yük atma": "Otomatik yük atma",
+    "Sahaya fiziksel müdahale (PRO)": "Uzaktan hücre açma / kapama (PRO)",
+    "Yük atma süreçlerini otonom hale getirin.": "Planlı yük atma talimatlarını sahaya otomatik uygulayın.",
+    "Planlı Üretim Durdurma": "Planlı Yük Atma",
+    "Saha cihazlarından gelen veriler, veri toplama ve haberleşme teknolojileri üzerinden ScadaWatt yazılımına taşınır. İzleme ve raporlama ihtiyaçları cihaz ve saha kapsamına göre belirlenir.": "Evirici, analizör, sayaç ve sensör verileri ScadaWatt veri toplama cihazı üzerinden platforma aktarılır. Cihaz durumları, haberleşme kesintileri ve alarmlar web panelinden ve mobil uygulamadan takip edilir.",
+    "Yenilenebilir enerji üretiminde ölçüm, performans analizi ve kontrol verileri önemlidir. ScadaWatt’ın GES izleme ürünü, üretim verilerini yazılım üzerinden değerlendirmeye odaklanır.": "Güneş enerji santrallerinde üretimi doğru ölçmek, performansı izlemek ve gerektiğinde sahaya müdahale edebilmek gerekir. ScadaWatt bu üç ihtiyacı tek platformda karşılar.",
+    "Zero Injection modülü ile eviriciler dinamik olarak PID kontrol edilir, tüketim değerleriniz ölçülür ve tüketim kadar üretim yapılır.": "Zero Injection modülü tesisin anlık tüketimini ölçer ve evirici gücünü buna göre sürekli ayarlar; üretim tüketimi aşmaz.",
+    "Dinamik PID evirici kontrolü": "Dinamik evirici güç kontrolü",
+    "Reaktif güç ve kompanzasyon takibiyle enerji kalitesini kontrol etme, cezaları önleme": "Reaktif güç ve kompanzasyon takibiyle enerji kalitesini kontrol etme, ceza riskini azaltma",
+    "Piyasa fiyatları ve PTF kontrolleriyle santrali optimum seviyede yönetme": "Piyasa takas fiyatını (PTF) üretim verisiyle birlikte izleyerek santrali daha bilinçli yönetme",
+    "Akıllı enerji yönetimiyle mükemmel çözümler sunuyoruz.": "Santralinizi uzaktan, eksiksiz ve doğru veriyle yönetin.",
+    "ScadaWatt ekosisteminde yerinizi alarak, santrallerinizde enerji yönetimini en üst seviyeye taşımaya hazır mısınız?": "Santrallerinizi ScadaWatt ile izlemeye hazır mısınız? Sahanızı ve ihtiyacınızı konuşmak için bize ulaşın.",
+    "Markamızın çıkış ürünü olan ScadaWatt izleme otomasyonu, güneş enerjisi sektöründe kazandığımız tecrübeyi somut çözümlere dönüştürmektedir.": "Markamızın ilk ürünü olan ScadaWatt izleme sistemi, güneş enerjisi sahalarında edindiğimiz deneyimin ürünüdür.",
+    "Ek modüllerimiz sayesinde müşterilerimizin özel ihtiyaçlarını ürüne dönüştürerek, tamamen kişiselleştirilmiş çözümler sunuyoruz.": "Müşterilerimizin özel ihtiyaçlarını ek modüllerle ürüne dönüştürüyor, sahaya özel çözümler geliştiriyoruz.",
+    "Milyarlarca veriyi saniyeler içinde analiz ederek kayıpları kazanca çevirmek.": "Sahadaki her ölçümü anlamlı bilgiye dönüştürerek kayıpları kazanca çevirmek.",
+    "Sahaya fiziksel müdahale": "Uzaktan hücre açma / kapama",
+    "Ölçüm, izleme, analiz ve enerji yönetimi için geliştirilen yazılım yaklaşımını keşfedin.": "ScadaWatt yazılımının ölçüm, izleme, analiz ve enerji yönetimi araçlarını keşfedin.",
+    "İzleme arayüzü yaklaşımı": "İzleme arayüzü",
+    "Piyasa fiyatları ve PTF kontrolleriyle santral optimum seviyede yönetilir.": "Piyasa takas fiyatı (PTF) üretim verisiyle birlikte izlenir; üretiminizin değeri net görünür.",
+    "Evirici ve saha limitleri anlık takip edilir, ceza riskleri önlenir.": "Evirici ve saha limitleri anlık takip edilir, ceza riski azaltılır.",
+    "PTF ve piyasa kontrolü": "Piyasa takas fiyatı (PTF)",
+    "Planlı üretim durdurma talimatı yok": "Planlı yük atma talimatı yok",
+    "Üretim, performans analizi ve raporlama yaklaşımını web arayüzü üzerinden keşfedin.": "Üretim takibi, performans analizi ve raporlamayı web arayüzünden keşfedin.",
+    "ScadaWatt S3000i veri toplama cihazı, S4000MC çok amaçlı kontrol cihazı ve LOMR-07H şebeke arıza rölesi.": "ScadaWatt S3000i veri toplama cihazı, S4000MC çok amaçlı kontrol cihazı ve LOMR-07H şebeke izleme rölesi.",
+    "LOMR-07H, şebeke arızası durumunda rölelerini tetikler. Röle çıkışları kumanda panoları da kullanılarak tesis ile şebeke arasındaki bağlantının güvenli şekilde yönetilmesini sağlar.": "LOMR-07H şebekenin gerilim ve frekansını sürekli ölçer. Arıza algıladığında röle çıkışlarını tetikler ve kumanda panosu üzerinden tesisin şebeke bağlantısının güvenli şekilde ayrılmasını sağlar. RS485 Modbus ile ScadaWatt'a bağlanır.",
+    "S3000i, ekosistemimizin veri toplama ve işleme konusunda temel unsurudur. Farklı sensörlerden ve saha cihazlarından aldığı verileri analiz eder, depolar ve ScadaWatt platformuna iletir.": "S3000i, ScadaWatt ekosisteminin sahadaki merkezidir. Evirici, analizör, sayaç ve sensörlerden veriyi okur, sahada işler ve saklar, ardından ScadaWatt platformuna iletir. İnternet bağlantısı kesildiğinde kayda devam eder.",
+    "700 Mhz": "700 MHz"
+  },
+  "en": {
+    "Panellerin ürettiği enerji sahadaki eviriciler, analizörler, sayaçlar ve sensörler tarafından ölçülür. ScadaWatt'ın izleme süreci bu ölçümlerle başlar.": "The energy produced by the panels is measured by inverters, analysers, meters and sensors on site. ScadaWatt's monitoring starts with these measurements.",
+    "Saha ve çevre yapıları, gönderilen fotoğraftan ilhamla modellenmiştir. Birebir tesis veya coğrafi konum iddiası yoktur.": "The energy produced by the panels is measured by inverters, analysers, meters and sensors on site. ScadaWatt's monitoring starts with these measurements.",
+    "Bir santralin ne kadar ürettiği kadar, ne üretmediği de önemlidir. ScadaWatt sahadaki her cihazı izleyerek bu sorunun cevabını verir.": "What a plant doesn't generate matters as much as what it does. ScadaWatt monitors every device on site to answer that question.",
+    "Sahaya doğru alçalıyoruz. Panel sıralarının hemen üzerinden geçiyor, aşağıdaki çalışan ekibi ve toprak yolları izleyerek eviriciye ilerliyoruz.": "What a plant doesn't generate matters as much as what it does. ScadaWatt monitors every device on site to answer that question.",
+    "Her şey sahada başlar.": "It all starts in the field.",
+    "Verinin izinden.": "It all starts in the field.",
+    "Monitörde gördüğünüz, ScadaWatt'ın gerçek genel görünüm ekranıdır. Aşağı kaydırarak donanımları, çözümleri ve uygulama ekranlarını inceleyebilirsiniz.": "The monitor shows the actual ScadaWatt overview screen. Scroll down to explore the hardware, solutions and application screens.",
+    "Monitörde ScadaWatt genel görünümü sabit olarak gösterilir. Kamera monitöre ulaştığında yolculuk tamamlanır; aşağı kaydırarak donanımları, çözümleri ve uygulama görsellerini inceleyebilirsiniz. Bu tanıtım sahaya komut göndermez.": "The monitor shows the actual ScadaWatt overview screen. Scroll down to explore the hardware, solutions and application screens.",
+    "Sahalarınızı karşılaştırın, üretim eğrilerini inceleyin, kayıpları erkenden fark edin. Yolculuğun sonunda gördüğünüz ekran, ScadaWatt'ın kendisi.": "Compare your sites, examine generation curves and spot losses early. The screen at the end of the journey is ScadaWatt itself.",
+    "Sahaları karşılaştırın, üretim eğrilerini inceleyin. Yolculuğun sonunda gerçek ScadaWatt ekranındasınız.": "Compare your sites, examine generation curves and spot losses early. The screen at the end of the journey is ScadaWatt itself.",
+    "Bütün tablo önünüzde.": "The full picture, in front of you.",
+    "Artık bütününü görün.": "The full picture, in front of you.",
+    "ScadaWatt eviricilerle Modbus RTU/TCP ve SunSpec üzerinden haberleşir; anlık güç, üretim, durum ve arıza bilgilerini okur. MPPT-dize verisi sunan eviricilerde performans dize bazında da izlenir.": "ScadaWatt communicates with inverters over Modbus RTU/TCP and SunSpec, reading real-time power, generation, status and fault data. Where inverters provide MPPT/string data, performance is also tracked string by string.",
+    "Evirici dışarıdan gösterilir. Kamera gövdeye girmez; kapak açılmaz.": "ScadaWatt communicates with inverters over Modbus RTU/TCP and SunSpec, reading real-time power, generation, status and fault data. Where inverters provide MPPT/string data, performance is also tracked string by string.",
+    "Panellerden gelen enerji eviricide şebekeye hazır hale gelir. ScadaWatt her eviricinin ne kadar ürettiğini, hangi durumda olduğunu ve arıza verip vermediğini sürekli izler. Gerektiğinde üretim limitini de eviriciye kendisi iletir.": "Energy from the panels is made grid-ready in the inverter. ScadaWatt continuously tracks how much each inverter generates, its operating status and any faults. When needed, it also sends the generation limit to the inverter itself.",
+    "Panellerin ürettiği doğru akım, eviricide alternatif akıma dönüştürülür. Ölçümler, üretimi anlamanın kaynaklarından biridir.": "Energy from the panels is made grid-ready in the inverter. ScadaWatt continuously tracks how much each inverter generates, its operating status and any faults. When needed, it also sends the generation limit to the inverter itself.",
+    "Eviricileriniz hep gözünüzün önünde.": "Your inverters, always in view.",
+    "Eviricinin yanındayız.": "Your inverters, always in view.",
+    "Köşkteki panoda ScadaWatt veri toplama cihazı, RS485 ve Ethernet hatları üzerinden sahadaki cihazlara bağlanır. LOMR-07H şebeke izleme rölesi de bu noktada şebekeyi izler ve arıza anında tesisi korur.": "In the kiosk panel, the ScadaWatt data acquisition device connects to field devices over RS485 and Ethernet. The LOMR-07H grid monitoring relay also sits here, watching the grid and protecting the plant when a fault occurs.",
+    "Köşk referans fotoğraflarındaki gövde, çatı saçağı, metal kapılar ve havalandırma detaylarından esinlenerek modellenmiştir. Evirici ziyareti sonrasında kamera doğrudan köşke yönelir. Sahnenin bu bölümünde evirici ile köşk arasında kablo gösterilmez.": "In the kiosk panel, the ScadaWatt data acquisition device connects to field devices over RS485 and Ethernet. The LOMR-07H grid monitoring relay also sits here, watching the grid and protecting the plant when a fault occurs.",
+    "Evirici, analizör, sayaç, sensör... Sahadaki bütün veri kaynakları ScadaWatt ile buluşur.": "Inverters, analysers, meters, sensors... Every data source on site comes together in ScadaWatt.",
+    "Paneller arasındaki toprak yolda yer alan köşke yaklaşıyoruz. Önce yapıyı dışarıdan görüyor, ardından açılan servis kapılarından pano alanına ilerliyoruz.": "Inverters, analysers, meters, sensors... Every data source on site comes together in ScadaWatt.",
+    "Sahanın kontrol noktası.": "The site's control point.",
+    "Köşke ilerliyoruz.": "The site's control point.",
+    "Okunan veriler sahada işlenip kaydedilir, ardından ScadaWatt platformuna gönderilir. Zero injection, planlı yük atma ve kompanzasyon gibi kontrol senaryoları da sahadaki bu cihaz üzerinden yürütülür.": "Data is processed and stored on site, then sent to the ScadaWatt platform. Control scenarios such as zero injection, scheduled load shedding and power factor correction also run on this device.",
+    "S3000i dış görünümü gerçek ürün fotoğrafından esinlenmiştir. Cihazın kendi gövdesine girilmez veya kapağı açılmaz. Kamera köşkten çıktıktan sonra servis kapıları kapanır; sahadan sonra küresel kablo çizilmez.": "Data is processed and stored on site, then sent to the ScadaWatt platform. Control scenarios such as zero injection, scheduled load shedding and power factor correction also run on this device.",
+    "ScadaWatt farklı marka ve modeldeki cihazlarla aynı anda haberleşir. Veriyi sahada işler. İnternet bağlantısı kesilse bile kaydetmeye devam eder, bağlantı geri geldiğinde eksik kalan veriyi tamamlar.": "ScadaWatt communicates with devices of different brands and models at the same time and processes data on site. If the internet connection drops, it keeps recording and fills in the gaps once the connection is restored.",
+    "S3000i, köşkün içindeki panoda yer alıyor. Farklı kaynaklardan gelen verileri topluyor, işliyor ve depoluyor. Şimdi bu veriyi uzaktaki ekrana taşıyan yolculuğa devam ediyoruz.": "ScadaWatt communicates with devices of different brands and models at the same time and processes data on site. If the internet connection drops, it keeps recording and fills in the gaps once the connection is restored.",
+    "Veri burada toplanır.": "This is where data comes together.",
+    "Panonun içindeki teknoloji.": "This is where data comes together.",
+    "Sahadan gelen veri platformda saklanır; saatlik ve günlük üretim, mahsuplaşma ve raporlar burada hesaplanır. OSOS sayaç verisi ve piyasa takas fiyatları (PTF) da aynı platformda birleşir.": "Field data is stored on the platform, where hourly and daily generation, net-metering settlement and reports are calculated. OSOS meter data and market clearing prices (PTF) are brought together on the same platform.",
+    "Dünya sabit kalır; kamera 39° Kuzey / 35,5° Doğu ile 38° Kuzey / 97° Batı arasındaki kısa yayı izler. Bunlar ülke sınırları içindeki temsili noktalardır; gerçek müşteri veya internet rotası gösterilmez.": "Field data is stored on the platform, where hourly and daily generation, net-metering settlement and reports are calculated. OSOS meter data and market clearing prices (PTF) are brought together on the same platform.",
+    "Sahadan çıkan veri, güvenli bir bağlantıyla birkaç saniye içinde ScadaWatt platformuna ulaşır.": "Data leaving the site reaches the ScadaWatt platform over a secure connection within seconds.",
+    "Türkiye’deki sahadan yükseliyoruz. Dünya üzerinde tek bir kısa yay boyunca ABD’deki operatöre doğru ilerliyoruz.": "Data leaving the site reaches the ScadaWatt platform over a secure connection within seconds.",
+    "Mesafenin önemi yok.": "Distance doesn't matter.",
+    "Mesafenin ötesinde.": "Distance doesn't matter.",
+    "ScadaWatt'a internet bağlantısı olan her yerden erişebilirsiniz. Sahanın bulunduğu yer ile sizin bulunduğunuz yer arasındaki mesafe izlemeyi etkilemez.": "ScadaWatt can be accessed from anywhere with an internet connection. The distance between you and your site makes no difference to monitoring.",
+    "ABD’deki şehir ve ev temsili olarak modellenmiştir. Konum, ana kara sınırları içinde seçilmiştir; belirli bir müşterinin gerçek adresi gösterilmez.": "ScadaWatt can be accessed from anywhere with an internet connection. The distance between you and your site makes no difference to monitoring.",
+    "Sahanız başka bir şehirde, hatta başka bir kıtada olabilir. Mesafeler takibe engel değil.": "Your site may be in another city, or even on another continent. Distance is no barrier to monitoring.",
+    "Gece tarafında otoyollar, yerleşimler ve bölgesel ışık ağı beliriyor. Yolculuk, operatörün bulunduğu yaşam alanına doğru daralıyor.": "Your site may be in another city, or even on another continent. Distance is no barrier to monitoring.",
+    "Hangi ülkede olursanız olun.": "Wherever you are in the world.",
+    "Başka bir yerde.": "Wherever you are in the world.",
+    "Kullanıcılar şirket ve saha bazında yetkilendirilir. Yatırımcı, EPC firması ve bakım ekibi aynı santrali kendi yetkileri ölçüsünde izler.": "Users are authorised by company and by site. Investors, EPC contractors and maintenance teams monitor the same plant within the limits of their own permissions.",
+    "Şehir, farklı yükseklikteki binalar, park alanları, araçlar ve cadde ışıklarıyla oluşturulmuş özgün bir 3B yerleşimdir.": "Users are authorised by company and by site. Investors, EPC contractors and maintenance teams monitor the same plant within the limits of their own permissions.",
+    "Yönetim, işletme ve bakım ekipleri farklı şehirlerde olsa da aynı veriyi görür. Herkes kendi yetkisi kadarına erişir, kararlar ortak bir tablo üzerinden alınır.": "Management, operations and maintenance teams see the same data, even from different cities. Everyone accesses what their role allows, and decisions are made from a shared picture.",
+    "Işıklı caddeler, park cepleri, araçlar ve farklı yapı ölçekleri belirginleşiyor. Aynı saha bilgisi, çok uzaktaki bir ekranda okunabilir.": "Management, operations and maintenance teams see the same data, even from different cities. Everyone accesses what their role allows, and decisions are made from a shared picture.",
+    "Ekibinizle aynı ekrana bakın.": "Look at the same screen as your team.",
+    "Şehre yaklaşıyoruz.": "Look at the same screen as your team.",
+    "Web paneli ile iOS ve Android mobil uygulama aynı veriyi gösterir. Saha durumu, canlı üretim ve alarmlar her iki tarafta da görülebilir.": "The web platform and the iOS and Android apps show the same data. Site status, live generation and alarms are available on both.",
+    "Yaklaşma rotası hedef binanın önündeki açık koridoru takip eder; bina içinden rastgele kesilerek geçmez.": "The web platform and the iOS and Android apps show the same data. Site status, live generation and alarms are available on both.",
+    "ScadaWatt'a hem web panelinden hem mobil uygulamadan ulaşabilirsiniz. Bilgisayar başında olmanız gerekmez.": "Access ScadaWatt from the web platform or the mobile app. You don't need to be at a desk.",
+    "Şehirden mahalle ölçeğine iniyoruz: yol, park, apartman ve küçük yaşam cepleri arasından aydınlık pencereye ilerliyoruz.": "Access ScadaWatt from the web platform or the mobile app. You don't need to be at a desk.",
+    "Ofiste ya da yolda.": "At the office or on the move.",
+    "Bir mahalle. Bir bina.": "At the office or on the move.",
+    "Bildirimler, tekrar eden mesajları sınırlayan kurallarla gönderilir; aynı arıza için art arda mesaj yağmaz, önemli uyarılar gözden kaçmaz.": "Notifications follow rules that limit repeat messages, so you are not flooded by the same fault and important alerts stand out.",
+    "İnsan, çalışma masası ve koltuk/TV içeren ev ortamı modellenmiştir. Monitördeki görüntü gönderilen gerçek ScadaWatt arayüzüdür; canlı bağlantı değildir.": "Notifications follow rules that limit repeat messages, so you are not flooded by the same fault and important alerts stand out.",
+    "Sahada bir sorun çıktığında ScadaWatt sizi SMS ve e-postayla hemen haberdar eder. Her akşam günün üretim özeti telefonunuza gelir.": "If a problem occurs on site, ScadaWatt notifies you immediately by SMS and email. Every evening, a summary of the day's generation arrives on your phone.",
+    "Pencerenin ardında çalışan bir operatör. Kamera omzunun yanından masadaki monitöre yaklaşıyor.": "If a problem occurs on site, ScadaWatt notifies you immediately by SMS and email. Every evening, a summary of the day's generation arrives on your phone.",
+    "Mesai bitince de haberiniz olur.": "You stay informed after hours.",
+    "Saha, ekranında.": "You stay informed after hours.",
+    "her noktasında.": "your operations.",
+    "ScadaWatt çözümleri": "ScadaWatt solutions",
+    "Bütün çözümler": "All solutions",
+    "SCADAWATT ÇÖZÜMLERİ": "SCADAWATT SOLUTIONS",
+    "Sahadaki her cihazı izleyin, veriyi anlamlı bilgiye dönüştürün. İşletmenize uygun izleme ve kontrol kapsamını birlikte belirleyelim.": "Monitor every device on site and turn data into insight. Let's define the right monitoring and control scope for your operations together.",
+    "Enerji verisini anlamlandırın. Cihazlarınızı izleyin. İşletmenizin ihtiyacına uygun izleme ve kontrol kapsamını keşfedin.": "Monitor every device on site and turn data into insight. Let's define the right monitoring and control scope for your operations together.",
+    "Çözümü inceleyin": "Explore this solution",
+    "İHTİYACINIZI SEÇİN": "CHOOSE YOUR REQUIREMENT",
+    "Teknoloji, işletmenin": "Technology across",
+    "ScadaWatt ${screen.title.toLocaleLowerCase('tr-TR')} uygulama ekranı": "ScadaWatt ${screen.title.toLocaleLowerCase('tr-TR')} application screen",
+    "DONANIMLAR": "HARDWARE",
+    "bir donanımı var.": "for every task.",
+    "SAHAYA UYGUN TEKNOLOJİ": "TECHNOLOGY BUILT FOR THE FIELD",
+    "Her görevin": "The right hardware",
+    "Saha verisini toplayan, kontrolü sağlayan ve sistemi koruyan teknolojiyi yakından tanıyın.": "Discover the technology that collects field data, enables control and protects your system.",
+    "Cihaz ara": "Search devices",
+    "Bu aramayla eşleşen cihaz bulunamadı.": "No devices match your search.",
+    "Donanım seçimi": "Select hardware",
+    "SCADAWATT DONANIM AİLESİ": "THE SCADAWATT HARDWARE FAMILY",
+    "${product.code} ürün bilgileri": "${product.code} product information",
+    "${product.code} gerçek ürün fotoğrafı": "${product.code} actual product photo",
+    "İhtiyaçlarınızı seçin": "Select your requirements",
+    "Soldan ihtiyaç seçtiğinizde ilgili çözümler burada listelenir.": "Select your requirements on the left to see relevant solutions here.",
+    "SİZE UYGUN BAŞLANGIÇ": "YOUR STARTING POINT",
+    "Veri toplama": "Data acquisition",
+    "İHTİYACINIZDAN BAŞLAYIN": "START WITH YOUR REQUIREMENTS",
+    "S3000i": "S3000i",
+    "ScadaWatt keşif araçları": "ScadaWatt discovery tools",
+    "İzlemenin yanında kontrol ihtiyacım da var.": "I need control capabilities as well as monitoring.",
+    "Kontrol özellikleri için PRO kapsamı, cihaz uyumluluğu ve saha koşulları birlikte değerlendirilmelidir. Bu seçim kesin bir paket veya uyumluluk onayı değildir.": "For control capabilities, the PRO scope, device compatibility and site conditions must be reviewed together. This selection does not confirm a plan or device compatibility.",
+    "Sizin sahanız. Sizin önceliğiniz.": "Your site. Your priorities.",
+    "Önceliklerinizi belirleyin.": "Set your priorities.",
+    "Seçiminize göre ilgili çözüm alanları:": "Relevant solution areas based on your selection:",
+    "Seçimi temizle": "Clear selection",
+    "Seçimimle demo talep et": "Request a demo with my selection",
+    "Önce bu çözümlere bakalım.": "Let’s start with these solutions.",
+    "Çözüm seçici": "Solution finder",
+    "Donanımı inceleyin": "Explore this device",
+    "Keşif araçları hazırlanıyor…": "Preparing discovery tools…",
+    "konuşalım.": "your project.",
+    "BİR SONRAKİ ADIM": "THE NEXT STEP",
+    "Cihazlarınız, ölçüm noktalarınız ve yazılım ihtiyaçlarınız için": "Talk to our team about your devices, measurement points",
+    "ScadaWatt demo talebi": "ScadaWatt demo request",
+    "DEMO TALEP EDİN": "REQUEST A DEMO",
+    "ekibimizle görüşün.": "and software requirements.",
+    "Projenizi": "Let’s discuss",
+    "İhtiyacınıza uygun çözümü keşfedin.": "Find the right solution for your needs.",
+    "İzleme planlarını karşılaştırın": "Compare monitoring plans",
+    "SCADAWATT / YAZILIM & ELEKTRONİK": "SCADAWATT / SOFTWARE & ELECTRONICS",
+    "ScadaWatt veri yolculuğu": "The ScadaWatt data journey",
+    "Bu aşamada ne oluyor?": "What happens at this stage?",
+    "Donanımları keşfet": "Explore the hardware",
+    "VERİNİN İZİNİ SÜR": "FOLLOW THE DATA",
+    "Yolculuğu geç": "Skip the journey",
+    "Önceki görünüm": "Previous view",
+    "ŞEHRİ KEŞFET": "EXPLORE THE CITY",
+    "Sonraki görünüm": "Next view",
+    "ScadaWatt gerçek uygulama ekranı": "Actual ScadaWatt application screen",
+    "Sahne yükleniyor": "Loading the scene",
+    "3B görünüm bu tarayıcıda açılamadı.": "The 3D experience is unavailable in this browser.",
+    "Aşamaları aşağıdaki düğmelerle inceleyebilirsiniz.": "Use the buttons below to explore each stage.",
+    "SCADAWATT / KEŞİF": "SCADAWATT / EXPLORE",
+    "Sistem yükleniyor...": "Loading system...",
+    "ϟ": "ϟ",
+    "SCADAWATT / DİJİTAL ENERJİ": "SCADAWATT / DIGITAL ENERGY",
+    "SCADAWATT /": "SCADAWATT /",
+    "Devamını keşfedin": "Discover more",
+    "Çözümleri keşfedin": "Explore solutions",
+    "Sahadan gelen veriyi anlamlı bilgiye dönüştürün. SCADA, uzaktan izleme ve enerji yönetimini tek bir ekosistemde keşfedin.": "Turn field data into actionable insight. Discover SCADA, remote monitoring and energy management in one connected ecosystem.",
+    "Saha": "Site",
+    "bağlantıda kalın.": "to your operations.",
+    "ScadaWatt mobil uygulaması": "ScadaWatt mobile app",
+    "Sahadan ekrana": "From field to screen",
+    "YAZILIM & ELEKTRONİK": "SOFTWARE & ELECTRONICS",
+    "ScadaWatt uygulamaları": "ScadaWatt applications",
+    "Görünür veri. Bilinçli kararlar.": "Clear data. Informed decisions.",
+    "ScadaWatt izleme arayüzü": "ScadaWatt monitoring dashboard",
+    "Sahanızla": "Stay connected",
+    "Yazılım": "Software",
+    "ScadaWatt: güneş enerji santralleri için uzaktan izleme, SCADA, veri toplama ve enerji yönetimi çözümleri.": "ScadaWatt: remote monitoring, SCADA, data acquisition and energy management solutions for solar power plants.",
+    "ScadaWatt: sahadaki ölçümden yazılım ekranına veri toplama, SCADA ve enerji yönetimi teknolojileri.": "ScadaWatt: remote monitoring, SCADA, data acquisition and energy management solutions for solar power plants.",
+    "Yazılım, Elektronik ve Enerji Teknolojileri": "Software, Electronics and Energy Technologies",
+    "Aşağıdaki ihtiyaçlarım için ScadaWatt çözümlerini değerlendirmek ve bir demo görüşmesi planlamak istiyorum.": "I would like to explore ScadaWatt solutions for the following requirements and arrange a demo.",
+    "Saha türü, cihazlar ve kurulum detaylarını görüşmede birlikte değerlendirebiliriz.": "We can discuss the site type, devices and installation details during the meeting.",
+    "Talep ettiğim kapsam:": "Requested scope:",
+    "İzleme, analiz ve kontrol olanakları": "Monitoring, analysis and control capabilities",
+    "İlgilendiğim çözümler:": "Solutions of interest:",
+    "Uygun bir demo planlamak için benimle iletişime geçmenizi rica ederim.": "Please contact me to arrange a suitable demo.",
+    "Önceliklerim:": "My priorities:",
+    "Merhaba ScadaWatt ekibi,": "Hello ScadaWatt team,",
+    "İzleme ve analiz": "Monitoring and analysis",
+    "Demoda, bu ihtiyaçların saha verileri, cihaz durumları ve raporlama ekranları üzerinden nasıl karşılandığını görmek isterim.": "During the demo, I would like to see how these requirements are addressed through field data, device status and reporting interfaces.",
+    "DİKKAT": "CAUTION",
+    "VERİ TOPLAMA KÖŞKÜ": "DATA ACQUISITION KIOSK",
+    "HÜCRE": "COMPARTMENT",
+    "KONTROL EVİ": "CONTROL HOUSE",
+    "EVİRİCİ": "INVERTER",
+    "Evirici ve üretim kayıtlarını birlikte değerlendirin.": "Evaluate inverter data and generation records together.",
+    "Üretim performansını izlemek": "Monitor generation performance",
+    "Cihaz durumu, haberleşme ve alarmları takip edin.": "Track device status, communication and alarms.",
+    "Cihazlara uzaktan görünürlük": "Gain visibility into remote devices",
+    "Üretim, tüketim ve enerji kalitesine birlikte bakın.": "Review generation, consumption and power quality together.",
+    "Enerji tüketimini anlamak": "Understand energy consumption",
+    "Kompanzasyon ve reaktif güç gereksinimlerini değerlendirin.": "Assess power factor correction and reactive power requirements.",
+    "Reaktif gücü takip etmek": "Monitor reactive power",
+    "Saha ve evirici limitlerini görünür hale getirin.": "Make site and inverter limits visible.",
+    "Operasyonel limitleri izlemek": "Monitor operational limits",
+    "3B kaynakları": "3D credits",
+    "Çerezler": "Cookies",
+    "arasında bağlantı kuruyoruz.": "with energy management.",
+    "Başa dön ↑": "Back to top ↑",
+    "KVKK": "KVKK",
+    "Şirket": "Company",
+    "Sahadaki veri ile enerji yönetimi": "Connecting field data",
+    "İletişim →": "Contact →",
+    "Teknoloji": "Technology",
+    "Gizlilik": "Privacy",
+    "Yazılım, elektronik ve AR-GE.": "Software, electronics and R&D.",
+    "Web & mobil uygulamalar": "Web & mobile apps",
+    "YAZILIM / ELEKTRONİK / AR-GE": "SOFTWARE / ELECTRONICS / R&D",
+    "Ürünler": "Products",
+    "Hakkımızda": "About us",
+    "Çözümler": "Solutions",
+    "ScadaWatt / Ankara": "ScadaWatt / Ankara",
+    "SCADA yazılımı": "SCADA software",
+    "İzleme planları": "Monitoring plans",
+    "SCADAWATT": "SCADAWATT",
+    "Donanım": "Hardware",
+    "İçeriğe geç": "Skip to content",
+    "Sayfa yüklenemedi.": "The page could not be loaded.",
+    "Ana sayfaya dönün →": "Back to home →",
+    "Sayfayı yenileyebilir veya ana sayfaya dönebilirsiniz.": "Refresh the page or return to the home page.",
+    "ScadaWatt — Yazılım ve Enerji Teknolojileri": "ScadaWatt — Software and Energy Technologies",
+    "Taslak önizlemesi · Ziyaretçiler bu değişiklikleri görmez.": "Draft preview · Visitors cannot see these changes.",
+    "Yönetime dön": "Back to admin",
+    "Sayfa bulunamadı.": "Page not found.",
+    "SCADAWATT / ANKARA": "SCADAWATT / ANKARA",
+    "Keşif bölümleri": "Explore the experience",
+    "Başlangıç": "Start",
+    "Gezinme menüsünü kapat": "Close navigation menu",
+    "ScadaWatt ana sayfa": "ScadaWatt home",
+    "Türkiye: Gece · ABD: Gündüz": "Türkiye: Night · USA: Day",
+    "Şirketimizi tanıyın": "Meet ScadaWatt",
+    "Keşif araçları": "Discovery tools",
+    "Ana menü": "Main navigation",
+    "Menüyü kapat": "Close menu",
+    "Menüyü aç": "Open menu",
+    "Gündüz temasına geç": "Switch to light theme",
+    "Veri yolculuğu": "Data journey",
+    "Yazılım, elektronik": "Software, electronics",
+    "Menü": "Menu",
+    "Dil seçimi": "Language selection",
+    "ScadaWatt navigasyonu": "ScadaWatt navigation",
+    "ve enerji teknolojileri.": "and energy technologies.",
+    "Gece temasına geç": "Switch to dark theme",
+    "Türkiye: Gündüz · ABD: Gece": "Türkiye: Day · USA: Night",
+    "TR": "TR",
+    "null": "Monitoring plans",
+    "EN": "EN",
+    "Donanımlar": "Hardware",
+    "Ana sayfa": "Home",
+    "Demo talep edin": "Request a demo",
+    "İletişim": "Contact",
+    "Aktif ve geçmiş alarmları tek listede görün. Her alarmın ne zaman başladığı, hangi cihazdan geldiği ve ne zaman kapandığı kayıt altındadır.": "See active and past alarms in one list. When each alarm started, which device raised it and when it cleared are all recorded.",
+    "Aktif ve geçmiş alarmları birlikte görün. Bir uyarıyı anlamak için olayın zamanı, kaynağı ve durumu birlikte değerlendirilir.": "See active and past alarms in one list. When each alarm started, which device raised it and when it cleared are all recorded.",
+    "Alarm arşivi": "Alarm archive",
+    "Farklı bölgelerdeki sahalarınızı tek ekranda toplayın. Görseldeki değerler ekran görüntüsünün alındığı ana aittir.": "Bring sites from different regions together on one screen. Values shown reflect the moment the screenshot was taken.",
+    "Farklı bölgelerdeki sahaları bir araya getiren gerçek ScadaWatt ekranı. Görseldeki değerler çekim anına aittir.": "Bring sites from different regions together on one screen. Values shown reflect the moment the screenshot was taken.",
+    "Bölgesel görünüm": "Regional overview",
+    "Tüm sahaların haberleşme ve çalışma durumunu tek ekranda izleyin. Bağlantısı kopan ya da arıza veren saha hemen öne çıkar.": "Monitor the communication and operating status of every site on one screen. Sites that lose connection or report a fault stand out immediately.",
+    "Sahaların haberleşme ve durum bilgilerini birlikte inceleyin. Bu görüntü, gönderilen uygulama ekranının sabit bir kaydıdır.": "Monitor the communication and operating status of every site on one screen. Sites that lose connection or report a fault stand out immediately.",
+    "Canlı izleme": "Live monitoring",
+    "Saha üretiminin kaynağına inin. Her eviricinin gücünü, durumunu ve üretimini ayrı ayrı görün.": "Drill down to the source of site generation. See the power, status and output of each inverter individually.",
+    "Toplam üretimin kaynağına inin. Eviricileri ayrı ayrı görmek, saha seviyesindeki bilgiyi cihaz seviyesinde okumayı sağlar.": "Drill down to the source of site generation. See the power, status and output of each inverter individually.",
+    "Eviriciler": "Inverters",
+    "Sahaları aynı ekranda karşılaştırın. Güç eğrisi ve dönemsel üretim, tek bir sayının arkasındaki değişimi gösterir.": "Compare sites on one screen. Power curves and generation over time reveal the trends behind a single figure.",
+    "Genel görünüm": "Overview",
+    "Evirici ve saha limitlerini izleyin. Kontrol olanakları, kurulumun ve seçilen hizmetin kapsamına bağlıdır.": "Monitor inverter and site limits. Control capabilities depend on the installation and selected services.",
+    "Limit yönetimi": "Limit management",
+    "Saha içindeki cihazları ve bağlantı bilgilerini inceleyin. Her ölçümün hangi kaynaktan geldiğini bilmek, doğru yorumun başlangıcıdır.": "Inspect site devices and connection details. Knowing the source of each measurement is essential to interpreting it correctly.",
+    "Saha cihazları": "Field devices",
+    "Seçilen sahanın durum ve olay kayıtlarına odaklanın. Genel görünümden sahaya, sahadan ayrıntıya ilerleyin.": "Focus on status and event records for the selected site. Move from the overview to the site, then into the details.",
+    "Saha olayları": "Site events",
+    "Üretim kayıtlarını gün, ay ve yıl bazında inceleyin; dönemleri ve sahaları karşılaştırın.": "Review generation by day, month and year, and compare periods and sites.",
+    "Üretim kayıtlarını dönemlere göre inceleyin. Anlık güç ile zaman içinde biriken enerji farklı büyüklüklerdir.": "Review generation by day, month and year, and compare periods and sites.",
+    "Üretimler": "Generation",
+    "ScadaWatt web sitesi çerez politikası.": "ScadaWatt website cookie policy.",
+    "Çerez Politikası": "Cookie Policy",
+    "GES uzaktan izleme, limit yönetimi, kompanzasyon, zero injection, planlı yük atma, saatlik mahsuplaşma takibi ve anlık bildirim çözümleri.": "Remote solar PV monitoring, limit management, power factor correction, zero injection, scheduled load shedding, hourly net-metering tracking and real-time notifications.",
+    "GES uzaktan izleme, limit yönetimi, kompanzasyon, Zero Injection, planlı üretim durdurma ve anlık bildirim çözümleri.": "Remote solar PV monitoring, limit management, power factor correction, zero injection, scheduled load shedding, hourly net-metering tracking and real-time notifications.",
+    "Enerji yönetimi, uzaktan izleme, üretim analizi ve saha kontrolü için ScadaWatt çözümlerini keşfedin.": "Explore ScadaWatt solutions for energy management, remote monitoring, generation analysis and field control.",
+    "Enerji ve veri için çözümler.": "Solutions for energy and data.",
+    "Çözüm bulunamadı | ScadaWatt": "Solution not found | ScadaWatt",
+    "Kapsam": "Scope",
+    "Bu çözüm için demo talep et": "Request a demo for this solution",
+    "Çözüm": "Solution",
+    "Sonraki çözüm": "Next solution",
+    "Gün sonu üretim bilgileri, anlık alarm durumları ve limit aşım uyarıları gibi tüm kritik olaylar anında iletilir.": "Critical events, including daily generation updates, active alarms and limit exceedances, are delivered immediately.",
+    "Bildirimler SMS, e-posta ve iOS / Android uygulama kanallarından alınabilir.": "Notifications are available through SMS, email and the iOS / Android apps.",
+    "SMS": "SMS",
+    "E-posta": "Email",
+    "iOS": "iOS",
+    "Android": "Android",
+    "Alarm, limit aşımı ve gün sonu üretim bilgisi; SMS, e-posta, iOS ve Android.": "Alarms, limit exceedances and daily generation updates via SMS, email, iOS and Android.",
+    "Anlık Bildirimler": "Real-Time Notifications",
+    "Üretim ve dönemsel eğriler · Gerçek uygulama görünümü": "Generation and historical trends · Actual application view",
+    "Enerjinizin bütününü görün.": "See the full picture of your energy.",
+    "ScadaWatt üretim, tüketim, limit ve reaktif güç verilerini aynı platformda toplar. OSOS sayaç verisi, saatlik mahsuplaşma takibi ve piyasa takas fiyatlarıyla (PTF) enerjinin hem teknik hem ticari tarafını birlikte görürsünüz.": "ScadaWatt brings generation, consumption, limit and reactive power data together on one platform. With OSOS meter data, hourly net-metering tracking and market clearing prices (PTF), you see both the technical and commercial side of your energy.",
+    "ScadaWatt, ölçüm verilerini izleme, raporlama ve kontrol ihtiyaçlarıyla bir araya getirir. Üretim ve tüketim görünürlüğü, limit takibi ve reaktif güç değerlendirmesi enerji yönetiminin farklı parçalarıdır.": "ScadaWatt brings generation, consumption, limit and reactive power data together on one platform. With OSOS meter data, hourly net-metering tracking and market clearing prices (PTF), you see both the technical and commercial side of your energy.",
+    "Saatlik mahsuplaşma takibi sunan altyapımız, 15 dakikalık uzlaştırma dönemine geçişe uygun şekilde hazırlanmaktadır.": "Our hourly net-metering infrastructure is being prepared for the transition to 15-minute settlement periods.",
+    "Uygulanacak kapsam, saha cihazları ve seçilen hizmetlere göre birlikte değerlendirilir.": "Our hourly net-metering infrastructure is being prepared for the transition to 15-minute settlement periods.",
+    "Üretim ve tüketim takibi": "Generation and consumption monitoring",
+    "Enerji kalitesi ve reaktif güç": "Power quality and reactive power",
+    "Limit takibi ve raporlama": "Limit monitoring and reporting",
+    "Üretim, tüketim ve enerji kalitesi verilerini birlikte değerlendirin.": "Bring generation, consumption and power quality data together.",
+    "Enerji Yönetimi": "Energy Management",
+    "Evirici, enerji analizörü, elektrik sayacı ve sensörlerden gelen veriler S3000i veri toplama cihazı üzerinden ScadaWatt platformuna aktarılır.": "Data from inverters, power analysers, electricity meters and sensors is transferred to the ScadaWatt platform through the S3000i data acquisition device.",
+    "Farklı cihazlardan alınan veriler eş zamanlı karşılaştırılır ve en doğru üretim raporu oluşturulur. MPPT-dize ve evirici performans analizleriyle kayıp noktaları görünür hale gelir.": "Data from different devices is compared simultaneously to produce accurate generation reports. MPPT/string and inverter performance analysis helps identify sources of loss.",
+    "Çok noktadan üretim verisi": "Generation data from multiple sources",
+    "MPPT-dize performans analizi": "MPPT/string performance analysis",
+    "Evirici performans analizi": "Inverter performance analysis",
+    "Gün sonu üretim raporları": "Daily generation reports",
+    "Santralinizdeki tüm ekipmanları tek platformdan, gerçek zamanlı izleyin.": "Monitor all your plant equipment in real time, on one platform.",
+    "GES Uzaktan İzleme": "Remote Solar PV Monitoring",
+    "ScadaWatt platformundan genel bir görünüm": "An overview of the ScadaWatt platform",
+    "Enerji kalitesine odaklanın.": "Focus on power quality.",
+    "Reaktif güç değerleri sürekli izlenir. Limit aşımlarında ScadaWatt kompanzasyon sistemini kontrol ederek reaktif ceza riskini azaltır.": "Reactive power is monitored continuously. When limits are exceeded, ScadaWatt controls the power factor correction system to reduce the risk of reactive penalties.",
+    "Reaktif güç değerleri sürekli izlenir. Limit aşımlarında ScadaWatt kompanzasyon sistemini kontrol ederek ceza risklerinin oluşmasını engeller.": "Reactive power is monitored continuously. When limits are exceeded, ScadaWatt controls the power factor correction system to reduce the risk of reactive penalties.",
+    "Saatlik veriler üzerinden fatura doğrulaması yapılır; hatalı faturalar kolayca fark edilir.": "Bills are checked against hourly data, making billing errors easy to spot.",
+    "Saatlik veriler üzerinden fatura doğrulaması yapılarak hatalı faturaların önüne geçilir.": "Bills are checked against hourly data, making billing errors easy to spot.",
+    "Reaktif güç izleme": "Reactive power monitoring",
+    "Otomatik kompanzasyon kontrolü": "Automatic power factor correction control",
+    "Saatlik fatura doğrulama": "Hourly billing verification",
+    "Reaktif güç sürekli izlenir; limit aşımlarında kompanzasyon otomatik kontrol edilir.": "Reactive power is continuously monitored, with correction controlled automatically when limits are exceeded.",
+    "Kompanzasyon Takibi ve Kontrolü": "Power Factor Correction Monitoring and Control",
+    "Evirici ve saha limitleri · Gerçek uygulama görünümü": "Inverter and site limits · Actual application view",
+    "Sınırları görünür kılın.": "Make limits visible.",
+    "Evirici ve saha limitleriniz anlık olarak takip edilir. Operasyonel hatalar nedeniyle oluşabilecek limit aşımları ve ceza riskleri önceden yakalanır.": "Inverter and site limits are monitored in real time to identify potential exceedances and penalty risks caused by operational errors.",
+    "PRO pakette limitler yalnızca görüntülenmez; ScadaWatt üzerinden doğrudan yönetilir.": "With PRO, limits can be managed directly through ScadaWatt, as well as viewed.",
+    "Evirici limit görüntüleme": "Inverter limit monitoring",
+    "Evirici limit yönetimi (PRO)": "Inverter limit control (PRO)",
+    "Limit aşım uyarıları": "Limit exceedance alerts",
+    "Evirici ve saha limitlerini anlık takip edin, ceza riskini azaltın.": "Monitor inverter and site limits in real time and reduce the risk of penalties.",
+    "Evirici ve saha limitlerini anlık takip edin, ceza risklerini ortadan kaldırın.": "Monitor inverter and site limits in real time and reduce the risk of penalties.",
+    "Limit Yönetimi": "Limit Management",
+    "Planlı yük atma talimatları ScadaWatt üzerinden tanımlanır ve belirlenen saatte sahaya otomatik uygulanır; ekibin sahaya gitmesine gerek kalmaz.": "Scheduled load-shedding instructions are defined in ScadaWatt and applied to the site automatically at the set time, with no need to send a team on site.",
+    "Planlı üretim durdurma modülü ile yük atma süreçleri otonom hale gelir; talimatlar manuel müdahaleye gerek kalmadan sahaya uygulanır.": "Scheduled load-shedding instructions are defined in ScadaWatt and applied to the site automatically at the set time, with no need to send a team on site.",
+    "PRO pakette acil durdurma eylemi ve hücrenin uzaktan açılıp kapatılması da bulunur.": "PRO also includes emergency shutdown and remote opening and closing of the switchgear cell.",
+    "PRO pakette acil durdurma eylemi ve sahaya fiziksel müdahale imkânı da bulunur.": "PRO also includes emergency shutdown and remote opening and closing of the switchgear cell.",
+    "Otomatik yük atma": "Automatic load shedding",
+    "Otonom yük atma": "Automatic load shedding",
+    "Acil durdurma eylemi (PRO)": "Emergency shutdown (PRO)",
+    "Uzaktan hücre açma / kapama (PRO)": "Remote switchgear cell open / close (PRO)",
+    "Sahaya fiziksel müdahale (PRO)": "Remote switchgear cell open / close (PRO)",
+    "Planlı yük atma talimatlarını sahaya otomatik uygulayın.": "Apply scheduled load-shedding instructions to the site automatically.",
+    "Yük atma süreçlerini otonom hale getirin.": "Apply scheduled load-shedding instructions to the site automatically.",
+    "Planlı Yük Atma": "Scheduled Load Shedding",
+    "Planlı Üretim Durdurma": "Scheduled Load Shedding",
+    "Cihaz ve saha durumları · Gerçek uygulama görünümü": "Device and site status · Actual application view",
+    "Saha uzakta. Bilgi yanınızda.": "The site is remote. The insight is close.",
+    "Evirici, analizör, sayaç ve sensör verileri ScadaWatt veri toplama cihazı üzerinden platforma aktarılır. Cihaz durumları, haberleşme kesintileri ve alarmlar web panelinden ve mobil uygulamadan takip edilir.": "Data from inverters, analysers, meters and sensors is transferred to the platform through the ScadaWatt data acquisition device. Device status, communication outages and alarms can be followed on the web platform and mobile app.",
+    "Saha cihazlarından gelen veriler, veri toplama ve haberleşme teknolojileri üzerinden ScadaWatt yazılımına taşınır. İzleme ve raporlama ihtiyaçları cihaz ve saha kapsamına göre belirlenir.": "Data from inverters, analysers, meters and sensors is transferred to the platform through the ScadaWatt data acquisition device. Device status, communication outages and alarms can be followed on the web platform and mobile app.",
+    "Cihaz verileri": "Device data",
+    "Alarm ve bildirim": "Alarms and notifications",
+    "Web ve mobil görünüm": "Web and mobile access",
+    "Ölçümleri, cihaz durumlarını ve alarmları yazılım üzerinden takip edin.": "Track measurements, device status and alarms through the software.",
+    "Uzaktan İzleme": "Remote Monitoring",
+    "Dönemsel üretim kayıtları · Gerçek uygulama görünümü": "Historical generation records · Actual application view",
+    "Üretimi zaman içinde okuyun.": "Read generation over time.",
+    "Güneş enerji santrallerinde üretimi doğru ölçmek, performansı izlemek ve gerektiğinde sahaya müdahale edebilmek gerekir. ScadaWatt bu üç ihtiyacı tek platformda karşılar.": "Solar power plants need accurate generation measurement, performance monitoring and the ability to act on site when necessary. ScadaWatt meets all three on one platform.",
+    "Yenilenebilir enerji üretiminde ölçüm, performans analizi ve kontrol verileri önemlidir. ScadaWatt’ın GES izleme ürünü, üretim verilerini yazılım üzerinden değerlendirmeye odaklanır.": "Solar power plants need accurate generation measurement, performance monitoring and the ability to act on site when necessary. ScadaWatt meets all three on one platform.",
+    "Diğer kaynaklar için cihaz uyumluluğu ve uygulanabilecek kapsam proje özelinde değerlendirilmelidir.": "For other energy sources, device compatibility and the available scope must be assessed for each project.",
+    "Üretim verileri": "Generation data",
+    "Performans takibi": "Performance monitoring",
+    "Saha cihazlarıyla haberleşme": "Communication with field devices",
+    "Üretim sistemlerinde veri toplama ve yazılım teknolojileri.": "Data acquisition and software technologies for generation systems.",
+    "Yenilenebilir Enerji": "Renewable Energy",
+    "Evirici görünümü · Kontrol kapsamı projeye göre belirlenir": "Inverter view · Control scope is defined for each project",
+    "Üretim ile tüketimi dengeleyin.": "Balance generation and consumption.",
+    "Zero Injection modülü tesisin anlık tüketimini ölçer ve evirici gücünü buna göre sürekli ayarlar; üretim tüketimi aşmaz.": "The Zero Injection module measures the facility's real-time consumption and continuously adjusts inverter output to match it, so generation never exceeds consumption.",
+    "Zero Injection modülü ile eviriciler dinamik olarak PID kontrol edilir, tüketim değerleriniz ölçülür ve tüketim kadar üretim yapılır.": "The Zero Injection module measures the facility's real-time consumption and continuously adjusts inverter output to match it, so generation never exceeds consumption.",
+    "Böylece şebeke yönüne enerji gitmemesi sağlanır. Tüm süreç ScadaWatt ekranları ve raporlarıyla izlenir ve yönetilir.": "This prevents power from being exported to the grid. The process is monitored and managed through ScadaWatt screens and reports.",
+    "Dinamik evirici güç kontrolü": "Dynamic inverter power control",
+    "Dinamik PID evirici kontrolü": "Dynamic inverter power control",
+    "Anlık tüketim ölçümü": "Real-time consumption measurement",
+    "Şebekeye sıfır enjeksiyon": "Zero export to the grid",
+    "Tüketim kadar üretim: şebeke yönüne enerji gitmez.": "Generate what you consume, without exporting power to the grid.",
+    "Zero Injection": "Zero Injection",
+    "ScadaWatt web sitesi gizlilik politikası.": "ScadaWatt website privacy policy.",
+    "Gizlilik Politikası": "Privacy Policy",
+    "Bu sayfanın metni ScadaWatt hukuk danışmanı tarafından hazırlanıp onaylanmalıdır. Aşağıdaki başlıklar yalnızca yapı önerisidir.": "This page must be drafted and approved by ScadaWatt’s legal adviser. The headings below are a suggested structure only.",
+    "Yasal": "Legal",
+    "Hukuki onay gerekli": "Legal approval required",
+    "Sorduğumuz soru": "The question we ask",
+    "Enerji yönetimine yaklaşımımız": "Our approach to energy management",
+    "Veriyi görünür, yönetimi bütüncül kılıyoruz.": "Making data visible. Bringing management together.",
+    "Uzmanlık alanlarımız": "Our areas of expertise",
+    "Saha deneyiminden doğan teknoloji.": "Technology shaped by field experience.",
+    "Vizyonumuz": "Our vision",
+    "Hakkımızda / ScadaWatt": "About / ScadaWatt",
+    "Santrallerdeki kayıplara farkındalık yaratmak ve veriyi kararlarınıza taşımak için çalışıyoruz.": "We work to make plant losses visible and put data at the heart of your decisions.",
+    "Sahadan ekranınıza.": "From the field to your screen.",
+    "ScadaWatt mobil uygulamasının izleme ve analiz ekranları": "Monitoring and analysis screens in the ScadaWatt mobile app",
+    "İzleme, analiz ve kontrol. Aynı ekosistemde.": "Monitoring, analysis and control. One connected ecosystem.",
+    "ScadaWatt, güneş enerji santralleri için uzaktan izleme ve kontrol sistemleri geliştiren elektronik temelli yazılım ve AR-GE şirketidir.": "ScadaWatt is an electronics-led software and R&D company developing remote monitoring and control systems for solar power plants.",
+    "Santrallerinizdeki tüm ekipmanları tek bir platformdan uzaktan izleme ve kontrol": "Remotely monitor and control all your plant equipment from one platform",
+    "Üretim ve tüketimi analiz ederek verimliliği artırma, kayıpları en aza indirme": "Improve efficiency and minimise losses by analysing generation and consumption",
+    "Reaktif güç ve kompanzasyon takibiyle enerji kalitesini kontrol etme, ceza riskini azaltma": "Monitor reactive power and power factor correction to manage power quality and reduce penalty risk",
+    "Reaktif güç ve kompanzasyon takibiyle enerji kalitesini kontrol etme, cezaları önleme": "Monitor reactive power and power factor correction to manage power quality and reduce penalty risk",
+    "Saatlik veriler üzerinden fatura doğrulama": "Validate electricity bills against hourly data",
+    "Piyasa takas fiyatını (PTF) üretim verisiyle birlikte izleyerek santrali daha bilinçli yönetme": "Manage the plant more effectively by tracking market clearing prices (PTF) alongside generation data",
+    "Piyasa fiyatları ve PTF kontrolleriyle santrali optimum seviyede yönetme": "Manage the plant more effectively by tracking market clearing prices (PTF) alongside generation data",
+    "Santralinizi uzaktan, eksiksiz ve doğru veriyle yönetin.": "Manage your plant remotely, with complete and accurate data.",
+    "Akıllı enerji yönetimiyle mükemmel çözümler sunuyoruz.": "Manage your plant remotely, with complete and accurate data.",
+    "AR-GE": "R&D",
+    "Saha deneyimini ve müşterilerimizin özel ihtiyaçlarını ek modüller ve kişiselleştirilmiş çözümlerle değerlendiriyoruz.": "We apply field experience and our customers’ specific requirements to additional modules and tailored solutions.",
+    "Santrallerinizi ScadaWatt ile izlemeye hazır mısınız? Sahanızı ve ihtiyacınızı konuşmak için bize ulaşın.": "Ready to monitor your plants with ScadaWatt? Get in touch to talk about your site and what you need.",
+    "ScadaWatt ekosisteminde yerinizi alarak, santrallerinizde enerji yönetimini en üst seviyeye taşımaya hazır mısınız?": "Ready to monitor your plants with ScadaWatt? Get in touch to talk about your site and what you need.",
+    "Markamızın ilk ürünü olan ScadaWatt izleme sistemi, güneş enerjisi sahalarında edindiğimiz deneyimin ürünüdür.": "ScadaWatt monitoring, our first product, grew out of hands-on experience in solar power plants.",
+    "Markamızın çıkış ürünü olan ScadaWatt izleme otomasyonu, güneş enerjisi sektöründe kazandığımız tecrübeyi somut çözümlere dönüştürmektedir.": "ScadaWatt monitoring, our first product, grew out of hands-on experience in solar power plants.",
+    "Elektronik": "Electronics",
+    "Veri toplama ve haberleşme donanımlarıyla saha cihazları ile yazılım arasındaki bağlantıyı kuruyoruz.": "Our data acquisition and communication hardware connects field devices to software.",
+    "ScadaWatt, güneş enerji santralleriniz için uzaktan izleme ve kontrol sistemleri geliştiren elektronik temelli bir yazılım ve AR-GE şirketidir.": "ScadaWatt is an electronics-driven software and R&D company developing remote monitoring and control systems for solar power plants.",
+    "Müşterilerimizin özel ihtiyaçlarını ek modüllerle ürüne dönüştürüyor, sahaya özel çözümler geliştiriyoruz.": "We turn our customers' specific requirements into product features through additional modules, building solutions around each site.",
+    "Ek modüllerimiz sayesinde müşterilerimizin özel ihtiyaçlarını ürüne dönüştürerek, tamamen kişiselleştirilmiş çözümler sunuyoruz.": "We turn our customers' specific requirements into product features through additional modules, building solutions around each site.",
+    "Bugün Ne Kaybettiğinizi Biliyor musunuz?": "Do You Know What You Lost Today?",
+    "Sahadaki her ölçümü anlamlı bilgiye dönüştürerek kayıpları kazanca çevirmek.": "Turning every field measurement into insight, and losses into gains.",
+    "Milyarlarca veriyi saniyeler içinde analiz ederek kayıpları kazanca çevirmek.": "Turning every field measurement into insight, and losses into gains.",
+    "Sahadan gelen verileri izleme, analiz ve raporlama ekranlarında bir araya getiriyoruz.": "We bring field data together in monitoring, analysis and reporting interfaces.",
+    "Bize ulaşın.": "Get in touch.",
+    "ScadaWatt ofis konumu": "ScadaWatt office location",
+    "Birlikte doğru çözümü bulalım.": "Let’s find the right solution together.",
+    "Google Haritalar’da aç": "Open in Google Maps",
+    "İhtiyacınızı paylaşın. Demo, teklif veya bilgi talebinizi doğru kapsamla hazırlayın.": "Tell us what you need. Prepare a focused request for a demo, quotation or further information.",
+    "ScadaWatt ile iletişime geçin; demo, teklif veya bilgi talebinizi iletin. Ankara, Yenimahalle.": "Contact ScadaWatt to request a demo, quotation or further information. Yenimahalle, Ankara.",
+    "İletişim ve Demo Talebi": "Contact and Demo Requests",
+    "Mesajınız en az 10 karakter olmalı": "Your message must contain at least 10 characters",
+    "Sorunuzu ve ihtiyaç duyduğunuz bilgiyi yazın.": "Enter your question and the information you need.",
+    "Kopyalandı": "Copied",
+    "Yeni talep oluştur": "Create a new request",
+    "Firma:": "Company:",
+    "Ad Soyad *": "Full name *",
+    "Enerji yönetimi projesi": "Energy management project",
+    "Talebiniz hazır.": "Your request is ready.",
+    "Mesaj:": "Message:",
+    "Pozitif bir saha sayısı girin": "Enter a positive number of sites",
+    "ScadaWatt’ı ihtiyaçlarınızla birlikte keşfedin.": "Explore ScadaWatt around your needs.",
+    "Bilgi almak istediğiniz konuyu ve sorunuzu paylaşmanız yeterli.": "Simply choose a topic and tell us what you would like to know.",
+    "E-posta:": "Email:",
+    "Form bu tarayıcıda bir taslak oluşturur; bilgiler bir sunucuya gönderilmez.": "This form creates a draft in your browser; no information is sent to a server.",
+    "İlgilendiğiniz ürün / hizmet (isteğe bağlı)": "Product / service of interest (optional)",
+    "Sorularınızı doğrudan ekibimize iletin.": "Ask our team directly.",
+    "Firma": "Company",
+    "İlgilenilen ürün ve hizmetler:": "Products and services of interest:",
+    "Genel soru": "General enquiry",
+    "E-posta *": "Email *",
+    "Bir ürün veya hizmet seçin": "Select a product or service",
+    "Sorunuz *": "Your question *",
+    "Değer ve birim, ör. 1 MW": "Value and unit, e.g. 1 MW",
+    "Tercih edilen gün:": "Preferred day:",
+    "Görüşme tercihi": "Preferred contact method",
+    "Proje bilgileri": "Project details",
+    "Telefon *": "Phone *",
+    "Talep:": "Request:",
+    "Talep türü": "Request type",
+    "Firma *": "Company *",
+    "Demoda özellikle görmek istediğiniz konuları paylaşın.": "Tell us what you would particularly like to see in the demo.",
+    "Saha, cihazlar, mevcut sistem ve hedeflediğiniz kapsam…": "Your site, devices, existing system and intended scope…",
+    "Seçilen ürün ve hizmetler": "Selected products and services",
+    "Teklif": "Quotation",
+    "Firma ve proje bilgilerinizi paylaşın. Teknik kapsam ve fiyatlandırma ekibimizle birlikte değerlendirilir.": "Share your company and project details. Our team will review the technical scope and pricing with you.",
+    "Diğer": "Other",
+    "Demo görüşmesi": "Demo meeting",
+    "Taslağınız bu tarayıcıda oluşturuldu; henüz gönderilmedi. Metni kopyalayabilir veya e-posta uygulamanızda açıp gönderebilirsiniz.": "Your draft has been created in this browser and has not been sent. Copy the text or open it in your email app to send it.",
+    "Ürün veya hizmet ekleyin": "Add a product or service",
+    "Projenizi anlatın *": "Tell us about your project *",
+    "KVKK aydınlatma metnini onaylamanız gerekir": "Please accept the personal data privacy notice",
+    "Konu:": "Topic:",
+    "Proje türünü seçin": "Select a project type",
+    "Ticari / endüstriyel tesis": "Commercial / industrial facility",
+    "İlgilendiğiniz çözümleri seçin; demo odağını ve görüşme tercihinizi paylaşın.": "Choose the solutions that interest you and tell us what you would like to see and how you prefer to be contacted.",
+    "Kurulu güç / kapasite:": "Installed power / capacity:",
+    "Teklif için firma adını girin": "Enter your company name to request a quotation",
+    "Geçerli bir e-posta girin": "Enter a valid email address",
+    "Talep taslağı": "Request draft",
+    "Bilgi": "Information",
+    "Kurulu güç / kapasite (isteğe bağlı)": "Installed power / capacity (optional)",
+    "Birden fazla seçim yapabilirsiniz. Seçimlerinizin tamamı talep taslağına eklenir.": "You can select more than one option. All your selections will be included in the request draft.",
+    "Telefonla görüşmek için numaranızı girin": "Enter your phone number to be contacted by phone",
+    "Seçimi kaldır:": "Remove selection:",
+    "Saha sayısı:": "Number of sites:",
+    "Bilgi almak istediğiniz konu *": "Topic of your enquiry *",
+    "Ad soyad en az 2 karakter olmalı": "Full name must contain at least 2 characters",
+    "Proje türü:": "Project type:",
+    "Proje türü *": "Project type *",
+    "Tercih ettiğiniz gün (isteğe bağlı)": "Preferred day (optional)",
+    "Yazılım ve entegrasyon": "Software and integration",
+    "Ad:": "Name:",
+    "Talep taslağını oluştur": "Create request draft",
+    "Metni kopyala": "Copy text",
+    "Seçin": "Select an option",
+    "Paketler ve hizmet kapsamı": "Plans and service scope",
+    "Görüşme günü bir tercihtir; randevu ekibimizle teyit edilir.": "Your preferred day is a request; the appointment will be confirmed with our team.",
+    "İlgilendiğiniz ürün / hizmet *": "Product / service of interest *",
+    "Ürün ve teknik özellikler": "Products and technical specifications",
+    "Geçerli bir telefon numarası girin": "Enter a valid phone number",
+    "Görüşme tercihi:": "Preferred contact method:",
+    "Projeniz için doğru kapsamı belirleyelim.": "Let’s define the right scope for your project.",
+    "Telefon (isteğe bağlı)": "Phone (optional)",
+    "Mesaj *": "Message *",
+    "Telefon:": "Phone:",
+    "Bilgi almak istediğiniz konuyu seçin": "Select the topic you would like to learn about",
+    "Telefon": "Phone",
+    "Saha sayısı (isteğe bağlı)": "Number of sites (optional)",
+    "Güneş enerji santrali": "Solar power plant",
+    "E-posta uygulamasında aç": "Open in your email app",
+    "Paketler": "Plans",
+    "Demo talebi": "Demo request",
+    "KVKK Aydınlatma Metni": "KVKK Personal Data Privacy Notice",
+    "6698 sayılı KVKK kapsamında ScadaWatt aydınlatma metni.": "ScadaWatt privacy notice under Türkiye’s Personal Data Protection Law No. 6698.",
+    "İzleme Paketleri": "Monitoring Plans",
+    "Özellik": "Feature",
+    "Yok": "Not included",
+    "Var": "Included",
+    "Detaylı karşılaştırma": "Detailed comparison",
+    "Planı seç": "Select plan",
+    "Tavsiye edilen": "Recommended",
+    "Size uygun planı seçin.": "Choose the right plan for you.",
+    "Fiyat için teklif alın": "Request pricing",
+    "Standart paketteki tüm hizmetler": "All services in the STANDART plan",
+    "Evirici limit yönetimi": "Inverter limit control",
+    "Acil durdurma eylemi": "Emergency shutdown",
+    "Uzaktan hücre açma / kapama": "Remote switchgear cell open / close",
+    "Sahaya fiziksel müdahale": "Remote switchgear cell open / close",
+    "PRO": "PRO",
+    "Yıllık abonelik": "Annual subscription",
+    "Aynı sahada birçok marka evirici": "Multiple inverter brands per site",
+    "Gün sonu üretim raporu (Mail, SMS)": "Daily generation report (email, SMS)",
+    "Alarm bilgisi (Mail, SMS)": "Alarm notifications (email, SMS)",
+    "Tüm cihazlarla haberleşme": "Communication with all devices",
+    "STANDART": "STANDART",
+    "Alarm bildirimi": "Alarm notifications",
+    "Mail, SMS": "Email, SMS",
+    "Evirici markası": "Inverter brands",
+    "Çoklu marka": "Multiple brands",
+    "Gün sonu üretim bildirimi": "Daily generation notification",
+    "Haberleşme": "Communication",
+    "Tüm cihazlar": "All devices",
+    "Yazılımın yapabildikleri": "Software capabilities",
+    "ScadaWatt yazılımının ölçüm, izleme, analiz ve enerji yönetimi araçlarını keşfedin.": "Explore ScadaWatt's tools for measurement, monitoring, analysis and energy management.",
+    "Ölçüm, izleme, analiz ve enerji yönetimi için geliştirilen yazılım yaklaşımını keşfedin.": "Explore ScadaWatt's tools for measurement, monitoring, analysis and energy management.",
+    "ScadaWatt SCADA yazılımı.": "ScadaWatt SCADA software.",
+    "Aşağıdaki örnek arayüz temsili verilerle çalışır. Gerçek uygulama ekranı veya canlı veri değildir.": "The example interface below uses illustrative data. It is not an actual application screen or live data feed.",
+    "İzleme arayüzü": "The monitoring interface",
+    "İzleme arayüzü yaklaşımı": "The monitoring interface",
+    "SCADA Yazılımı": "SCADA Software",
+    "ScadaWatt SCADA platformu: çok noktadan üretim verisi, limit ve kompanzasyon kontrolü, fatura doğrulama, PTF takibi ve anlık bildirimler.": "The ScadaWatt SCADA platform: multi-source generation data, limit and power factor correction control, billing verification, market clearing price monitoring and real-time notifications.",
+    "SMS, e-posta, iOS ve Android üzerinden alarm ve gün sonu raporları.": "Alarms and daily reports via SMS, email, iOS and Android.",
+    "Kompanzasyon kontrolü": "Power factor correction control",
+    "Reaktif güç sürekli izlenir; limit aşımında kompanzasyon kontrol edilir.": "Reactive power is continuously monitored, and correction is controlled when limits are exceeded.",
+    "Evirici, analizör ve sayaç verileri eş zamanlı karşılaştırılır; en doğru üretim raporu oluşur.": "Inverter, analyser and meter data is compared simultaneously to produce accurate generation reports.",
+    "Piyasa takas fiyatı (PTF) üretim verisiyle birlikte izlenir; üretiminizin değeri net görünür.": "Market clearing prices (PTF) are tracked alongside generation data, so the value of your output is clear.",
+    "Piyasa fiyatları ve PTF kontrolleriyle santral optimum seviyede yönetilir.": "Market clearing prices (PTF) are tracked alongside generation data, so the value of your output is clear.",
+    "Evirici ve saha limitleri anlık takip edilir, ceza riski azaltılır.": "Inverter and site limits are monitored in real time to reduce penalty risk.",
+    "Evirici ve saha limitleri anlık takip edilir, ceza riskleri önlenir.": "Inverter and site limits are monitored in real time to reduce penalty risk.",
+    "Piyasa takas fiyatı (PTF)": "Market clearing price (PTF)",
+    "PTF ve piyasa kontrolü": "Market clearing price (PTF)",
+    "Anlık bildirimler": "Real-time notifications",
+    "Saatlik veriler üzerinden fatura doğrulaması yapılır.": "Electricity bills are checked against hourly data.",
+    "Fatura doğrulama": "Billing verification",
+    "Güç": "Power",
+    "Zero Injection aktif · şebekeye 0 kW": "Zero Injection active · 0 kW to the grid",
+    "Santral seçimi": "Select a site",
+    "Kompanzasyon kademesi devreye alındı": "A power factor correction stage has been activated",
+    "Olaylar": "Events",
+    "Demo GES · Konya": "Demo GES · Konya",
+    "DEMO VERİ": "DEMO DATA",
+    "Günlük üretim": "Daily generation",
+    "Gün sonu raporu 20:00'de gönderilecek": "The daily generation report will be sent at 20:00",
+    "Demo Çatı · Kayseri": "Demo Rooftop · Kayseri",
+    "Planlı yük atma talimatı yok": "No scheduled load-shedding instruction",
+    "Planlı üretim durdurma talimatı yok": "No scheduled load-shedding instruction",
+    "EV-03 dize 4 düşük performans": "INV-03 string 4 is underperforming",
+    "Anlık güç": "Real-time power",
+    "Demo GES · Ankara": "Demo GES · Ankara",
+    "Üretim eğrisi · bugün": "Power curve · today",
+    "Evirici": "Inverter",
+    "Kurulu güç": "Installed capacity",
+    "EV-07 reaktif güç limitine yaklaştı": "INV-07 is approaching its reactive power limit",
+    "${invCount} / ${invCount} çevrimiçi": "${invCount} / ${invCount} online",
+    "${today.toLocaleString(\"tr-TR\")} MWh": "${today.toLocaleString(\"tr-TR\")} MWh",
+    "Demo ": "Demo ",
+    "${plant.kwp.toLocaleString(\"tr-TR\")} kWp": "${plant.kwp.toLocaleString(\"tr-TR\")} kWp",
+    "${now.toLocaleString(\"tr-TR\")} kW": "${now.toLocaleString(\"tr-TR\")} kW",
+    "Enerji verilerinize daha yakından bakın.": "A closer look at your energy data.",
+    "ScadaWatt’ı yanınızda taşıyın.": "ScadaWatt, wherever you are.",
+    "Mevcut ScadaWatt web arayüzü tanıtım görseli": "ScadaWatt web platform preview",
+    "Web arayüzü ve mobil uygulama.": "Web platform and mobile app.",
+    "Mevcut ScadaWatt mobil uygulama tanıtım görseli": "ScadaWatt mobile app preview",
+    "SCADAWATT UYGULAMALARI": "SCADAWATT APPLICATIONS",
+    "Mobil uygulama ekranlarını, üretim verisi ve bildirim deneyimini keşfedin.": "Discover the mobile app, with generation insights and notifications on the go.",
+    "Demoda tanıyın": "Explore it in a demo",
+    "Üretim takibi, performans analizi ve raporlamayı web arayüzünden keşfedin.": "Explore generation monitoring, performance analysis and reporting on the web platform.",
+    "Üretim, performans analizi ve raporlama yaklaşımını web arayüzü üzerinden keşfedin.": "Explore generation monitoring, performance analysis and reporting on the web platform.",
+    "Mevcut şirket tanıtım görseli": "Company presentation image",
+    "Web arayüzü": "Web platform",
+    "Mobil uygulama": "Mobile app",
+    "ScadaWatt": "ScadaWatt",
+    "Sahada çalışan donanım.": "Hardware built for the field.",
+    "Detaylar": "Details",
+    "ScadaWatt S3000i veri toplama cihazı, S4000MC çok amaçlı kontrol cihazı ve LOMR-07H şebeke izleme rölesi.": "ScadaWatt S3000i data acquisition device, S4000MC versatile control device and LOMR-07H grid monitoring relay.",
+    "ScadaWatt S3000i veri toplama cihazı, S4000MC çok amaçlı kontrol cihazı ve LOMR-07H şebeke arıza rölesi.": "ScadaWatt S3000i data acquisition device, S4000MC versatile control device and LOMR-07H grid monitoring relay.",
+    "Teknik özellikler": "Technical specifications",
+    "DİĞER ÜRÜNLER": "OTHER PRODUCTS",
+    "ÜRÜN BİLGİLERİ": "PRODUCT INFORMATION",
+    "ScadaWatt ürün bilgilerinden aktarılmıştır. Güncel revizyon ve projenize uygun kapsam için ekibimizle görüşün.": "Based on ScadaWatt product information. Contact our team for the latest revision and the scope appropriate to your project.",
+    "Ürün için teklif isteyin": "Request a quotation for this product",
+    "Ürünler /": "Products /",
+    "Şebeke arızası algılama": "Grid fault detection",
+    "Röle çıkışları": "Relay outputs",
+    "ScadaWatt LOMR-07H": "ScadaWatt LOMR-07H",
+    "Şebeke arıza algılama · Röle tetikleme": "Grid fault detection · Relay activation",
+    "LOMR-07H şebekenin gerilim ve frekansını sürekli ölçer. Arıza algıladığında röle çıkışlarını tetikler ve kumanda panosu üzerinden tesisin şebeke bağlantısının güvenli şekilde ayrılmasını sağlar. RS485 Modbus ile ScadaWatt'a bağlanır.": "LOMR-07H continuously measures grid voltage and frequency. When it detects a fault, it triggers its relay outputs so that the plant can be safely disconnected from the grid through the control panel. It connects to ScadaWatt via RS485 Modbus.",
+    "LOMR-07H, şebeke arızası durumunda rölelerini tetikler. Röle çıkışları kumanda panoları da kullanılarak tesis ile şebeke arasındaki bağlantının güvenli şekilde yönetilmesini sağlar.": "LOMR-07H continuously measures grid voltage and frequency. When it detects a fault, it triggers its relay outputs so that the plant can be safely disconnected from the grid through the control panel. It connects to ScadaWatt via RS485 Modbus.",
+    "Şebeke arızasında tesis koruması": "Plant protection during grid faults",
+    "Çalışma Sıcaklığı": "Operating Temperature",
+    "-40°C ~ 85°C": "-40°C ~ 85°C",
+    "Röle Çıkışı": "Relay Output",
+    "3 Adet 8A/250 VAC": "3 × 8 A / 250 VAC",
+    "Koruma Sınıfı": "Protection Rating",
+    "IP30": "IP30",
+    "Besleme Gerilimi": "Supply Voltage",
+    "7-32 V": "7-32 V",
+    "Montaj": "Mounting",
+    "DIN": "DIN",
+    "Boyutlar": "Dimensions",
+    "88 x 105 x 53 mm": "88 x 105 x 53 mm",
+    "Faz-Faz Ölçüm Aralığı": "Phase-to-Phase Measurement Range",
+    "0-680 VAC": "0-680 VAC",
+    "Faz-Nötr Ölçüm Aralığı": "Phase-to-Neutral Measurement Range",
+    "0-400 VAC": "0-400 VAC",
+    "Frekans Ölçüm Aralığı": "Frequency Measurement Range",
+    "40-60 Hz": "40-60 Hz",
+    "RS485 Modbus": "RS485 Modbus",
+    "Yerel veri işleme ve depolama": "Local data processing and storage",
+    "Platforma veri iletimi": "Data transfer to the platform",
+    "ScadaWatt S3000i": "ScadaWatt S3000i",
+    "Veri toplama · İşleme · Depolama": "Data acquisition · Processing · Storage",
+    "S3000i, ScadaWatt ekosisteminin sahadaki merkezidir. Evirici, analizör, sayaç ve sensörlerden veriyi okur, sahada işler ve saklar, ardından ScadaWatt platformuna iletir. İnternet bağlantısı kesildiğinde kayda devam eder.": "S3000i is the heart of the ScadaWatt ecosystem on site. It reads data from inverters, analysers, meters and sensors, processes and stores it locally, then sends it to the ScadaWatt platform. If the internet connection drops, it keeps recording.",
+    "S3000i, ekosistemimizin veri toplama ve işleme konusunda temel unsurudur. Farklı sensörlerden ve saha cihazlarından aldığı verileri analiz eder, depolar ve ScadaWatt platformuna iletir.": "S3000i is the heart of the ScadaWatt ecosystem on site. It reads data from inverters, analysers, meters and sensors, processes and stores it locally, then sends it to the ScadaWatt platform. If the internet connection drops, it keeps recording.",
+    "Ekosistemin veri toplama ve işleme merkezi": "The ecosystem’s data acquisition and processing hub",
+    "12-30 VDC": "12-30 VDC",
+    "-20°C ~ +60°C": "-20°C ~ +60°C",
+    "Dahili Dijital Giriş": "Integrated Digital Inputs",
+    "3 Adet": "3",
+    "Haberleşme Arayüzü": "Communication Interfaces",
+    "RS485, RJ45 Ethernet": "RS485, RJ45 Ethernet",
+    "CPU": "CPU",
+    "4 Çekirdek": "4 cores",
+    "Çekirdek Saat Hızı": "CPU Clock Speed",
+    "Dahili Gerçek Zamanlı Saat": "Integrated Real-Time Clock",
+    "Evet": "Yes",
+    "Hafıza": "Memory",
+    "Ağırlık": "Weight",
+    "0.3 kg": "0.3 kg",
+    "Ebatlar": "Dimensions",
+    "110x120x46mm": "110x120x46mm",
+    "Çok amaçlı kontrol": "Versatile control",
+    "S3000i ile entegre çalışma": "Integrated operation with S3000i",
+    "ScadaWatt S4000MC": "ScadaWatt S4000MC",
+    "Çok amaçlı kontrol · Özel senaryolar": "Versatile control · Custom applications",
+    "S4000MC, daha karmaşık ve özel ihtiyaçlara yönelik tasarlanmış çok amaçlı bir cihazdır. Verileri toplamak ve işlemek için S3000i ile birlikte çalışarak kontrol senaryolarını genişletir.": "S4000MC is a versatile device designed for complex, specialised requirements. Working alongside S3000i to collect and process data, it extends the available control scenarios.",
+    "Karmaşık ve özel ihtiyaçlar için çok amaçlı cihaz": "A versatile device for complex, specialised requirements",
+    "700 MHz": "700 MHz",
+    "700 Mhz": "700 MHz",
+    "Yeni Batı Mah. 2399 Sok. No: 2 Yenimahalle / Ankara": "Yeni Batı Mah. 2399 Sok. No: 2 Yenimahalle / Ankara, Türkiye",
+    "info@scadawatt.com": "info@scadawatt.com",
+    "0312 255 55 86": "0312 255 55 86"
+  }
+}

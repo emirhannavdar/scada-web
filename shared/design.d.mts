@@ -51,6 +51,7 @@ export type SiteDesign = {
   palette: { light: Record<string, string>; dark: Record<string, string> };
   elements: Record<string, DesignElement>;
   homeOrder: string[];
+  pageOrders?: Record<string,string[]>;
 };
 export const DESIGN_KEY: string;
 export const HOME_SECTIONS: string[];

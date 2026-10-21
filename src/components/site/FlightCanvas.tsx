@@ -240,7 +240,7 @@ export function FlightCanvas({
               <div className="flight-loading-grid" aria-hidden="true" />
               <div className="flight-loading-head">
                 <span>ϟ</span>
-                <small>SCADAWATT / DİJİTAL ENERJİ</small>
+                <small>{_tx("SCADAWATT / DİJİTAL ENERJİ")}</small>
               </div>
               <div className="flight-loading-content">
                 <div className="flight-loading-logo">

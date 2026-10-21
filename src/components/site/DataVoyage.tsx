@@ -1,3 +1,4 @@
+import {readHomePosition,rememberJourneyProgress} from "@/lib/home-position";
 import { translate as _tx, useLocale as _useLocale } from "@/lib/i18n";
 import { advanceJourney } from "@/lib/journey-gate";
 import type { CSSProperties } from "react";
@@ -11,15 +12,16 @@ import { journeyIndex, voyageStops } from "@/lib/voyage";
 import { FlightCanvas } from "./FlightCanvas";
 export function DataVoyage() {
   _useLocale();
-  const [active, setActive] = useState(0),
+  const [savedPosition] = useState(readHomePosition);
+  const [homeRestored,setHomeRestored] = useState(!savedPosition);
+  const initialProgress = savedPosition?.progress ?? 0;
+  const [active, setActive] = useState(()=>journeyIndex(initialProgress)),
     [detail, setDetail] = useState(false),
-    [copyHidden, setCopyHidden] = useState(false);
-  const seen =
-    typeof window !== "undefined" && sessionStorage.getItem("scadawatt-journey-seen") === "1";
+    [copyHidden, setCopyHidden] = useState(initialProgress > .96);
   const ref = useRef<HTMLElement>(null),
-    painted = useRef(seen),
-    completed = useRef(seen),
-    skipping = useRef(seen);
+    painted = useRef(initialProgress >= .9999),
+    completed = useRef(initialProgress >= .9999),
+    skipping = useRef(false);
   const homeScreens = [
     "/assets/screens/monitor-dashboard-1.png",
     "/assets/screens/monitor-live-v69-2.png",
@@ -33,9 +35,9 @@ export function DataVoyage() {
   const [fallback, setFallback] = useState(false),
     [sceneReady, setSceneReady] = useState(false);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
-  const timeline = useMotionValue(seen ? 1 : 0),
-    camera = useMotionValue(seen ? 1 : 0),
-    manual = useMotionValue(seen ? 1 : 0),
+  const timeline = useMotionValue(initialProgress),
+    camera = useMotionValue(initialProgress),
+    manual = useMotionValue(initialProgress),
     progress = reduced ? manual : camera;
   function scrollToTime(value: number) {
     if (ref.current)
@@ -49,53 +51,23 @@ export function DataVoyage() {
   }
   useMotionValueEvent(timeline, "change", (value) => camera.set(value));
   useMotionValueEvent(progress, "change", (p) => {
+    rememberJourneyProgress(p);
     setActive(journeyIndex(p));
     setCopyHidden(p > 0.96);
     completed.current = p >= 0.9999 && painted.current;
     if (completed.current) sessionStorage.setItem("scadawatt-journey-seen", "1");
   });
   useEffect(() => {
-    let frame = 0;
-    const remember = () => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() =>
-        sessionStorage.setItem("scadawatt-home-scroll", String(window.scrollY)),
-      );
-    };
-    window.addEventListener("scroll", remember, { passive: true });
-    window.addEventListener("pagehide", remember);
-    return () => {
-      sessionStorage.setItem("scadawatt-home-scroll", String(window.scrollY));
-      window.removeEventListener("scroll", remember);
-      window.removeEventListener("pagehide", remember);
-      cancelAnimationFrame(frame);
-    };
-  }, []);
-  useEffect(() => {
-    if (!seen || !ref.current) return;
-    setActive(fieldJourney.length - 1);
-    setCopyHidden(true);
-    const savedY = Number(sessionStorage.getItem("scadawatt-home-scroll"));
-    requestAnimationFrame(() =>
-      requestAnimationFrame(() => {
-        if (!ref.current) return;
-        const start = ref.current.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({
-          top:
-            Number.isFinite(savedY) && savedY > 0
-              ? savedY
-              : start + Math.max(0, ref.current.offsetHeight - window.innerHeight) - 1,
-          behavior: "instant",
-        });
-        skipping.current = false;
-      }),
-    );
-  }, []);
+    rememberJourneyProgress(initialProgress);
+    const restored=()=>setHomeRestored(true);
+    window.addEventListener('scadawatt:home-restored',restored);
+    return()=>window.removeEventListener('scadawatt:home-restored',restored);
+  },[]);
   useEffect(() => {
     if (reduced) manual.set(skipping.current ? 1 : voyageStops[active]!);
   }, [reduced, manual, active]);
   useEffect(() => {
-    if (editorPaused || reduced || (!sceneReady && !fallback)) return;
+    if (!homeRestored || editorPaused || reduced || (!sceneReady && !fallback)) return;
     let frame = 0,
       last = performance.now();
     const tick = (now: number) => {
@@ -121,9 +93,10 @@ export function DataVoyage() {
       unsubscribe();
       cancelAnimationFrame(frame);
     };
-  }, [editorPaused, reduced, sceneReady, fallback, scrollYProgress, timeline]);
+  }, [homeRestored, editorPaused, reduced, sceneReady, fallback, scrollYProgress, timeline]);
   useEffect(() => {
     if (
+      !homeRestored ||
       document.documentElement.dataset["cmsVisual"] === "true" ||
       reduced ||
       fallback ||
@@ -132,7 +105,7 @@ export function DataVoyage() {
     )
       return;
     return installJourneyGate(ref.current, () => completed.current);
-  }, [reduced, fallback, sceneReady]);
+  }, [homeRestored, reduced, fallback, sceneReady]);
   useEffect(() => {
     if (document.documentElement.dataset["cmsVisual"] !== "true") return;
     const handle = (event: Event) => {

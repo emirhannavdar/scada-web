@@ -1,3 +1,9 @@
+import {GoogleReviewsSettings} from './GoogleReviewsSettings';
+import {CommunityEditor} from './CommunityEditor';
+import {MailSettings} from './MailSettings';
+import {COMMUNITY_FIELD} from '../../../shared/community.mjs';
+import {ConfiguratorEditor} from './ConfiguratorEditor';
+import {CONFIGURATOR_FIELD} from '@/lib/configurator-engine';
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   ArrowLeft,
@@ -283,7 +289,7 @@ export function AdminPanel({
     [notice, setNotice] = useState(""),
     [approvalSent, setApprovalSent] = useState(false),
     [view, setView] = useState<
-      "content" | "media" | "history" | "collections" | "users" | "approvals"
+      "content" | "media" | "history" | "collections" | "users" | "approvals" | "configurator" | "community" | "mail" | "google"
     >("content"),
     [media, setMedia] = useState<Media[]>([]),
     [versions, setVersions] = useState<Version[]>([]),
@@ -379,7 +385,7 @@ export function AdminPanel({
     };
   }, []);
   const fields = (workspace?.catalog.fields ?? []).filter(
-      (f) => !f.retired && (!collections || !managedRoots.has(f.path?.[0] || "")),
+      (f) => !f.retired && !["configurator","community"].includes(f.kind) && (!collections || !managedRoots.has(f.path?.[0] || "")),
     ),
     groups = useMemo(
       () =>
@@ -686,6 +692,7 @@ export function AdminPanel({
                 </button>
               </>
             )}
+
             {error && (
               <p className="cms-error" role="alert">
                 {error}
@@ -750,7 +757,7 @@ export function AdminPanel({
             Sayfa üzerinde düzenle
           </button>
           <div className="cms-sidebar-label">ÇALIŞMA ALANI</div>
-          <nav aria-label="Yönetim bölümleri">
+          <nav aria-label="Yönetim bölümleri"><button className={view==="google"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("google");setSidebar(false)}}>Google yorum entegrasyonu</button><button className={view==="community"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("community");setSidebar(false)}}>SSS ve müşteri yorumları</button><button className={view==="mail"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("mail");setSidebar(false)}}>E-posta gönderimi</button><button className={view==="configurator"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("configurator");setSidebar(false)}}>Saha yapılandırıcısı</button>
             <button
               className={view === "content" ? "is-active" : ""}
               onClick={() => {
@@ -897,11 +904,12 @@ export function AdminPanel({
             </a>
           </header>
           <main className="cms-main">
+
             <header className="cms-page-title">
               <div>
                 <p className="cms-eyebrow">SCADAWATT / EDİTÖR</p>
                 <h1>
-                  {view === "media"
+                  {view==="google" ? "Google yorum entegrasyonu." : view === "community" ? "SSS ve müşteri yorumları." : view==="mail" ? "E-posta gönderimi." : view === "configurator" ? "Saha yapılandırıcısı." : view === "media"
                     ? "Görselleriniz."
                     : view === "history"
                       ? "Yayın geçmişi."
@@ -914,7 +922,7 @@ export function AdminPanel({
                             : "İçeriği siz yönetin."}
                 </h1>
                 <p>
-                  {view === "content"
+                  {view==="google" ? "Google yorumlarını otomatik çekmek için API bağlantısını yönetin." : view==="community" ? "Soruları, gerçek müşteri yorumlarını ve Google bağlantısını yönetin." : view==="mail" ? "Form alıcısı ve güvenli SMTP bağlantısını yapılandırın." : view === "configurator" ? "Soruları, cevapları ve sonuç kurallarını taslak ve onay akışıyla yönetin." : view === "content"
                     ? "Önce sayfayı veya sahneyi seçin. Sonra ekranda gördüğünüz metni düzenleyin."
                     : view === "media"
                       ? "Bir kez yükleyin, içerik alanlarında kullanın."
@@ -932,6 +940,10 @@ export function AdminPanel({
                 <small>{view === "content" ? "yayından farklı alan" : "içerik arşivi"}</small>
               </span>
             </header>
+            {view==="configurator"&&workspace&&<ConfiguratorEditor value={String((values[CONFIGURATOR_FIELD]??workspace.catalog.fields.find(f=>f.id===CONFIGURATOR_FIELD)?.default)?.tr??"{}")} onApply={value=>setValues(old=>({...old,[CONFIGURATOR_FIELD]:{tr:value,en:value}}))} onEditingChange={setRecordEditing}/>}
+            {view==="community"&&workspace&&auth.csrf&&<CommunityEditor csrf={auth.csrf} value={String((values[COMMUNITY_FIELD]??workspace.catalog.fields.find(f=>f.id===COMMUNITY_FIELD)?.default)?.tr??"{}")} onApply={value=>setValues(old=>({...old,[COMMUNITY_FIELD]:{tr:value,en:value}}))} onEditingChange={setRecordEditing}/>}
+            {view==="google"&&auth.role==="root"&&auth.csrf&&<GoogleReviewsSettings csrf={auth.csrf} onEditingChange={setRecordEditing}/>}
+            {view==="mail"&&auth.role==="root"&&auth.csrf&&<MailSettings csrf={auth.csrf} onEditingChange={setRecordEditing}/>}
             {error && (
               <div className="cms-alert cms-error" role="alert">
                 {error}
@@ -1597,7 +1609,7 @@ export function AdminPanel({
                   <span className="sr-only">Önizlenecek sayfa</span>
                   <select value={previewPath} onChange={(e) => setPreviewPath(e.target.value)}>
                     <option value="/">Ana sayfa</option>
-                    <option value="/hakkimizda">Hakkımızda</option>
+                    <option value="/hakkimizda">Hakkımızda</option><option value="/saha-yapilandirici">Saha yapılandırıcısı</option>
                     <option value="/iletisim">İletişim</option>
                     <option value="/paketler">Paketler</option>
                     <option value="/cozumler">Çözümler</option>
@@ -1642,7 +1654,7 @@ export function AdminPanel({
             </div>
             <p className="cms-footnote">
               {recordEditing && (
-                <strong>Önce açık kayıtta “Listeye uygula” düğmesine basın. </strong>
+                <strong>Önce açık düzenlemeyi taslağa uygulayın. </strong>
               )}
               Taslak → Önizleme → Yayın. Yeni yayın, ziyaretçiler sayfayı yeniden açtığında görünür.
               Sabit sayfa düzeni, URL’ler ve 3D sahne yapısı korunur.

@@ -29,7 +29,7 @@ const alarmsBy: Record<string, {
     ],
     b: [
         { lvl: "warn", text: "EV-03 dize 4 düşük performans", t: "11:15" },
-        { lvl: "info", text: "Planlı üretim durdurma talimatı yok", t: "09:00" },
+        { lvl: "info", text: "Planlı yük atma talimatı yok", t: "09:00" },
     ],
     c: [{ lvl: "ok", text: "Zero Injection aktif · şebekeye 0 kW", t: "14:05" }],
 };
@@ -64,7 +64,7 @@ export function DemoDashboard({ className }: {
             ["Anlık güç", `${now.toLocaleString("tr-TR")} kW`],
             ["Kurulu güç", `${plant.kwp.toLocaleString("tr-TR")} kWp`],
             ["Günlük üretim", `${today.toLocaleString("tr-TR")} MWh`],
-            ["Evirici", `${invCount} / ${invCount} çevrimiçi`],
+            ["Evirici", `${invCount} / ${invCount} ${_tx("çevrimiçi")}`],
         ].map(([k, v]) => (<div key={k} className="bg-ink-2 px-5 py-4">
               <p className="eyebrow text-ink-muted">{_tx(k)}</p>
               <p className="mt-1 font-mono text-xl tabular-nums">{_tx(v)}</p>

@@ -1,3 +1,6 @@
+import {COMMUNITY_FIELD,validateCommunity,defaultCommunity} from '../shared/community.mjs';
+import {CONFIGURATOR_FIELD,validateConfigurator} from '../shared/configurator.mjs';
+import {reviseTextValues,reviseCollectionTexts} from './text-revision.mjs';
 import { DEVICE_KEY, checkDevice, deviceContent } from "./device-content.mjs";
 import { DESIGN_KEY, emptyDesign, validateDesign } from "../shared/design.mjs";
 import { COLLECTION_KEY, makeCollections, validateCollections } from "./collections.mjs";
@@ -95,7 +98,15 @@ export function openStore(directory, catalogPath = new URL("./catalog.json", imp
         if (!byId.has(f.legacyId)) delete result[f.legacyId];
       }
     }
-    return result;
+    // Preserve earlier inline FAQ edits when moving to the structured manager.
+    if(!Object.hasOwn(result,COMMUNITY_FIELD)){
+      const definition=structuredClone(defaultCommunity);let changed=false;
+      const copy=(pair,alternates=[])=>{const field=catalog.fields.find(f=>f.target==='copy'&&[pair.tr,...alternates].includes(f.source));const value=field&&result[field.id];if(value&&typeof value.tr==='string'&&typeof value.en==='string'){pair.tr=value.tr;pair.en=value.en;changed=true;}};
+      copy(definition.faq.title);copy(definition.faq.kicker);
+      for(const item of definition.faq.items){copy(item.question);copy(item.answer,[item.answer.tr.replace('talebinizi','talep taslağınızı')]);}
+      if(changed){const text=JSON.stringify(definition);result[COMMUNITY_FIELD]={tr:text,en:text};}
+    }
+    return reviseTextValues(result);
   }
   function split(raw) {
     const values = migrate(raw);
@@ -105,7 +116,7 @@ export function openStore(directory, catalogPath = new URL("./catalog.json", imp
     return values;
   }
   function effective(raw) {
-    return raw[COLLECTION_KEY] ?? makeCollections(catalog, split(raw));
+    return reviseCollectionTexts(raw[COLLECTION_KEY] ?? makeCollections(catalog, split(raw)));
   }
   function state(device) {
     device = checkDevice(device);
@@ -140,6 +151,16 @@ export function openStore(directory, catalogPath = new URL("./catalog.json", imp
       const f = byId.get(id);
       if (!f || !v || typeof v !== "object" || Array.isArray(v))
         throw new CmsError(400, "Bilinmeyen içerik alanı.");
+      if(f.id===COMMUNITY_FIELD){
+        if(typeof v.tr!=='string'||v.tr.length>450000||v.en!==v.tr)throw new CmsError(400,'SSS / yorum verisi geçersiz.');
+        try{const clean=JSON.stringify(validateCommunity(JSON.parse(v.tr),imageAllowed));result[id]={tr:clean,en:clean};}catch(error){throw new CmsError(400,error.message);}
+        continue;
+      }
+      if(f.id===CONFIGURATOR_FIELD){
+        if(typeof v.tr!=="string"||v.tr.length>250000||v.en!==v.tr)throw new CmsError(400,"Yapılandırıcı verisi geçersiz.");
+        try{const clean=JSON.stringify(validateConfigurator(JSON.parse(v.tr)));result[id]={tr:clean,en:clean};}catch(error){throw new CmsError(400,error.message);}
+        continue;
+      }
       if (f.kind === "boolean") {
         if (typeof v.tr !== "boolean") throw new CmsError(400, "Geçersiz seçenek.");
         result[id] = { tr: v.tr, en: v.tr };
@@ -379,13 +400,13 @@ export function openStore(directory, catalogPath = new URL("./catalog.json", imp
     const row = db.prepare("SELECT * FROM approval_requests WHERE id=?").get(id);
     if (!row) throw new CmsError(404, "Onay talebi bulunamadı.");
     const snapshot = JSON.parse(row.body);
-    return payload(
+    return {...payload(
       snapshot.values,
       "approval-" + row.id,
       snapshot.collections,
       snapshot.design,
       true,
-    );
+    ),device:row.device};
   }
   function reviewApproval(id, decision, comment, reviewer) {
     if (!["approved", "revision", "rejected"].includes(decision))
@@ -454,7 +475,7 @@ export function openStore(directory, catalogPath = new URL("./catalog.json", imp
             ...v,
           };
         }),
-      collections: collections ?? makeCollections(catalog, values),
+      collections: reviseCollectionTexts(collections ?? makeCollections(catalog, values)),
     };
   }
 

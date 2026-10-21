@@ -1,3 +1,4 @@
+import {setPreviewReview} from "@/lib/cms-review-state";
 import { pickWord } from "@/lib/cms-words";
 import { getLanguage } from "@/lib/i18n";
 import { applyEditorContent } from "@/lib/cms-runtime";
@@ -217,7 +218,7 @@ export function VisualBridge() {
         if (editing) {
           e.preventDefault();
           e.stopImmediatePropagation();
-          send({ type: "hint", text: "Bağlantıyı açmak için üstten Gezin moduna geçin." });
+          send({ type: "hint", text: "Bağlantıyı açmak için üstten Önizleme moduna geçin." });
           return;
         }
         if (url.origin === location.origin && !url.pathname.startsWith("/admin")) {
@@ -284,6 +285,7 @@ export function VisualBridge() {
         history.replaceState(history.state, "", address);
         drag.sync();
         editing = data.editing !== false;
+        if(data.content)setPreviewReview(data.content,!editing);
         document.documentElement.dataset["cmsEditing"] = String(editing);
         setLanguage(data.language === "en" ? "en" : "tr");
         if (!editing) {

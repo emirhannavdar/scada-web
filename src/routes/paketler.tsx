@@ -1,3 +1,4 @@
+import {OrderedPageSections} from '@/components/site/OrderedPageSections';
 import {translate as _tx,useLocale as _useLocale} from '@/lib/i18n';
 import { createFileRoute } from "@tanstack/react-router";
 import { Check, Minus } from "lucide-react";
@@ -14,7 +15,7 @@ export const Route = createFileRoute("/paketler")({
 function Plans() {
     _useLocale();
     return (<>
-      <PageHero eyebrow={_tx("Paketler")} title={_tx("Size uygun plan\u0131 se\u00E7in.")} lead={_tx("Mevcut GES izleme \u00FCr\u00FCn\u00FC i\u00E7in NANO, STANDART ve PRO kapsamlar\u0131n\u0131 kar\u015F\u0131la\u015Ft\u0131r\u0131n. Fiyat ve uygulama ko\u015Fullar\u0131 i\u00E7in ekibimizle g\u00F6r\u00FC\u015F\u00FCn.")}/>
+      <PageHero eyebrow={_tx("Paketler")} title={_tx("Size uygun plan\u0131 se\u00E7in.")} lead={_tx("Mevcut GES izleme \u00FCr\u00FCn\u00FC i\u00E7in NANO, STANDART ve PRO kapsamlar\u0131n\u0131 kar\u015F\u0131la\u015Ft\u0131r\u0131n. Fiyat ve uygulama ko\u015Fullar\u0131 i\u00E7in ekibimizle g\u00F6r\u00FC\u015F\u00FCn.")}/><OrderedPageSections path="/paketler">
       <section data-cms-collection="plans" className="py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-6 lg:grid-cols-3">
@@ -57,5 +58,5 @@ function Plans() {
           </Reveal>
         </div>
       </section>
-    </>);
+    </OrderedPageSections></>);
 }

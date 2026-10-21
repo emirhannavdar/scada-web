@@ -1,11 +1,11 @@
 {
   "name": "scadawatt-website",
-  "version": "101.0.0",
+  "version": "115.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "node --env-file-if-exists=.env scripts/dev-cms.mjs",
-    "build": "node scripts/cms-catalog.mjs && tsc --noEmit && vite build",
+    "build": "node scripts/retire-demo.mjs && node scripts/cms-catalog.mjs && node scripts/build-seo.mjs && tsc --noEmit && vite build && node scripts/compress-web.mjs",
     "preview": "node --env-file-if-exists=.env server/index.mjs",
     "test": "vitest run",
     "test:models": "node scripts/check-model-assets.mjs && vitest run src/test/optimized-scene.test.ts src/test/additional-models.test.ts src/test/model-cache.test.ts",
@@ -15,7 +15,9 @@
     "cms:reset-password": "node --env-file-if-exists=.env server/setup.mjs --reset",
     "cms:backup": "node --env-file-if-exists=.env server/backup.mjs",
     "test:cms": "node --test server/cms.test.mjs server/origin.test.mjs",
-    "test:types": "tsc --noEmit -p tsconfig.test.json"
+    "test:types": "tsc --noEmit -p tsconfig.test.json",
+    "prestart": "node scripts/retire-demo.mjs",
+    "predev": "node scripts/retire-demo.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -26,6 +28,7 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.575.0",
     "motion": "^14.2.0",
+    "nodemailer": "^10.1.7",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-hook-form": "^7.71.2",

@@ -163,5 +163,2225 @@
     "location": "Site geneli › Ortak metinler",
     "page": "/",
     "retired": true
+  },
+  {
+    "id": "copy.011ee92c34e05d3e",
+    "target": "copy",
+    "source": "Hücresel bağlantı",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Hücresel bağlantı",
+    "kind": "text",
+    "default": {
+      "tr": "Hücresel bağlantı",
+      "en": "Cellular connection"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.066c2aa33b0ec86d",
+    "target": "copy",
+    "source": "Senaryoyu yeniden deneyin",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Senaryoyu yeniden deneyin",
+    "kind": "text",
+    "default": {
+      "tr": "Senaryoyu yeniden deneyin",
+      "en": "Try the scenario again"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.08dcde32f9bd8a1b",
+    "target": "copy",
+    "source": "ScadaWatt ürün ekranı",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "ScadaWatt ürün ekranı",
+    "kind": "text",
+    "default": {
+      "tr": "ScadaWatt ürün ekranı",
+      "en": "ScadaWatt product screenshot"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.09036b759a684816",
+    "target": "copy",
+    "source": "Ekiple demo planlayın",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Ekiple demo planlayın",
+    "kind": "text",
+    "default": {
+      "tr": "Ekiple demo planlayın",
+      "en": "Arrange a demo with the team"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.09fdfc6f3f41a4e8",
+    "target": "copy",
+    "source": "A için 240 ÷ 400, B için 120 ÷ 200. Her iki sonuç da 0,60 kWh/kWp. Bu örnekte doğru yorum hangisi?",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "A için 240 ÷ 400, B için 120 ÷ 200. Her iki sonuç da 0,60 kWh/kWp. Bu örnekte doğru yorum ",
+    "kind": "text",
+    "default": {
+      "tr": "A için 240 ÷ 400, B için 120 ÷ 200. Her iki sonuç da 0,60 kWh/kWp. Bu örnekte doğru yorum hangisi?",
+      "en": "For A, 240 ÷ 400; for B, 120 ÷ 200. Both equal 0.60 kWh/kWp. Which interpretation is correct?"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.13a6934ef27421cd",
+    "target": "copy",
+    "source": "İnternet erişimi:",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "İnternet erişimi:",
+    "kind": "text",
+    "default": {
+      "tr": "İnternet erişimi:",
+      "en": "Internet access:"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.168f292b8aa3f291",
+    "target": "copy",
+    "source": "Gerçek ürün ekranları üzerinden veriyi yorumlamayı deneyin. Görevler temsili ve yönlendirmelidir; canlı sisteme bağlantı kurulmaz.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Gerçek ürün ekranları üzerinden veriyi yorumlamayı deneyin. Görevler temsili ve yönlendirm",
+    "kind": "text",
+    "default": {
+      "tr": "Gerçek ürün ekranları üzerinden veriyi yorumlamayı deneyin. Görevler temsili ve yönlendirmelidir; canlı sisteme bağlantı kurulmaz.",
+      "en": "Practise interpreting data using actual product screenshots. Tasks are illustrative and guided; there is no connection to a live system."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.1aa3f8f3cfdbfc26",
+    "target": "copy",
+    "source": "Enerji analizörü:",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Enerji analizörü:",
+    "kind": "text",
+    "default": {
+      "tr": "Enerji analizörü:",
+      "en": "Energy analyser:"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.1c96485091d9b6ec",
+    "target": "copy",
+    "source": "Sahanın internet erişimi ve bağlantı sürekliliği değerlendirilmeli.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Sahanın internet erişimi ve bağlantı sürekliliği değerlendirilmeli.",
+    "kind": "text",
+    "default": {
+      "tr": "Sahanın internet erişimi ve bağlantı sürekliliği değerlendirilmeli.",
+      "en": "Assess the site's internet access and connection reliability."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.1eb566b019c29f20",
+    "target": "copy",
+    "source": "INV-03 için son güncelleme sekiz dakika önce. Son görülen güç değeri yeni bir ölçüm olarak kabul edilmemeli.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "INV-03 için son güncelleme sekiz dakika önce. Son görülen güç değeri yeni bir ölçüm olarak",
+    "kind": "text",
+    "default": {
+      "tr": "INV-03 için son güncelleme sekiz dakika önce. Son görülen güç değeri yeni bir ölçüm olarak kabul edilmemeli.",
+      "en": "INV-03 last updated eight minutes ago. Its last reported power must not be treated as a new measurement."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.21ca9d5108d9ce5e",
+    "target": "copy",
+    "source": "Demo senaryoları",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Demo senaryoları",
+    "kind": "text",
+    "default": {
+      "tr": "Demo senaryoları",
+      "en": "Demo scenarios"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.267ba62a4afc6f55",
+    "target": "copy",
+    "source": "Marka / model:",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Marka / model:",
+    "kind": "text",
+    "default": {
+      "tr": "Marka / model:",
+      "en": "Make / model:"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.2b16a579b8779f6f",
+    "target": "copy",
+    "source": "Üretim miktarını kurulu güç ve zaman aralığıyla birlikte değerlendirin.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Üretim miktarını kurulu güç ve zaman aralığıyla birlikte değerlendirin.",
+    "kind": "text",
+    "default": {
+      "tr": "Üretim miktarını kurulu güç ve zaman aralığıyla birlikte değerlendirin.",
+      "en": "Assess generation alongside installed capacity and the time interval."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.2b51f6254e989a4d",
+    "target": "copy",
+    "source": "Bu bilgi bize neyi söylüyor?",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Bu bilgi bize neyi söylüyor?",
+    "kind": "text",
+    "default": {
+      "tr": "Bu bilgi bize neyi söylüyor?",
+      "en": "What does this information tell us?"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.2bdd1ae5eac48286",
+    "target": "copy",
+    "source": "Farklı kapasitedeki sahalar yalnız toplam enerjiyle karşılaştırılamaz. Zaman aralığı ve kurulu güç birlikte ele alınır.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Farklı kapasitedeki sahalar yalnız toplam enerjiyle karşılaştırılamaz. Zaman aralığı ve ku",
+    "kind": "text",
+    "default": {
+      "tr": "Farklı kapasitedeki sahalar yalnız toplam enerjiyle karşılaştırılamaz. Zaman aralığı ve kurulu güç birlikte ele alınır.",
+      "en": "Sites with different capacities cannot be compared on total energy alone. Consider both installed capacity and the time interval."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.2f5c645cd3e1f2e0",
+    "target": "copy",
+    "source": "Yalnız sahanın adını.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Yalnız sahanın adını.",
+    "kind": "text",
+    "default": {
+      "tr": "Yalnız sahanın adını.",
+      "en": "Only the site name."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.366953242cd65eb4",
+    "target": "copy",
+    "source": "Görüntüdeki değerler ekranın alındığı ana aittir; yan taraftaki temsili görev verilerinden bağımsızdır.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Görüntüdeki değerler ekranın alındığı ana aittir; yan taraftaki temsili görev verilerinden",
+    "kind": "text",
+    "default": {
+      "tr": "Görüntüdeki değerler ekranın alındığı ana aittir; yan taraftaki temsili görev verilerinden bağımsızdır.",
+      "en": "The values shown were captured with the screenshot and are separate from the illustrative task data alongside it."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.3951a4dcedb63c92",
+    "target": "copy",
+    "source": "Evirici kesinlikle arızalı.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Evirici kesinlikle arızalı.",
+    "kind": "text",
+    "default": {
+      "tr": "Evirici kesinlikle arızalı.",
+      "en": "The inverter has definitely failed."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.3f82977b3caf7508",
+    "target": "copy",
+    "source": "Üretim farkının nedeni için ölçüm kapsamı ve saha koşulları doğrulanır. Tek bir göstergeye dayanarak kazanç veya kayıp vaadi oluşturulmaz.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Üretim farkının nedeni için ölçüm kapsamı ve saha koşulları doğrulanır. Tek bir göstergeye",
+    "kind": "text",
+    "default": {
+      "tr": "Üretim farkının nedeni için ölçüm kapsamı ve saha koşulları doğrulanır. Tek bir göstergeye dayanarak kazanç veya kayıp vaadi oluşturulmaz.",
+      "en": "Verify the measurement scope and site conditions when investigating generation differences. A single indicator cannot justify a claim about gains or losses."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.4027f16e85507da8",
+    "target": "copy",
+    "source": "Bağlantıyı, cihaz erişimini ve son geçerli ölçümü kontrol edin.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Bağlantıyı, cihaz erişimini ve son geçerli ölçümü kontrol edin.",
+    "kind": "text",
+    "default": {
+      "tr": "Bağlantıyı, cihaz erişimini ve son geçerli ölçümü kontrol edin.",
+      "en": "Check the connection, device accessibility and last valid reading."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.42bca4488cde7b63",
+    "target": "copy",
+    "source": "İzleme ve kontrol",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "İzleme ve kontrol",
+    "kind": "text",
+    "default": {
+      "tr": "İzleme ve kontrol",
+      "en": "Monitoring and control"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.44062daf7a31acbb",
+    "target": "copy",
+    "source": "Üretimi doğru karşılaştırın.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Üretimi doğru karşılaştırın.",
+    "kind": "text",
+    "default": {
+      "tr": "Üretimi doğru karşılaştırın.",
+      "en": "Compare generation correctly."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.44fe4bd333b63996",
+    "target": "copy",
+    "source": "Tesis türü:",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Tesis türü:",
+    "kind": "text",
+    "default": {
+      "tr": "Tesis türü:",
+      "en": "Facility type:"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.463925e8504a7472",
+    "target": "copy",
+    "source": "Kontrol yetkileri, emniyet koşulları ve PRO hizmet kapsamı birlikte değerlendirilmeli.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Kontrol yetkileri, emniyet koşulları ve PRO hizmet kapsamı birlikte değerlendirilmeli.",
+    "kind": "text",
+    "default": {
+      "tr": "Kontrol yetkileri, emniyet koşulları ve PRO hizmet kapsamı birlikte değerlendirilmeli.",
+      "en": "Review control permissions, safety requirements and the PRO service scope together."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.4736812d9c27a759",
+    "target": "copy",
+    "source": "Bağlantıyı, ölçüm zamanını ve saha koşullarını birlikte değerlendirdiniz. Kendi sahanızın veri kaynaklarıyla aynı yaklaşımı görüşebiliriz.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Bağlantıyı, ölçüm zamanını ve saha koşullarını birlikte değerlendirdiniz. Kendi sahanızın ",
+    "kind": "text",
+    "default": {
+      "tr": "Bağlantıyı, ölçüm zamanını ve saha koşullarını birlikte değerlendirdiniz. Kendi sahanızın veri kaynaklarıyla aynı yaklaşımı görüşebiliriz.",
+      "en": "You have considered connectivity, measurement timestamps and site conditions together. We can discuss the same approach using your own site's data sources."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.4783f9f06957cf28",
+    "target": "copy",
+    "source": "Gerçek bir performans incelemesinde üretim verisine hangi bilgiler eşlik etmeli?",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Gerçek bir performans incelemesinde üretim verisine hangi bilgiler eşlik etmeli?",
+    "kind": "text",
+    "default": {
+      "tr": "Gerçek bir performans incelemesinde üretim verisine hangi bilgiler eşlik etmeli?",
+      "en": "What other information should accompany generation data in a real performance review?"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.4892c62b51f7a991",
+    "target": "copy",
+    "source": "Işınım, hava koşulları, cihaz verileri ve veri bütünlüğü.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Işınım, hava koşulları, cihaz verileri ve veri bütünlüğü.",
+    "kind": "text",
+    "default": {
+      "tr": "Işınım, hava koşulları, cihaz verileri ve veri bütünlüğü.",
+      "en": "Irradiance, weather conditions, device data and data completeness."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.49c9c611611763c2",
+    "target": "copy",
+    "source": "Veriyi doğru soruyla okumak.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Veriyi doğru soruyla okumak.",
+    "kind": "text",
+    "default": {
+      "tr": "Veriyi doğru soruyla okumak.",
+      "en": "Read the data with the right question."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.4d0bcc617c6e57ec",
+    "target": "copy",
+    "source": "Son geçerli ölçüm ile güncel ölçüm arasındaki farkı keşfedin.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Son geçerli ölçüm ile güncel ölçüm arasındaki farkı keşfedin.",
+    "kind": "text",
+    "default": {
+      "tr": "Son geçerli ölçüm ile güncel ölçüm arasındaki farkı keşfedin.",
+      "en": "Explore the difference between the last valid reading and a current measurement."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.558495dfa1cc5dfb",
+    "target": "copy",
+    "source": "GERÇEK ÜRÜN EKRANI",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "GERÇEK ÜRÜN EKRANI",
+    "kind": "text",
+    "default": {
+      "tr": "GERÇEK ÜRÜN EKRANI",
+      "en": "ACTUAL PRODUCT SCREENSHOT"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.58acb997889bd9d5",
+    "target": "copy",
+    "source": "Cihaz adedi, hat uzunluğu ve pano yerleşimi üzerinden donanım miktarı belirlenmeli.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Cihaz adedi, hat uzunluğu ve pano yerleşimi üzerinden donanım miktarı belirlenmeli.",
+    "kind": "text",
+    "default": {
+      "tr": "Cihaz adedi, hat uzunluğu ve pano yerleşimi üzerinden donanım miktarı belirlenmeli.",
+      "en": "Hardware quantities need to be determined from device counts, cable lengths and cabinet layout."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.58becce31076ede7",
+    "target": "copy",
+    "source": "Farkın kaynağına yaklaşın.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Farkın kaynağına yaklaşın.",
+    "kind": "text",
+    "default": {
+      "tr": "Farkın kaynağına yaklaşın.",
+      "en": "Explore what drives the difference."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.5bf133e4fccd03f2",
+    "target": "copy",
+    "source": "Cihazın güncel üretimi henüz doğrulanamıyor.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Cihazın güncel üretimi henüz doğrulanamıyor.",
+    "kind": "text",
+    "default": {
+      "tr": "Cihazın güncel üretimi henüz doğrulanamıyor.",
+      "en": "The device's current generation cannot yet be verified."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.5d69cc4bae1ada06",
+    "target": "copy",
+    "source": "Bu kaynak türündeki ölçüm noktaları ve uygulanabilir ürün kapsamı ayrıca doğrulanmalı.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Bu kaynak türündeki ölçüm noktaları ve uygulanabilir ürün kapsamı ayrıca doğrulanmalı.",
+    "kind": "text",
+    "default": {
+      "tr": "Bu kaynak türündeki ölçüm noktaları ve uygulanabilir ürün kapsamı ayrıca doğrulanmalı.",
+      "en": "Verify the measurement points and applicable product scope for this energy source separately."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.5e03acd1abddcbf0",
+    "target": "copy",
+    "source": "Güneş enerjisi",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Güneş enerjisi",
+    "kind": "text",
+    "default": {
+      "tr": "Güneş enerjisi",
+      "en": "Solar energy"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.5faef3e56fa631b3",
+    "target": "copy",
+    "source": "Saha yapılandırıcısında aşağıdaki ön değerlendirmeyi hazırladım. Teknik kapsamı birlikte netleştirmek istiyorum.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Saha yapılandırıcısında aşağıdaki ön değerlendirmeyi hazırladım. Teknik kapsamı birlikte n",
+    "kind": "text",
+    "default": {
+      "tr": "Saha yapılandırıcısında aşağıdaki ön değerlendirmeyi hazırladım. Teknik kapsamı birlikte netleştirmek istiyorum.",
+      "en": "I prepared the following preliminary assessment using the site configurator and would like to define the technical scope with your team."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.6038051ce7df1415",
+    "target": "copy",
+    "source": "Haberleşme sorununu ayırt edin.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Haberleşme sorununu ayırt edin.",
+    "kind": "text",
+    "default": {
+      "tr": "Haberleşme sorununu ayırt edin.",
+      "en": "Identify a communication issue."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.60d08ddc9bc2b060",
+    "target": "copy",
+    "source": "Henüz belirtilmedi",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Henüz belirtilmedi",
+    "kind": "text",
+    "default": {
+      "tr": "Henüz belirtilmedi",
+      "en": "Not specified yet"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.62cf21ad55a5abbe",
+    "target": "copy",
+    "source": "Toplam evirici sayısı:",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Toplam evirici sayısı:",
+    "kind": "text",
+    "default": {
+      "tr": "Toplam evirici sayısı:",
+      "en": "Total number of inverters:"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.6780c439142708a6",
+    "target": "copy",
+    "source": "Sadece tek bir ekran görüntüsü.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Sadece tek bir ekran görüntüsü.",
+    "kind": "text",
+    "default": {
+      "tr": "Sadece tek bir ekran görüntüsü.",
+      "en": "Only a single screenshot."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.6924a44abf903232",
+    "target": "copy",
+    "source": "INV-03 için son bilinen güç 63 kW. Cihazdan yeni veri gelmiyor. Yalnız bu bilgilere dayanarak ne söyleyebiliriz?",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "INV-03 için son bilinen güç 63 kW. Cihazdan yeni veri gelmiyor. Yalnız bu bilgilere dayana",
+    "kind": "text",
+    "default": {
+      "tr": "INV-03 için son bilinen güç 63 kW. Cihazdan yeni veri gelmiyor. Yalnız bu bilgilere dayanarak ne söyleyebiliriz?",
+      "en": "INV-03 last reported 63 kW, but no new data is arriving. What can we conclude from this information alone?"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.69ad9351b62e792a",
+    "target": "copy",
+    "source": "Gerçek saha kapsamı ve ürün kullanımı, ScadaWatt ekibiyle yapılacak canlı sunumda değerlendirilir.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Gerçek saha kapsamı ve ürün kullanımı, ScadaWatt ekibiyle yapılacak canlı sunumda değerlen",
+    "kind": "text",
+    "default": {
+      "tr": "Gerçek saha kapsamı ve ürün kullanımı, ScadaWatt ekibiyle yapılacak canlı sunumda değerlendirilir.",
+      "en": "Actual site requirements and product operation are reviewed in a live presentation with the ScadaWatt team."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.6f974b3a8b317263",
+    "target": "copy",
+    "source": "ÖRNEK GÖREV",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "ÖRNEK GÖREV",
+    "kind": "text",
+    "default": {
+      "tr": "ÖRNEK GÖREV",
+      "en": "ILLUSTRATIVE TASK"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.72b81198992f72fa",
+    "target": "copy",
+    "source": "Hibrit üretim",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Hibrit üretim",
+    "kind": "text",
+    "default": {
+      "tr": "Hibrit üretim",
+      "en": "Hybrid generation"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.771fce9f72523092",
+    "target": "copy",
+    "source": "Sayaç:",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Sayaç:",
+    "kind": "text",
+    "default": {
+      "tr": "Sayaç:",
+      "en": "Meter:"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.78d78beef7e00131",
+    "target": "copy",
+    "source": "Endüstriyel tesis",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Endüstriyel tesis",
+    "kind": "text",
+    "default": {
+      "tr": "Endüstriyel tesis",
+      "en": "Industrial facility"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.79b12791a29d751d",
+    "target": "copy",
+    "source": "Değerlendirilecek çözümler:",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Değerlendirilecek çözümler:",
+    "kind": "text",
+    "default": {
+      "tr": "Değerlendirilecek çözümler:",
+      "en": "Solutions to review:"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.7e24d2f4730bcbac",
+    "target": "copy",
+    "source": "Saha cihazlarının RS485 / Ethernet bağlantıları netleştirilmeli.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Saha cihazlarının RS485 / Ethernet bağlantıları netleştirilmeli.",
+    "kind": "text",
+    "default": {
+      "tr": "Saha cihazlarının RS485 / Ethernet bağlantıları netleştirilmeli.",
+      "en": "Confirm the RS485 / Ethernet connections available on the field devices."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.8330b3b825751bce",
+    "target": "copy",
+    "source": "Doğru yaklaşım.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Doğru yaklaşım.",
+    "kind": "text",
+    "default": {
+      "tr": "Doğru yaklaşım.",
+      "en": "That's the right approach."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.83e3775160de5f3a",
+    "target": "copy",
+    "source": "Hangi cihazın verisi güncel değil?",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Hangi cihazın verisi güncel değil?",
+    "kind": "text",
+    "default": {
+      "tr": "Hangi cihazın verisi güncel değil?",
+      "en": "Which device has outdated data?"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.884e2e50365b819a",
+    "target": "copy",
+    "source": "Öncelikler:",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Öncelikler:",
+    "kind": "text",
+    "default": {
+      "tr": "Öncelikler:",
+      "en": "Priorities:"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.891622b4246b1abb",
+    "target": "copy",
+    "source": "Bu çıktı bir uyumluluk onayı, kesin donanım listesi veya fiyat teklifi değildir. Mühendislik incelemesi ve uygun bir demo görüşmesi rica ediyorum.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Bu çıktı bir uyumluluk onayı, kesin donanım listesi veya fiyat teklifi değildir. Mühendisl",
+    "kind": "text",
+    "default": {
+      "tr": "Bu çıktı bir uyumluluk onayı, kesin donanım listesi veya fiyat teklifi değildir. Mühendislik incelemesi ve uygun bir demo görüşmesi rica ediyorum.",
+      "en": "This summary is not a compatibility approval, final hardware list or quotation. I would appreciate an engineering review and a suitable demo meeting."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.90f9746a8606defd",
+    "target": "copy",
+    "source": "SCADAWATT / REHBERLİ DENEYİM",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "SCADAWATT / REHBERLİ DENEYİM",
+    "kind": "text",
+    "default": {
+      "tr": "SCADAWATT / REHBERLİ DENEYİM",
+      "en": "SCADAWATT / GUIDED EXPERIENCE"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.91d5b132a51352a8",
+    "target": "copy",
+    "source": "Kablolu internet",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Kablolu internet",
+    "kind": "text",
+    "default": {
+      "tr": "Kablolu internet",
+      "en": "Wired internet"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.96e0691808e12126",
+    "target": "copy",
+    "source": "A iki kat daha verimli.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "A iki kat daha verimli.",
+    "kind": "text",
+    "default": {
+      "tr": "A iki kat daha verimli.",
+      "en": "A is twice as efficient."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.98c26785e2a22a7a",
+    "target": "copy",
+    "source": "Kendi sahanızı planlayın",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Kendi sahanızı planlayın",
+    "kind": "text",
+    "default": {
+      "tr": "Kendi sahanızı planlayın",
+      "en": "Plan your own site"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.9b66bf17dac28ddc",
+    "target": "copy",
+    "source": "Bir kez daha değerlendirin.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Bir kez daha değerlendirin.",
+    "kind": "text",
+    "default": {
+      "tr": "Bir kez daha değerlendirin.",
+      "en": "Take another look."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.9b74b8515fb2a42e",
+    "target": "copy",
+    "source": "Talep edilen kapsam:",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Talep edilen kapsam:",
+    "kind": "text",
+    "default": {
+      "tr": "Talep edilen kapsam:",
+      "en": "Requested scope:"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.9bee2cf38301d9d2",
+    "target": "copy",
+    "source": "Marka, model ve haberleşme dokümanları mühendislik ekibince doğrulanmalı.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Marka, model ve haberleşme dokümanları mühendislik ekibince doğrulanmalı.",
+    "kind": "text",
+    "default": {
+      "tr": "Marka, model ve haberleşme dokümanları mühendislik ekibince doğrulanmalı.",
+      "en": "The engineering team needs to verify the make, model and communication documentation."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.9f00cbd6474a4c34",
+    "target": "copy",
+    "source": "İnceleme yapmadan üretimi durdurun.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "İnceleme yapmadan üretimi durdurun.",
+    "kind": "text",
+    "default": {
+      "tr": "İnceleme yapmadan üretimi durdurun.",
+      "en": "Stop generation without investigating."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.a00e43c26e43310e",
+    "target": "copy",
+    "source": "Yalnız toplam kWh değerini.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Yalnız toplam kWh değerini.",
+    "kind": "text",
+    "default": {
+      "tr": "Yalnız toplam kWh değerini.",
+      "en": "Only the total kWh figure."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.a3a3f79c46500d1e",
+    "target": "copy",
+    "source": "Rüzgâr enerjisi",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Rüzgâr enerjisi",
+    "kind": "text",
+    "default": {
+      "tr": "Rüzgâr enerjisi",
+      "en": "Wind energy"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.a3cbc1612e19fb42",
+    "target": "copy",
+    "source": "Cihaz bağlantısı:",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Cihaz bağlantısı:",
+    "kind": "text",
+    "default": {
+      "tr": "Cihaz bağlantısı:",
+      "en": "Device connection:"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.a433bddeb3aeba70",
+    "target": "copy",
+    "source": "Alarm kayıtları ve cihaz erişimi birlikte incelenir. Saha ekibine hangi kontrolü önerirsiniz?",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Alarm kayıtları ve cihaz erişimi birlikte incelenir. Saha ekibine hangi kontrolü önerirsin",
+    "kind": "text",
+    "default": {
+      "tr": "Alarm kayıtları ve cihaz erişimi birlikte incelenir. Saha ekibine hangi kontrolü önerirsiniz?",
+      "en": "Review alarm records alongside device accessibility. Which check would you recommend to the field team?"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.a56298adbfe129d5",
+    "target": "copy",
+    "source": "Bir saatlik örnekte A sahası 400 kWp kurulu güçle 240 kWh, B sahası 200 kWp kurulu güçle 120 kWh üretmiş. Karşılaştırmada hangi bilgiyi de kullanmalıyız?",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Bir saatlik örnekte A sahası 400 kWp kurulu güçle 240 kWh, B sahası 200 kWp kurulu güçle 1",
+    "kind": "text",
+    "default": {
+      "tr": "Bir saatlik örnekte A sahası 400 kWp kurulu güçle 240 kWh, B sahası 200 kWp kurulu güçle 120 kWh üretmiş. Karşılaştırmada hangi bilgiyi de kullanmalıyız?",
+      "en": "Over one hour, site A generates 240 kWh with 400 kWp installed capacity, while site B generates 120 kWh with 200 kWp. What else should we consider when comparing them?"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.aa2f90d2c9998857",
+    "target": "copy",
+    "source": "Haberleşme kaybı ile üretim kaybı aynı şey değildir. Son ölçümün zamanını ve bağlantı durumunu birlikte değerlendirmek gerekir.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Haberleşme kaybı ile üretim kaybı aynı şey değildir. Son ölçümün zamanını ve bağlantı duru",
+    "kind": "text",
+    "default": {
+      "tr": "Haberleşme kaybı ile üretim kaybı aynı şey değildir. Son ölçümün zamanını ve bağlantı durumunu birlikte değerlendirmek gerekir.",
+      "en": "Loss of communication is not the same as loss of generation. Check both the measurement timestamp and the connection status."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.afb4c064339f05c1",
+    "target": "copy",
+    "source": "İncelemeyi tamamla",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "İncelemeyi tamamla",
+    "kind": "text",
+    "default": {
+      "tr": "İncelemeyi tamamla",
+      "en": "Complete the review"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.b18c320773d8ab1f",
+    "target": "copy",
+    "source": "Eski değeri güncel kabul edin.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Eski değeri güncel kabul edin.",
+    "kind": "text",
+    "default": {
+      "tr": "Eski değeri güncel kabul edin.",
+      "en": "Treat the old value as current."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.b2499f018e27d28c",
+    "target": "copy",
+    "source": "Aynı zaman aralığı, farklı kapasite.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Aynı zaman aralığı, farklı kapasite.",
+    "kind": "text",
+    "default": {
+      "tr": "Aynı zaman aralığı, farklı kapasite.",
+      "en": "Same interval, different capacities."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.ba771d7f294effdf",
+    "target": "copy",
+    "source": "Sadece en yüksek anlık güç.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Sadece en yüksek anlık güç.",
+    "kind": "text",
+    "default": {
+      "tr": "Sadece en yüksek anlık güç.",
+      "en": "Only the highest instantaneous power."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.bf585241a66830e6",
+    "target": "copy",
+    "source": "Örnek senaryoda saat 14:20. Üç cihaz 14:20’de, INV-03 ise en son 14:12’de veri iletti.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Örnek senaryoda saat 14:20. Üç cihaz 14:20’de, INV-03 ise en son 14:12’de veri iletti.",
+    "kind": "text",
+    "default": {
+      "tr": "Örnek senaryoda saat 14:20. Üç cihaz 14:20’de, INV-03 ise en son 14:12’de veri iletti.",
+      "en": "In this example, the time is 14:20. Three devices reported at 14:20, while INV-03 last reported at 14:12."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.c044062d2c2103f4",
+    "target": "copy",
+    "source": "Ürün ekranını tam boyutta aç",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Ürün ekranını tam boyutta aç",
+    "kind": "text",
+    "default": {
+      "tr": "Ürün ekranını tam boyutta aç",
+      "en": "Open the full-size product screenshot"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.c8dcc4f8881bda35",
+    "target": "copy",
+    "source": "Ekrana bakmayın. Bir sorunun izini sürün.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Ekrana bakmayın. Bir sorunun izini sürün.",
+    "kind": "text",
+    "default": {
+      "tr": "Ekrana bakmayın. Bir sorunun izini sürün.",
+      "en": "Go beyond the screen. Follow an issue through."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.c8e7f80f201b24c8",
+    "target": "copy",
+    "source": "Bir sonraki doğru adım.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Bir sonraki doğru adım.",
+    "kind": "text",
+    "default": {
+      "tr": "Bir sonraki doğru adım.",
+      "en": "The right next step."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.d1ac5a2414414bb0",
+    "target": "copy",
+    "source": "Sonraki adım",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Sonraki adım",
+    "kind": "text",
+    "default": {
+      "tr": "Sonraki adım",
+      "en": "Next step"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.d28efcb6232079b1",
+    "target": "copy",
+    "source": "B sahası çalışmıyor.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "B sahası çalışmıyor.",
+    "kind": "text",
+    "default": {
+      "tr": "B sahası çalışmıyor.",
+      "en": "Site B is not operating."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.d5a3881c3be1ff5c",
+    "target": "copy",
+    "source": "Görevde verilen zaman, kapasite ve bağlantı bilgilerini birlikte düşünün. Başka bir yanıt seçebilirsiniz.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Görevde verilen zaman, kapasite ve bağlantı bilgilerini birlikte düşünün. Başka bir yanıt ",
+    "kind": "text",
+    "default": {
+      "tr": "Görevde verilen zaman, kapasite ve bağlantı bilgilerini birlikte düşünün. Başka bir yanıt seçebilirsiniz.",
+      "en": "Consider the timestamps, capacities and connection details given in the task together. You can choose another answer."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.d7038c2c4d1ee7aa",
+    "target": "copy",
+    "source": "Kurulu gücü ve aynı zaman aralığını.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Kurulu gücü ve aynı zaman aralığını.",
+    "kind": "text",
+    "default": {
+      "tr": "Kurulu gücü ve aynı zaman aralığını.",
+      "en": "Installed capacity and the same time interval."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.d8869f7c11697c60",
+    "target": "copy",
+    "source": "Bağlantı, besleme ve haberleşme kayıtları kontrol edilir. Bu demo sahaya bağlanmaz ve kontrol komutu göndermez.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Bağlantı, besleme ve haberleşme kayıtları kontrol edilir. Bu demo sahaya bağlanmaz ve kont",
+    "kind": "text",
+    "default": {
+      "tr": "Bağlantı, besleme ve haberleşme kayıtları kontrol edilir. Bu demo sahaya bağlanmaz ve kontrol komutu göndermez.",
+      "en": "Check connectivity, power supply and communication records. This demo does not connect to a site or send control commands."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.d8c85da7edec5081",
+    "target": "copy",
+    "source": "Birim kurulu güç başına üretim.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Birim kurulu güç başına üretim.",
+    "kind": "text",
+    "default": {
+      "tr": "Birim kurulu güç başına üretim.",
+      "en": "Generation per unit of installed capacity."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.d9d19dfbb8115a8f",
+    "target": "copy",
+    "source": "İki sahanın bu aralıktaki özgül üretimi eşit. Bu oran tek başına performans oranı (PR) veya arıza teşhisi değildir.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "İki sahanın bu aralıktaki özgül üretimi eşit. Bu oran tek başına performans oranı (PR) vey",
+    "kind": "text",
+    "default": {
+      "tr": "İki sahanın bu aralıktaki özgül üretimi eşit. Bu oran tek başına performans oranı (PR) veya arıza teşhisi değildir.",
+      "en": "Both sites have the same specific yield over this interval. This figure alone is neither a performance ratio (PR) nor a fault diagnosis."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.dc20998e0cb9895c",
+    "target": "copy",
+    "source": "Rehberli demoyu inceledim. Kendi sahamız için canlı bir ürün sunumu planlamak istiyorum.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Rehberli demoyu inceledim. Kendi sahamız için canlı bir ürün sunumu planlamak istiyorum.",
+    "kind": "text",
+    "default": {
+      "tr": "Rehberli demoyu inceledim. Kendi sahamız için canlı bir ürün sunumu planlamak istiyorum.",
+      "en": "I explored the guided demo and would like to arrange a live product presentation for our own site."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.df58c417fd21da35",
+    "target": "copy",
+    "source": "Henüz bilmiyorum",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Henüz bilmiyorum",
+    "kind": "text",
+    "default": {
+      "tr": "Henüz bilmiyorum",
+      "en": "Not sure yet"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.ea242c116cbc4b5a",
+    "target": "copy",
+    "source": "Üretim kesinlikle sıfır.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Üretim kesinlikle sıfır.",
+    "kind": "text",
+    "default": {
+      "tr": "Üretim kesinlikle sıfır.",
+      "en": "Generation is definitely zero."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.ee02fd71d20342f1",
+    "target": "copy",
+    "source": "Yok / bilinmiyor",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Yok / bilinmiyor",
+    "kind": "text",
+    "default": {
+      "tr": "Yok / bilinmiyor",
+      "en": "Not available / unknown"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.f0c8226fed867620",
+    "target": "copy",
+    "source": "Değerlendirmeniz",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Değerlendirmeniz",
+    "kind": "text",
+    "default": {
+      "tr": "Değerlendirmeniz",
+      "en": "Your assessment"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.f2b81a236d51cca1",
+    "target": "copy",
+    "source": "Bu zaman aralığında özgül üretimleri eşit.",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "Bu zaman aralığında özgül üretimleri eşit.",
+    "kind": "text",
+    "default": {
+      "tr": "Bu zaman aralığında özgül üretimleri eşit.",
+      "en": "Their specific yields are equal over this interval."
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.f4af533a01581f84",
+    "target": "copy",
+    "source": "SCADA yazılımını inceleyin",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "SCADA yazılımını inceleyin",
+    "kind": "text",
+    "default": {
+      "tr": "SCADA yazılımını inceleyin",
+      "en": "Explore the SCADA software"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.fde88d3683649b56",
+    "target": "copy",
+    "source": "İNCELEME TAMAMLANDI",
+    "group": "Arşiv · kaldırılan demo",
+    "label": "İNCELEME TAMAMLANDI",
+    "kind": "text",
+    "default": {
+      "tr": "İNCELEME TAMAMLANDI",
+      "en": "REVIEW COMPLETE"
+    },
+    "location": "Uygulama dışı",
+    "page": "/demo",
+    "retired": true
+  },
+  {
+    "id": "copy.86357610473787e3",
+    "target": "copy",
+    "source": "KVKK aydınlatma metnini onaylamanız gerekir",
+    "group": "Arşiv · önceki metin",
+    "label": "KVKK aydınlatma metnini onaylamanız gerekir",
+    "kind": "text",
+    "default": {
+      "tr": "KVKK aydınlatma metnini onaylamanız gerekir",
+      "en": "Please accept the personal data privacy notice"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.82268f30b0351e47",
+    "target": "copy",
+    "source": "Kişisel verilerimin KVKK aydınlatma metni kapsamında işlenmesini kabul ediyorum.",
+    "group": "Arşiv · önceki metin",
+    "label": "Kişisel verilerimin KVKK aydınlatma metni kapsamında işlenmesini kabul ediyorum.",
+    "kind": "text",
+    "default": {
+      "tr": "Kişisel verilerimin KVKK aydınlatma metni kapsamında işlenmesini kabul ediyorum.",
+      "en": "I consent to the processing of my personal data as described in the KVKK privacy notice."
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.015c1b0968c63d8a",
+    "target": "copy",
+    "source": "Değişiklikler",
+    "group": "Arşiv · önceki metin",
+    "label": "Değişiklikler",
+    "kind": "text",
+    "default": {
+      "tr": "Değişiklikler",
+      "en": "Changes"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.18dc3b68eb882b4a",
+    "target": "copy",
+    "source": "ScadaWatt web sitesi çerez politikası.",
+    "group": "Arşiv · önceki metin",
+    "label": "ScadaWatt web sitesi çerez politikası.",
+    "kind": "text",
+    "default": {
+      "tr": "ScadaWatt web sitesi çerez politikası.",
+      "en": "ScadaWatt website cookie policy."
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.3a0ef1c3c826c8f2",
+    "target": "copy",
+    "source": "Verilerin kullanım amaçları",
+    "group": "Arşiv · önceki metin",
+    "label": "Verilerin kullanım amaçları",
+    "kind": "text",
+    "default": {
+      "tr": "Verilerin kullanım amaçları",
+      "en": "How data is used"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.591abe76dfd1f0a3",
+    "target": "copy",
+    "source": "Saklama süresi",
+    "group": "Arşiv · önceki metin",
+    "label": "Saklama süresi",
+    "kind": "text",
+    "default": {
+      "tr": "Saklama süresi",
+      "en": "Retention period"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.79e8fa56fa116df1",
+    "target": "copy",
+    "source": "Haklarınız",
+    "group": "Arşiv · önceki metin",
+    "label": "Haklarınız",
+    "kind": "text",
+    "default": {
+      "tr": "Haklarınız",
+      "en": "Your rights"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.8bd09d9192a8b85a",
+    "target": "copy",
+    "source": "Çerezlerin yönetimi",
+    "group": "Arşiv · önceki metin",
+    "label": "Çerezlerin yönetimi",
+    "kind": "text",
+    "default": {
+      "tr": "Çerezlerin yönetimi",
+      "en": "Managing cookies"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.977b55a1c0895fd1",
+    "target": "copy",
+    "source": "Kullanılan çerez türleri",
+    "group": "Arşiv · önceki metin",
+    "label": "Kullanılan çerez türleri",
+    "kind": "text",
+    "default": {
+      "tr": "Kullanılan çerez türleri",
+      "en": "Types of cookies used"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.aa805b50448ac62f",
+    "target": "copy",
+    "source": "ScadaWatt web sitesi gizlilik politikası.",
+    "group": "Arşiv · önceki metin",
+    "label": "ScadaWatt web sitesi gizlilik politikası.",
+    "kind": "text",
+    "default": {
+      "tr": "ScadaWatt web sitesi gizlilik politikası.",
+      "en": "ScadaWatt website privacy policy."
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.cf327d935bb4583a",
+    "target": "copy",
+    "source": "Verilerin paylaşımı",
+    "group": "Arşiv · önceki metin",
+    "label": "Verilerin paylaşımı",
+    "kind": "text",
+    "default": {
+      "tr": "Verilerin paylaşımı",
+      "en": "Data sharing"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.dc125f66ba54b942",
+    "target": "copy",
+    "source": "Çerez nedir",
+    "group": "Arşiv · önceki metin",
+    "label": "Çerez nedir",
+    "kind": "text",
+    "default": {
+      "tr": "Çerez nedir",
+      "en": "What are cookies?"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.e41c932727297ea6",
+    "target": "copy",
+    "source": "Ürünler /",
+    "group": "Arşiv · önceki metin",
+    "label": "Ürünler /",
+    "kind": "text",
+    "default": {
+      "tr": "Ürünler /",
+      "en": "Products /"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/urunler",
+    "retired": true
+  },
+  {
+    "id": "copy.f637502c209f80f5",
+    "target": "copy",
+    "source": "Toplanan veriler",
+    "group": "Arşiv · önceki metin",
+    "label": "Toplanan veriler",
+    "kind": "text",
+    "default": {
+      "tr": "Toplanan veriler",
+      "en": "Data collected"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.02af74b2f0d6a427",
+    "target": "copy",
+    "source": "Kopyalandı",
+    "group": "Arşiv · önceki metin",
+    "label": "Kopyalandı",
+    "kind": "text",
+    "default": {
+      "tr": "Kopyalandı",
+      "en": "Copied"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.dc46b17c57d36a1f",
+    "target": "copy",
+    "source": "Metni kopyala",
+    "group": "Arşiv · önceki metin",
+    "label": "Metni kopyala",
+    "kind": "text",
+    "default": {
+      "tr": "Metni kopyala",
+      "en": "Copy text"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.1130d599e89ce194",
+    "target": "copy",
+    "source": "Firma:",
+    "group": "Arşiv · önceki metin",
+    "label": "Firma:",
+    "kind": "text",
+    "default": {
+      "tr": "Firma:",
+      "en": "Company:"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.17ec1dabca5d7ea2",
+    "target": "copy",
+    "source": "Talebiniz hazır.",
+    "group": "Arşiv · önceki metin",
+    "label": "Talebiniz hazır.",
+    "kind": "text",
+    "default": {
+      "tr": "Talebiniz hazır.",
+      "en": "Your request is ready."
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.1863dd745d43280a",
+    "target": "copy",
+    "source": "Mesaj:",
+    "group": "Arşiv · önceki metin",
+    "label": "Mesaj:",
+    "kind": "text",
+    "default": {
+      "tr": "Mesaj:",
+      "en": "Message:"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.23e3edcd441593c6",
+    "target": "copy",
+    "source": "E-posta:",
+    "group": "Arşiv · önceki metin",
+    "label": "E-posta:",
+    "kind": "text",
+    "default": {
+      "tr": "E-posta:",
+      "en": "Email:"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.27457dd3f92a6cb5",
+    "target": "copy",
+    "source": "SIK SORULAN SORULAR",
+    "group": "Arşiv · önceki metin",
+    "label": "SIK SORULAN SORULAR",
+    "kind": "text",
+    "default": {
+      "tr": "SIK SORULAN SORULAR",
+      "en": "FREQUENTLY ASKED QUESTIONS"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.27a7f1db6469d30f",
+    "target": "copy",
+    "source": "Form bu tarayıcıda bir taslak oluşturur; bilgiler bir sunucuya gönderilmez.",
+    "group": "Arşiv · önceki metin",
+    "label": "Form bu tarayıcıda bir taslak oluşturur; bilgiler bir sunucuya gönderilmez.",
+    "kind": "text",
+    "default": {
+      "tr": "Form bu tarayıcıda bir taslak oluşturur; bilgiler bir sunucuya gönderilmez.",
+      "en": "This form creates a draft in your browser; no information is sent to a server."
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.36ffe7b1aaf5093b",
+    "target": "copy",
+    "source": "Saha türünü, saha sayısını, cihaz modellerini ve önceliklerinizi paylaşın. Yapılandırıcı sonucunu iletişim formuna aktararak talep taslağınızı hazırlayabilirsiniz.",
+    "group": "Arşiv · önceki metin",
+    "label": "Saha türünü, saha sayısını, cihaz modellerini ve önceliklerinizi paylaşın. Yapılandırıcı s",
+    "kind": "text",
+    "default": {
+      "tr": "Saha türünü, saha sayısını, cihaz modellerini ve önceliklerinizi paylaşın. Yapılandırıcı sonucunu iletişim formuna aktararak talep taslağınızı hazırlayabilirsiniz.",
+      "en": "Share your site type, number of sites, device models and priorities. Transfer your configurator summary to the contact form to prepare a request draft."
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.38b9b122d37142c0",
+    "target": "copy",
+    "source": "İlgilenilen ürün ve hizmetler:",
+    "group": "Arşiv · önceki metin",
+    "label": "İlgilenilen ürün ve hizmetler:",
+    "kind": "text",
+    "default": {
+      "tr": "İlgilenilen ürün ve hizmetler:",
+      "en": "Products and services of interest:"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.490d0141714d019f",
+    "target": "copy",
+    "source": "Tercih edilen gün:",
+    "group": "Arşiv · önceki metin",
+    "label": "Tercih edilen gün:",
+    "kind": "text",
+    "default": {
+      "tr": "Tercih edilen gün:",
+      "en": "Preferred day:"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.537b5c46845f8079",
+    "target": "copy",
+    "source": "Talep:",
+    "group": "Arşiv · önceki metin",
+    "label": "Talep:",
+    "kind": "text",
+    "default": {
+      "tr": "Talep:",
+      "en": "Request:"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.5d72611aef2112cc",
+    "target": "copy",
+    "source": "Çok noktalı izleme ihtiyaçlarınız için saha sayısı, cihaz çeşitliliği ve kullanıcı erişimleri birlikte değerlendirilir. Uygun kapsamı ekibimizle belirleyebilirsiniz.",
+    "group": "Arşiv · önceki metin",
+    "label": "Çok noktalı izleme ihtiyaçlarınız için saha sayısı, cihaz çeşitliliği ve kullanıcı erişiml",
+    "kind": "text",
+    "default": {
+      "tr": "Çok noktalı izleme ihtiyaçlarınız için saha sayısı, cihaz çeşitliliği ve kullanıcı erişimleri birlikte değerlendirilir. Uygun kapsamı ekibimizle belirleyebilirsiniz.",
+      "en": "For multi-site monitoring, we assess site numbers, device types and user access requirements together. Our team can help define the right scope."
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.5e0ec213faa4d42f",
+    "target": "copy",
+    "source": "Hangi saha cihazlarıyla çalışabilir?",
+    "group": "Arşiv · önceki metin",
+    "label": "Hangi saha cihazlarıyla çalışabilir?",
+    "kind": "text",
+    "default": {
+      "tr": "Hangi saha cihazlarıyla çalışabilir?",
+      "en": "Which field devices can be connected?"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.7078303b99eaa50b",
+    "target": "copy",
+    "source": "Taslağınız bu tarayıcıda oluşturuldu; henüz gönderilmedi. Metni kopyalayabilir veya e-posta uygulamanızda açıp gönderebilirsiniz.",
+    "group": "Arşiv · önceki metin",
+    "label": "Taslağınız bu tarayıcıda oluşturuldu; henüz gönderilmedi. Metni kopyalayabilir veya e-post",
+    "kind": "text",
+    "default": {
+      "tr": "Taslağınız bu tarayıcıda oluşturuldu; henüz gönderilmedi. Metni kopyalayabilir veya e-posta uygulamanızda açıp gönderebilirsiniz.",
+      "en": "Your draft has been created in this browser and has not been sent. Copy the text or open it in your email app to send it."
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.8804c0005d2cd5a2",
+    "target": "copy",
+    "source": "Formda ad, firma, e-posta, isteğe bağlı telefon ve talep bilgileri kullanılır. Bu bilgiler mevcut sürümde web sitesi sunucusuna gönderilmez; tarayıcıda bir e-posta taslağı oluşturulur. E-posta uygulamasında aç seçeneğiyle kendi e-posta hizmetinize geçersiniz. Gönderim, uygulamanızda ayrıca tamamlanır.",
+    "group": "Arşiv · önceki metin",
+    "label": "Formda ad, firma, e-posta, isteğe bağlı telefon ve talep bilgileri kullanılır. Bu bilgiler",
+    "kind": "text",
+    "default": {
+      "tr": "Formda ad, firma, e-posta, isteğe bağlı telefon ve talep bilgileri kullanılır. Bu bilgiler mevcut sürümde web sitesi sunucusuna gönderilmez; tarayıcıda bir e-posta taslağı oluşturulur. E-posta uygulamasında aç seçeneğiyle kendi e-posta hizmetinize geçersiniz. Gönderim, uygulamanızda ayrıca tamamlanır.",
+      "en": "The form uses your name, company, email, optional telephone number and request details. In this version, these details are not submitted to the website server; an email draft is created in your browser. Opening it in your email application takes you to your own email service, where you must complete sending separately."
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.8804ec3db9076a1f",
+    "target": "copy",
+    "source": "Konu:",
+    "group": "Arşiv · önceki metin",
+    "label": "Konu:",
+    "kind": "text",
+    "default": {
+      "tr": "Konu:",
+      "en": "Topic:"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.8e47dc2adea66807",
+    "target": "copy",
+    "source": "Kurulu güç / kapasite:",
+    "group": "Arşiv · önceki metin",
+    "label": "Kurulu güç / kapasite:",
+    "kind": "text",
+    "default": {
+      "tr": "Kurulu güç / kapasite:",
+      "en": "Installed power / capacity:"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.8f051f3ed5a0f3a9",
+    "target": "copy",
+    "source": "Birden fazla sahayı izleyebilir miyim?",
+    "group": "Arşiv · önceki metin",
+    "label": "Birden fazla sahayı izleyebilir miyim?",
+    "kind": "text",
+    "default": {
+      "tr": "Birden fazla sahayı izleyebilir miyim?",
+      "en": "Can I monitor more than one site?"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.8f0a8d4029ff81f2",
+    "target": "copy",
+    "source": "İzleme; ölçümleri, cihaz durumlarını ve alarmları görmenizi sağlar. Kontrol kapsamı ise cihazın ve saha altyapısının desteklediği işlevlere göre ayrıca belirlenir.",
+    "group": "Arşiv · önceki metin",
+    "label": "İzleme; ölçümleri, cihaz durumlarını ve alarmları görmenizi sağlar. Kontrol kapsamı ise ci",
+    "kind": "text",
+    "default": {
+      "tr": "İzleme; ölçümleri, cihaz durumlarını ve alarmları görmenizi sağlar. Kontrol kapsamı ise cihazın ve saha altyapısının desteklediği işlevlere göre ayrıca belirlenir.",
+      "en": "Monitoring provides visibility into measurements, device status and alarms. Control capabilities are assessed separately based on the functions supported by the devices and site infrastructure."
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.988323c99faa8d3a",
+    "target": "copy",
+    "source": "Demo veya teklif görüşmesine nasıl hazırlanabilirim?",
+    "group": "Arşiv · önceki metin",
+    "label": "Demo veya teklif görüşmesine nasıl hazırlanabilirim?",
+    "kind": "text",
+    "default": {
+      "tr": "Demo veya teklif görüşmesine nasıl hazırlanabilirim?",
+      "en": "How can I prepare for a demo or quotation discussion?"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.a672af02378c9ff4",
+    "target": "copy",
+    "source": "Talep taslağı",
+    "group": "Arşiv · önceki metin",
+    "label": "Talep taslağı",
+    "kind": "text",
+    "default": {
+      "tr": "Talep taslağı",
+      "en": "Request draft"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.a6abfe20175080a9",
+    "target": "copy",
+    "source": "Evirici, analizör, sayaç ve sensörler için cihaz modeli, haberleşme protokolü ve erişilebilir veriler birlikte değerlendirilir. Projenizdeki marka ve modelleri paylaşarak uyumluluk kapsamını netleştirebilirsiniz.",
+    "group": "Arşiv · önceki metin",
+    "label": "Evirici, analizör, sayaç ve sensörler için cihaz modeli, haberleşme protokolü ve erişilebi",
+    "kind": "text",
+    "default": {
+      "tr": "Evirici, analizör, sayaç ve sensörler için cihaz modeli, haberleşme protokolü ve erişilebilir veriler birlikte değerlendirilir. Projenizdeki marka ve modelleri paylaşarak uyumluluk kapsamını netleştirebilirsiniz.",
+      "en": "Compatibility depends on each inverter, analyser, meter or sensor model, its communication protocol and the available data. Share your device makes and models so we can confirm the supported scope."
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.acecee3c82f1fa2a",
+    "target": "copy",
+    "source": "Birden fazla seçim yapabilirsiniz. Seçimlerinizin tamamı talep taslağına eklenir.",
+    "group": "Arşiv · önceki metin",
+    "label": "Birden fazla seçim yapabilirsiniz. Seçimlerinizin tamamı talep taslağına eklenir.",
+    "kind": "text",
+    "default": {
+      "tr": "Birden fazla seçim yapabilirsiniz. Seçimlerinizin tamamı talep taslağına eklenir.",
+      "en": "You can select more than one option. All your selections will be included in the request draft."
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.b53b2dafa4efb965",
+    "target": "copy",
+    "source": "Saha sayısı:",
+    "group": "Arşiv · önceki metin",
+    "label": "Saha sayısı:",
+    "kind": "text",
+    "default": {
+      "tr": "Saha sayısı:",
+      "en": "Number of sites:"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.c6b1924c970cdf4d",
+    "target": "copy",
+    "source": "Proje türü:",
+    "group": "Arşiv · önceki metin",
+    "label": "Proje türü:",
+    "kind": "text",
+    "default": {
+      "tr": "Proje türü:",
+      "en": "Project type:"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.ce16eed8b8f9f09a",
+    "target": "copy",
+    "source": "Uzaktan izleme ve kontrol aynı şey mi?",
+    "group": "Arşiv · önceki metin",
+    "label": "Uzaktan izleme ve kontrol aynı şey mi?",
+    "kind": "text",
+    "default": {
+      "tr": "Uzaktan izleme ve kontrol aynı şey mi?",
+      "en": "Are remote monitoring and control the same?"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.d89fcee45b8b9fe7",
+    "target": "copy",
+    "source": "Ad:",
+    "group": "Arşiv · önceki metin",
+    "label": "Ad:",
+    "kind": "text",
+    "default": {
+      "tr": "Ad:",
+      "en": "Name:"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.d93836ba41376639",
+    "target": "copy",
+    "source": "Talep taslağını oluştur",
+    "group": "Arşiv · önceki metin",
+    "label": "Talep taslağını oluştur",
+    "kind": "text",
+    "default": {
+      "tr": "Talep taslağını oluştur",
+      "en": "Create request draft"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.e0fc6df49459276e",
+    "target": "copy",
+    "source": "Gizlilik bilgilendirmesini okudum. Talebin tarayıcıda bir taslak olarak hazırlanacağını biliyorum.",
+    "group": "Arşiv · önceki metin",
+    "label": "Gizlilik bilgilendirmesini okudum. Talebin tarayıcıda bir taslak olarak hazırlanacağını bi",
+    "kind": "text",
+    "default": {
+      "tr": "Gizlilik bilgilendirmesini okudum. Talebin tarayıcıda bir taslak olarak hazırlanacağını biliyorum.",
+      "en": "I have read the privacy information and understand that my request will be prepared as a draft in this browser."
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.f2435fb1c56f5027",
+    "target": "copy",
+    "source": "Görüşme tercihi:",
+    "group": "Arşiv · önceki metin",
+    "label": "Görüşme tercihi:",
+    "kind": "text",
+    "default": {
+      "tr": "Görüşme tercihi:",
+      "en": "Preferred contact method:"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.f47f50817f447197",
+    "target": "copy",
+    "source": "Google Haritalar bileşeni siz Haritayı göster düğmesine bastığınızda yüklenir. Haritayı açmak veya dış bağlantıya gitmek ilgili hizmetle bağlantı kurulmasına neden olur. Bu hizmetlerin veri ve çerez uygulamaları kendi politikalarına tabidir. Canlı barındırma ve e-posta hizmetlerinin veri işleyişi ayrıca değerlendirilmelidir.",
+    "group": "Arşiv · önceki metin",
+    "label": "Google Haritalar bileşeni siz Haritayı göster düğmesine bastığınızda yüklenir. Haritayı aç",
+    "kind": "text",
+    "default": {
+      "tr": "Google Haritalar bileşeni siz Haritayı göster düğmesine bastığınızda yüklenir. Haritayı açmak veya dış bağlantıya gitmek ilgili hizmetle bağlantı kurulmasına neden olur. Bu hizmetlerin veri ve çerez uygulamaları kendi politikalarına tabidir. Canlı barındırma ve e-posta hizmetlerinin veri işleyişi ayrıca değerlendirilmelidir.",
+      "en": "Google Maps loads when you select Show map. Opening the map or following an external link connects you to the relevant service, whose own data and cookie policies apply. The data handling practices of the production hosting and email providers must be assessed separately."
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.f4e683c4d0bc4111",
+    "target": "copy",
+    "source": "Saham için hangi bağlantı bilgileri gerekli?",
+    "group": "Arşiv · önceki metin",
+    "label": "Saham için hangi bağlantı bilgileri gerekli?",
+    "kind": "text",
+    "default": {
+      "tr": "Saham için hangi bağlantı bilgileri gerekli?",
+      "en": "What connection details are needed for my site?"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.f6c3c3fdbecd4e10",
+    "target": "copy",
+    "source": "Cihaz listesi, mevcut haberleşme bağlantıları ve internet erişimi bilgisi ön değerlendirmeyi kolaylaştırır. Saha yapılandırıcısıyla bu bilgileri bir araya getirebilirsiniz.",
+    "group": "Arşiv · önceki metin",
+    "label": "Cihaz listesi, mevcut haberleşme bağlantıları ve internet erişimi bilgisi ön değerlendirme",
+    "kind": "text",
+    "default": {
+      "tr": "Cihaz listesi, mevcut haberleşme bağlantıları ve internet erişimi bilgisi ön değerlendirmeyi kolaylaştırır. Saha yapılandırıcısıyla bu bilgileri bir araya getirebilirsiniz.",
+      "en": "A device list, existing communication connections and internet access details help us assess your requirements. Use the site configurator to bring these details together."
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.f81858601dd7aae4",
+    "target": "copy",
+    "source": "Telefon:",
+    "group": "Arşiv · önceki metin",
+    "label": "Telefon:",
+    "kind": "text",
+    "default": {
+      "tr": "Telefon:",
+      "en": "Phone:"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.fcefb08a9570f4f1",
+    "target": "copy",
+    "source": "E-posta uygulamasında aç",
+    "group": "Arşiv · önceki metin",
+    "label": "E-posta uygulamasında aç",
+    "kind": "text",
+    "default": {
+      "tr": "E-posta uygulamasında aç",
+      "en": "Open in your email app"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.fe47383db2e94613",
+    "target": "copy",
+    "source": "Başlamadan önce.",
+    "group": "Arşiv · önceki metin",
+    "label": "Başlamadan önce.",
+    "kind": "text",
+    "default": {
+      "tr": "Başlamadan önce.",
+      "en": "Before you get started."
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.449d7383b2ef380d",
+    "target": "copy",
+    "source": "Haritayı göster",
+    "group": "Arşiv · önceki metin",
+    "label": "Haritayı göster",
+    "kind": "text",
+    "default": {
+      "tr": "Haritayı göster",
+      "en": "Show map"
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.d997101d5bad142a",
+    "target": "copy",
+    "source": "Haritayı açtığınızda Google Haritalar ile bağlantı kurulur.",
+    "group": "Arşiv · önceki metin",
+    "label": "Haritayı açtığınızda Google Haritalar ile bağlantı kurulur.",
+    "kind": "text",
+    "default": {
+      "tr": "Haritayı açtığınızda Google Haritalar ile bağlantı kurulur.",
+      "en": "Opening the map establishes a connection to Google Maps."
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/iletisim",
+    "retired": true
+  },
+  {
+    "id": "copy.1719fe4c012c0557",
+    "target": "copy",
+    "source": "İletişim sayfasındaki Google Haritalar bileşeni doğrudan yüklenir ve Google ile bağlantı kurar. Google yorumları düğmesi, yapılandırılmış Google işletme veya yorum sayfasını açar; yorumlar otomatik olarak kopyalanmaz. Bu hizmetlerin veri ve çerez uygulamaları kendi politikalarına tabidir. Canlı barındırma ve e-posta hizmetlerinin veri işleyişi ayrıca değerlendirilmelidir.",
+    "group": "Arşiv · önceki metin",
+    "label": "İletişim sayfasındaki Google Haritalar bileşeni doğrudan yüklenir ve Google ile bağlantı k",
+    "kind": "text",
+    "default": {
+      "tr": "İletişim sayfasındaki Google Haritalar bileşeni doğrudan yüklenir ve Google ile bağlantı kurar. Google yorumları düğmesi, yapılandırılmış Google işletme veya yorum sayfasını açar; yorumlar otomatik olarak kopyalanmaz. Bu hizmetlerin veri ve çerez uygulamaları kendi politikalarına tabidir. Canlı barındırma ve e-posta hizmetlerinin veri işleyişi ayrıca değerlendirilmelidir.",
+      "en": "Google Maps loads directly on the contact page and connects to Google. The Google reviews button opens the configured Google business or review page; reviews are not copied automatically. These services apply their own data and cookie policies. The data practices of the production hosting and email providers must be assessed separately."
+    },
+    "location": "Arşiv · önceki metin",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.2a65de4a5c3631be",
+    "target": "copy",
+    "source": "Google yorum kartları",
+    "group": "Arşiv / önceki içerikler",
+    "label": "Google yorum kartları",
+    "kind": "text",
+    "default": {
+      "tr": "Google yorum kartları",
+      "en": "Google review cards"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.19b6acde330304f5",
+    "target": "copy",
+    "source": "Duraklat",
+    "group": "Arşiv / önceki içerikler",
+    "label": "Duraklat",
+    "kind": "text",
+    "default": {
+      "tr": "Duraklat",
+      "en": "Pause"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.d83e265191d4e5e3",
+    "target": "copy",
+    "source": "Sonraki yorum",
+    "group": "Arşiv / önceki içerikler",
+    "label": "Sonraki yorum",
+    "kind": "text",
+    "default": {
+      "tr": "Sonraki yorum",
+      "en": "Next review"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.d9e9df3d9ab382e8",
+    "target": "copy",
+    "source": "Önceki yorum",
+    "group": "Arşiv / önceki içerikler",
+    "label": "Önceki yorum",
+    "kind": "text",
+    "default": {
+      "tr": "Önceki yorum",
+      "en": "Previous review"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.ebec940a8210f72f",
+    "target": "copy",
+    "source": "Oynat",
+    "group": "Arşiv / önceki içerikler",
+    "label": "Oynat",
+    "kind": "text",
+    "default": {
+      "tr": "Oynat",
+      "en": "Play"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
   }
 ]

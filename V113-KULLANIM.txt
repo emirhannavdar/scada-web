@@ -1,0 +1,7 @@
+ScadaWatt v113 — Ücretsiz yorumlar ve bölüm sırası
+
+Kurulum: Çalışan sunucuyu Ctrl+C ile durdurun. ZIP içeriğini mevcut proje klasörüne çıkartın; dosyaları değiştirin. npm.cmd start ile açın. Tarayıcıda Ctrl+F5 kullanın. Mevcut veritabanı, kullanıcılar, .env ve yüklenen görseller korunur.
+
+API’siz yorumlar: Yönetim → SSS ve yorum ayarları → Yalnız kayıtlı müşteri yorumlarını kullan. Müşterinin paylaşım izni verdiği metin ve görselleri ekleyin, kullanım izni ve yayında seçeneklerini işaretleyin, taslağa uygulayın ve mevcut onay/yayın akışını tamamlayın. Kayıtlı yorumlar kayan kartlarda gösterilir. Google API anahtarı gerekmez; Google’dan otomatik yorum aktarılmaz. Google entegrasyonu isteğe bağlı olarak korunmuştur. Google bağlantısı eklemek tek başına yorum indirmez.
+
+Sıralama: Sayfa üzerinde düzenleme → ilgili sayfa → Tasarım / yerleşim → Bölüm sırası. SSS, müşteri yorumları ve sayfa içeriklerini oklarla taşıyın. Ana sayfa, hakkımızda, iletişim, SCADA yazılımı, ürünler, çözümler, paketler ve saha yapılandırıcısında desteklenir. Sayfa başlığı ve 3D yolculuk başlangıcı sabit kalır. Bölümün hangi sayfalarda gösterileceği SSS ve yorum ayarlarından seçilir. Mobil ve masaüstü sıraları ayrı düzenlenir.

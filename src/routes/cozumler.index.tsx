@@ -1,3 +1,4 @@
+import {OrderedPageSections} from '@/components/site/OrderedPageSections';
 import {translate as _tx,useLocale as _useLocale} from '@/lib/i18n';
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
@@ -6,13 +7,13 @@ import { Reveal } from "@/components/site/Reveal";
 import { solutions } from "@/content/site";
 import { seo } from "@/lib/seo";
 export const Route = createFileRoute("/cozumler/")({
-    head: () => seo("Çözümler", "GES uzaktan izleme, limit yönetimi, kompanzasyon, Zero Injection, planlı üretim durdurma ve anlık bildirim çözümleri."),
+    head: () => seo("Çözümler", "GES uzaktan izleme, limit yönetimi, kompanzasyon, zero injection, planlı yük atma, saatlik mahsuplaşma takibi ve anlık bildirim çözümleri."),
     component: Solutions,
 });
 function Solutions() {
     _useLocale();
     return (<>
-      <PageHero eyebrow={_tx("\u00C7\u00F6z\u00FCmler")} title={_tx("Enerji ve veri i\u00E7in \u00E7\u00F6z\u00FCmler.")} lead={_tx("Enerji y\u00F6netimi, uzaktan izleme, \u00FCretim analizi ve saha kontrol\u00FC i\u00E7in ScadaWatt \u00E7\u00F6z\u00FCmlerini ke\u015Ffedin.")}/>
+      <PageHero eyebrow={_tx("\u00C7\u00F6z\u00FCmler")} title={_tx("Enerji ve veri i\u00E7in \u00E7\u00F6z\u00FCmler.")} lead={_tx("Enerji y\u00F6netimi, uzaktan izleme, \u00FCretim analizi ve saha kontrol\u00FC i\u00E7in ScadaWatt \u00E7\u00F6z\u00FCmlerini ke\u015Ffedin.")}/><OrderedPageSections path="/cozumler">
       <section data-cms-collection="solutions" className="py-24">
         <div className="mx-auto max-w-7xl px-6">
           {_tx(solutions.map((s, i) => (<Reveal key={s.slug}>
@@ -27,5 +28,5 @@ function Solutions() {
             </Reveal>)))}
         </div>
       </section>
-    </>);
+    </OrderedPageSections></>);
 }

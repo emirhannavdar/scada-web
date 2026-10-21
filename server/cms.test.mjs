@@ -107,3 +107,30 @@ test('mobile and desktop isolate copy, images, records, palettes, order and publ
 
 test('word formatting persists by language and device and never styles the enclosing paragraph',async()=>{const f=await fixture();try{await f.store.createAdmin('admin@example.com','Long-Test-Password-4901');await f.login();const {emptyDesign,designKey}=await import('../shared/design.mjs');const d=emptyDesign(),selector='#main > main:nth-of-type(1) > h1:nth-of-type(1)',fragment={start:7,end:13,text:'enerji',language:'tr'},key=designKey('/hakkimizda',selector,fragment);d.elements[key]={page:'/hakkimizda',selector,label:'enerji',kind:'text',fragment,desktop:{color:'#ff5500',fontWeight:700,fontStyle:'italic'},mobile:{}};let r=await f.call('/api/cms/draft',{method:'PUT',data:{device:'desktop',revision:0,values:{},design:d}});assert.equal(r.response.status,200,JSON.stringify(r.json));r=await f.call('/api/cms/publish',{method:'POST',data:{device:'desktop',revision:r.json.revision}});assert.equal(r.response.status,200);const content=(await f.call('/api/content')).json;assert.deepEqual(content.variants.desktop.design.elements[key].fragment,fragment);assert.equal(content.variants.mobile.design.elements[key],undefined);const invalid=structuredClone(d);invalid.elements[key].fragment.end=99999;assert.equal((await f.call('/api/cms/draft',{method:'PUT',data:{device:'desktop',revision:r.json.revision,values:{},design:invalid}})).response.status,400);}finally{await f.close();f.cleanup()}});
 test('admin approval snapshot stays unpublished until root approves it',async()=>{const f=await fixture();try{await f.store.createAdmin('root@example.com','Long-Test-Password-4901');const field=f.store.catalog.fields.find(v=>v.id==='data.aboutCompany.headline');f.store.save(0,{[field.id]:{tr:'Root onayı bekleyen başlık',en:'Headline awaiting root'}} ,undefined,undefined,'desktop');const request=f.store.createApproval('desktop','editor@example.com','Başlık güncellendi');assert.equal(request.status,'pending');assert.notEqual(f.store.state('desktop').published[field.id]?.tr,'Root onayı bekleyen başlık');f.store.reviewApproval(request.id,'approved','Uygun','root@example.com');assert.equal(f.store.state('desktop').published[field.id].tr,'Root onayı bekleyen başlık');assert.equal(f.store.db.prepare('SELECT status FROM approval_requests WHERE id=?').get(request.id).status,'approved');}finally{await f.close();f.cleanup()}});
+
+test('preview comparisons stay authenticated and use the selected approval snapshot',async()=>{const f=await fixture();try{
+ assert.equal((await f.call('/api/cms/preview?device=desktop',{withAuth:false})).response.status,401);
+ await f.store.createAdmin('admin@example.com','Long-Test-Password-4901');await f.login();
+ const field=f.store.catalog.fields.find(v=>v.kind==='text'&&!v.retired).id;
+ f.store.save(0,{[field]:{tr:'Yeni inceleme metni',en:'New review copy'}},undefined,undefined,'desktop');
+ const preview=(await f.call('/api/cms/preview?device=desktop')).json;
+ assert.equal(preview.review.device,'desktop');assert.equal(preview.review.values[field].tr,'Yeni inceleme metni');assert.equal(preview.review.published[field],undefined);
+ assert.equal(Object.hasOwn((await f.call('/api/content')).json,'review'),false);
+ const approval=f.store.createApproval('desktop','admin@test.local','İncelenecek');
+ f.store.save(f.store.state('desktop').revision,{[field]:{tr:'Sonraki taslak',en:'Later draft'}},undefined,undefined,'desktop');
+ const snapshot=(await f.call('/api/cms/preview?approval='+approval.id)).json;
+ assert.equal(snapshot.review.values[field].tr,'Yeni inceleme metni');assert.equal(snapshot.review.device,'desktop');
+ }finally{await f.close()}});
+
+test('configurator definitions validate, remain device-specific and only become public after root publication',async()=>{const {CONFIGURATOR_FIELD,defaultConfigurator}=await import('../shared/configurator.mjs');const f=await fixture();try{
+ await f.store.createAdmin('admin@example.com','Long-Test-Password-4901');await f.login();
+ const schema=structuredClone(defaultConfigurator);schema.questions[0].type='multi';schema.questions[0].defaultValue=[];schema.questions[0].required=false;
+ for(let i=0;i<35;i++)schema.questions.push({id:'custom'+i,section:'facility',label:{tr:'Özel soru '+i,en:'Custom question '+i},help:{tr:'Açıklama '.repeat(20),en:'Description '.repeat(20)},type:'text',enabled:true,required:false,defaultValue:'',options:[]});
+ const text=JSON.stringify(schema);assert.ok(text.length>12000);
+ let response=await f.call('/api/cms/draft',{method:'PUT',data:{device:'mobile',revision:0,values:{[CONFIGURATOR_FIELD]:{tr:text,en:text}}}});assert.equal(response.response.status,200,JSON.stringify(response.json));
+ assert.equal(f.store.state('desktop').values[CONFIGURATOR_FIELD],undefined);
+ const before=(await f.call('/api/content')).json;assert.equal(JSON.parse(before.variants.mobile.entries.find(e=>e.id===CONFIGURATOR_FIELD).tr).questions[0].type,'single');
+ const published=await f.call('/api/cms/publish',{method:'POST',data:{device:'mobile',revision:response.json.revision,note:'Yapılandırıcı'}});assert.equal(published.response.status,200,JSON.stringify(published.json));
+ const publicData=(await f.call('/api/content')).json;const entry=publicData.variants.mobile.entries.find(e=>e.id===CONFIGURATOR_FIELD);assert.equal(JSON.parse(entry.tr).questions[0].type,'multi');assert.equal(JSON.parse(publicData.variants.desktop.entries.find(e=>e.id===CONFIGURATOR_FIELD).tr).questions[0].type,'single');
+ const bad=structuredClone(schema);bad.questions[1].id=bad.questions[0].id;const raw=JSON.stringify(bad);response=await f.call('/api/cms/draft',{method:'PUT',data:{device:'mobile',revision:published.json.revision,values:{[CONFIGURATOR_FIELD]:{tr:raw,en:raw}}}});assert.equal(response.response.status,400);
+ }finally{await f.close()}});

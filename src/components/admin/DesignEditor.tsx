@@ -1,3 +1,4 @@
+import {PAGE_SECTIONS,sectionOrder} from '../../../shared/page-sections.mjs';
 import "./design-editor.css";
 import { useState } from "react";
 import {
@@ -88,6 +89,7 @@ function hex(value: string | undefined, fallback: string) {
 }
 export function DesignEditor({
   design = emptyDesign(),
+  path = "/",
   selected,
   selections,
   onChange,
@@ -97,6 +99,7 @@ export function DesignEditor({
   device = "desktop",
 }: {
   design?: SiteDesign;
+  path?: string;
   selected: DesignSelection | null;
   selections?: DesignSelection[];
   onChange: (value: SiteDesign) => void;
@@ -269,13 +272,15 @@ export function DesignEditor({
       </label>
     );
   }
+  const page=path.replace(/\/$/,"")||"/",order=sectionOrder(design,page);
+  function setOrder(ids:string[]){onChange(page==='/'?{...design,homeOrder:ids}:{...design,pageOrders:{...design.pageOrders,[page]:ids}})}
   function move(index: number, direction: number) {
-    const homeOrder = [...design.homeOrder];
+    const homeOrder = [...order];
     [homeOrder[index], homeOrder[index + direction]] = [
       homeOrder[index + direction]!,
       homeOrder[index]!,
     ];
-    onChange({ ...design, homeOrder });
+    setOrder(homeOrder);
   }
   return (
     <section className="design-editor">
@@ -539,12 +544,12 @@ export function DesignEditor({
       )}
       {tab === "sections" && (
         <>
-          <h3>Ana sayfanın bölüm sırası</h3>
+          <h3>Bu sayfanın bölüm sırası</h3>
           <p className="visual-help">
-            3D yolculuk başlangıçta sabittir. Diğer bölümler gerçek sayfa akışında taşınır.
+            Başlangıç başlığı / 3D yolculuk sabittir. SSS ve yorumlar dahil bölümleri oklarla taşıyın. Kapalı bölümler ziyaretçiye gösterilmez. Masaüstü ve mobil sıraları ayrıdır.
           </p>
           <ol className="design-sections">
-            {design.homeOrder.map((id, index) => (
+            {order.map((id, index) => (
               <li key={id}>
                 <span>
                   {index + 1}. {sectionNames[id] || id}
@@ -558,7 +563,7 @@ export function DesignEditor({
                 </button>
                 <button
                   aria-label={sectionNames[id] + " aşağı taşı"}
-                  disabled={index === design.homeOrder.length - 1}
+                  disabled={index === order.length - 1}
                   onClick={() => move(index, 1)}
                 >
                   <ArrowDown size={14} />
@@ -566,7 +571,7 @@ export function DesignEditor({
               </li>
             ))}
           </ol>
-          <button onClick={() => onChange({ ...design, homeOrder: [...HOME_SECTIONS] })}>
+          <button onClick={() => setOrder([...(PAGE_SECTIONS[page]||[])])}>
             <RotateCcw size={14} />
             İlk bölüm sırasına dön
           </button>
