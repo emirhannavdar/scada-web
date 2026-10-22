@@ -1,4 +1,6 @@
 User-agent: *
-Disallow:
-
-Sitemap: https://scadawatt.com
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /*?*cms-
+Sitemap: https://scadawatt.com/sitemap.xml

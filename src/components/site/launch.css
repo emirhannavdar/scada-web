@@ -8,3 +8,36 @@
 .focus-review-window{overflow:hidden;padding:24px 0 32px;touch-action:pan-y;outline-offset:-4px}.community-review-grid.focus-review-stage{display:grid;grid-template-columns:minmax(0,1fr);gap:0;width:42%;margin-inline:auto;isolation:isolate}.focus-review-slot{grid-area:1/1;min-width:0;transform:translateX(calc(var(--review-slot)*101%)) scale(.82);opacity:.48;transition:transform .75s cubic-bezier(.22,.68,.2,1),opacity .75s;z-index:1;pointer-events:none;display:flex}.focus-review-slot.is-active{transform:translateX(0) scale(1);opacity:1;z-index:2;pointer-events:auto}.focus-review-card{width:100%;display:flex}.focus-review-card>figure,.focus-review-card>.google-review-card{width:100%;min-width:0;flex:1;margin:0;background:var(--background,#fff);box-shadow:0 16px 45px #0000000a}.focus-review-slot.is-active .focus-review-card>figure,.focus-review-slot.is-active .google-review-card{border-color:var(--accent,#e9783b)}.review-position{align-self:center;font-size:12px;opacity:.65;font-variant-numeric:tabular-nums}.focus-review-carousel .review-carousel-controls{justify-content:center}.focus-review-card .google-review-card{flex-basis:auto}.focus-review-carousel:has(.focus-review-slot:only-child) .focus-review-stage{width:min(100%,640px)}@media(max-width:900px){.community-review-grid.focus-review-stage{width:56%}}@media(max-width:600px){.community-review-grid.focus-review-stage{width:82%}.focus-review-window{padding-top:12px;padding-bottom:20px}.focus-review-slot{transform:translateX(calc(var(--review-slot)*96%)) scale(.85)}}@media(prefers-reduced-motion:reduce){.focus-review-slot{transition:none}}
 
 .focus-review-window{cursor:grab;user-select:none;-webkit-user-select:none}.focus-review-window[data-dragging]{cursor:grabbing}.focus-review-window .focus-review-stage{transform:translateX(var(--review-drag,0px));transition:transform .35s ease}.focus-review-window[data-dragging] .focus-review-stage{transition:none}.focus-review-window img{-webkit-user-drag:none}.focus-review-window a,.focus-review-window button{user-select:auto}@media(prefers-reduced-motion:reduce){.focus-review-window .focus-review-stage{transition:none}}
+
+/* Equal-size cards: the message scrolls within its own viewport. */
+.community-review-grid.focus-review-stage{width:min(440px,76%)}
+.focus-review-card{height:360px;min-height:360px;max-height:360px}
+.focus-review-card>figure,.focus-review-card>.google-review-card{height:100%;min-height:0;max-height:100%;overflow:hidden;box-sizing:border-box;gap:18px}
+.focus-review-card>figure>blockquote{display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden}
+.focus-review-card>figure>blockquote>span{flex:none;line-height:30px;font-size:40px}
+.focus-review-card blockquote>p{flex:1;min-height:0;max-height:100%;overflow-y:auto;overscroll-behavior-y:contain;scrollbar-width:none;touch-action:pan-y pinch-zoom;scroll-behavior:auto!important;margin:0;padding:0 3px 4px 0}
+.focus-review-card blockquote>p::-webkit-scrollbar{display:none}
+.focus-review-card>figure>figcaption{flex:none;height:60px;min-height:60px;overflow:hidden}
+.focus-review-card figcaption>div{min-width:0}
+.focus-review-card figcaption strong,.focus-review-card figcaption div>span{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;overflow-wrap:anywhere}
+.focus-review-card>.google-review-card>header{flex:none;max-height:100px;overflow:hidden;gap:10px}
+.focus-review-card>.google-review-card>blockquote{flex:1;min-height:0;overflow:hidden;display:flex}
+.focus-review-card>.google-review-card blockquote>.is-clamped{display:block;-webkit-line-clamp:unset;overflow-y:auto}
+.focus-review-card>.google-review-card>.google-read-more{display:none}
+.focus-review-card>.google-review-card>footer{flex:none;margin-top:0;min-height:34px;padding-top:10px}
+.focus-review-window{touch-action:pan-y pinch-zoom;-webkit-tap-highlight-color:transparent}
+.focus-review-window .focus-review-stage{transition:none;transform:none}
+@media(max-width:600px){.community-review-grid.focus-review-stage{width:calc(100% - 56px);max-width:360px}.focus-review-card{height:350px;min-height:350px;max-height:350px}.focus-review-card>figure,.focus-review-card>.google-review-card{padding:22px;gap:14px}.focus-review-card blockquote p{font-size:15px;line-height:1.75}.focus-review-card>figure>figcaption{height:56px;min-height:56px}.focus-review-card figcaption img,.focus-review-card .community-avatar{width:44px;height:44px}}
+.focus-review-carousel:has(.focus-review-slot:only-child) .community-review-grid.focus-review-stage{width:min(440px,76%)}
+.focus-review-window{-webkit-touch-callout:none}
+.focus-review-card blockquote>p{overscroll-behavior-y:auto}
+@media(max-width:600px){.focus-review-carousel:has(.focus-review-slot:only-child) .community-review-grid.focus-review-stage{width:calc(100% - 56px);max-width:360px}}
+
+/* Compact review cards, without changing the scrollable message viewport behavior. */
+.community-review-grid.focus-review-stage,.focus-review-carousel:has(.focus-review-slot:only-child) .community-review-grid.focus-review-stage{width:min(380px,76%)}
+.focus-review-card{height:300px;min-height:300px;max-height:300px}
+.focus-review-card>figure,.focus-review-card>.google-review-card{padding:24px;gap:14px}
+.focus-review-card>figure>figcaption{height:52px;min-height:52px}
+.focus-review-card figcaption img,.focus-review-card .community-avatar{width:48px;height:48px}
+.focus-review-card blockquote p{font-size:16px}
+@media(max-width:600px){.community-review-grid.focus-review-stage,.focus-review-carousel:has(.focus-review-slot:only-child) .community-review-grid.focus-review-stage{width:calc(100% - 64px);max-width:310px}.focus-review-card{height:300px;min-height:300px;max-height:300px}.focus-review-card>figure,.focus-review-card>.google-review-card{padding:20px;gap:12px}.focus-review-card blockquote p{font-size:15px}.focus-review-card>figure>figcaption{height:48px;min-height:48px}.focus-review-card figcaption img,.focus-review-card .community-avatar{width:42px;height:42px}}

@@ -1,5 +1,5 @@
 {
-  "schemaHash": "e0f30a5e3ff32945",
+  "schemaHash": "53ea6e5ff907d44f",
   "fields": [
     {
       "id": "copy.0b2bdd94b1824426",
@@ -14740,6 +14740,66 @@
       "default": {
         "tr": "Google yorum kartları",
         "en": "Google review cards"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/",
+      "retired": true
+    },
+    {
+      "id": "copy.19b6acde330304f5",
+      "target": "copy",
+      "source": "Duraklat",
+      "group": "Arşiv / önceki içerikler",
+      "label": "Duraklat",
+      "kind": "text",
+      "default": {
+        "tr": "Duraklat",
+        "en": "Pause"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/",
+      "retired": true
+    },
+    {
+      "id": "copy.d83e265191d4e5e3",
+      "target": "copy",
+      "source": "Sonraki yorum",
+      "group": "Arşiv / önceki içerikler",
+      "label": "Sonraki yorum",
+      "kind": "text",
+      "default": {
+        "tr": "Sonraki yorum",
+        "en": "Next review"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/",
+      "retired": true
+    },
+    {
+      "id": "copy.d9e9df3d9ab382e8",
+      "target": "copy",
+      "source": "Önceki yorum",
+      "group": "Arşiv / önceki içerikler",
+      "label": "Önceki yorum",
+      "kind": "text",
+      "default": {
+        "tr": "Önceki yorum",
+        "en": "Previous review"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/",
+      "retired": true
+    },
+    {
+      "id": "copy.ebec940a8210f72f",
+      "target": "copy",
+      "source": "Oynat",
+      "group": "Arşiv / önceki içerikler",
+      "label": "Oynat",
+      "kind": "text",
+      "default": {
+        "tr": "Oynat",
+        "en": "Play"
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/",
