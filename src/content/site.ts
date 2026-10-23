@@ -391,9 +391,153 @@ export const aboutCompany={
  ]
 };
 
+export const privacyPolicy: {title:string;blocks:{type:string;text:string;number?:number}[]} = {
+  "title": "SCADAWATT GİZLİLİK POLİTİKASI",
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Kişisel verilerinizin ne kadar önemli olduğunun farkındayız. Hizmetlerimizi kullandığınızda bize güvenirsiniz."
+    },
+    {
+      "type": "paragraph",
+      "text": "Bunun bilincindeyiz ve bilgilerinizi korumak için büyük çaba harcıyoruz."
+    },
+    {
+      "type": "paragraph",
+      "text": "Farkına varacaksınız ki ScadaWatt ekosisteminde sizden almak zorunda olduğumuz bilgiler haricinde kişisel bilgi almamaya çalışıyoruz. Aşağıda almak zorunda olduğumuz bilgilerin ve neden aldığımız hakkında birkaç bilgi paylaşacağız."
+    },
+    {
+      "type": "heading",
+      "text": "Hizmetlerimizi Kullanırken Oluşturduğunuz Bilgiler"
+    },
+    {
+      "type": "subheading",
+      "number": 1,
+      "text": "IP Adresiniz"
+    },
+    {
+      "type": "paragraph",
+      "text": "İnternete bağlanabilen her modeme İnternet Servis Sağlayıcınız tarafından bir İnternet Protokolü (IP) adresi olarak adlandırılan bir numara zinciri atanır. Bu numara zincirleri coğrafi bloklar içerisinde atanır."
+    },
+    {
+      "type": "paragraph",
+      "text": "Bir IP adresini inceleyerek konumunuz yalnızca il-ilçe bazında ve yaklaşık olarak tespit edilebilir."
+    },
+    {
+      "type": "paragraph",
+      "text": "Ancak biz IP adresinizi yalnızca güvenlik algoritmalarımız gereği kullanıyoruz."
+    },
+    {
+      "type": "paragraph",
+      "text": "Örneğin; hatalı bir giriş yapıldığında sizi tanımak ve sizi sistemden uzaklaştırmamak için kullanacağız."
+    },
+    {
+      "type": "paragraph",
+      "text": "Ayrıca; sisteminize hatalı bir müdahalede bulunulduğunda hatayı yapan kişiyi kayıt altında tutmak ve gerekirse resmi devlet kurumlarına kanıt olarak bildirmek için kullanırız."
+    },
+    {
+      "type": "subheading",
+      "number": 2,
+      "text": "İsim ve Soyisim"
+    },
+    {
+      "type": "paragraph",
+      "text": "Sizi tanımlayan bilgilerdir. Listeleme işlemlerinde sistem yöneticilerinize, gönderilecek SMS ve E-Posta metni içerisinde sizi selamlamak için kullanırız."
+    },
+    {
+      "type": "subheading",
+      "number": 3,
+      "text": "Telefon ve E-Posta Adresiniz"
+    },
+    {
+      "type": "paragraph",
+      "text": "Bazı durumlarda size SMS veya E-Posta göndermek zorunda kalabiliriz. Alarm durumları ve gün sonu üretim raporları buna örnek olarak verilebilir. Bu yüzden sistemde telefon numaranız ve e-postanızı kendi isteğiniz doğrultusunda girebilir veya kaldırabilirsiniz."
+    },
+    {
+      "type": "paragraph",
+      "text": "Sildiğiniz telefon numaranız ve e-posta adresiniz sistemden geri dönüştürülemeyecek şekilde anında silinecektir. Kesinlikle başka kurumlarla paylaşılmayacaktır."
+    },
+    {
+      "type": "paragraph",
+      "text": "Bazen önemli bir duyuru yayınlamak zorunda kalabiliriz. Bu durumlarda da bizler size en hızlı yoldan ulaşmak için SMS veya e-posta gönderebilir, hatta doğrudan bir temsilcimiz tarafından arayabiliriz."
+    },
+    {
+      "type": "subheading",
+      "number": 4,
+      "text": "Mobil Cihaz Bilgileriniz"
+    },
+    {
+      "type": "paragraph",
+      "text": "Kişisel bilgileriniz dışında üretim santrallerinizin güvenliğini de önemsiyoruz. Bu yüzden santral üretimini etkileyecek kadar önemli yetkilere sahip olan kullanıcılar için mobil cihazlarınızın bazı bilgilerini kaydederiz. Yapılan her işlemde de ‘aynı ve güvendiğiniz mobil cihaz’ olmasını takip ederiz. Hesap bilgilerinizi kaybetseniz bile farklı bir cihazdan giriş yaptığınız için siz ‘güvenilir cihaz’ olarak kaydetmediğiniz sürece hesabınıza erişim yetkisi vermeyeceğiz. Bu güvenlik algoritması için gerekli bilgiler şunlardır: i) Cihaz üreticisi ii) Cihaz modeli iii) Benzersiz tanımlayıcısı: Cihazınızın kimliğini benzersiz olarak belirlemek üzere kullanılabilecek bir karakter dizisidir. Güvenlik ve sahtekarlık tespiti için kullanılabilir. Bu benzersiz tanımlayıcılar (bazen UUID olarak anılır) cihaz üreticiniz tarafından bizimle paylaşılabilir. IMEI numaraları buna örnektir. Her cihaz için benzersizdir."
+    },
+    {
+      "type": "subheading",
+      "number": 5,
+      "text": "Sahalardan Alınan Veriler"
+    },
+    {
+      "type": "paragraph",
+      "text": "ScadaWatt’a ait cihazlar, çeşitli yöntemlerle sahadan bilgiler toplar, kendi içerisinde geçici olarak kaydeder, kalıcı kaydetme ve analiz için Türkiye lokasyonlu yüksek güvenlikli veri merkezlerinde barınan sunucularımıza iletir."
+    },
+    {
+      "type": "paragraph",
+      "text": "Sahadan alınan veriler doğrultusunda santrallerinizin performans analizleri, alarm takipleri, üretim-tüketim karşılaştırmaları ve çevrimiçi canlı izleme imkanı sağlamaktayız."
+    },
+    {
+      "type": "paragraph",
+      "text": "Sahadan toplanıp saklanan veriler şunlardır: i) Tesis genel bilgileri ii) Evirici genel bilgileri iii) Evirici anlık üretim bilgileri iv) Evirici durum ve alarm bilgileri v) Elektrik şebekesi gerilim-frekans bilgileri vi) Tesisin üretilen-tüketilen akım bilgileri vii) Tesisin frekans senkronizasyon bilgileri viii) Tesisin konumu için hava durumu verileri ix) Personel devam takip sistemleri için zaman ve kişi bilgileri x) Tesiste kullanılan üretim ekipmanlarının (örneğin güneş panelleri) genel bilgileri."
+    },
+    {
+      "type": "paragraph",
+      "text": "Bu bilgilerin tamamı kullanıcı arayüzlerimizden görüntülenmeye müsait olup istenildiği hallerde kalıcı olarak temizlenebilmektedir. Ancak carilerimizin kazançlarını artırmak ve kamuyu korumak adına bu verilerin kaydedilmesi oldukça önemlidir."
+    },
+    {
+      "type": "paragraph",
+      "text": "Bu verilerin tutulmaması halinde yapay zekâ algoritmaları çalışamaz, performans analizleri ve uyarıları oluşturulamaz."
+    },
+    {
+      "type": "subheading",
+      "number": 6,
+      "text": "Haberleşmelerin Güvenliği"
+    },
+    {
+      "type": "paragraph",
+      "text": "ScadaWatt cihazları kendi içlerinde bulunan bir özel ağ sayesinde yalnızca yerel ağdan veri toplayıp kendi veri merkezlerimize veri gönderebilecek yetkilere sahiptir. Bunu sağlayabilmek için sanal özel ağ (VPN) kullanırız."
+    },
+    {
+      "type": "paragraph",
+      "text": "ScadaWatt cihazları internet üzerinden herhangi bir siteye bağlantı kuramayacağı için virüs gibi tehlikelerden etkilenmezler. Bağlı bulunduğu ağı da tehlikeye atmazlar."
+    },
+    {
+      "type": "paragraph",
+      "text": "VPN ağımız UDP ve TCP bilgi transferi protokollerini, güvenli soket katmanı için SSL ve aktarım katmanı güvenliği için TLS 1.2, şifreleme ve doğrulama sertifikaları için ise 256-bit OpenSSL kullanır."
+    },
+    {
+      "type": "paragraph",
+      "text": "Bulut sistemlerimize giriş yapmak için kullanılan şifreleriniz asla ham haliyle kaydedilmez. Şifreleriniz RSA3-512 bitlik algoritma kullanılarak geri dönüştürülemeyecek şekilde yeniden şifrelenir ve saklanır."
+    },
+    {
+      "type": "heading",
+      "text": "ScadaWatt’ı, kullanıcılarımızı, carilerimizi ve kamuyu koruma"
+    },
+    {
+      "type": "paragraph",
+      "text": "Bilgileri hizmetlerimizin güvenliğini ve güvenilirliğini iyileştirmek için kullanırız. ScadaWatt’a, kullanıcılarımıza, carilerimize veya kamuya zarar verebilecek teknik sorunlar ve güvenlik risklerinin algılanması, önlenmesi ve bunlara yanıt verilmesi bu kapsamda yer alır. Algoritmalarımızla yukarıda yer alan verilerinizi kullanarak; sizi ve kamuya ait elektrik şebekesini korumak için elimizden geleni yaparız."
+    },
+    {
+      "type": "heading",
+      "text": "Yasal İşlem veya Uygulanabilir Resmi Talepler"
+    },
+    {
+      "type": "paragraph",
+      "text": "Kullanıcılarımızın ve carilerimizin bilgilerinin güvenliği ve gizliliğine gösterdiğimiz hassasiyet doğrultusunda; hukuk ekibimiz, hangi türde olursa olsun her talebi inceler ve bir talebin kapsamı aşırı geniş göründüğünde veya talep doğru süreci takip etmediğinde sıklıkla olumsuz yanıt verir."
+    }
+  ]
+};
+
 /** Server-authorised content is applied once, before routes load. Geometry is untouched. */
 export function applyRuntimeFields(entries:{path?:string[];tr:string|boolean}[]){
- const roots:Record<string,unknown>={communityContent,configuratorContent,images,contact,fieldJourney,aboutPoints,solutions,products,plans,comparison,nav,productSpecifications,screenGallery,solutionPresentation,discoveryGoals,applicationStories,aboutCompany};
+ const roots:Record<string,unknown>={privacyPolicy,communityContent,configuratorContent,images,contact,fieldJourney,aboutPoints,solutions,products,plans,comparison,nav,productSpecifications,screenGallery,solutionPresentation,discoveryGoals,applicationStories,aboutCompany};
  for(const entry of entries){const path=entry.path;if(!path?.length||path.some(k=>[{},'prototype',undefined].includes(k)))continue;
   if(path.length===1){if(path[0]==='slogan')slogan=String(entry.tr);if(path[0]==='vision')vision=String(entry.tr);continue}
   let current=roots[path[0]!] as Record<string,unknown>|undefined;
@@ -403,6 +547,6 @@ export function applyRuntimeFields(entries:{path?:string[];tr:string|boolean}[])
 }
 
 /** Preserve exported root identities while replacing device-specific content on resize. */
-const runtimeRoots={communityContent,configuratorContent,images,contact,fieldJourney,aboutPoints,solutions,products,plans,comparison,nav,productSpecifications,screenGallery,solutionPresentation,discoveryGoals,applicationStories,aboutCompany};
+const runtimeRoots={privacyPolicy,communityContent,configuratorContent,images,contact,fieldJourney,aboutPoints,solutions,products,plans,comparison,nav,productSpecifications,screenGallery,solutionPresentation,discoveryGoals,applicationStories,aboutCompany};
 const initialRuntime=structuredClone(runtimeRoots),initialSlogan=slogan,initialVision=vision;
 export function resetRuntimeContent(){for(const [key,target] of Object.entries(runtimeRoots)){const source=structuredClone(initialRuntime[key as keyof typeof initialRuntime]);if(Array.isArray(target))(target as unknown[]).splice(0,target.length,...source as unknown[]);else{for(const name of Object.keys(target))delete (target as Record<string,unknown>)[name];Object.assign(target,source)}}slogan=initialSlogan;vision=initialVision;}

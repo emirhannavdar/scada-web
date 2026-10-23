@@ -29,7 +29,21 @@ export function DataVoyage() {
   ];
   const [homeScreenIndex, setHomeScreenIndex] = useState(0);
   const homeScreen = homeScreens[homeScreenIndex]!;
-  const { reduced, fieldNight = false } = useExperience();
+  const { reduced, fieldNight = false, setJourneyActive } = useExperience();
+  useEffect(() => {
+    const update = () => {
+      const rect = ref.current?.getBoundingClientRect();
+      setJourneyActive(Boolean(rect && rect.top <= 80 && rect.bottom >= window.innerHeight - 2));
+    };
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    return () => {
+      window.removeEventListener('scroll', update);
+      window.removeEventListener('resize', update);
+      setJourneyActive(false);
+    };
+  }, [setJourneyActive]);
   const [editorPaused, setEditorPaused] = useState(false);
   const editorPausedRef = useRef(false);
   const [fallback, setFallback] = useState(false),

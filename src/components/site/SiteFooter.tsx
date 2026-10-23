@@ -1,6 +1,22 @@
 import {CmsImage} from '@/components/site/CmsImage';
-import {translate as _tx,useLocale as _useLocale} from '@/lib/i18n';
-import { Link, useRouterState } from '@tanstack/react-router';
-import { contact, images, products } from '@/content/site';
-function CorporateFooter() { _useLocale(); return <footer className="corporate-footer"><div className="sw-wrap"><div className="footer-layout"><div><Link className="footer-logo-link" to="/"><CmsImage className="footer-logo" src={images.wordmark} alt={_tx("ScadaWatt")} width="170" height="49"/></Link><p className="footer-about">{_tx("Yaz\u0131l\u0131m, elektronik ve AR-GE.")}<br />{_tx("Sahadaki veri ile enerji y\u00F6netimi")}<br />{_tx("aras\u0131nda ba\u011Flant\u0131 kuruyoruz.")}</p></div><div><h3>{_tx("Teknoloji")}</h3><Link to="/scada-yazilimi">{_tx("SCADA yaz\u0131l\u0131m\u0131")}</Link><Link to="/scada-yazilimi" hash="uygulamalar">{_tx("Web & mobil uygulamalar")}</Link><Link to="/cozumler">{_tx("\u00C7\u00F6z\u00FCmler")}</Link><Link to="/paketler">{_tx("\u0130zleme planlar\u0131")}</Link></div><div><h3>{_tx("\u00DCr\u00FCnler")}</h3>{_tx(products.map(p => <Link key={p.slug} to="/urunler/$slug" params={{ slug: p.slug }}>{_tx(p.code)}</Link>))}<Link to="/hakkimizda">{_tx("Hakk\u0131m\u0131zda")}</Link></div><div><h3>{_tx("ScadaWatt / Ankara")}</h3><address>{_tx(contact.address)}</address><a href={contact.phoneHref}>{_tx(contact.phone)}</a><a href={`mailto:${contact.email}`}>{_tx(contact.email)}</a><Link to="/iletisim">{_tx("\u0130leti\u015Fim \u2192")}</Link></div></div><div className="footer-bottom"><span>{_tx("\u00A9 ")}{_tx(new Date().getFullYear())}{_tx(" ScadaWatt")}</span><div><Link to="/kullanim-kosullari">{_tx("Kullanım koşulları")}</Link><Link to="/gizlilik">{_tx("Gizlilik")}</Link><Link to="/cerez">{_tx("\u00C7erezler")}</Link><Link to="/kvkk">{_tx("KVKK")}</Link><a href="/model-credits.html">{_tx("3B kaynaklar\u0131")}</a></div></div></div></footer>; }
-export function SiteFooter() { _useLocale(); const home = useRouterState({ select: s => s.location.pathname === '/' }); return home ? <footer className="film-footer"><div className="film-wrap"><div className="film-footer-top"><address>{_tx(contact.address)}</address><div><Link to="/hakkimizda">{_tx("\u015Eirket")}</Link><Link to="/urunler">{_tx("\u00DCr\u00FCnler")}</Link><Link to="/paketler">{_tx("\u0130zleme planlar\u0131")}</Link></div></div><div className="film-footer-brand" aria-hidden="true">{_tx("SCADAWATT")}</div><div className="film-footer-bottom"><span>{_tx("\u00A9 ")}{_tx(new Date().getFullYear())}{_tx(" ScadaWatt")}</span><span>{_tx("YAZILIM / ELEKTRON\u0130K / AR-GE")}</span><div><Link to="/kullanim-kosullari">{_tx("Kullanım koşulları")}</Link><Link to="/gizlilik">{_tx("Gizlilik")}</Link><Link to="/cerez">{_tx("\u00C7erezler")}</Link><Link to="/kvkk">{_tx("KVKK")}</Link><a href="/model-credits.html">{_tx("3B kaynaklar\u0131")}</a><a href="#enerji">{_tx("Ba\u015Fa d\u00F6n \u2191")}</a></div></div></div></footer> : <CorporateFooter />; }
+import {translate as t,useLocale} from '@/lib/i18n';
+import {cmsAsset} from '@/lib/cms-state';
+import type {CSSProperties} from 'react';
+import {Link} from '@tanstack/react-router';
+import {contact,images,products} from '@/content/site';
+export function SiteFooter(){
+ useLocale();
+ const brandStyle={'--brand-mask':`url(${JSON.stringify(cmsAsset(images.wordmark))})`} as CSSProperties;
+ return <footer className="corporate-footer site-footer" data-site-footer="true" aria-label={t('ScadaWatt site bilgileri')}>
+ <div className="sw-wrap">
+ <div className="footer-layout">
+ <div><Link className="footer-logo-link" to="/" aria-label={t('ScadaWatt ana sayfa')}>
+ <span className="footer-wordmark" style={brandStyle}><CmsImage className="footer-logo" src={images.wordmark} alt="ScadaWatt" width="170" height="49"/></span>
+ </Link><p className="footer-about">{t('Yazılım, elektronik ve AR-GE.')}<br/>{t('Sahadaki veri ile enerji yönetimi')}<br/>{t('arasında bağlantı kuruyoruz.')}</p></div>
+ <nav aria-label={t('Teknoloji bağlantıları')}><p className="footer-column-title">{t('Teknoloji')}</p><Link to="/scada-yazilimi">{t('SCADA yazılımı')}</Link><Link to="/scada-yazilimi" hash="uygulamalar">{t('Web & mobil uygulamalar')}</Link><Link to="/cozumler">{t('Çözümler')}</Link><Link to="/paketler">{t('İzleme planları')}</Link></nav>
+ <nav aria-label={t('Donanım bağlantıları')}><p className="footer-column-title">{t('Donanımlar')}</p>{products.map(p=><Link key={p.slug} to="/urunler/$slug" params={{slug:p.slug}}>{t(p.code)}</Link>)}<Link to="/hakkimizda">{t('Hakkımızda')}</Link></nav>
+ <div><p className="footer-column-title">{t('ScadaWatt / Ankara')}</p><address>{t(contact.address)}</address><a href={contact.phoneHref}>{t(contact.phone)}</a><a href={`mailto:${contact.email}`}>{t(contact.email)}</a><Link to="/iletisim">{t('İletişim')} →</Link></div>
+ </div>
+ <div className="footer-bottom"><span>© {new Date().getFullYear()}{' '}ScadaWatt</span><nav aria-label={t('Yasal bilgiler')}><Link to="/kullanim-kosullari">{t('Kullanım koşulları')}</Link><Link to="/privacy-policy">{t('Gizlilik Politikası')}</Link><Link to="/cerez">{t('Çerez Politikası')}</Link><a href="/model-credits.html">{t('3B kaynakları')}</a></nav></div>
+ </div></footer>;
+}

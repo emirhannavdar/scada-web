@@ -6,7 +6,7 @@ import './mobile-home.css';
 
 export function MobileHomeHero() {
   useLocale();
-  const [platform,setPlatform] = useState<'mobile'|'web'>('mobile');
+  const [platform,setPlatform] = useState<'mobile'|'web'>('web');
   return <section id="enerji" className="mobile-home-hero" data-cms-section="mobile-introduction">
     <div className="mobile-home-grid" aria-hidden="true" />
     <div className="mobile-home-copy">

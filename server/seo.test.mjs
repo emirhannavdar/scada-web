@@ -41,6 +41,15 @@ test('public SEO uses published pages, real HTTP 404, private noindex and contro
         const xml = await r.text();
         assert.match(xml, /urunler\/s3000i/);
         assert.doesNotMatch(xml, /\/admin|\/demo|\/kvkk/);
+        assert.match(xml, /\/privacy-policy/);
+        for (const alias of ['/gizlilik', '/kvkk']) {
+            const redirected = await fetch(base + alias, { redirect: 'manual' });
+            assert.equal(redirected.status, 301);
+            assert.equal(redirected.headers.get('location'), '/privacy-policy');
+        }
+        r = await fetch(base + '/privacy-policy');
+        assert.equal(r.status, 200);
+        assert.match(await r.text(), /Gizlilik Politikası/);
         r = await fetch(base + '/not-a-page');
         assert.equal(r.status, 404);
         assert.match(r.headers.get('x-robots-tag'), /noindex/);

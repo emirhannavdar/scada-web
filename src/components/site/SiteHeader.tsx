@@ -2,20 +2,19 @@ import { CmsImage } from "@/components/site/CmsImage";
 import { setLanguage } from "@/lib/i18n";
 import { translate as _tx, useLocale as _useLocale } from "@/lib/i18n";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
+import { useEffect, useRef } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight, X, Sun, Moon } from "lucide-react";
 import { contact, images } from "@/content/site";
 import { useExperience } from "./ExperienceContext";
 export function SiteHeader() {
   const language = _useLocale();
-  const { menuOpen, setMenuOpen, reduced, fieldNight, setFieldNight } = useExperience();
+  const { menuOpen, setMenuOpen, reduced, fieldNight, setFieldNight, journeyActive } = useExperience();
   const trigger = useRef<HTMLButtonElement>(null);
   const panel = useRef<HTMLDivElement>(null);
   const path = useRouterState({ select: (s) => s.location.pathname });
   const home = path === "/";
-  const [scrolled, setScrolled] = useState(false);
-  const pageLinks = [
+    const pageLinks = [
     { to: "/", tr: "Ana sayfa", en: "Home" },
     { to: "/cozumler", tr: "Çözümler", en: "Solutions" },
     { to: "/urunler", tr: "Donanımlar", en: "Hardware" },
@@ -25,9 +24,13 @@ export function SiteHeader() {
     { to: "/hakkimizda", tr: "Hakkımızda", en: "About us" },
     { to: "/iletisim", tr: "İletişim", en: "Contact" },
   ] as const;
-  const { scrollY } = useScroll();
-  useMotionValueEvent(scrollY, "change", (v) => setScrolled(v > 80));
   useEffect(() => setMenuOpen(false), [path, setMenuOpen]);
+  useEffect(() => {
+    const wide = window.matchMedia('(min-width: 1440px)');
+    const update = () => { if (wide.matches) setMenuOpen(false); };
+    wide.addEventListener('change', update);
+    return () => wide.removeEventListener('change', update);
+  }, [setMenuOpen]);
   useEffect(() => {
     if (!menuOpen) return;
     const old = document.body.style.overflow;
@@ -64,14 +67,14 @@ export function SiteHeader() {
   }
   return (
     <>
-      <header className={`film-header ${scrolled || !home || menuOpen ? "is-solid" : ""}`}>
+      <header className={`film-header ${!home || menuOpen || !journeyActive ? "is-solid" : "is-flight"}`}>
         <div className="film-header-inner">
           <Link to="/" className="film-brand" aria-label={_tx("ScadaWatt ana sayfa")}>
             <CmsImage src={images.wordmark} alt={_tx("ScadaWatt")} width="196" height="56" />
           </Link>
           <nav className="film-header-chapters" aria-label={_tx("Ana menü")}>
-            {pageLinks.filter(item=>["/cozumler","/scada-yazilimi","/saha-yapilandirici"].includes(item.to)).map(item => (
-              <Link to={item.to} key={item.to} aria-current={path === item.to ? "page" : undefined}>
+            {pageLinks.map(item => (
+              <Link className={["/cozumler","/scada-yazilimi","/saha-yapilandirici"].includes(item.to) ? "header-priority" : undefined} to={item.to} key={item.to} aria-current={(path === item.to || (item.to !== "/" && path.startsWith(item.to + "/"))) ? "page" : undefined}>
                 {_tx(item.tr)}
               </Link>
             ))}
@@ -116,6 +119,7 @@ export function SiteHeader() {
               ref={trigger}
               className="film-menu-trigger"
               onClick={() => setMenuOpen(!menuOpen)}
+              type="button"
               aria-expanded={menuOpen}
               aria-controls="film-navigation"
               aria-label={_tx(menuOpen ? "Menüyü kapat" : "Menüyü aç")}
@@ -152,7 +156,7 @@ export function SiteHeader() {
               <div className="film-wrap film-navigation-grid">
                 <nav aria-label={_tx("Ana men\u00FC")}>
                   {pageLinks.map((item, i) => (
-                    <Link to={item.to} key={item.to} onClick={close} aria-current={path === item.to ? "page" : undefined}>
+                    <Link to={item.to} key={item.to} onClick={close} aria-current={(path === item.to || (item.to !== "/" && path.startsWith(item.to + "/"))) ? "page" : undefined}>
                       <span>{String(i + 1).padStart(2, "0")}</span>
                       {_tx(item.tr)}
                       <ArrowUpRight size={36} />

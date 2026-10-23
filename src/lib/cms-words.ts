@@ -1,3 +1,4 @@
+import {shellReadability} from './shell-readability';
 import {
   describeDesignElement,
   designKey,
@@ -89,7 +90,8 @@ const allowed = [
   "color",
   "backgroundColor",
 ] as const;
-function applyRule(element: HTMLElement, rule: StyleRule) {
+function applyRule(element: HTMLElement, rule: StyleRule, context?: HTMLElement) {
+  rule=shellReadability(rule,'',context??element);
   for (const key of allowed) {
     const value = rule[key];
     if (value === undefined) continue;
@@ -209,7 +211,7 @@ export function installWordStyles(
         if (existing) {
           for (const entry of relevant)
             if (entry.fragment!.start <= start && entry.fragment!.end >= offset)
-              applyRule(existing, themedRule(entry));
+              applyRule(existing, themedRule(entry), element);
           continue;
         }
         const cuts = [
@@ -232,7 +234,7 @@ export function installWordStyles(
           run.textContent = source.slice(a, b);
           for (const entry of relevant)
             if (entry.fragment!.start <= start + a && entry.fragment!.end >= start + b)
-              applyRule(run, themedRule(entry));
+              applyRule(run, themedRule(entry), element);
           record.runs.push(run);
         }
         node.data = "";

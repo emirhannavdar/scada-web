@@ -19,6 +19,7 @@ import { Route as IletisimRouteImport } from './routes/iletisim'
 import { Route as KullanimKosullariRouteImport } from './routes/kullanim-kosullari'
 import { Route as KvkkRouteImport } from './routes/kvkk'
 import { Route as PaketlerRouteImport } from './routes/paketler'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as SahaYapilandiriciRouteImport } from './routes/saha-yapilandirici'
 import { Route as ScadaYazilimiRouteImport } from './routes/scada-yazilimi'
 import { Route as CozumlerIndexRouteImport } from './routes/cozumler.index'
@@ -76,6 +77,11 @@ const PaketlerRoute = PaketlerRouteImport.update({
   path: '/paketler',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SahaYapilandiriciRoute = SahaYapilandiriciRouteImport.update({
   id: '/saha-yapilandirici',
   path: '/saha-yapilandirici',
@@ -118,6 +124,7 @@ export interface FileRoutesByFullPath {
   '/kullanim-kosullari': typeof KullanimKosullariRoute
   '/kvkk': typeof KvkkRoute
   '/paketler': typeof PaketlerRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/saha-yapilandirici': typeof SahaYapilandiriciRoute
   '/scada-yazilimi': typeof ScadaYazilimiRoute
   '/cozumler/$slug': typeof CozumlerSlugRoute
@@ -136,6 +143,7 @@ export interface FileRoutesByTo {
   '/kullanim-kosullari': typeof KullanimKosullariRoute
   '/kvkk': typeof KvkkRoute
   '/paketler': typeof PaketlerRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/saha-yapilandirici': typeof SahaYapilandiriciRoute
   '/scada-yazilimi': typeof ScadaYazilimiRoute
   '/cozumler/$slug': typeof CozumlerSlugRoute
@@ -155,6 +163,7 @@ export interface FileRoutesById {
   '/kullanim-kosullari': typeof KullanimKosullariRoute
   '/kvkk': typeof KvkkRoute
   '/paketler': typeof PaketlerRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/saha-yapilandirici': typeof SahaYapilandiriciRoute
   '/scada-yazilimi': typeof ScadaYazilimiRoute
   '/cozumler/$slug': typeof CozumlerSlugRoute
@@ -175,6 +184,7 @@ export interface FileRouteTypes {
     | '/kullanim-kosullari'
     | '/kvkk'
     | '/paketler'
+    | '/privacy-policy'
     | '/saha-yapilandirici'
     | '/scada-yazilimi'
     | '/cozumler/$slug'
@@ -193,6 +203,7 @@ export interface FileRouteTypes {
     | '/kullanim-kosullari'
     | '/kvkk'
     | '/paketler'
+    | '/privacy-policy'
     | '/saha-yapilandirici'
     | '/scada-yazilimi'
     | '/cozumler/$slug'
@@ -211,6 +222,7 @@ export interface FileRouteTypes {
     | '/kullanim-kosullari'
     | '/kvkk'
     | '/paketler'
+    | '/privacy-policy'
     | '/saha-yapilandirici'
     | '/scada-yazilimi'
     | '/cozumler/$slug'
@@ -230,6 +242,7 @@ export interface RootRouteChildren {
   KullanimKosullariRoute: typeof KullanimKosullariRoute
   KvkkRoute: typeof KvkkRoute
   PaketlerRoute: typeof PaketlerRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   SahaYapilandiriciRoute: typeof SahaYapilandiriciRoute
   ScadaYazilimiRoute: typeof ScadaYazilimiRoute
   CozumlerSlugRoute: typeof CozumlerSlugRoute
@@ -310,6 +323,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PaketlerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/saha-yapilandirici': {
       id: '/saha-yapilandirici'
       path: '/saha-yapilandirici'
@@ -366,6 +386,7 @@ const rootRouteChildren: RootRouteChildren = {
   KullanimKosullariRoute: KullanimKosullariRoute,
   KvkkRoute: KvkkRoute,
   PaketlerRoute: PaketlerRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   SahaYapilandiriciRoute: SahaYapilandiriciRoute,
   ScadaYazilimiRoute: ScadaYazilimiRoute,
   CozumlerSlugRoute: CozumlerSlugRoute,

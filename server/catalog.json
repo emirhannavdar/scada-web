@@ -1,5 +1,5 @@
 {
-  "schemaHash": "53ea6e5ff907d44f",
+  "schemaHash": "d64c7aaa5aea2d81",
   "fields": [
     {
       "id": "copy.0b2bdd94b1824426",
@@ -3229,6 +3229,650 @@
       "page": "/iletisim"
     },
     {
+      "id": "data.privacyPolicy.blocks.0.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "0",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 1 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Kişisel verilerinizin ne kadar önemli olduğunun farkındayız. Hizmetlerimizi kullandığınızda bize güvenirsiniz.",
+        "en": "We recognize how important your personal data is. When you use our services, you place your trust in us."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.1.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "1",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 2 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Bunun bilincindeyiz ve bilgilerinizi korumak için büyük çaba harcıyoruz.",
+        "en": "We are fully aware of this responsibility and take great care to protect your information."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.10.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "10",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 11 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "İsim ve Soyisim",
+        "en": "Name and Surname"
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.11.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "11",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 12 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Sizi tanımlayan bilgilerdir. Listeleme işlemlerinde sistem yöneticilerinize, gönderilecek SMS ve E-Posta metni içerisinde sizi selamlamak için kullanırız.",
+        "en": "This is information that identifies you. We use it in listing processes for your system administrators and to greet you in SMS and email texts."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.12.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "12",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 13 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Telefon ve E-Posta Adresiniz",
+        "en": "Phone and Email Address"
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.13.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "13",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 14 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Bazı durumlarda size SMS veya E-Posta göndermek zorunda kalabiliriz. Alarm durumları ve gün sonu üretim raporları buna örnek olarak verilebilir. Bu yüzden sistemde telefon numaranız ve e-postanızı kendi isteğiniz doğrultusunda girebilir veya kaldırabilirsiniz.",
+        "en": "In some situations, we may need to send you an SMS or email. Examples include alarm situations and end-of-day production reports. For this reason, you can enter or remove your phone number and email address in the system at your discretion."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.14.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "14",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 15 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Sildiğiniz telefon numaranız ve e-posta adresiniz sistemden geri dönüştürülemeyecek şekilde anında silinecektir. Kesinlikle başka kurumlarla paylaşılmayacaktır.",
+        "en": "Any phone number or email address you delete will be immediately removed from the system in a way that cannot be recovered. They will not be shared with any other institutions."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.15.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "15",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 16 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Bazen önemli bir duyuru yayınlamak zorunda kalabiliriz. Bu durumlarda da bizler size en hızlı yoldan ulaşmak için SMS veya e-posta gönderebilir, hatta doğrudan bir temsilcimiz tarafından arayabiliriz.",
+        "en": "Sometimes, we may need to issue an important announcement. In such cases, we may send you an SMS or email, or even call you directly via a representative to reach you as quickly as possible."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.16.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "16",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 17 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Mobil Cihaz Bilgileriniz",
+        "en": "Mobile Device Information"
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.17.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "17",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 18 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Kişisel bilgileriniz dışında üretim santrallerinizin güvenliğini de önemsiyoruz. Bu yüzden santral üretimini etkileyecek kadar önemli yetkilere sahip olan kullanıcılar için mobil cihazlarınızın bazı bilgilerini kaydederiz. Yapılan her işlemde de ‘aynı ve güvendiğiniz mobil cihaz’ olmasını takip ederiz. Hesap bilgilerinizi kaybetseniz bile farklı bir cihazdan giriş yaptığınız için siz ‘güvenilir cihaz’ olarak kaydetmediğiniz sürece hesabınıza erişim yetkisi vermeyeceğiz. Bu güvenlik algoritması için gerekli bilgiler şunlardır: i) Cihaz üreticisi ii) Cihaz modeli iii) Benzersiz tanımlayıcısı: Cihazınızın kimliğini benzersiz olarak belirlemek üzere kullanılabilecek bir karakter dizisidir. Güvenlik ve sahtekarlık tespiti için kullanılabilir. Bu benzersiz tanımlayıcılar (bazen UUID olarak anılır) cihaz üreticiniz tarafından bizimle paylaşılabilir. IMEI numaraları buna örnektir. Her cihaz için benzersizdir.",
+        "en": "Apart from your personal information, we also care about the security of your production plants. Therefore, for users who have significant authority that could affect plant production, we record certain information about your mobile devices. We ensure that every action is performed by the ‘same and trusted mobile device.’ Even if you lose your account credentials, you will not be granted access to your account from a different device unless you register it as a ‘trusted device.’ The information required for this security algorithm includes: i) Device Manufacturer ii) Device Model iii) Unique Identifier: This is a string of characters that can be used to uniquely identify your device. It can be used for security and fraud detection. These unique identifiers (sometimes referred to as UUIDs) may be shared with us by your device manufacturer. IMEI numbers are an example of this and are unique to each device."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.18.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "18",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 19 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Sahalardan Alınan Veriler",
+        "en": "Data Collected from Sites"
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.19.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "19",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 20 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "ScadaWatt’a ait cihazlar, çeşitli yöntemlerle sahadan bilgiler toplar, kendi içerisinde geçici olarak kaydeder, kalıcı kaydetme ve analiz için Türkiye lokasyonlu yüksek güvenlikli veri merkezlerinde barınan sunucularımıza iletir.",
+        "en": "ScadaWatt devices collect information from the site through various methods, temporarily store it internally, and transmit it to our servers located in highly secure data centers in Turkey for permanent storage and analysis."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.2.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "2",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 3 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Farkına varacaksınız ki ScadaWatt ekosisteminde sizden almak zorunda olduğumuz bilgiler haricinde kişisel bilgi almamaya çalışıyoruz. Aşağıda almak zorunda olduğumuz bilgilerin ve neden aldığımız hakkında birkaç bilgi paylaşacağız.",
+        "en": "You will notice that within the ScadaWatt ecosystem, we strive to avoid collecting personal information beyond what is necessary. Below, we will share some details about the information we are required to collect and why."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.20.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "20",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 21 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Sahadan alınan veriler doğrultusunda santrallerinizin performans analizleri, alarm takipleri, üretim-tüketim karşılaştırmaları ve çevrimiçi canlı izleme imkanı sağlamaktayız.",
+        "en": "Based on the data collected from the site, we provide performance analyses, alarm monitoring, production-consumption comparisons, and live online monitoring for your plants."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.21.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "21",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 22 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Sahadan toplanıp saklanan veriler şunlardır: i) Tesis genel bilgileri ii) Evirici genel bilgileri iii) Evirici anlık üretim bilgileri iv) Evirici durum ve alarm bilgileri v) Elektrik şebekesi gerilim-frekans bilgileri vi) Tesisin üretilen-tüketilen akım bilgileri vii) Tesisin frekans senkronizasyon bilgileri viii) Tesisin konumu için hava durumu verileri ix) Personel devam takip sistemleri için zaman ve kişi bilgileri x) Tesiste kullanılan üretim ekipmanlarının (örneğin güneş panelleri) genel bilgileri.",
+        "en": "The data collected and stored from the site includes: i) General Facility Information ii) General Inverter Information iii) Inverter Real-Time Production Information iv) Inverter Status and Alarm Information v) Electric Grid Voltage-Frequency Information vi) Facility's Produced-Consumed Current Information vii) Facility's Frequency Synchronization Information viii) Weather Data for the Facility's Location ix) Time and Personnel Information for Personnel Attendance Tracking Systems x) General Information on Production Equipment Used in the Facility (e.g., solar panels)."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.22.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "22",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 23 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Bu bilgilerin tamamı kullanıcı arayüzlerimizden görüntülenmeye müsait olup istenildiği hallerde kalıcı olarak temizlenebilmektedir. Ancak carilerimizin kazançlarını artırmak ve kamuyu korumak adına bu verilerin kaydedilmesi oldukça önemlidir.",
+        "en": "All of this information can be viewed from our user interfaces and can be permanently deleted if desired. However, recording this data is essential for increasing our clients' profits and protecting the public."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.23.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "23",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 24 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Bu verilerin tutulmaması halinde yapay zekâ algoritmaları çalışamaz, performans analizleri ve uyarıları oluşturulamaz.",
+        "en": "Without retaining this data, artificial intelligence algorithms cannot function, and performance analyses and alerts cannot be generated."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.24.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "24",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 25 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Haberleşmelerin Güvenliği",
+        "en": "Communication Security"
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.25.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "25",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 26 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "ScadaWatt cihazları kendi içlerinde bulunan bir özel ağ sayesinde yalnızca yerel ağdan veri toplayıp kendi veri merkezlerimize veri gönderebilecek yetkilere sahiptir. Bunu sağlayabilmek için sanal özel ağ (VPN) kullanırız.",
+        "en": "ScadaWatt devices are equipped with a private network that allows them to collect data from the local network and send it to our data centers. To enable this, we use a Virtual Private Network (VPN)."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.26.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "26",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 27 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "ScadaWatt cihazları internet üzerinden herhangi bir siteye bağlantı kuramayacağı için virüs gibi tehlikelerden etkilenmezler. Bağlı bulunduğu ağı da tehlikeye atmazlar.",
+        "en": "ScadaWatt devices cannot connect to any site over the internet, so they are not vulnerable to threats like viruses, and they do not endanger the network they are connected to."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.27.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "27",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 28 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "VPN ağımız UDP ve TCP bilgi transferi protokollerini, güvenli soket katmanı için SSL ve aktarım katmanı güvenliği için TLS 1.2, şifreleme ve doğrulama sertifikaları için ise 256-bit OpenSSL kullanır.",
+        "en": "Our VPN uses UDP and TCP data transfer protocols, SSL for secure socket layers, TLS 1.2 for transmission layer security, and 256-bit OpenSSL for encryption and authentication certificates."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.28.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "28",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 29 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Bulut sistemlerimize giriş yapmak için kullanılan şifreleriniz asla ham haliyle kaydedilmez. Şifreleriniz RSA3-512 bitlik algoritma kullanılarak geri dönüştürülemeyecek şekilde yeniden şifrelenir ve saklanır.",
+        "en": "The passwords used to access our cloud systems are never stored in their raw form. Your passwords are encrypted using the RSA3-512-bit algorithm, making them irretrievable, and stored securely."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.29.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "29",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 30 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "ScadaWatt’ı, kullanıcılarımızı, carilerimizi ve kamuyu koruma",
+        "en": "Protecting ScadaWatt, our users, our clients and the public"
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.3.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "3",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 4 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Hizmetlerimizi Kullanırken Oluşturduğunuz Bilgiler",
+        "en": "Information Generated While Using Our Services"
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.30.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "30",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 31 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Bilgileri hizmetlerimizin güvenliğini ve güvenilirliğini iyileştirmek için kullanırız. ScadaWatt’a, kullanıcılarımıza, carilerimize veya kamuya zarar verebilecek teknik sorunlar ve güvenlik risklerinin algılanması, önlenmesi ve bunlara yanıt verilmesi bu kapsamda yer alır. Algoritmalarımızla yukarıda yer alan verilerinizi kullanarak; sizi ve kamuya ait elektrik şebekesini korumak için elimizden geleni yaparız.",
+        "en": "We use information to improve the security and reliability of our services, protecting ScadaWatt, our users, our clients, and the public. This includes detecting, preventing, and responding to technical issues and security risks that could harm ScadaWatt, our users, our clients, or the public. Using the above-mentioned data with our algorithms, we do everything we can to protect you and the public electric grid."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.31.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "31",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 32 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Yasal İşlem veya Uygulanabilir Resmi Talepler",
+        "en": "Legal Proceedings or Applicable Official Requests"
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.32.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "32",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 33 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Kullanıcılarımızın ve carilerimizin bilgilerinin güvenliği ve gizliliğine gösterdiğimiz hassasiyet doğrultusunda; hukuk ekibimiz, hangi türde olursa olsun her talebi inceler ve bir talebin kapsamı aşırı geniş göründüğünde veya talep doğru süreci takip etmediğinde sıklıkla olumsuz yanıt verir.",
+        "en": "In line with our sensitivity to the security and privacy of our users' and clients' information, our legal team reviews every request, regardless of type, and often responds negatively when a request appears overly broad or does not follow the correct procedure."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.4.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "4",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 5 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "IP Adresiniz",
+        "en": "Your IP Address"
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.5.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "5",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 6 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "İnternete bağlanabilen her modeme İnternet Servis Sağlayıcınız tarafından bir İnternet Protokolü (IP) adresi olarak adlandırılan bir numara zinciri atanır. Bu numara zincirleri coğrafi bloklar içerisinde atanır.",
+        "en": "Every modem capable of connecting to the internet is assigned a string of numbers known as an Internet Protocol (IP) address by your Internet Service Provider. These number strings are assigned within geographic blocks."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.6.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "6",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 7 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Bir IP adresini inceleyerek konumunuz yalnızca il-ilçe bazında ve yaklaşık olarak tespit edilebilir.",
+        "en": "By examining an IP address, your location can only be approximately determined at the city or district level."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.7.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "7",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 8 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Ancak biz IP adresinizi yalnızca güvenlik algoritmalarımız gereği kullanıyoruz.",
+        "en": "However, we use your IP address solely for the purposes required by our security algorithms."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.8.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "8",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 9 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Örneğin; hatalı bir giriş yapıldığında sizi tanımak ve sizi sistemden uzaklaştırmamak için kullanacağız.",
+        "en": "For example, when an incorrect login occurs, we will use it to recognize you and prevent you from being logged out of the system."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.blocks.9.text",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "blocks",
+        "9",
+        "text"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "blocks / 10 / Metin",
+      "kind": "text",
+      "default": {
+        "tr": "Ayrıca; sisteminize hatalı bir müdahalede bulunulduğunda hatayı yapan kişiyi kayıt altında tutmak ve gerekirse resmi devlet kurumlarına kanıt olarak bildirmek için kullanırız.",
+        "en": "Additionally, if there is an unauthorized attempt to access your system, we use the IP address to log the identity of the individual responsible and, if necessary, provide evidence to official state authorities."
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
+      "id": "data.privacyPolicy.title",
+      "target": "data",
+      "path": [
+        "privacyPolicy",
+        "title"
+      ],
+      "group": "Gizlilik politikası",
+      "label": "Başlık",
+      "kind": "text",
+      "default": {
+        "tr": "SCADAWATT GİZLİLİK POLİTİKASI",
+        "en": "SCADAWATT PRIVACY POLICY"
+      },
+      "page": "/privacy-policy",
+      "location": "Gizlilik politikası › /privacy-policy"
+    },
+    {
       "id": "data.aboutCompany.experience",
       "target": "data",
       "path": [
@@ -4046,20 +4690,6 @@
       "page": "/"
     },
     {
-      "id": "copy.0d83ac5147c67fe4",
-      "target": "copy",
-      "source": "Çerezler",
-      "group": "Ortak arayüz metinleri",
-      "label": "Çerezler",
-      "kind": "text",
-      "default": {
-        "tr": "Çerezler",
-        "en": "Cookies"
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
       "id": "copy.0e5efbb549ecc411",
       "target": "copy",
       "source": "M0-8C-11-41-8-78 2-109c9 31 9 67 4 101M7 4c34-5 67 7 94 28-32 2-67-7-96-21M-7 4c-22 27-51 48-84 58 18-27 47-50 79-62",
@@ -4139,6 +4769,20 @@
       "default": {
         "tr": "Büyütülmüş uygulama ekranı",
         "en": "Enlarged application screen"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
+      "id": "copy.166bb135a7deeadb",
+      "target": "copy",
+      "source": "M36 75v54m137-46v46M36 117l137-25M36 92l137 25M24 129h24m113 0h24",
+      "group": "Ortak arayüz metinleri",
+      "label": "M36 75v54m137-46v46M36 117l137-25M36 92l137 25M24 129h24m113 0h24",
+      "kind": "text",
+      "default": {
+        "tr": "M36 75v54m137-46v46M36 117l137-25M36 92l137 25M24 129h24m113 0h24",
+        "en": "M36 75v54m137-46v46M36 117l137-25M36 92l137 25M24 129h24m113 0h24"
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -4536,20 +5180,6 @@
       "page": "/saha-yapilandirici"
     },
     {
-      "id": "copy.2ea2d6281a574c40",
-      "target": "copy",
-      "source": "Başa dön ↑",
-      "group": "Ortak arayüz metinleri",
-      "label": "Başa dön ↑",
-      "kind": "text",
-      "default": {
-        "tr": "Başa dön ↑",
-        "en": "Back to top ↑"
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
       "id": "copy.2ee48fecc37e5f14",
       "target": "copy",
       "source": "Saha",
@@ -4587,20 +5217,6 @@
       "default": {
         "tr": "Mevcut ScadaWatt web arayüzü tanıtım görseli",
         "en": "ScadaWatt web platform preview"
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
-      "id": "copy.30a7f4fceb9627e9",
-      "target": "copy",
-      "source": "KVKK",
-      "group": "Ortak arayüz metinleri",
-      "label": "KVKK",
-      "kind": "text",
-      "default": {
-        "tr": "KVKK",
-        "en": "KVKK"
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -4730,20 +5346,6 @@
       },
       "location": "İletişim › Talep formu",
       "page": "/iletisim"
-    },
-    {
-      "id": "copy.39aafcf2526d6881",
-      "target": "copy",
-      "source": "Şirket",
-      "group": "Ortak arayüz metinleri",
-      "label": "Şirket",
-      "kind": "text",
-      "default": {
-        "tr": "Şirket",
-        "en": "Company"
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
     },
     {
       "id": "copy.3b7cf6671b600d5c",
@@ -5161,6 +5763,20 @@
       "default": {
         "tr": "04 / VERİNİN TOPLANDIĞI YER",
         "en": "04 / WHERE DATA COMES TOGETHER"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
+      "id": "copy.4ee00fbed78d35e0",
+      "target": "copy",
+      "source": "Donanım bağlantıları",
+      "group": "Ortak arayüz metinleri",
+      "label": "Donanım bağlantıları",
+      "kind": "text",
+      "default": {
+        "tr": "Donanım bağlantıları",
+        "en": "Hardware links"
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -5586,6 +6202,20 @@
       "page": "/"
     },
     {
+      "id": "copy.6d9e85271c8247c5",
+      "target": "copy",
+      "source": "ScadaWatt site bilgileri",
+      "group": "Ortak arayüz metinleri",
+      "label": "ScadaWatt site bilgileri",
+      "kind": "text",
+      "default": {
+        "tr": "ScadaWatt site bilgileri",
+        "en": "ScadaWatt site information"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
       "id": "copy.6e5d5d41d922565d",
       "target": "copy",
       "source": "Demo görüşmesi",
@@ -5735,6 +6365,20 @@
       "default": {
         "tr": "SCADAWATT",
         "en": "SCADAWATT"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
+      "id": "copy.7552d9ae5c1002c6",
+      "target": "copy",
+      "source": "M0 72 46 3l190 6-43 75Z",
+      "group": "Ortak arayüz metinleri",
+      "label": "M0 72 46 3l190 6-43 75Z",
+      "kind": "text",
+      "default": {
+        "tr": "M0 72 46 3l190 6-43 75Z",
+        "en": "M0 72 46 3l190 6-43 75Z"
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -6090,6 +6734,34 @@
       "page": "/saha-yapilandirici"
     },
     {
+      "id": "copy.8f1f9176d5f019d2",
+      "target": "copy",
+      "source": "m15.3-23 190 6M30.7-46l190 6",
+      "group": "Ortak arayüz metinleri",
+      "label": "m15.3-23 190 6M30.7-46l190 6",
+      "kind": "text",
+      "default": {
+        "tr": "m15.3-23 190 6M30.7-46l190 6",
+        "en": "m15.3-23 190 6M30.7-46l190 6"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
+      "id": "copy.8fc9c2443eed5c07",
+      "target": "copy",
+      "source": "Yasal bilgiler",
+      "group": "Ortak arayüz metinleri",
+      "label": "Yasal bilgiler",
+      "kind": "text",
+      "default": {
+        "tr": "Yasal bilgiler",
+        "en": "Legal information"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
       "id": "copy.903388c8f7352379",
       "target": "copy",
       "source": "06 / GECE TARAFINDA",
@@ -6384,20 +7056,6 @@
       "page": "/"
     },
     {
-      "id": "copy.a034556140812ec3",
-      "target": "copy",
-      "source": "İletişim →",
-      "group": "Ortak arayüz metinleri",
-      "label": "İletişim →",
-      "kind": "text",
-      "default": {
-        "tr": "İletişim →",
-        "en": "Contact →"
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
       "id": "copy.a06a3c7a29c89d8e",
       "target": "copy",
       "source": "Sizin sahanız. Sizin önceliğiniz.",
@@ -6608,6 +7266,20 @@
       "page": "/"
     },
     {
+      "id": "copy.ab1ef8193f5174be",
+      "target": "copy",
+      "source": "Teknoloji bağlantıları",
+      "group": "Ortak arayüz metinleri",
+      "label": "Teknoloji bağlantıları",
+      "kind": "text",
+      "default": {
+        "tr": "Teknoloji bağlantıları",
+        "en": "Technology links"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
       "id": "copy.ab4a063d77765a67",
       "target": "copy",
       "source": "Önceliklerinizi belirleyin.",
@@ -6687,20 +7359,6 @@
       "default": {
         "tr": "02 / ENERJİNİN DÖNÜŞÜMÜ",
         "en": "02 / ENERGY CONVERSION"
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
-      "id": "copy.af17077f5192fbff",
-      "target": "copy",
-      "source": "m0 72 46-69 190 6-43 75zM12 56l193 8M29 31l193 7M72 5l-43 73M122 7 80 81M173 8l-42 77M218 9l-43 77M54 86l-9 43m117-41 13 43m-151 0h180",
-      "group": "Ortak arayüz metinleri",
-      "label": "m0 72 46-69 190 6-43 75zM12 56l193 8M29 31l193 7M72 5l-43 73M122 7 80 81M173 8l-42 77M218 ",
-      "kind": "text",
-      "default": {
-        "tr": "m0 72 46-69 190 6-43 75zM12 56l193 8M29 31l193 7M72 5l-43 73M122 7 80 81M173 8l-42 77M218 9l-43 77M54 86l-9 43m117-41 13 43m-151 0h180",
-        "en": "m0 72 46-69 190 6-43 75zM12 56l193 8M29 31l193 7M72 5l-43 73M122 7 80 81M173 8l-42 77M218 9l-43 77M54 86l-9 43m117-41 13 43m-151 0h180"
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -6860,20 +7518,6 @@
       "page": "/"
     },
     {
-      "id": "copy.b867e8544d0e6022",
-      "target": "copy",
-      "source": "Gizlilik",
-      "group": "Ortak arayüz metinleri",
-      "label": "Gizlilik",
-      "kind": "text",
-      "default": {
-        "tr": "Gizlilik",
-        "en": "Privacy"
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
       "id": "copy.b9f8379a3c6c8dda",
       "target": "copy",
       "source": "Demo Çatı · Kayseri",
@@ -6883,6 +7527,20 @@
       "default": {
         "tr": "Demo Çatı · Kayseri",
         "en": "Demo Rooftop · Kayseri"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
+      "id": "copy.baa331b837791d0d",
+      "target": "copy",
+      "source": "M84 4.2 38.6 74.4M122 5.4 77.2 76.8M160 6.6 115.8 79.2M198 7.8 154.4 81.6M0 76l193 12 43-75M193 84v4",
+      "group": "Ortak arayüz metinleri",
+      "label": "M84 4.2 38.6 74.4M122 5.4 77.2 76.8M160 6.6 115.8 79.2M198 7.8 154.4 81.6M0 76l193 12 43-7",
+      "kind": "text",
+      "default": {
+        "tr": "M84 4.2 38.6 74.4M122 5.4 77.2 76.8M160 6.6 115.8 79.2M198 7.8 154.4 81.6M0 76l193 12 43-75M193 84v4",
+        "en": "M84 4.2 38.6 74.4M122 5.4 77.2 76.8M160 6.6 115.8 79.2M198 7.8 154.4 81.6M0 76l193 12 43-75M193 84v4"
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -7723,20 +8381,6 @@
       "default": {
         "tr": "Sayfa bulunamadı.",
         "en": "Page not found."
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
-      "id": "copy.f142f8d2a849e619",
-      "target": "copy",
-      "source": "YAZILIM / ELEKTRONİK / AR-GE",
-      "group": "Ortak arayüz metinleri",
-      "label": "YAZILIM / ELEKTRONİK / AR-GE",
-      "kind": "text",
-      "default": {
-        "tr": "YAZILIM / ELEKTRONİK / AR-GE",
-        "en": "SOFTWARE / ELECTRONICS / R&D"
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -9446,20 +10090,6 @@
       "page": "/cozumler"
     },
     {
-      "id": "copy.50ac6ea2423eb5c0",
-      "target": "copy",
-      "source": "Başvuru yöntemi",
-      "group": "Sayfa metinleri",
-      "label": "Başvuru yöntemi",
-      "kind": "text",
-      "default": {
-        "tr": "Başvuru yöntemi",
-        "en": "How to submit a request"
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
       "id": "copy.560e3839d2e80518",
       "target": "copy",
       "source": "ÜRÜN BİLGİLERİ",
@@ -9595,20 +10225,6 @@
       "default": {
         "tr": "ScadaWatt: güneş enerji santralleri için uzaktan izleme, SCADA, veri toplama ve enerji yönetimi çözümleri.",
         "en": "ScadaWatt: remote monitoring, SCADA, data acquisition and energy management solutions for solar power plants."
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
-      "id": "copy.772d892609486663",
-      "target": "copy",
-      "source": "6698 sayılı KVKK kapsamında ScadaWatt aydınlatma metni.",
-      "group": "Sayfa metinleri",
-      "label": "6698 sayılı KVKK kapsamında ScadaWatt aydınlatma metni.",
-      "kind": "text",
-      "default": {
-        "tr": "6698 sayılı KVKK kapsamında ScadaWatt aydınlatma metni.",
-        "en": "ScadaWatt privacy notice under Türkiye’s Personal Data Protection Law No. 6698."
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -9796,20 +10412,6 @@
       "page": "/hakkimizda"
     },
     {
-      "id": "copy.9b33bcfe83fde43c",
-      "target": "copy",
-      "source": "İşlenen kişisel veriler",
-      "group": "Sayfa metinleri",
-      "label": "İşlenen kişisel veriler",
-      "kind": "text",
-      "default": {
-        "tr": "İşlenen kişisel veriler",
-        "en": "Personal data processed"
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
-    },
-    {
       "id": "copy.a0af8a806f6fca2a",
       "target": "copy",
       "source": "Google Maps üzerinden sunulan harita ve yorum içeriklerini kullanırken Google Maps / Google Earth Ek Hizmet Şartları ve Google Gizlilik Politikası da uygulanır. Bu metinler aşağıdaki bağlantılardan erişilebilir ve burada atıf yoluyla belirtilmiştir.",
@@ -9878,20 +10480,6 @@
       },
       "location": "Saha yapılandırıcısı › Sayfa metinleri",
       "page": "/saha-yapilandirici"
-    },
-    {
-      "id": "copy.a889e079fbee53ab",
-      "target": "copy",
-      "source": "İlgili kişinin hakları",
-      "group": "Sayfa metinleri",
-      "label": "İlgili kişinin hakları",
-      "kind": "text",
-      "default": {
-        "tr": "İlgili kişinin hakları",
-        "en": "Data subject rights"
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
     },
     {
       "id": "copy.b52f1023ae4f7ed5",
@@ -10046,20 +10634,6 @@
       },
       "location": "Paketler › Sayfa metinleri",
       "page": "/paketler"
-    },
-    {
-      "id": "copy.cd2d2bde28335118",
-      "target": "copy",
-      "source": "Aktarım",
-      "group": "Sayfa metinleri",
-      "label": "Aktarım",
-      "kind": "text",
-      "default": {
-        "tr": "Aktarım",
-        "en": "Data transfers"
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
     },
     {
       "id": "copy.ce76433a2ec67220",
@@ -10228,20 +10802,6 @@
       },
       "location": "SCADA Yazılımı › Sayfa metinleri",
       "page": "/scada-yazilimi"
-    },
-    {
-      "id": "copy.ed19d3565d88891a",
-      "target": "copy",
-      "source": "İşleme amaçları ve hukuki sebepler",
-      "group": "Sayfa metinleri",
-      "label": "İşleme amaçları ve hukuki sebepler",
-      "kind": "text",
-      "default": {
-        "tr": "İşleme amaçları ve hukuki sebepler",
-        "en": "Purposes and legal grounds for processing"
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
     },
     {
       "id": "copy.ed53506cbb22f0ca",
@@ -14800,6 +15360,201 @@
       "default": {
         "tr": "Oynat",
         "en": "Play"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/",
+      "retired": true
+    },
+    {
+      "id": "copy.30a7f4fceb9627e9",
+      "target": "copy",
+      "source": "KVKK",
+      "group": "Arşiv / önceki içerikler",
+      "label": "KVKK",
+      "kind": "text",
+      "default": {
+        "tr": "KVKK",
+        "en": "KVKK"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/",
+      "retired": true
+    },
+    {
+      "id": "copy.50ac6ea2423eb5c0",
+      "target": "copy",
+      "source": "Başvuru yöntemi",
+      "group": "Arşiv / önceki içerikler",
+      "label": "Başvuru yöntemi",
+      "kind": "text",
+      "default": {
+        "tr": "Başvuru yöntemi",
+        "en": "How to submit a request"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/",
+      "retired": true
+    },
+    {
+      "id": "copy.772d892609486663",
+      "target": "copy",
+      "source": "6698 sayılı KVKK kapsamında ScadaWatt aydınlatma metni.",
+      "group": "Arşiv / önceki içerikler",
+      "label": "6698 sayılı KVKK kapsamında ScadaWatt aydınlatma metni.",
+      "kind": "text",
+      "default": {
+        "tr": "6698 sayılı KVKK kapsamında ScadaWatt aydınlatma metni.",
+        "en": "ScadaWatt privacy notice under Türkiye’s Personal Data Protection Law No. 6698."
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/",
+      "retired": true
+    },
+    {
+      "id": "copy.9b33bcfe83fde43c",
+      "target": "copy",
+      "source": "İşlenen kişisel veriler",
+      "group": "Arşiv / önceki içerikler",
+      "label": "İşlenen kişisel veriler",
+      "kind": "text",
+      "default": {
+        "tr": "İşlenen kişisel veriler",
+        "en": "Personal data processed"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/",
+      "retired": true
+    },
+    {
+      "id": "copy.a889e079fbee53ab",
+      "target": "copy",
+      "source": "İlgili kişinin hakları",
+      "group": "Arşiv / önceki içerikler",
+      "label": "İlgili kişinin hakları",
+      "kind": "text",
+      "default": {
+        "tr": "İlgili kişinin hakları",
+        "en": "Data subject rights"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/",
+      "retired": true
+    },
+    {
+      "id": "copy.cd2d2bde28335118",
+      "target": "copy",
+      "source": "Aktarım",
+      "group": "Arşiv / önceki içerikler",
+      "label": "Aktarım",
+      "kind": "text",
+      "default": {
+        "tr": "Aktarım",
+        "en": "Data transfers"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/",
+      "retired": true
+    },
+    {
+      "id": "copy.ed19d3565d88891a",
+      "target": "copy",
+      "source": "İşleme amaçları ve hukuki sebepler",
+      "group": "Arşiv / önceki içerikler",
+      "label": "İşleme amaçları ve hukuki sebepler",
+      "kind": "text",
+      "default": {
+        "tr": "İşleme amaçları ve hukuki sebepler",
+        "en": "Purposes and legal grounds for processing"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/",
+      "retired": true
+    },
+    {
+      "id": "copy.0d83ac5147c67fe4",
+      "target": "copy",
+      "source": "Çerezler",
+      "group": "Arşiv / önceki içerikler",
+      "label": "Çerezler",
+      "kind": "text",
+      "default": {
+        "tr": "Çerezler",
+        "en": "Cookies"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/",
+      "retired": true
+    },
+    {
+      "id": "copy.2ea2d6281a574c40",
+      "target": "copy",
+      "source": "Başa dön ↑",
+      "group": "Arşiv / önceki içerikler",
+      "label": "Başa dön ↑",
+      "kind": "text",
+      "default": {
+        "tr": "Başa dön ↑",
+        "en": "Back to top ↑"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/",
+      "retired": true
+    },
+    {
+      "id": "copy.39aafcf2526d6881",
+      "target": "copy",
+      "source": "Şirket",
+      "group": "Arşiv / önceki içerikler",
+      "label": "Şirket",
+      "kind": "text",
+      "default": {
+        "tr": "Şirket",
+        "en": "Company"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/",
+      "retired": true
+    },
+    {
+      "id": "copy.a034556140812ec3",
+      "target": "copy",
+      "source": "İletişim →",
+      "group": "Arşiv / önceki içerikler",
+      "label": "İletişim →",
+      "kind": "text",
+      "default": {
+        "tr": "İletişim →",
+        "en": "Contact →"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/",
+      "retired": true
+    },
+    {
+      "id": "copy.b867e8544d0e6022",
+      "target": "copy",
+      "source": "Gizlilik",
+      "group": "Arşiv / önceki içerikler",
+      "label": "Gizlilik",
+      "kind": "text",
+      "default": {
+        "tr": "Gizlilik",
+        "en": "Privacy"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/",
+      "retired": true
+    },
+    {
+      "id": "copy.f142f8d2a849e619",
+      "target": "copy",
+      "source": "YAZILIM / ELEKTRONİK / AR-GE",
+      "group": "Arşiv / önceki içerikler",
+      "label": "YAZILIM / ELEKTRONİK / AR-GE",
+      "kind": "text",
+      "default": {
+        "tr": "YAZILIM / ELEKTRONİK / AR-GE",
+        "en": "SOFTWARE / ELECTRONICS / R&D"
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/",

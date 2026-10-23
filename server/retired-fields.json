@@ -2383,5 +2383,200 @@
     "location": "Site geneli › Ortak metinler",
     "page": "/",
     "retired": true
+  },
+  {
+    "id": "copy.30a7f4fceb9627e9",
+    "target": "copy",
+    "source": "KVKK",
+    "group": "Arşiv / önceki içerikler",
+    "label": "KVKK",
+    "kind": "text",
+    "default": {
+      "tr": "KVKK",
+      "en": "KVKK"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.50ac6ea2423eb5c0",
+    "target": "copy",
+    "source": "Başvuru yöntemi",
+    "group": "Arşiv / önceki içerikler",
+    "label": "Başvuru yöntemi",
+    "kind": "text",
+    "default": {
+      "tr": "Başvuru yöntemi",
+      "en": "How to submit a request"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.772d892609486663",
+    "target": "copy",
+    "source": "6698 sayılı KVKK kapsamında ScadaWatt aydınlatma metni.",
+    "group": "Arşiv / önceki içerikler",
+    "label": "6698 sayılı KVKK kapsamında ScadaWatt aydınlatma metni.",
+    "kind": "text",
+    "default": {
+      "tr": "6698 sayılı KVKK kapsamında ScadaWatt aydınlatma metni.",
+      "en": "ScadaWatt privacy notice under Türkiye’s Personal Data Protection Law No. 6698."
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.9b33bcfe83fde43c",
+    "target": "copy",
+    "source": "İşlenen kişisel veriler",
+    "group": "Arşiv / önceki içerikler",
+    "label": "İşlenen kişisel veriler",
+    "kind": "text",
+    "default": {
+      "tr": "İşlenen kişisel veriler",
+      "en": "Personal data processed"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.a889e079fbee53ab",
+    "target": "copy",
+    "source": "İlgili kişinin hakları",
+    "group": "Arşiv / önceki içerikler",
+    "label": "İlgili kişinin hakları",
+    "kind": "text",
+    "default": {
+      "tr": "İlgili kişinin hakları",
+      "en": "Data subject rights"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.cd2d2bde28335118",
+    "target": "copy",
+    "source": "Aktarım",
+    "group": "Arşiv / önceki içerikler",
+    "label": "Aktarım",
+    "kind": "text",
+    "default": {
+      "tr": "Aktarım",
+      "en": "Data transfers"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.ed19d3565d88891a",
+    "target": "copy",
+    "source": "İşleme amaçları ve hukuki sebepler",
+    "group": "Arşiv / önceki içerikler",
+    "label": "İşleme amaçları ve hukuki sebepler",
+    "kind": "text",
+    "default": {
+      "tr": "İşleme amaçları ve hukuki sebepler",
+      "en": "Purposes and legal grounds for processing"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.0d83ac5147c67fe4",
+    "target": "copy",
+    "source": "Çerezler",
+    "group": "Arşiv / önceki içerikler",
+    "label": "Çerezler",
+    "kind": "text",
+    "default": {
+      "tr": "Çerezler",
+      "en": "Cookies"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.2ea2d6281a574c40",
+    "target": "copy",
+    "source": "Başa dön ↑",
+    "group": "Arşiv / önceki içerikler",
+    "label": "Başa dön ↑",
+    "kind": "text",
+    "default": {
+      "tr": "Başa dön ↑",
+      "en": "Back to top ↑"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.39aafcf2526d6881",
+    "target": "copy",
+    "source": "Şirket",
+    "group": "Arşiv / önceki içerikler",
+    "label": "Şirket",
+    "kind": "text",
+    "default": {
+      "tr": "Şirket",
+      "en": "Company"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.a034556140812ec3",
+    "target": "copy",
+    "source": "İletişim →",
+    "group": "Arşiv / önceki içerikler",
+    "label": "İletişim →",
+    "kind": "text",
+    "default": {
+      "tr": "İletişim →",
+      "en": "Contact →"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.b867e8544d0e6022",
+    "target": "copy",
+    "source": "Gizlilik",
+    "group": "Arşiv / önceki içerikler",
+    "label": "Gizlilik",
+    "kind": "text",
+    "default": {
+      "tr": "Gizlilik",
+      "en": "Privacy"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
+  },
+  {
+    "id": "copy.f142f8d2a849e619",
+    "target": "copy",
+    "source": "YAZILIM / ELEKTRONİK / AR-GE",
+    "group": "Arşiv / önceki içerikler",
+    "label": "YAZILIM / ELEKTRONİK / AR-GE",
+    "kind": "text",
+    "default": {
+      "tr": "YAZILIM / ELEKTRONİK / AR-GE",
+      "en": "SOFTWARE / ELECTRONICS / R&D"
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/",
+    "retired": true
   }
 ]

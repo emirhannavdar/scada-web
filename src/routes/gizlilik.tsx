@@ -1,4 +1,2 @@
-import {createFileRoute} from '@tanstack/react-router';
-import {PrivacyDetails} from '@/components/site/PrivacyDetails';
-import {seo} from '@/lib/seo';
-export const Route=createFileRoute('/gizlilik')({head:()=>seo('Gizlilik Politikası','ScadaWatt web sitesi gizlilik politikası: iletişim formu, tarayıcı depolaması ve Google hizmetleri.'),component:()=> <PrivacyDetails cookies={false}/> });
+import {createFileRoute,redirect} from '@tanstack/react-router';
+export const Route=createFileRoute('/gizlilik')({beforeLoad:({location})=>{throw redirect({href:'/privacy-policy'+location.searchStr,replace:true,statusCode:301});}});
