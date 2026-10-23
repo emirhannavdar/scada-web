@@ -9,6 +9,7 @@ export function shellReadability(rule:StyleRule,selector='',context?:Element):St
  const next={...rule};
  next.color=navigation?'var(--nav-link-color, var(--site-text))':'inherit';
  next.opacity=1;
+ if(navigation){next.fontSize=13;next.fontWeight=500;next.fontFamily="var(--font-sans)";}
  if(typeof next.fontSize==='number')next.fontSize=Math.max(navigation?13:14,next.fontSize);
  if(footer&&typeof next.lineHeight==='number')next.lineHeight=Math.max(1.5,next.lineHeight);
  if(footer&&(node?.matches('[data-site-footer],.corporate-footer,.film-footer')||/\.(corporate-footer|film-footer|site-footer)$/.test(selector)))delete next.backgroundColor;

@@ -17,7 +17,7 @@ while IFS= read -r rel; do
   esac
   [ -f "$PAYLOAD/$rel" ] || { echo "Eksik dosya: $rel"; exit 1; }
 done < "$STAGE/FILES.txt"
-BACKUP="/home/developer/scadawatt-transfer/updates/pre-v125-$(date +%Y%m%d-%H%M%S)-$$"
+BACKUP="/home/developer/scadawatt-transfer/updates/pre-v126-$(date +%Y%m%d-%H%M%S)-$$"
 install -d -m 700 "$BACKUP/previous"
 : > "$BACKUP/existing.txt"
 : > "$BACKUP/new.txt"
@@ -74,6 +74,6 @@ for attempt in 1 2 3 4 5 6 7 8 9 10; do
 done
 [ "$healthy" -eq 1 ]
 trap - ERR
-echo 'V125 güncellemesi uygulandı. Veritabanı, yüklenen görseller, .env ve Nginx ayarları korunuyor.'
+echo 'V126 güncellemesi uygulandı. Veritabanı, yüklenen görseller, .env ve Nginx ayarları korunuyor.'
 printf 'Geri alma: sudo bash %s/rollback.sh\n' "$BACKUP"
 echo 'Tarayıcıda Ctrl+F5 yapın. https://sca.scadawatt.com/privacy-policy adresini ve admin önizlemesini kontrol edin.'

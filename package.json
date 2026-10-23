@@ -1,6 +1,6 @@
 {
   "name": "scadawatt-website",
-  "version": "125.0.0",
+  "version": "126.0.0",
   "private": true,
   "type": "module",
   "scripts": {
