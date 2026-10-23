@@ -1,0 +1,32 @@
+{
+  "release": "118.0.0",
+  "storage": "PostgreSQL",
+  "sqliteSource": "retained",
+  "checks": {
+    "cms_smtp_google_seo_migration": 25,
+    "origin_delivery_diagnostics": 7
+  },
+  "files": [
+    "package.json",
+    "package-lock.json",
+    "POSTGRESQL-GECIS.txt",
+    "server/database.mjs",
+    "server/store.mjs",
+    "server/app.mjs",
+    "server/mail.mjs",
+    "server/google-reviews.mjs",
+    "server/seo.mjs",
+    "server/index.mjs",
+    "server/setup.mjs",
+    "server/backup.mjs",
+    "server/configure-postgres.mjs",
+    "server/migrate-postgres.mjs",
+    "server/postgres-test-env.mjs",
+    "server/postgres.test.mjs",
+    "server/cms.test.mjs",
+    "server/contact.test.mjs",
+    "server/google-reviews.test.mjs",
+    "server/seo.test.mjs",
+    "server/delivery.test.mjs"
+  ]
+}

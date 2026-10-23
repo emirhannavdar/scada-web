@@ -1,23 +1,26 @@
 {
   "name": "scadawatt-website",
-  "version": "115.0.0",
+  "version": "121.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node --env-file-if-exists=.env scripts/dev-cms.mjs",
+    "dev": "node --use-system-ca --env-file-if-exists=.env scripts/dev-cms.mjs",
     "build": "node scripts/retire-demo.mjs && node scripts/cms-catalog.mjs && node scripts/build-seo.mjs && tsc --noEmit && vite build && node scripts/compress-web.mjs",
-    "preview": "node --env-file-if-exists=.env server/index.mjs",
+    "preview": "node --use-system-ca --env-file-if-exists=.env server/index.mjs",
     "test": "vitest run",
     "test:models": "node scripts/check-model-assets.mjs && vitest run src/test/optimized-scene.test.ts src/test/additional-models.test.ts src/test/model-cache.test.ts",
     "report": "node scripts/analyze-transfer.mjs",
-    "start": "node --env-file-if-exists=.env server/index.mjs",
+    "start": "node --use-system-ca --env-file-if-exists=.env server/index.mjs",
     "cms:setup": "node --env-file-if-exists=.env server/setup.mjs",
     "cms:reset-password": "node --env-file-if-exists=.env server/setup.mjs --reset",
     "cms:backup": "node --env-file-if-exists=.env server/backup.mjs",
-    "test:cms": "node --test server/cms.test.mjs server/origin.test.mjs",
+    "test:cms": "node --import ./server/postgres-test-env.mjs --test --test-concurrency=1 server/cms.test.mjs server/contact.test.mjs server/google-reviews.test.mjs server/seo.test.mjs server/postgres.test.mjs server/origin.test.mjs server/mail-diagnostic.test.mjs server/delivery.test.mjs server/mail-persistence.test.mjs",
     "test:types": "tsc --noEmit -p tsconfig.test.json",
-    "prestart": "node scripts/retire-demo.mjs",
-    "predev": "node scripts/retire-demo.mjs"
+    "prestart": "node scripts/retire-demo.mjs && node --env-file-if-exists=.env scripts/start-local-postgres.mjs",
+    "predev": "node scripts/retire-demo.mjs",
+    "cms:postgres:setup": "node --env-file-if-exists=.env server/configure-postgres.mjs",
+    "cms:migrate-postgres": "node --env-file-if-exists=.env server/migrate-postgres.mjs",
+    "test:postgres": "node --import ./server/postgres-test-env.mjs --test server/postgres.test.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -37,7 +40,8 @@
     "tailwindcss": "^4.2.1",
     "three": "^0.180.0",
     "tw-animate-css": "^1.3.4",
-    "zod": "^3.25.76"
+    "zod": "^3.25.76",
+    "pg": "^8.23.1"
   },
   "devDependencies": {
     "@tanstack/router-plugin": "1.168.42",
@@ -51,7 +55,8 @@
     "jsdom": "^20.0.3",
     "typescript": "^5.8.3",
     "vite": "7.2.2",
-    "vitest": "^4.1.10"
+    "vitest": "^4.1.10",
+    "@electric-sql/pglite": "^0.5.11"
   },
   "engines": {
     "node": ">=24 <27"

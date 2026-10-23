@@ -1,0 +1,11 @@
+Kurulum: ZIP içeriğini mevcut proje klasörüne çıkarıp dosyaları değiştirin. Sunucuyu yeniden başlatın.
+
+Canlı sunucuda .env ayarları:
+SITE_URL=https://scadawatt.com
+SITE_INDEXABLE=1
+
+Mevcut .env korunur. SITE_INDEXABLE=0 varsa canlıda 1 yapın. Windows üzerinde CANLI-SEO-BASLAT.cmd aynı ayarlarla başlatır. Normal npm.cmd start da çalışır: SITE_INDEXABLE belirtilmemişse scadawatt.com ve www.scadawatt.com talepleri açıktır; localhost, LAN ve önizleme adresleri kapalıdır. Test ortamını kapalı tutmak için SITE_INDEXABLE=0 kullanın.
+
+Kontrol: https://scadawatt.com/robots.txt sayfasında Allow: / ve Sitemap satırı görünmeli; tek başına Disallow: / olmamalı. Ana sayfa kaynağında robots index,follow ve sw-indexable 1 olmalı. /admin, API, taslak önizlemeleri ve 404 sayfaları noindex kalır.
+
+Yayında Google Search Console üzerinden https://scadawatt.com/sitemap.xml gönderin ve ana sayfa için URL Denetimi ile dizine eklenmesini isteyin. Bu ayarlar taramayı açar; Google sıralamasını veya dizine alınmayı garanti etmez.
