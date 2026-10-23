@@ -2,7 +2,7 @@ import { acquireFlight, hasPreparedFlight } from "@/lib/flight/session";
 import { CmsImage } from "@/components/site/CmsImage";
 import { translate as _tx, useLocale as _useLocale } from "@/lib/i18n";
 import { createPortal } from "react-dom";
-import { useEffect, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, type MotionValue } from "motion/react";
 import type { FlightRenderer } from "@/lib/flight/render";
 import { useExperience } from "./ExperienceContext";
@@ -267,32 +267,7 @@ export function FlightCanvas({
                 </div>
                 <p className="flight-loading-caption">{_tx("Sistem yükleniyor...")}</p>
               </div>
-              <svg className="flight-loading-renewables" viewBox="0 0 1400 330" aria-hidden="true">
-                <g className="loader-land">
-                  <path d="M0 285c145-55 260-35 385-68 148-38 250-29 362 11 126 45 251-50 391-22 95 19 165 55 262 25v99H0z" />
-                  <path d="M0 294c190-20 306-7 474-35 152-26 260 32 403 21 215-17 314-63 523-20" />
-                </g>
-                <g className="loader-solar" transform="translate(90 173)">
-                  <path d="m0 72 46-69 190 6-43 75zM12 56l193 8M29 31l193 7M72 5l-43 73M122 7 80 81M173 8l-42 77M218 9l-43 77M54 86l-9 43m117-41 13 43m-151 0h180" />
-                </g>
-                <g className="loader-city" transform="translate(475 120)">
-                  <path d="M0 165V76h44v89M52 165V38h54v127m9 0V91h40v74m9 0V12h63v153m9 0V62h44v103m9 0V99h31v66M15 95h13m-13 22h13m42-58h18m-18 24h18m-18 25h18m93-71h18m-18 27h18m-18 27h18m46-8h18m-18 25h18" />
-                </g>
-                {[0, 1, 2].map((index) => (
-                  <g
-                    key={index}
-                    className={`loader-turbine turbine-${index + 1}`}
-                    transform={`translate(${930 + index * 160} ${index === 1 ? 92 : 122}) scale(${index === 1 ? 1.14 : 0.92})`}
-                  >
-                    <path className="loader-tower" d="M0 0-12 224h24L0 0" />
-                    <g className="loader-blades">
-                      <circle className="loader-rotation-anchor" r="112" />
-                      <circle r="9" />
-                      <path d="M0-8C-11-41-8-78 2-109c9 31 9 67 4 101M7 4c34-5 67 7 94 28-32 2-67-7-96-21M-7 4c-22 27-51 48-84 58 18-27 47-50 79-62" />
-                    </g>
-                  </g>
-                ))}
-              </svg>
+              <LoadingLandscape />
             </div>,
             document.body,
           ),
@@ -315,3 +290,40 @@ export function FlightCanvas({
     </div>
   );
 }
+
+// A stable subtree keeps the rotor animation alive across progress updates.
+const LoadingLandscape = memo(function LoadingLandscape() {
+  return (<svg className="flight-loading-renewables" viewBox="0 0 1400 330" aria-hidden="true">
+                <g className="loader-land">
+                  <path d="M0 285c145-55 260-35 385-68 148-38 250-29 362 11 126 45 251-50 391-22 95 19 165 55 262 25v99H0z" />
+                  <path d="M0 294c190-20 306-7 474-35 152-26 260 32 403 21 215-17 314-63 523-20" />
+                </g>
+                <g className="loader-solar" transform="translate(90 173)">
+                  {/* Supports meet the panel underside; braces share the same endpoints. */}
+                  <path className="loader-solar-support" d="M36 75v54m137-46v46M36 117l137-25M36 92l137 25M24 129h24m113 0h24" />
+                  <path className="loader-solar-surface" d="M0 72 46 3l190 6-43 75Z" />
+                  <path d="m15.3-23 190 6M30.7-46l190 6" transform="translate(0 72)" />
+                  <path d="M84 4.2 38.6 74.4M122 5.4 77.2 76.8M160 6.6 115.8 79.2M198 7.8 154.4 81.6M0 76l193 12 43-75M193 84v4" />
+                </g>
+                <g className="loader-city" transform="translate(475 120)">
+                  <path d="M0 165V76h44v89M52 165V38h54v127m9 0V91h40v74m9 0V12h63v153m9 0V62h44v103m9 0V99h31v66M15 95h13m-13 22h13m42-58h18m-18 24h18m-18 25h18m93-71h18m-18 27h18m-18 27h18m46-8h18m-18 25h18" />
+                </g>
+                {[0, 1, 2].map((index) => (
+                  <g
+                    key={index}
+                    className={`loader-turbine turbine-${index + 1}`}
+                    transform={`translate(${930 + index * 160} ${index === 1 ? 92 : 122}) scale(${index === 1 ? 1.14 : 0.92})`}
+                  >
+                    <path className="loader-tower" d="M0 0-12 224h24L0 0" />
+                    <foreignObject x="-112" y="-112" width="224" height="224" className="loader-rotor-window">
+                      <div className="loader-rotor-layer">
+                        <svg viewBox="-112 -112 224 224" width="224" height="224" aria-hidden="true">
+                          <circle r="9" />
+                          <path d="M0-8C-11-41-8-78 2-109c9 31 9 67 4 101M7 4c34-5 67 7 94 28-32 2-67-7-96-21M-7 4c-22 27-51 48-84 58 18-27 47-50 79-62" />
+                        </svg>
+                      </div>
+                    </foreignObject>
+                  </g>
+                ))}
+              </svg>);
+});

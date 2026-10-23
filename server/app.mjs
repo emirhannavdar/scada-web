@@ -545,6 +545,10 @@ export async function createCmsApp({ dataDir = process.env["CMS_DATA_DIR"] || "d
                 return sendText(req, res, robotsTxt(req), 'text/plain; charset=utf-8');
             if (path === '/sitemap.xml')
                 return sendText(req, res, (await sitemap(store)), 'application/xml; charset=utf-8');
+            if ((path === '/gizlilik' || path === '/kvkk') && !url.searchParams.has('cms-preview')) {
+                res.writeHead(301, { Location: '/privacy-policy' + url.search });
+                return res.end();
+            }
             if (path === '/demo') {
                 res.writeHead(301, { Location: '/saha-yapilandirici' });
                 return res.end();

@@ -8,10 +8,6 @@
       "title": "Çözümler | ScadaWatt",
       "description": "GES uzaktan izleme, limit yönetimi, kompanzasyon, zero injection, planlı yük atma, saatlik mahsuplaşma takibi ve anlık bildirim çözümleri."
     },
-    "/gizlilik": {
-      "title": "Gizlilik Politikası | ScadaWatt",
-      "description": "ScadaWatt web sitesi gizlilik politikası: iletişim formu, tarayıcı depolaması ve Google hizmetleri."
-    },
     "/hakkimizda": {
       "title": "Hakkımızda | ScadaWatt",
       "description": "ScadaWatt, güneş enerji santralleri için uzaktan izleme ve kontrol sistemleri geliştiren elektronik temelli yazılım ve AR-GE şirketidir."
@@ -28,13 +24,13 @@
       "title": "Kullanım Koşulları | ScadaWatt",
       "description": "ScadaWatt web sitesi ve Google Maps içeriklerinin kullanımı hakkında bilgiler."
     },
-    "/kvkk": {
-      "title": "KVKK Aydınlatma Metni | ScadaWatt",
-      "description": "6698 sayılı KVKK kapsamında ScadaWatt aydınlatma metni."
-    },
     "/paketler": {
       "title": "İzleme Paketleri | ScadaWatt",
       "description": "NANO, STANDART ve PRO izleme paketlerini karşılaştırın; santraliniz için en uygun planı seçin ve teklif alın."
+    },
+    "/privacy-policy": {
+      "title": "Gizlilik Politikası | ScadaWatt",
+      "description": "ScadaWatt gizlilik politikası: kişisel bilgiler, saha verileri, haberleşme güvenliği ve bilgi işleme amaçları."
     },
     "/saha-yapilandirici": {
       "title": "Saha Yapılandırıcısı | ScadaWatt",

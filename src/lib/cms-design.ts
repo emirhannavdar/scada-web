@@ -1,3 +1,4 @@
+import {shellReadability} from './shell-readability';
 import { useSyncExternalStore } from "react";
 import {
   emptyDesign,
@@ -204,12 +205,12 @@ export function designCss(input: SiteDesign, path: string) {
   const page = path.replace(/\/$/, "") || "/";
   for (const entry of Object.values(input.elements)) {
     if (entry.fragment || entry.page !== page || !safeSelector(entry.selector)) continue;
-    const desktop = rules(entry.desktop),
-      mobile = rules(entry.mobile);
+    const desktop = rules(shellReadability(entry.desktop,entry.selector)),
+      mobile = rules(shellReadability(entry.mobile,entry.selector));
     for (const device of ["desktop", "mobile"] as const) {
       for (const theme of ["Light", "Dark"] as const) {
         const profile = `${device}${theme}` as const;
-        const scoped = rules(entry[profile] ?? {});
+        const scoped = rules(shellReadability(entry[profile] ?? {},entry.selector));
         if (scoped) css.push(`@media(${device === "mobile" ? "max-width:760px" : "min-width:761px"}){html${theme === "Dark" ? '[data-theme="dark"]' : ':not([data-theme="dark"])'} ${entry.selector.startsWith("#main") ? "#root " : ""}${entry.selector}{${scoped}}}`);
       }
     }

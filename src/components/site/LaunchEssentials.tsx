@@ -11,7 +11,7 @@ export function LaunchEssentials(){
  useEffect(()=>{
   const canonical=document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
   const base=document.querySelector('meta[name="sw-origin"]')?.getAttribute('content')||(canonical?new URL(canonical.href).origin:location.origin);
-  const roots=['/','/cozumler','/urunler','/scada-yazilimi','/saha-yapilandirici','/paketler','/hakkimizda','/iletisim','/gizlilik','/cerez','/kullanim-kosullari'];
+  const roots=['/','/cozumler','/urunler','/scada-yazilimi','/saha-yapilandirici','/paketler','/hakkimizda','/iletisim','/privacy-policy','/gizlilik','/cerez','/kullanim-kosullari'];
   const valid=roots.includes(path)||products.some(p=>path==='/urunler/'+p.slug)||solutions.some(s=>path==='/cozumler/'+s.slug);
   const preview=new URLSearchParams(location.search).has('cms-preview');
   const robots=document.querySelector<HTMLMetaElement>('meta[name="robots"]');

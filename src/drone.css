@@ -1568,3 +1568,20 @@
 }
 
 /* Keep sunset highlights visible above the opening headline. */
+/* Clock-driven compositor animation: never derived from loading progress. */
+.flight-loading-renewables .loader-blades{transform-box:fill-box;transform-origin:50% 50%;animation:loaderWind 5s linear infinite;animation-play-state:running;backface-visibility:hidden}
+.flight-loading-renewables .turbine-2 .loader-blades{animation-duration:5.6s;animation-delay:-1.7s}
+.flight-loading-renewables .turbine-3 .loader-blades{animation-duration:4.6s;animation-delay:-3s}
+.flight-loading-renewables .loader-solar-surface{fill:#6f8a770d}
+.flight-loading-renewables .loader-solar-support{stroke-width:2.5}
+@media(prefers-reduced-motion:reduce){.flight-loading-renewables .loader-blades{animation:none}}
+
+/* Animate an isolated HTML layer rather than repainting SVG geometry during GLTF parsing. */
+.loader-rotor-window{overflow:visible;pointer-events:none}
+.loader-rotor-layer{width:224px;height:224px;contain:layout paint style;transform-origin:112px 112px;will-change:transform;backface-visibility:hidden;animation:loaderRotorContinuous 4s linear infinite}
+.loader-rotor-layer svg{display:block;overflow:visible}
+.loader-rotor-layer :is(path,circle){fill:none;stroke:#6f8a77;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.turbine-2 .loader-rotor-layer{animation-duration:4.7s;animation-delay:-1.3s}
+.turbine-3 .loader-rotor-layer{animation-duration:3.6s;animation-delay:-2.1s}
+@keyframes loaderRotorContinuous{from{transform:translateZ(0) rotate(0deg)}to{transform:translateZ(0) rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.loader-rotor-layer{animation:none}}

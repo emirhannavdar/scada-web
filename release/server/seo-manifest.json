@@ -1,0 +1,62 @@
+{
+  "pages": {
+    "/cerez": {
+      "title": "Çerez Politikası | ScadaWatt",
+      "description": "ScadaWatt web sitesi çerez politikası: tarayıcı depolaması, iletişim taslağı ve harita kullanımı."
+    },
+    "/cozumler": {
+      "title": "Çözümler | ScadaWatt",
+      "description": "GES uzaktan izleme, limit yönetimi, kompanzasyon, zero injection, planlı yük atma, saatlik mahsuplaşma takibi ve anlık bildirim çözümleri."
+    },
+    "/hakkimizda": {
+      "title": "Hakkımızda | ScadaWatt",
+      "description": "ScadaWatt, güneş enerji santralleri için uzaktan izleme ve kontrol sistemleri geliştiren elektronik temelli yazılım ve AR-GE şirketidir."
+    },
+    "/iletisim": {
+      "title": "İletişim ve Demo Talebi | ScadaWatt",
+      "description": "ScadaWatt ile iletişime geçin; demo, teklif veya bilgi talebinizi iletin. Ankara, Yenimahalle."
+    },
+    "/": {
+      "title": "Yazılım, Elektronik ve Enerji Teknolojileri | ScadaWatt",
+      "description": "ScadaWatt: güneş enerji santralleri için uzaktan izleme, SCADA, veri toplama ve enerji yönetimi çözümleri."
+    },
+    "/kullanim-kosullari": {
+      "title": "Kullanım Koşulları | ScadaWatt",
+      "description": "ScadaWatt web sitesi ve Google Maps içeriklerinin kullanımı hakkında bilgiler."
+    },
+    "/paketler": {
+      "title": "İzleme Paketleri | ScadaWatt",
+      "description": "NANO, STANDART ve PRO izleme paketlerini karşılaştırın; santraliniz için en uygun planı seçin ve teklif alın."
+    },
+    "/privacy-policy": {
+      "title": "Gizlilik Politikası | ScadaWatt",
+      "description": "ScadaWatt gizlilik politikası: kişisel bilgiler, saha verileri, haberleşme güvenliği ve bilgi işleme amaçları."
+    },
+    "/saha-yapilandirici": {
+      "title": "Saha Yapılandırıcısı | ScadaWatt",
+      "description": "Saha cihazlarınızı, bağlantılarınızı ve önceliklerinizi belirleyin; ScadaWatt ekibiyle görüşmek için teknik bir ön değerlendirme hazırlayın."
+    },
+    "/scada-yazilimi": {
+      "title": "SCADA Yazılımı | ScadaWatt",
+      "description": "ScadaWatt SCADA platformu: çok noktadan üretim verisi, limit ve kompanzasyon kontrolü, fatura doğrulama, PTF takibi ve anlık bildirimler."
+    },
+    "/urunler": {
+      "title": "Ürünler | ScadaWatt",
+      "description": "ScadaWatt S3000i veri toplama cihazı, S4000MC çok amaçlı kontrol cihazı ve LOMR-07H şebeke izleme rölesi."
+    }
+  },
+  "contact": {
+    "address": "Yeni Batı Mah. 2399 Sok. No: 2 Yenimahalle / Ankara",
+    "phone": "0312 255 55 86",
+    "phoneHref": "tel:+903122555586",
+    "email": "info@scadawatt.com",
+    "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d412.77193959823535!2d32.687390142726436!3d39.97714719108156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d3364c5761c97f:0xba3ff258fc66f49f!2sYeni Batı, 2399. Sk. No:2, 06370 Yenimahalle/Ankara!5e0!3m2!1str!2str!4v1724585418339!5m2!1str!2str",
+    "mapHref": "https://www.google.com/maps?cid=13420711878593016991"
+  },
+  "images": {
+    "web": "/assets/web.webp",
+    "app": "/assets/app.webp",
+    "logo": "/assets/scadawatt-mini-logo.png",
+    "wordmark": "/assets/scadawatt-logo.png"
+  }
+}

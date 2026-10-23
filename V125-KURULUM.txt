@@ -1,0 +1,26 @@
+SCADAWATT V125 — RENK, LOGO VE OKUNURLUK
+
+LOCAL WINDOWS:
+1. Çalışan uygulamayı Ctrl+C ile durdurun.
+2. ZIP’in içindeki TÜM DOSYALARI package.json bulunan mevcut proje klasörüne çıkarın. Dosyaları değiştirmeyi onaylayın.
+3. npm.cmd start çalıştırın. Sürüm 125.0.0 görünmelidir.
+4. Tarayıcıda Ctrl+F5 yapın. Build hazırdır; npm ci veya build gerekmez.
+
+SUNUCU:
+ZIP’i /home/developer/scadawatt-transfer/ klasörüne gönderin.
+python3 -m zipfile -e /home/developer/scadawatt-transfer/scadawatt-v125-renk-okunurluk.zip /home/developer/scadawatt-transfer/v125
+sudo bash /home/developer/scadawatt-transfer/v125/apply-server.sh
+
+Betik önce değiştireceği uygulama dosyalarını yedekler. Sağlık kontrolü başarısızsa geri alır.
+Yalnızca scadawatt-preview yeniden başlatılır. .env, veritabanı, yüklenen görseller, Nginx, sertifika ve log ayarları değiştirilmez.
+Önceki v124 güncellemeleri de bu pakete dahildir.
+
+DÜZELTMELER:
+- Bütün sayfalarda aynı, erişilebilir bağlantıları olan ortak footer.
+- 14 px ve üzeri footer metni, 16 px sütun başlıkları, mobil dokunma alanları.
+- Açık/koyu temada tutarlı ve yüksek kontrastlı renkler.
+- Tema ile uyumlu renkli ScadaWatt logosu; gri filtre kaldırıldı.
+- Saha yapılandırıcısının sürekli turuncu olmasına yol açan eski kural kaldırıldı.
+- Üst menüde sadece açık sayfa/ilgili ürün veya çözüm grubu ve üzerine gelinen bağlantı vurgulanır.
+- Eski kayıtlı admin stilleri silinmez. Menü/footer için render sırasında okunurluk ve tutarlı renk koruması uygulanır; sayfa içindeki özel stiller korunur.
+- Telif satırındaki yıl ve marka arasındaki boşluk düzeltildi.
