@@ -1,0 +1,16 @@
+SCADAWATT V128 — EKSİK ÇALIŞTIRMA DOSYALARI
+
+Paket server, shared, gereken scripts dosyaları ve hazır dist çıktısını içerir. .env, veritabanı, özel anahtarlar ve 3D modeller dahil değildir.
+
+1. İçindekileri package.json bulunan mevcut scada-web klasörüne çıkarın; klasörleri birleştirin ve aynı dosyaları değiştirin. src, public, data veya .env dosyalarınızı silmeyin.
+2. Node.js 24 kullanın (node -v). Node 22 desteklenmez.
+3. npm ci çalıştırın.
+4. PostgreSQL bu Mac’te çalışmalı ve kök klasörde .env bulunmalı. PostgreSQL hazırsa npm run cms:postgres:setup ile bağlantıyı yapılandırın. Windows bilgisayarın veritabanı Mac’e otomatik taşınmaz; mevcut verileri korumak için yedekten ayrıca aktarılmalıdır.
+5. npm start çalıştırın. dist hazırdır; ilk açılışta build gerekmez.
+
+GitHub’a eklemek için:
+git add server/ scripts/ shared/
+git commit -m "fix(setup): eksik backend ve çalıştırma dosyalarını tamamla"
+git push
+
+.env, data ve backups klasörlerini GitHub’a yüklemeyin. dist genellikle Git tarafından izlenmez; gelecekte yeni klonlarda npm ci ardından npm run build gerekir.
