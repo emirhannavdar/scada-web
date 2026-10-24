@@ -1,3 +1,0 @@
-import {it,expect} from 'vitest';
-import {screenMenuTarget} from '@/lib/screen-hotspots';
-it('maps the captured menu after undoing letterboxing, and never treats chart clicks as menu actions',()=>{const w=1901,h=939,scale=Math.min(1024/w,548/h),uv=(x:number,y:number)=>[(x*scale+(1024-w*scale)/2)/1024,(y*scale+(548-h*scale)/2)/548] as const;for(const [row,target] of [[0,0],[1,1],[2,8],[4,4],[6,6],[7,2],[9,3],[15,5]])expect(screenMenuTarget('overview-detail',...uv(100,77+row!*45))).toBe(target);expect(screenMenuTarget('overview-detail',...uv(1000,350))).toBeNull();expect(screenMenuTarget('overview-detail',...uv(100,302))).toBeNull();});

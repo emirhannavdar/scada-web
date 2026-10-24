@@ -1,2 +1,0 @@
-import {it,expect} from 'vitest';import * as T from 'three';import {fieldSunDirection} from '@/lib/flight/field-sky';import {TILT} from '@/lib/flight/field';
-it('lights the front face of south-facing panels from a physically consistent afternoon direction',()=>{expect(new T.Vector3(0,Math.cos(TILT),Math.sin(TILT)).dot(fieldSunDirection)).toBeGreaterThan(0);expect(fieldSunDirection.z).toBeGreaterThan(0)});

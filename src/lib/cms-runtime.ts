@@ -13,9 +13,15 @@ type ContentPayload = {
   design?: SiteDesign;
   variants?: Record<"desktop" | "mobile", ContentPayload>;
 };
+type ContentStatus='ready'|'failed'|'retrying';
+let status:ContentStatus='ready';
+const statusListeners=new Set<()=>void>();
+export const contentStatus=()=>status;
+export function subscribeContentStatus(listener:()=>void){statusListeners.add(listener);return()=>{statusListeners.delete(listener)}}
+function updateContentStatus(next:ContentStatus){status=next;statusListeners.forEach(fn=>fn())}
 let stopResponsive: (() => void) | undefined;
 export async function initializeContent() {
-  stopResponsive?.();
+  if(status!=='ready')updateContentStatus('retrying');
   const params = new URLSearchParams(location.search),
     preview = params.get("cms-preview") === "1";
   const controller = new AbortController(),
@@ -40,6 +46,7 @@ export async function initializeContent() {
       throw Object.assign(Error("İçerik yüklenemedi."), { status: response.status });
     const payload = (await response.json()) as ContentPayload;
     if (!Array.isArray(payload.entries)) throw Error("Geçersiz içerik.");
+    stopResponsive?.();stopResponsive=undefined;
     if(preview && payload.review)setPreviewReview(payload.review,params.get("cms-edit")!=="1");
     const media = window.matchMedia("(max-width:760px)");
     function apply() {
@@ -52,6 +59,7 @@ export async function initializeContent() {
       refreshCmsContent();
     }
     apply();
+    updateContentStatus('ready');
     if (!preview && payload.variants) {
       media.addEventListener("change", apply);
       stopResponsive = () => media.removeEventListener("change", apply);
@@ -83,10 +91,12 @@ export async function initializeContent() {
       const link = document.createElement("a");
       link.href = "/admin";
       link.textContent = " Yönetim paneline dön";
-      box.append(link);
+      const retry=document.createElement("button");retry.type="button";retry.textContent="Yeniden dene";retry.addEventListener("click",()=>location.reload());
+      box.append(link,retry);
       document.body.append(box);
       return false;
     }
+    updateContentStatus('failed');
     console.warn("CMS erişilemiyor; paket içeriği gösteriliyor.");
   } finally {
     clearTimeout(timer);

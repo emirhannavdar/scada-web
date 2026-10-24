@@ -1,5 +1,5 @@
 {
-  "schemaHash": "d64c7aaa5aea2d81",
+  "schemaHash": "00c76f76dd0449cc",
   "fields": [
     {
       "id": "copy.0b2bdd94b1824426",
@@ -4732,6 +4732,20 @@
       "page": "/"
     },
     {
+      "id": "copy.1419dedb72f34101",
+      "target": "copy",
+      "source": "Güncel içerik yüklenemedi. Geçici olarak son kullanılabilir içerik gösteriliyor.",
+      "group": "Ortak arayüz metinleri",
+      "label": "Güncel içerik yüklenemedi. Geçici olarak son kullanılabilir içerik gösteriliyor.",
+      "kind": "text",
+      "default": {
+        "tr": "Güncel içerik yüklenemedi. Geçici olarak son kullanılabilir içerik gösteriliyor.",
+        "en": "The latest content could not be loaded. The last available content is being shown temporarily."
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
       "id": "copy.1436dbabcd84169d",
       "target": "copy",
       "source": "[Onaylı metin eklenecek]",
@@ -4984,6 +4998,20 @@
       "page": "/"
     },
     {
+      "id": "copy.1f30ff52f9d5e535",
+      "target": "copy",
+      "source": "Yeniden dene",
+      "group": "Ortak arayüz metinleri",
+      "label": "Yeniden dene",
+      "kind": "text",
+      "default": {
+        "tr": "Yeniden dene",
+        "en": "Try again"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
       "id": "copy.8b2160b866e78acf",
       "target": "copy",
       "source": "Sahadaki her cihazı izleyin, veriyi anlamlı bilgiye dönüştürün. İşletmenize uygun izleme ve kontrol kapsamını birlikte belirleyelim.",
@@ -5021,6 +5049,20 @@
       "default": {
         "tr": "İhtiyaçlarınızı seçin",
         "en": "Select your requirements"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
+      "id": "copy.21c29788c5760f36",
+      "target": "copy",
+      "source": "Yeniden yükleniyor…",
+      "group": "Ortak arayüz metinleri",
+      "label": "Yeniden yükleniyor…",
+      "kind": "text",
+      "default": {
+        "tr": "Yeniden yükleniyor…",
+        "en": "Reloading…"
       },
       "location": "Site geneli › Ortak metinler",
       "page": "/"
@@ -8372,6 +8414,20 @@
       "page": "/"
     },
     {
+      "id": "copy.f0323bfe6e55c440",
+      "target": "copy",
+      "source": "Önizleme henüz hazır değil",
+      "group": "Ortak arayüz metinleri",
+      "label": "Önizleme henüz hazır değil",
+      "kind": "text",
+      "default": {
+        "tr": "Önizleme henüz hazır değil",
+        "en": "Önizleme henüz hazır değil"
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
       "id": "copy.f1378c53adc5cf5d",
       "target": "copy",
       "source": "Sayfa bulunamadı.",
@@ -9824,6 +9880,20 @@
       "page": "/"
     },
     {
+      "id": "copy.2210107ba94b2d6d",
+      "target": "copy",
+      "source": "ScadaWatt web sitesinde çerezler, tarayıcı depolaması, oturum bilgileri ve üçüncü taraf harita hizmetlerinin kullanımı hakkında bilgi alın.",
+      "group": "Sayfa metinleri",
+      "label": "ScadaWatt web sitesinde çerezler, tarayıcı depolaması, oturum bilgileri ve üçüncü taraf ha",
+      "kind": "text",
+      "default": {
+        "tr": "ScadaWatt web sitesinde çerezler, tarayıcı depolaması, oturum bilgileri ve üçüncü taraf harita hizmetlerinin kullanımı hakkında bilgi alın.",
+        "en": "Learn how the ScadaWatt website uses cookies, browser storage, session information and third-party map services."
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
+    },
+    {
       "id": "copy.288c6e8330d06e5c",
       "target": "copy",
       "source": "Bu adres değişmiş veya kaldırılmış olabilir. Aşağıdaki bağlantılarla devam edebilirsiniz.",
@@ -10174,6 +10244,20 @@
       "page": "/scada-yazilimi"
     },
     {
+      "id": "copy.660229a92f502011",
+      "target": "copy",
+      "source": "Veri Toplama ve Kontrol Donanımları",
+      "group": "Sayfa metinleri",
+      "label": "Veri Toplama ve Kontrol Donanımları",
+      "kind": "text",
+      "default": {
+        "tr": "Veri Toplama ve Kontrol Donanımları",
+        "en": "Data Acquisition and Control Hardware"
+      },
+      "location": "Ürünler › Sayfa metinleri",
+      "page": "/urunler"
+    },
+    {
       "id": "copy.6a4b4a435ed20722",
       "target": "copy",
       "source": "Vizyonumuz",
@@ -10214,20 +10298,6 @@
       },
       "location": "Hakkımızda › Sayfa metinleri",
       "page": "/hakkimizda"
-    },
-    {
-      "id": "copy.5dc80f6117ee88ae",
-      "target": "copy",
-      "source": "ScadaWatt: güneş enerji santralleri için uzaktan izleme, SCADA, veri toplama ve enerji yönetimi çözümleri.",
-      "group": "Sayfa metinleri",
-      "label": "ScadaWatt: güneş enerji santralleri için uzaktan izleme, SCADA, veri toplama ve enerji yön",
-      "kind": "text",
-      "default": {
-        "tr": "ScadaWatt: güneş enerji santralleri için uzaktan izleme, SCADA, veri toplama ve enerji yönetimi çözümleri.",
-        "en": "ScadaWatt: remote monitoring, SCADA, data acquisition and energy management solutions for solar power plants."
-      },
-      "location": "Site geneli › Ortak metinler",
-      "page": "/"
     },
     {
       "id": "copy.567a803ffe80b72e",
@@ -10284,6 +10354,20 @@
       },
       "location": "Çözümler › Sayfa metinleri",
       "page": "/cozumler"
+    },
+    {
+      "id": "copy.7e92224db86644b9",
+      "target": "copy",
+      "source": "ScadaWatt; SCADA yazılımı, veri toplama, uzaktan izleme ve enerji yönetimi çözümleri geliştirir. Yazılım ve elektronik ürünlerimizi keşfedin.",
+      "group": "Sayfa metinleri",
+      "label": "ScadaWatt; SCADA yazılımı, veri toplama, uzaktan izleme ve enerji yönetimi çözümleri geliş",
+      "kind": "text",
+      "default": {
+        "tr": "ScadaWatt; SCADA yazılımı, veri toplama, uzaktan izleme ve enerji yönetimi çözümleri geliştirir. Yazılım ve elektronik ürünlerimizi keşfedin.",
+        "en": "ScadaWatt develops SCADA software, data acquisition, remote monitoring and energy management solutions. Explore our software and electronic products."
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
     },
     {
       "id": "copy.802f62644254d63a",
@@ -10365,6 +10449,20 @@
       "default": {
         "tr": "Bu çözüm için demo talep et",
         "en": "Request a demo for this solution"
+      },
+      "location": "Çözümler › Sayfa metinleri",
+      "page": "/cozumler"
+    },
+    {
+      "id": "copy.94bf835661179411",
+      "target": "copy",
+      "source": "SCADA ve Enerji Yönetimi Çözümleri",
+      "group": "Sayfa metinleri",
+      "label": "SCADA ve Enerji Yönetimi Çözümleri",
+      "kind": "text",
+      "default": {
+        "tr": "SCADA ve Enerji Yönetimi Çözümleri",
+        "en": "SCADA and Energy Management Solutions"
       },
       "location": "Çözümler › Sayfa metinleri",
       "page": "/cozumler"
@@ -10704,6 +10802,20 @@
       },
       "location": "Paketler › Sayfa metinleri",
       "page": "/paketler"
+    },
+    {
+      "id": "copy.da45d074cd5e8579",
+      "target": "copy",
+      "source": "SCADA Yazılımı ve Uzaktan İzleme",
+      "group": "Sayfa metinleri",
+      "label": "SCADA Yazılımı ve Uzaktan İzleme",
+      "kind": "text",
+      "default": {
+        "tr": "SCADA Yazılımı ve Uzaktan İzleme",
+        "en": "SCADA Software and Remote Monitoring"
+      },
+      "location": "SCADA Yazılımı › Sayfa metinleri",
+      "page": "/scada-yazilimi"
     },
     {
       "id": "copy.ca684059b36f267e",
@@ -15559,6 +15671,20 @@
       "location": "Site geneli › Ortak metinler",
       "page": "/",
       "retired": true
+    },
+    {
+      "id": "copy.5dc80f6117ee88ae",
+      "target": "copy",
+      "source": "ScadaWatt: güneş enerji santralleri için uzaktan izleme, SCADA, veri toplama ve enerji yönetimi çözümleri.",
+      "group": "Sayfa metinleri",
+      "label": "ScadaWatt: güneş enerji santralleri için uzaktan izleme, SCADA, veri toplama ve enerji yön",
+      "kind": "text",
+      "default": {
+        "tr": "ScadaWatt: güneş enerji santralleri için uzaktan izleme, SCADA, veri toplama ve enerji yönetimi çözümleri.",
+        "en": "ScadaWatt: remote monitoring, SCADA, data acquisition and energy management solutions for solar power plants."
+      },
+      "location": "Site geneli › Ortak metinler",
+      "page": "/"
     }
   ],
   "baseCollections": {

@@ -36,7 +36,7 @@ export async function publicPages(store) {
     const pages = { ...manifest.pages };
     for (const [kind, prefix] of [['products', '/urunler/'], ['solutions', '/cozumler/']])
         for (const item of p.collections[kind] || [])
-            pages[prefix + item.slug] = { title: (item.name || item.title) + ' | ScadaWatt', description: item.summary || item.short || '', image: item.image };
+            pages[prefix + item.slug] = { title: (kind === 'products' ? (item.code || item.name.replace(/^ScadaWatt\s+/i, '')) + (item.role ? ' — ' + item.role.split(' · ')[0] : '') : item.title) + ' | ScadaWatt', description: item.summary || item.short || '', image: item.image };
     const contact = { ...manifest.contact }, images = { ...manifest.images };
     for (const e of p.entries)
         if (e.path?.length === 2) {
@@ -52,14 +52,17 @@ export async function renderPage(html, path, store, privatePage = false, req) {
     const { pages, contact, images } = (await publicPages(store)), page = pages[path], known = Boolean(page) || privatePage;
     const title = page?.title || (privatePage ? 'Yönetim | ScadaWatt' : 'Sayfa bulunamadı | ScadaWatt'), description = page?.description || 'Aradığınız sayfa bulunamadı. ScadaWatt çözümlerini ve donanımlarını keşfedin.';
     const url = siteOrigin() + path, noindex = privatePage || !known || path === '/kvkk' || !siteIndexable(req);
-    html = html.replace(/<title>[\s\S]*?<\/title>/, '').replace(/<meta\b[^>]*(?:name=["'](?:description|robots|sw-indexable|sw-origin)["']|property=["']og:[^"']+["'])[^>]*>/gi, '');
+    html = html.replace(/<title>[\s\S]*?<\/title>/, '').replace(/<meta\b[^>]*(?:name=["'](?:description|robots|sw-indexable|sw-origin|twitter:[^"']+)["']|property=["']og:[^"']+["'])[^>]*>/gi, '');
+    html = html.replace(/<link\b(?=[^>]*rel=["']canonical["'])[^>]*>/gi, '')
+        .replace(/<script\b(?=[^>]*id=["'](?:site-schema|breadcrumb-schema)["'])[^>]*>[\s\S]*?<\/script>/gi, '');
     const image = new URL(page?.image || images.wordmark, siteOrigin()).href;
     const graph = [{ '@context': 'https://schema.org', '@type': 'Organization', '@id': siteOrigin() + '/#organization', name: 'ScadaWatt', url: siteOrigin(), logo: new URL(images.wordmark, siteOrigin()).href, email: contact.email, telephone: contact.phone, address: { '@type': 'PostalAddress', streetAddress: contact.address } }];
+    graph.push({ '@context': 'https://schema.org', '@type': 'WebSite', '@id': siteOrigin() + '/#website', name: 'ScadaWatt', url: siteOrigin(), publisher: { '@id': siteOrigin() + '/#organization' } });
     if (page && /^\/(urunler|cozumler)\/[^/]+$/.test(path)) {
         const group = path.split('/')[1];
         graph.push({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Ana sayfa', item: siteOrigin() + '/' }, { '@type': 'ListItem', position: 2, name: group === 'urunler' ? 'Donanımlar' : 'Çözümler', item: siteOrigin() + '/' + group }, { '@type': 'ListItem', position: 3, name: title.replace(' | ScadaWatt', ''), item: url }] });
     }
-    const head = '<meta name="sw-indexable" content="' + (siteIndexable(req) ? '1' : '0') + '"><meta name="sw-origin" content="' + escape(siteOrigin()) + '"><title>' + escape(title) + '</title><meta name="description" content="' + escape(description) + '"><meta name="robots" content="' + (noindex ? 'noindex,nofollow' : 'index,follow') + '"><meta property="og:title" content="' + escape(title) + '"><meta property="og:description" content="' + escape(description) + '"><meta property="og:url" content="' + escape(url) + '"><meta property="og:type" content="website"><meta property="og:image" content="' + escape(image) + '"><meta name="twitter:card" content="summary_large_image">' + (known && !privatePage ? '<link rel="canonical" href="' + escape(url) + '">' : '') + (!privatePage && known ? '<script type="application/ld+json" id="site-schema">' + JSON.stringify(graph).replace(/</g, '\\u003c') + '</script>' : '');
+    const head = '<meta name="sw-indexable" content="' + (siteIndexable(req) ? '1' : '0') + '"><meta name="sw-origin" content="' + escape(siteOrigin()) + '"><title>' + escape(title) + '</title><meta name="description" content="' + escape(description) + '"><meta name="robots" content="' + (noindex ? 'noindex,nofollow' : 'index,follow') + '"><meta property="og:title" content="' + escape(title) + '"><meta property="og:description" content="' + escape(description) + '"><meta property="og:url" content="' + escape(url) + '"><meta property="og:type" content="website"><meta property="og:image" content="' + escape(image) + '"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="' + escape(title) + '"><meta name="twitter:description" content="' + escape(description) + '"><meta name="twitter:image" content="' + escape(image) + '"><meta name="twitter:image:alt" content="' + escape(title.replace(' | ScadaWatt', '')) + '">' + (known && !privatePage ? '<link rel="canonical" href="' + escape(url) + '">' : '') + (!privatePage && known ? '<script type="application/ld+json" id="site-schema">' + JSON.stringify(graph).replace(/</g, '\\u003c') + '</script>' : '');
     return { html: html.replace('</head>', head + '</head>'), status: known ? 200 : 404, noindex };
 }
 export function compression(header) {

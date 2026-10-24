@@ -1,0 +1,2178 @@
+{
+  "checks": 92,
+  "findings": [],
+  "rows": [
+    {
+      "path": "/",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "Yazılım, Elektronik ve Enerji Teknolojileri | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Her şey sahadabaşlar."
+        },
+        {
+          "level": "H2",
+          "text": "Her görevinbir donanımı var."
+        },
+        {
+          "level": "H3",
+          "text": "S3000i"
+        },
+        {
+          "level": "H2",
+          "text": "Teknoloji, işletmeninher noktasında."
+        },
+        {
+          "level": "H3",
+          "text": "Enerjinizin bütününü görün."
+        },
+        {
+          "level": "H2",
+          "text": "Projenizikonuşalım."
+        },
+        {
+          "level": "H2",
+          "text": "Başlamadan önce."
+        }
+      ],
+      "images": 5
+    },
+    {
+      "path": "/cozumler",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "SCADA ve Enerji Yönetimi Çözümleri | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Enerji ve veri için çözümler."
+        },
+        {
+          "level": "H2",
+          "text": "Enerji Yönetimi"
+        },
+        {
+          "level": "H2",
+          "text": "Uzaktan İzleme"
+        },
+        {
+          "level": "H2",
+          "text": "Yenilenebilir Enerji"
+        },
+        {
+          "level": "H2",
+          "text": "GES Uzaktan İzleme"
+        },
+        {
+          "level": "H2",
+          "text": "Limit Yönetimi"
+        },
+        {
+          "level": "H2",
+          "text": "Kompanzasyon Takibi ve Kontrolü"
+        },
+        {
+          "level": "H2",
+          "text": "Zero Injection"
+        },
+        {
+          "level": "H2",
+          "text": "Planlı Yük Atma"
+        },
+        {
+          "level": "H2",
+          "text": "Anlık Bildirimler"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/urunler",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "Veri Toplama ve Kontrol Donanımları | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Sahada çalışan donanım."
+        },
+        {
+          "level": "H2",
+          "text": "S3000i"
+        },
+        {
+          "level": "H2",
+          "text": "S4000MC"
+        },
+        {
+          "level": "H2",
+          "text": "LOMR-07H"
+        }
+      ],
+      "images": 3
+    },
+    {
+      "path": "/scada-yazilimi",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "SCADA Yazılımı ve Uzaktan İzleme | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "ScadaWatt SCADA yazılımı."
+        },
+        {
+          "level": "H2",
+          "text": "Web arayüzü ve mobil uygulama."
+        },
+        {
+          "level": "H3",
+          "text": "Enerji verilerinize daha yakından bakın."
+        },
+        {
+          "level": "H2",
+          "text": "Yazılımın yapabildikleri"
+        },
+        {
+          "level": "H3",
+          "text": "Çok noktadan üretim verisi"
+        },
+        {
+          "level": "H3",
+          "text": "Limit yönetimi"
+        },
+        {
+          "level": "H3",
+          "text": "Kompanzasyon kontrolü"
+        },
+        {
+          "level": "H3",
+          "text": "Fatura doğrulama"
+        },
+        {
+          "level": "H3",
+          "text": "Piyasa takas fiyatı (PTF)"
+        },
+        {
+          "level": "H3",
+          "text": "Anlık bildirimler"
+        },
+        {
+          "level": "H2",
+          "text": "İzleme arayüzü"
+        }
+      ],
+      "images": 1
+    },
+    {
+      "path": "/paketler",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "İzleme Paketleri | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Size uygun planı seçin."
+        },
+        {
+          "level": "H2",
+          "text": "NANO"
+        },
+        {
+          "level": "H2",
+          "text": "STANDART"
+        },
+        {
+          "level": "H2",
+          "text": "PRO"
+        },
+        {
+          "level": "H2",
+          "text": "Detaylı karşılaştırma"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/hakkimizda",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "Hakkımızda | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Santralinizi uzaktan, eksiksiz ve doğru veriyle yönetin."
+        },
+        {
+          "level": "H2",
+          "text": "Saha deneyiminden doğan teknoloji."
+        },
+        {
+          "level": "H3",
+          "text": "Yazılım"
+        },
+        {
+          "level": "H3",
+          "text": "Elektronik"
+        },
+        {
+          "level": "H3",
+          "text": "AR-GE"
+        },
+        {
+          "level": "H2",
+          "text": "Bugün Ne Kaybettiğinizi Biliyor musunuz?"
+        },
+        {
+          "level": "H2",
+          "text": "Veriyi görünür, yönetimi bütüncül kılıyoruz."
+        }
+      ],
+      "images": 1
+    },
+    {
+      "path": "/iletisim",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "İletişim ve Demo Talebi | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Birlikte doğru çözümü bulalım."
+        },
+        {
+          "level": "H2",
+          "text": "Bize ulaşın."
+        },
+        {
+          "level": "H2",
+          "text": "ScadaWatt’ı ihtiyaçlarınızla birlikte keşfedin."
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/privacy-policy",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "Gizlilik Politikası | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "SCADAWATT GİZLİLİK POLİTİKASI"
+        },
+        {
+          "level": "H2",
+          "text": "Hizmetlerimizi Kullanırken Oluşturduğunuz Bilgiler"
+        },
+        {
+          "level": "H3",
+          "text": "IP Adresiniz"
+        },
+        {
+          "level": "H3",
+          "text": "İsim ve Soyisim"
+        },
+        {
+          "level": "H3",
+          "text": "Telefon ve E-Posta Adresiniz"
+        },
+        {
+          "level": "H3",
+          "text": "Mobil Cihaz Bilgileriniz"
+        },
+        {
+          "level": "H3",
+          "text": "Sahalardan Alınan Veriler"
+        },
+        {
+          "level": "H3",
+          "text": "Haberleşmelerin Güvenliği"
+        },
+        {
+          "level": "H2",
+          "text": "ScadaWatt’ı, kullanıcılarımızı, carilerimizi ve kamuyu koruma"
+        },
+        {
+          "level": "H2",
+          "text": "Yasal İşlem veya Uygulanabilir Resmi Talepler"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cerez",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "Çerez Politikası | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Çerez Politikası"
+        },
+        {
+          "level": "H2",
+          "text": "İletişim formu"
+        },
+        {
+          "level": "H2",
+          "text": "Tarayıcıda tutulan bilgiler"
+        },
+        {
+          "level": "H2",
+          "text": "Yönetici oturumu"
+        },
+        {
+          "level": "H2",
+          "text": "Harita ve dış bağlantılar"
+        },
+        {
+          "level": "H2",
+          "text": "Sorularınız ve başvurularınız"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/kullanim-kosullari",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "Kullanım Koşulları | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Kullanım koşulları"
+        },
+        {
+          "level": "H2",
+          "text": "Web sitesi bilgileri"
+        },
+        {
+          "level": "H2",
+          "text": "Google Maps içerikleri"
+        },
+        {
+          "level": "H2",
+          "text": "İletişim ve gizlilik"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/saha-yapilandirici",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "Saha Yapılandırıcısı | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Sahanızdan başlayalım."
+        },
+        {
+          "level": "H2",
+          "text": "Tesisiniz"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/urunler/s3000i",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "S3000i — Veri toplama | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "S3000i"
+        },
+        {
+          "level": "H2",
+          "text": "Veri toplama · İşleme · Depolama"
+        }
+      ],
+      "images": 3
+    },
+    {
+      "path": "/urunler/s4000mc",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "S4000MC — Çok amaçlı kontrol | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "S4000MC"
+        },
+        {
+          "level": "H2",
+          "text": "Çok amaçlı kontrol · Özel senaryolar"
+        }
+      ],
+      "images": 3
+    },
+    {
+      "path": "/urunler/lomr-07h",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "LOMR-07H — Şebeke arıza algılama | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "LOMR-07H"
+        },
+        {
+          "level": "H2",
+          "text": "Şebeke arıza algılama · Röle tetikleme"
+        }
+      ],
+      "images": 3
+    },
+    {
+      "path": "/cozumler/enerji-yonetimi",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "Enerji Yönetimi | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Enerji Yönetimi"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/uzaktan-izleme",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "Uzaktan İzleme | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Uzaktan İzleme"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/yenilenebilir-enerji",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "Yenilenebilir Enerji | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Yenilenebilir Enerji"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/ges-izleme",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "GES Uzaktan İzleme | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "GES Uzaktan İzleme"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/limit-yonetimi",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "Limit Yönetimi | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Limit Yönetimi"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/kompanzasyon",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "Kompanzasyon Takibi ve Kontrolü | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Kompanzasyon Takibi ve Kontrolü"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/zero-injection",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "Zero Injection | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Zero Injection"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/planli-uretim-durdurma",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "Planlı Yük Atma | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Planlı Yük Atma"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/bildirimler",
+      "language": "tr",
+      "viewport": "desktop",
+      "title": "Anlık Bildirimler | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Anlık Bildirimler"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "Yazılım, Elektronik ve Enerji Teknolojileri | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Sahanızlabağlantıda kalın."
+        },
+        {
+          "level": "H2",
+          "text": "Her görevinbir donanımı var."
+        },
+        {
+          "level": "H3",
+          "text": "S3000i"
+        },
+        {
+          "level": "H2",
+          "text": "Teknoloji, işletmeninher noktasında."
+        },
+        {
+          "level": "H3",
+          "text": "Enerjinizin bütününü görün."
+        },
+        {
+          "level": "H2",
+          "text": "Projenizikonuşalım."
+        },
+        {
+          "level": "H2",
+          "text": "Başlamadan önce."
+        }
+      ],
+      "images": 6
+    },
+    {
+      "path": "/cozumler",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "SCADA ve Enerji Yönetimi Çözümleri | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Enerji ve veri için çözümler."
+        },
+        {
+          "level": "H2",
+          "text": "Enerji Yönetimi"
+        },
+        {
+          "level": "H2",
+          "text": "Uzaktan İzleme"
+        },
+        {
+          "level": "H2",
+          "text": "Yenilenebilir Enerji"
+        },
+        {
+          "level": "H2",
+          "text": "GES Uzaktan İzleme"
+        },
+        {
+          "level": "H2",
+          "text": "Limit Yönetimi"
+        },
+        {
+          "level": "H2",
+          "text": "Kompanzasyon Takibi ve Kontrolü"
+        },
+        {
+          "level": "H2",
+          "text": "Zero Injection"
+        },
+        {
+          "level": "H2",
+          "text": "Planlı Yük Atma"
+        },
+        {
+          "level": "H2",
+          "text": "Anlık Bildirimler"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/urunler",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "Veri Toplama ve Kontrol Donanımları | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Sahada çalışan donanım."
+        },
+        {
+          "level": "H2",
+          "text": "S3000i"
+        },
+        {
+          "level": "H2",
+          "text": "S4000MC"
+        },
+        {
+          "level": "H2",
+          "text": "LOMR-07H"
+        }
+      ],
+      "images": 3
+    },
+    {
+      "path": "/scada-yazilimi",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "SCADA Yazılımı ve Uzaktan İzleme | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "ScadaWatt SCADA yazılımı."
+        },
+        {
+          "level": "H2",
+          "text": "Web arayüzü ve mobil uygulama."
+        },
+        {
+          "level": "H3",
+          "text": "Enerji verilerinize daha yakından bakın."
+        },
+        {
+          "level": "H2",
+          "text": "Yazılımın yapabildikleri"
+        },
+        {
+          "level": "H3",
+          "text": "Çok noktadan üretim verisi"
+        },
+        {
+          "level": "H3",
+          "text": "Limit yönetimi"
+        },
+        {
+          "level": "H3",
+          "text": "Kompanzasyon kontrolü"
+        },
+        {
+          "level": "H3",
+          "text": "Fatura doğrulama"
+        },
+        {
+          "level": "H3",
+          "text": "Piyasa takas fiyatı (PTF)"
+        },
+        {
+          "level": "H3",
+          "text": "Anlık bildirimler"
+        },
+        {
+          "level": "H2",
+          "text": "İzleme arayüzü"
+        }
+      ],
+      "images": 1
+    },
+    {
+      "path": "/paketler",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "İzleme Paketleri | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Size uygun planı seçin."
+        },
+        {
+          "level": "H2",
+          "text": "NANO"
+        },
+        {
+          "level": "H2",
+          "text": "STANDART"
+        },
+        {
+          "level": "H2",
+          "text": "PRO"
+        },
+        {
+          "level": "H2",
+          "text": "Detaylı karşılaştırma"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/hakkimizda",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "Hakkımızda | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Santralinizi uzaktan, eksiksiz ve doğru veriyle yönetin."
+        },
+        {
+          "level": "H2",
+          "text": "Saha deneyiminden doğan teknoloji."
+        },
+        {
+          "level": "H3",
+          "text": "Yazılım"
+        },
+        {
+          "level": "H3",
+          "text": "Elektronik"
+        },
+        {
+          "level": "H3",
+          "text": "AR-GE"
+        },
+        {
+          "level": "H2",
+          "text": "Bugün Ne Kaybettiğinizi Biliyor musunuz?"
+        },
+        {
+          "level": "H2",
+          "text": "Veriyi görünür, yönetimi bütüncül kılıyoruz."
+        }
+      ],
+      "images": 1
+    },
+    {
+      "path": "/iletisim",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "İletişim ve Demo Talebi | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Birlikte doğru çözümü bulalım."
+        },
+        {
+          "level": "H2",
+          "text": "Bize ulaşın."
+        },
+        {
+          "level": "H2",
+          "text": "ScadaWatt’ı ihtiyaçlarınızla birlikte keşfedin."
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/privacy-policy",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "Gizlilik Politikası | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "SCADAWATT GİZLİLİK POLİTİKASI"
+        },
+        {
+          "level": "H2",
+          "text": "Hizmetlerimizi Kullanırken Oluşturduğunuz Bilgiler"
+        },
+        {
+          "level": "H3",
+          "text": "IP Adresiniz"
+        },
+        {
+          "level": "H3",
+          "text": "İsim ve Soyisim"
+        },
+        {
+          "level": "H3",
+          "text": "Telefon ve E-Posta Adresiniz"
+        },
+        {
+          "level": "H3",
+          "text": "Mobil Cihaz Bilgileriniz"
+        },
+        {
+          "level": "H3",
+          "text": "Sahalardan Alınan Veriler"
+        },
+        {
+          "level": "H3",
+          "text": "Haberleşmelerin Güvenliği"
+        },
+        {
+          "level": "H2",
+          "text": "ScadaWatt’ı, kullanıcılarımızı, carilerimizi ve kamuyu koruma"
+        },
+        {
+          "level": "H2",
+          "text": "Yasal İşlem veya Uygulanabilir Resmi Talepler"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cerez",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "Çerez Politikası | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Çerez Politikası"
+        },
+        {
+          "level": "H2",
+          "text": "İletişim formu"
+        },
+        {
+          "level": "H2",
+          "text": "Tarayıcıda tutulan bilgiler"
+        },
+        {
+          "level": "H2",
+          "text": "Yönetici oturumu"
+        },
+        {
+          "level": "H2",
+          "text": "Harita ve dış bağlantılar"
+        },
+        {
+          "level": "H2",
+          "text": "Sorularınız ve başvurularınız"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/kullanim-kosullari",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "Kullanım Koşulları | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Kullanım koşulları"
+        },
+        {
+          "level": "H2",
+          "text": "Web sitesi bilgileri"
+        },
+        {
+          "level": "H2",
+          "text": "Google Maps içerikleri"
+        },
+        {
+          "level": "H2",
+          "text": "İletişim ve gizlilik"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/saha-yapilandirici",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "Saha Yapılandırıcısı | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Sahanızdan başlayalım."
+        },
+        {
+          "level": "H2",
+          "text": "Tesisiniz"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/urunler/s3000i",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "S3000i — Veri toplama | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "S3000i"
+        },
+        {
+          "level": "H2",
+          "text": "Veri toplama · İşleme · Depolama"
+        }
+      ],
+      "images": 3
+    },
+    {
+      "path": "/urunler/s4000mc",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "S4000MC — Çok amaçlı kontrol | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "S4000MC"
+        },
+        {
+          "level": "H2",
+          "text": "Çok amaçlı kontrol · Özel senaryolar"
+        }
+      ],
+      "images": 3
+    },
+    {
+      "path": "/urunler/lomr-07h",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "LOMR-07H — Şebeke arıza algılama | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "LOMR-07H"
+        },
+        {
+          "level": "H2",
+          "text": "Şebeke arıza algılama · Röle tetikleme"
+        }
+      ],
+      "images": 3
+    },
+    {
+      "path": "/cozumler/enerji-yonetimi",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "Enerji Yönetimi | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Enerji Yönetimi"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/uzaktan-izleme",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "Uzaktan İzleme | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Uzaktan İzleme"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/yenilenebilir-enerji",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "Yenilenebilir Enerji | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Yenilenebilir Enerji"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/ges-izleme",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "GES Uzaktan İzleme | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "GES Uzaktan İzleme"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/limit-yonetimi",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "Limit Yönetimi | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Limit Yönetimi"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/kompanzasyon",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "Kompanzasyon Takibi ve Kontrolü | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Kompanzasyon Takibi ve Kontrolü"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/zero-injection",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "Zero Injection | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Zero Injection"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/planli-uretim-durdurma",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "Planlı Yük Atma | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Planlı Yük Atma"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/bildirimler",
+      "language": "tr",
+      "viewport": "mobile",
+      "title": "Anlık Bildirimler | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Anlık Bildirimler"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "Software, Electronics and Energy Technologies | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "It all starts in thefield."
+        },
+        {
+          "level": "H2",
+          "text": "The right hardwarefor every task."
+        },
+        {
+          "level": "H3",
+          "text": "S3000i"
+        },
+        {
+          "level": "H2",
+          "text": "Technology acrossyour operations."
+        },
+        {
+          "level": "H3",
+          "text": "See the full picture of your energy."
+        },
+        {
+          "level": "H2",
+          "text": "Let’s discussyour project."
+        },
+        {
+          "level": "H2",
+          "text": "Before you get started."
+        }
+      ],
+      "images": 5
+    },
+    {
+      "path": "/cozumler",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "SCADA and Energy Management Solutions | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Solutions for energy and data."
+        },
+        {
+          "level": "H2",
+          "text": "Energy Management"
+        },
+        {
+          "level": "H2",
+          "text": "Remote Monitoring"
+        },
+        {
+          "level": "H2",
+          "text": "Renewable Energy"
+        },
+        {
+          "level": "H2",
+          "text": "Remote Solar PV Monitoring"
+        },
+        {
+          "level": "H2",
+          "text": "Limit Management"
+        },
+        {
+          "level": "H2",
+          "text": "Power Factor Correction Monitoring and Control"
+        },
+        {
+          "level": "H2",
+          "text": "Zero Injection"
+        },
+        {
+          "level": "H2",
+          "text": "Scheduled Load Shedding"
+        },
+        {
+          "level": "H2",
+          "text": "Real-Time Notifications"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/urunler",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "Data Acquisition and Control Hardware | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Hardware built for the field."
+        },
+        {
+          "level": "H2",
+          "text": "S3000i"
+        },
+        {
+          "level": "H2",
+          "text": "S4000MC"
+        },
+        {
+          "level": "H2",
+          "text": "LOMR-07H"
+        }
+      ],
+      "images": 3
+    },
+    {
+      "path": "/scada-yazilimi",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "SCADA Software and Remote Monitoring | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "ScadaWatt SCADA software."
+        },
+        {
+          "level": "H2",
+          "text": "Web platform and mobile app."
+        },
+        {
+          "level": "H3",
+          "text": "A closer look at your energy data."
+        },
+        {
+          "level": "H2",
+          "text": "Software capabilities"
+        },
+        {
+          "level": "H3",
+          "text": "Generation data from multiple sources"
+        },
+        {
+          "level": "H3",
+          "text": "Limit management"
+        },
+        {
+          "level": "H3",
+          "text": "Power factor correction control"
+        },
+        {
+          "level": "H3",
+          "text": "Billing verification"
+        },
+        {
+          "level": "H3",
+          "text": "Market clearing price (PTF)"
+        },
+        {
+          "level": "H3",
+          "text": "Real-time notifications"
+        },
+        {
+          "level": "H2",
+          "text": "The monitoring interface"
+        }
+      ],
+      "images": 1
+    },
+    {
+      "path": "/paketler",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "Monitoring Plans | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Choose the right plan for you."
+        },
+        {
+          "level": "H2",
+          "text": "NANO"
+        },
+        {
+          "level": "H2",
+          "text": "STANDART"
+        },
+        {
+          "level": "H2",
+          "text": "PRO"
+        },
+        {
+          "level": "H2",
+          "text": "Detailed comparison"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/hakkimizda",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "About us | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Manage your plant remotely, with complete and accurate data."
+        },
+        {
+          "level": "H2",
+          "text": "Technology shaped by field experience."
+        },
+        {
+          "level": "H3",
+          "text": "Software"
+        },
+        {
+          "level": "H3",
+          "text": "Electronics"
+        },
+        {
+          "level": "H3",
+          "text": "R&D"
+        },
+        {
+          "level": "H2",
+          "text": "Do You Know What You Lost Today?"
+        },
+        {
+          "level": "H2",
+          "text": "Making data visible. Bringing management together."
+        }
+      ],
+      "images": 1
+    },
+    {
+      "path": "/iletisim",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "Contact and Demo Requests | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Let’s find the right solution together."
+        },
+        {
+          "level": "H2",
+          "text": "Get in touch."
+        },
+        {
+          "level": "H2",
+          "text": "Explore ScadaWatt around your needs."
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/privacy-policy",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "Privacy Policy | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "SCADAWATT PRIVACY POLICY"
+        },
+        {
+          "level": "H2",
+          "text": "Information Generated While Using Our Services"
+        },
+        {
+          "level": "H3",
+          "text": "Your IP Address"
+        },
+        {
+          "level": "H3",
+          "text": "Name and Surname"
+        },
+        {
+          "level": "H3",
+          "text": "Phone and Email Address"
+        },
+        {
+          "level": "H3",
+          "text": "Mobile Device Information"
+        },
+        {
+          "level": "H3",
+          "text": "Data Collected from Sites"
+        },
+        {
+          "level": "H3",
+          "text": "Communication Security"
+        },
+        {
+          "level": "H2",
+          "text": "Protecting ScadaWatt, our users, our clients and the public"
+        },
+        {
+          "level": "H2",
+          "text": "Legal Proceedings or Applicable Official Requests"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cerez",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "Cookie Policy | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Cookie Policy"
+        },
+        {
+          "level": "H2",
+          "text": "Contact form"
+        },
+        {
+          "level": "H2",
+          "text": "Information stored in your browser"
+        },
+        {
+          "level": "H2",
+          "text": "Administrator session"
+        },
+        {
+          "level": "H2",
+          "text": "Maps and external links"
+        },
+        {
+          "level": "H2",
+          "text": "Questions and enquiries"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/kullanim-kosullari",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "Kullanım Koşulları | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Terms of use"
+        },
+        {
+          "level": "H2",
+          "text": "Website information"
+        },
+        {
+          "level": "H2",
+          "text": "Google Maps content"
+        },
+        {
+          "level": "H2",
+          "text": "Contact and privacy"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/saha-yapilandirici",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "Site Configurator | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Let's start with your site."
+        },
+        {
+          "level": "H2",
+          "text": "Your facility"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/urunler/s3000i",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "S3000i — Data Acquisition | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "S3000i"
+        },
+        {
+          "level": "H2",
+          "text": "Data acquisition · Processing · Storage"
+        }
+      ],
+      "images": 3
+    },
+    {
+      "path": "/urunler/s4000mc",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "S4000MC — Multipurpose Control | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "S4000MC"
+        },
+        {
+          "level": "H2",
+          "text": "Versatile control · Custom applications"
+        }
+      ],
+      "images": 3
+    },
+    {
+      "path": "/urunler/lomr-07h",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "LOMR-07H — Grid Fault Detection | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "LOMR-07H"
+        },
+        {
+          "level": "H2",
+          "text": "Grid fault detection · Relay activation"
+        }
+      ],
+      "images": 3
+    },
+    {
+      "path": "/cozumler/enerji-yonetimi",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "Energy Management | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Energy Management"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/uzaktan-izleme",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "Remote Monitoring | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Remote Monitoring"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/yenilenebilir-enerji",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "Renewable Energy | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Renewable Energy"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/ges-izleme",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "Remote Solar PV Monitoring | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Remote Solar PV Monitoring"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/limit-yonetimi",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "Limit Management | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Limit Management"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/kompanzasyon",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "Power Factor Correction Monitoring and Control | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Power Factor Correction Monitoring and Control"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/zero-injection",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "Zero Injection | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Zero Injection"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/planli-uretim-durdurma",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "Scheduled Load Shedding | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Scheduled Load Shedding"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/bildirimler",
+      "language": "en",
+      "viewport": "desktop",
+      "title": "Real-Time Notifications | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Real-Time Notifications"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "Software, Electronics and Energy Technologies | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Stay connectedto your operations."
+        },
+        {
+          "level": "H2",
+          "text": "The right hardwarefor every task."
+        },
+        {
+          "level": "H3",
+          "text": "S3000i"
+        },
+        {
+          "level": "H2",
+          "text": "Technology acrossyour operations."
+        },
+        {
+          "level": "H3",
+          "text": "See the full picture of your energy."
+        },
+        {
+          "level": "H2",
+          "text": "Let’s discussyour project."
+        },
+        {
+          "level": "H2",
+          "text": "Before you get started."
+        }
+      ],
+      "images": 6
+    },
+    {
+      "path": "/cozumler",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "SCADA and Energy Management Solutions | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Solutions for energy and data."
+        },
+        {
+          "level": "H2",
+          "text": "Energy Management"
+        },
+        {
+          "level": "H2",
+          "text": "Remote Monitoring"
+        },
+        {
+          "level": "H2",
+          "text": "Renewable Energy"
+        },
+        {
+          "level": "H2",
+          "text": "Remote Solar PV Monitoring"
+        },
+        {
+          "level": "H2",
+          "text": "Limit Management"
+        },
+        {
+          "level": "H2",
+          "text": "Power Factor Correction Monitoring and Control"
+        },
+        {
+          "level": "H2",
+          "text": "Zero Injection"
+        },
+        {
+          "level": "H2",
+          "text": "Scheduled Load Shedding"
+        },
+        {
+          "level": "H2",
+          "text": "Real-Time Notifications"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/urunler",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "Data Acquisition and Control Hardware | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Hardware built for the field."
+        },
+        {
+          "level": "H2",
+          "text": "S3000i"
+        },
+        {
+          "level": "H2",
+          "text": "S4000MC"
+        },
+        {
+          "level": "H2",
+          "text": "LOMR-07H"
+        }
+      ],
+      "images": 3
+    },
+    {
+      "path": "/scada-yazilimi",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "SCADA Software and Remote Monitoring | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "ScadaWatt SCADA software."
+        },
+        {
+          "level": "H2",
+          "text": "Web platform and mobile app."
+        },
+        {
+          "level": "H3",
+          "text": "A closer look at your energy data."
+        },
+        {
+          "level": "H2",
+          "text": "Software capabilities"
+        },
+        {
+          "level": "H3",
+          "text": "Generation data from multiple sources"
+        },
+        {
+          "level": "H3",
+          "text": "Limit management"
+        },
+        {
+          "level": "H3",
+          "text": "Power factor correction control"
+        },
+        {
+          "level": "H3",
+          "text": "Billing verification"
+        },
+        {
+          "level": "H3",
+          "text": "Market clearing price (PTF)"
+        },
+        {
+          "level": "H3",
+          "text": "Real-time notifications"
+        },
+        {
+          "level": "H2",
+          "text": "The monitoring interface"
+        }
+      ],
+      "images": 1
+    },
+    {
+      "path": "/paketler",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "Monitoring Plans | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Choose the right plan for you."
+        },
+        {
+          "level": "H2",
+          "text": "NANO"
+        },
+        {
+          "level": "H2",
+          "text": "STANDART"
+        },
+        {
+          "level": "H2",
+          "text": "PRO"
+        },
+        {
+          "level": "H2",
+          "text": "Detailed comparison"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/hakkimizda",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "About us | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Manage your plant remotely, with complete and accurate data."
+        },
+        {
+          "level": "H2",
+          "text": "Technology shaped by field experience."
+        },
+        {
+          "level": "H3",
+          "text": "Software"
+        },
+        {
+          "level": "H3",
+          "text": "Electronics"
+        },
+        {
+          "level": "H3",
+          "text": "R&D"
+        },
+        {
+          "level": "H2",
+          "text": "Do You Know What You Lost Today?"
+        },
+        {
+          "level": "H2",
+          "text": "Making data visible. Bringing management together."
+        }
+      ],
+      "images": 1
+    },
+    {
+      "path": "/iletisim",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "Contact and Demo Requests | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Let’s find the right solution together."
+        },
+        {
+          "level": "H2",
+          "text": "Get in touch."
+        },
+        {
+          "level": "H2",
+          "text": "Explore ScadaWatt around your needs."
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/privacy-policy",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "Privacy Policy | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "SCADAWATT PRIVACY POLICY"
+        },
+        {
+          "level": "H2",
+          "text": "Information Generated While Using Our Services"
+        },
+        {
+          "level": "H3",
+          "text": "Your IP Address"
+        },
+        {
+          "level": "H3",
+          "text": "Name and Surname"
+        },
+        {
+          "level": "H3",
+          "text": "Phone and Email Address"
+        },
+        {
+          "level": "H3",
+          "text": "Mobile Device Information"
+        },
+        {
+          "level": "H3",
+          "text": "Data Collected from Sites"
+        },
+        {
+          "level": "H3",
+          "text": "Communication Security"
+        },
+        {
+          "level": "H2",
+          "text": "Protecting ScadaWatt, our users, our clients and the public"
+        },
+        {
+          "level": "H2",
+          "text": "Legal Proceedings or Applicable Official Requests"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cerez",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "Cookie Policy | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Cookie Policy"
+        },
+        {
+          "level": "H2",
+          "text": "Contact form"
+        },
+        {
+          "level": "H2",
+          "text": "Information stored in your browser"
+        },
+        {
+          "level": "H2",
+          "text": "Administrator session"
+        },
+        {
+          "level": "H2",
+          "text": "Maps and external links"
+        },
+        {
+          "level": "H2",
+          "text": "Questions and enquiries"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/kullanim-kosullari",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "Kullanım Koşulları | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Terms of use"
+        },
+        {
+          "level": "H2",
+          "text": "Website information"
+        },
+        {
+          "level": "H2",
+          "text": "Google Maps content"
+        },
+        {
+          "level": "H2",
+          "text": "Contact and privacy"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/saha-yapilandirici",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "Site Configurator | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Let's start with your site."
+        },
+        {
+          "level": "H2",
+          "text": "Your facility"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/urunler/s3000i",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "S3000i — Data Acquisition | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "S3000i"
+        },
+        {
+          "level": "H2",
+          "text": "Data acquisition · Processing · Storage"
+        }
+      ],
+      "images": 3
+    },
+    {
+      "path": "/urunler/s4000mc",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "S4000MC — Multipurpose Control | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "S4000MC"
+        },
+        {
+          "level": "H2",
+          "text": "Versatile control · Custom applications"
+        }
+      ],
+      "images": 3
+    },
+    {
+      "path": "/urunler/lomr-07h",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "LOMR-07H — Grid Fault Detection | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "LOMR-07H"
+        },
+        {
+          "level": "H2",
+          "text": "Grid fault detection · Relay activation"
+        }
+      ],
+      "images": 3
+    },
+    {
+      "path": "/cozumler/enerji-yonetimi",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "Energy Management | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Energy Management"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/uzaktan-izleme",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "Remote Monitoring | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Remote Monitoring"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/yenilenebilir-enerji",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "Renewable Energy | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Renewable Energy"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/ges-izleme",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "Remote Solar PV Monitoring | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Remote Solar PV Monitoring"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/limit-yonetimi",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "Limit Management | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Limit Management"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/kompanzasyon",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "Power Factor Correction Monitoring and Control | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Power Factor Correction Monitoring and Control"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/zero-injection",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "Zero Injection | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Zero Injection"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/planli-uretim-durdurma",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "Scheduled Load Shedding | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Scheduled Load Shedding"
+        }
+      ],
+      "images": 0
+    },
+    {
+      "path": "/cozumler/bildirimler",
+      "language": "en",
+      "viewport": "mobile",
+      "title": "Real-Time Notifications | ScadaWatt",
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Real-Time Notifications"
+        }
+      ],
+      "images": 0
+    }
+  ]
+}

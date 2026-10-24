@@ -283,6 +283,7 @@ export function FlightCanvas({
                 "A\u015Famalar\u0131 a\u015Fa\u011F\u0131daki d\u00FC\u011Fmelerle inceleyebilirsiniz.",
               )}
             </p>
+            <button type="button" onClick={()=>location.reload()}>{_tx("Yeniden dene")}</button>
             <CmsImage src={screenUrl} alt={_tx("ScadaWatt ger\u00E7ek uygulama ekran\u0131")} />
           </div>
         ),
@@ -315,14 +316,11 @@ const LoadingLandscape = memo(function LoadingLandscape() {
                     transform={`translate(${930 + index * 160} ${index === 1 ? 92 : 122}) scale(${index === 1 ? 1.14 : 0.92})`}
                   >
                     <path className="loader-tower" d="M0 0-12 224h24L0 0" />
-                    <foreignObject x="-112" y="-112" width="224" height="224" className="loader-rotor-window">
-                      <div className="loader-rotor-layer">
-                        <svg viewBox="-112 -112 224 224" width="224" height="224" aria-hidden="true">
-                          <circle r="9" />
-                          <path d="M0-8C-11-41-8-78 2-109c9 31 9 67 4 101M7 4c34-5 67 7 94 28-32 2-67-7-96-21M-7 4c-22 27-51 48-84 58 18-27 47-50 79-62" />
-                        </svg>
-                      </div>
-                    </foreignObject>
+                    <g className="loader-blades">
+                      <circle className="loader-rotation-anchor" r="112" />
+                      <circle r="9" />
+                      <path d="M0-8C-11-41-8-78 2-109c9 31 9 67 4 101M7 4c34-5 67 7 94 28-32 2-67-7-96-21M-7 4c-22 27-51 48-84 58 18-27 47-50 79-62" />
+                    </g>
                   </g>
                 ))}
               </svg>);
