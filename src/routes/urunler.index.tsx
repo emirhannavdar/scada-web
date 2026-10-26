@@ -9,7 +9,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { products } from "@/content/site";
 import { seo } from "@/lib/seo";
 export const Route = createFileRoute("/urunler/")({
-    head: () => seo("Ürünler", "ScadaWatt S3000i veri toplama cihazı, S4000MC çok amaçlı kontrol cihazı ve LOMR-07H şebeke izleme rölesi."),
+    head: () => seo("Veri Toplama ve Kontrol Donanımları", "ScadaWatt S3000i veri toplama cihazı, S4000MC çok amaçlı kontrol cihazı ve LOMR-07H şebeke izleme rölesi."),
     component: ProductsPage,
 });
 function ProductsPage() {

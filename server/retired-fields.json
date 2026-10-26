@@ -2578,5 +2578,19 @@
     "location": "Site geneli › Ortak metinler",
     "page": "/",
     "retired": true
+  },
+  {
+    "id": "copy.5dc80f6117ee88ae",
+    "target": "copy",
+    "source": "ScadaWatt: güneş enerji santralleri için uzaktan izleme, SCADA, veri toplama ve enerji yönetimi çözümleri.",
+    "group": "Sayfa metinleri",
+    "label": "ScadaWatt: güneş enerji santralleri için uzaktan izleme, SCADA, veri toplama ve enerji yön",
+    "kind": "text",
+    "default": {
+      "tr": "ScadaWatt: güneş enerji santralleri için uzaktan izleme, SCADA, veri toplama ve enerji yönetimi çözümleri.",
+      "en": "ScadaWatt: remote monitoring, SCADA, data acquisition and energy management solutions for solar power plants."
+    },
+    "location": "Site geneli › Ortak metinler",
+    "page": "/"
   }
 ]

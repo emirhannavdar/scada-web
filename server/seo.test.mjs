@@ -23,7 +23,7 @@ test('public SEO uses published pages, real HTTP 404, private noindex and contro
         r = await fetch(base + '/cozumler');
         assert.equal(r.status, 200);
         let html = await r.text();
-        assert.match(html, /<title>Çözümler \| ScadaWatt/);
+        assert.match(html, /<title>SCADA ve Enerji Yönetimi Çözümleri \| ScadaWatt/);
         assert.match(html, /https:\/\/example.test\/cozumler/);
         assert.equal((html.match(/name="description"/g) || []).length, 1);
         process.env.SITE_INDEXABLE = '1';

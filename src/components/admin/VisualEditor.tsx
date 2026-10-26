@@ -1,3 +1,6 @@
+import {PreflightPanel} from './PreflightPanel';
+import {prepareImageUpload} from '@/lib/image-upload';
+import {useUnsavedChanges} from '@/lib/unsaved-changes';
 import {CommunityEditor} from './CommunityEditor';
 import {COMMUNITY_FIELD} from '../../../shared/community.mjs';
 import {ConfiguratorEditor} from './ConfiguratorEditor';
@@ -85,6 +88,7 @@ export function VisualEditor({
   onClassic: (workspace: VisualWorkspace) => void;
   onUnauthorized: () => void;
 }) {
+  const [preflightOpen,setPreflightOpen]=useState(false);
   const [saved, setSaved] = useState(initial),
     [draft, setDraft] = useState(initial),
     [configuratorOpen,setConfiguratorOpen]=useState(false),
@@ -126,9 +130,9 @@ export function VisualEditor({
   const [messageText,setMessageText]=useState(''),[messageRecipients,setMessageRecipients]=useState<number[]>([]),[messageAll,setMessageAll]=useState(true);
   useEffect(()=>{
     let alive=true;
-    const refresh=()=>void api<{items:typeof messages}>('messages',csrf).then(result=>{if(alive)setMessages(result.items)}).catch(()=>undefined);
+    const refresh=()=>void api<{items:typeof messages}>('messages',csrf).then(result=>{if(alive&&Array.isArray(result.items))setMessages(result.items)}).catch(()=>undefined);
     refresh();const timer=window.setInterval(refresh,30000);
-    if(role==='root')void api<{items:typeof messageUsers}>('users',csrf).then(result=>{if(alive)setMessageUsers(result.items.filter(user=>user.role==='admin'))}).catch(()=>undefined);
+    if(role==='root')void api<{items:typeof messageUsers}>('users',csrf).then(result=>{if(alive&&Array.isArray(result.items))setMessageUsers(result.items.filter(user=>user.role==='admin'))}).catch(()=>undefined);
     return()=>{alive=false;clearInterval(timer)};
   },[csrf,role,notificationsOpen]);
   const stageRef = useRef<HTMLDivElement>(null);
@@ -169,6 +173,7 @@ export function VisualEditor({
     unpublished =
       canon(draft.values) !== canon(saved.published) ||
       canon(draft.collections) !== canon(saved.publishedCollections);
+  useUnsavedChanges(active && (dirty || recordEditing));
   dirtyRef.current = dirty || recordEditing;
   const device = mobile ? "mobile" : "desktop";
   const send = useCallback(
@@ -317,6 +322,7 @@ export function VisualEditor({
   useEffect(() => {
     void api<{ items: ApprovalNotice[] }>("approvals", csrf)
       .then(({ items }) => {
+        if(!Array.isArray(items))return;
         setApprovalNotices(items);
         const latest = items[0];
         setApprovalSent(role === "admin" && latest?.status === "pending");
@@ -484,7 +490,8 @@ export function VisualEditor({
     setPicker(false);
   }
   async function uploadImage(file: File) {
-    if (file.size > 8 * 1024 * 1024) throw Error("Görsel en fazla 8 MB olabilir.");
+    const optimized = await prepareImageUpload(file);
+    file = optimized.file;
     const item = await api<Media>("media", csrf, {
       method: "POST",
       body: file,
@@ -656,7 +663,7 @@ export function VisualEditor({
           <option value="tr">TR</option>
           <option value="en">EN</option>
         </select>
-        <div className="visual-top-actions">
+        <div className="visual-top-actions"><button disabled={busy||recordEditing} title="Taslağı yayınlamadan kontrol et" onClick={()=>setPreflightOpen(true)}><Check size={16}/><span>Yayın kontrolü</span></button>
           {role === "root" && (
             <button
               title="Kullanıcılar, görseller ve yayın geçmişi"
@@ -869,6 +876,7 @@ export function VisualEditor({
           </button>
         </div>
       )}
+      {preflightOpen&&<PreflightPanel workspace={draft} path={path} getDocument={()=>iframe.current?.contentDocument} onClose={()=>setPreflightOpen(false)} onNavigate={next=>{setPreflightOpen(false);void run(()=>navigate(next))}} onMobile={()=>{setPreflightOpen(false);void run(()=>switchDevice(true))}}/>}
       <div className={`visual-stage ${mobile ? "is-mobile" : ""}`} ref={stageRef}>
         <iframe
           style={{

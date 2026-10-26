@@ -2,10 +2,10 @@
   "pages": {
     "/cerez": {
       "title": "Çerez Politikası | ScadaWatt",
-      "description": "ScadaWatt web sitesi çerez politikası: tarayıcı depolaması, iletişim taslağı ve harita kullanımı."
+      "description": "ScadaWatt web sitesinde çerezler, tarayıcı depolaması, oturum bilgileri ve üçüncü taraf harita hizmetlerinin kullanımı hakkında bilgi alın."
     },
     "/cozumler": {
-      "title": "Çözümler | ScadaWatt",
+      "title": "SCADA ve Enerji Yönetimi Çözümleri | ScadaWatt",
       "description": "GES uzaktan izleme, limit yönetimi, kompanzasyon, zero injection, planlı yük atma, saatlik mahsuplaşma takibi ve anlık bildirim çözümleri."
     },
     "/hakkimizda": {
@@ -18,7 +18,7 @@
     },
     "/": {
       "title": "Yazılım, Elektronik ve Enerji Teknolojileri | ScadaWatt",
-      "description": "ScadaWatt: güneş enerji santralleri için uzaktan izleme, SCADA, veri toplama ve enerji yönetimi çözümleri."
+      "description": "ScadaWatt; SCADA yazılımı, veri toplama, uzaktan izleme ve enerji yönetimi çözümleri geliştirir. Yazılım ve elektronik ürünlerimizi keşfedin."
     },
     "/kullanim-kosullari": {
       "title": "Kullanım Koşulları | ScadaWatt",
@@ -37,11 +37,11 @@
       "description": "Saha cihazlarınızı, bağlantılarınızı ve önceliklerinizi belirleyin; ScadaWatt ekibiyle görüşmek için teknik bir ön değerlendirme hazırlayın."
     },
     "/scada-yazilimi": {
-      "title": "SCADA Yazılımı | ScadaWatt",
+      "title": "SCADA Yazılımı ve Uzaktan İzleme | ScadaWatt",
       "description": "ScadaWatt SCADA platformu: çok noktadan üretim verisi, limit ve kompanzasyon kontrolü, fatura doğrulama, PTF takibi ve anlık bildirimler."
     },
     "/urunler": {
-      "title": "Ürünler | ScadaWatt",
+      "title": "Veri Toplama ve Kontrol Donanımları | ScadaWatt",
       "description": "ScadaWatt S3000i veri toplama cihazı, S4000MC çok amaçlı kontrol cihazı ve LOMR-07H şebeke izleme rölesi."
     }
   },

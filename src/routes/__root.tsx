@@ -1,3 +1,5 @@
+import {ContentStatus} from '@/components/site/ContentStatus';
+import {applySeoMetadata} from '@/lib/seo';
 import {LaunchEssentials} from '@/components/site/LaunchEssentials';
 import { translate as _tx, useLocale as _useLocale } from '@/lib/i18n';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -14,7 +16,7 @@ export const Route = createRootRouteWithContext<{
     queryClient: QueryClient;
 }>()({ component: RootComponent, errorComponent: () => {
         _useLocale();
-        return <div className="not-found sw-wrap"><h1>{_tx("Sayfa y\u00FCklenemedi.")}</h1><p>{_tx("Sayfay\u0131 yenileyebilir veya ana sayfaya d\u00F6nebilirsiniz.")}</p><a href="/">{_tx("Ana sayfaya d\u00F6n\u00FCn \u2192")}</a></div>;
+        return <div className="not-found sw-wrap"><h1>{_tx("Sayfa y\u00FCklenemedi.")}</h1><p>{_tx("Sayfay\u0131 yenileyebilir veya ana sayfaya d\u00F6nebilirsiniz.")}</p><button type="button" onClick={()=>location.reload()}>{_tx("Yeniden dene")}</button><a href="/">{_tx("Ana sayfaya d\u00F6n\u00FCn \u2192")}</a></div>;
     }, notFoundComponent: () => {
         _useLocale();
         return <div className="launch-404 sw-wrap"><p>404</p><h1>{_tx("Sayfa bulunamadı.")}</h1><p>{_tx("Bu adres değişmiş veya kaldırılmış olabilir. Aşağıdaki bağlantılarla devam edebilirsiniz.")}</p><nav><Link to="/">{_tx("Ana sayfa")}</Link><Link to="/cozumler">{_tx("Çözümler")}</Link><Link to="/iletisim">{_tx("İletişim")}</Link></nav></div>;
@@ -33,13 +35,12 @@ function RootComponent() {
     useEffect(() => {
         const meta = matches.flatMap(m => m.meta ?? []);
         const title = [...meta].reverse().find(m => m && 'title' in m);
-        document.title = statusCode===404 ? _tx('Sayfa bulunamadı.')+' | ScadaWatt' : title && 'title' in title ? _tx(String(title.title)) : _tx('ScadaWatt — Yazılım ve Enerji Teknolojileri');
         const description = [...meta].reverse().find(m => m && 'name' in m && m.name === 'description');
-        const element = document.querySelector('meta[name="description"]');
-        if (description && 'content' in description)
-            element?.setAttribute('content', _tx(String(description.content)));
- for(const item of meta){if(item&&'property' in item&&'content' in item){document.querySelector(`meta[property="${item.property}"]`)?.setAttribute('content',_tx(String(item.content)));}}
+        applySeoMetadata(
+          statusCode===404 ? 'Sayfa bulunamadı. | ScadaWatt' : title && 'title' in title ? String(title.title) : 'ScadaWatt — Yazılım ve Enerji Teknolojileri',
+          statusCode===404 ? 'Aradığınız sayfa bulunamadı. ScadaWatt çözümlerini ve donanımlarını keşfedin.' : description && 'content' in description ? String(description.content) : 'ScadaWatt: SCADA yazılımı, veri toplama ve enerji yönetimi teknolojileri.'
+        );
     }, [matches, language,statusCode]);
     if(admin)return <QueryClientProvider client={queryClient}><Outlet/></QueryClientProvider>;
-    return <QueryClientProvider client={queryClient}><ExperienceProvider><a className="skip-link" href="#main">{_tx("\u0130\u00E7eri\u011Fe ge\u00E7")}</a><SiteHeader />{document.documentElement.dataset['cmsPreview']==='true'&&<div className="cms-preview-banner">{_tx("Taslak önizlemesi · Ziyaretçiler bu değişiklikleri görmez.")} <a href="/admin">{_tx("Yönetime dön")}</a></div>}<main id="main"><Outlet /><LaunchEssentials/></main><SiteFooter /><SiteDesign path={path}/>{document.documentElement.dataset['cmsPreview']==='true'&&<Suspense fallback={null}><PreviewReview/></Suspense>}{document.documentElement.dataset['cmsVisual']==='true'&&<Suspense fallback={null}><VisualBridge/></Suspense>}</ExperienceProvider></QueryClientProvider>;
+    return <QueryClientProvider client={queryClient}><ExperienceProvider><a className="skip-link" href="#main">{_tx("\u0130\u00E7eri\u011Fe ge\u00E7")}</a><SiteHeader /><ContentStatus/>{document.documentElement.dataset['cmsPreview']==='true'&&<div className="cms-preview-banner">{_tx("Taslak önizlemesi · Ziyaretçiler bu değişiklikleri görmez.")} <a href="/admin">{_tx("Yönetime dön")}</a></div>}<main id="main"><Outlet /><LaunchEssentials/></main><SiteFooter /><SiteDesign path={path}/>{document.documentElement.dataset['cmsPreview']==='true'&&<Suspense fallback={null}><PreviewReview/></Suspense>}{document.documentElement.dataset['cmsVisual']==='true'&&<Suspense fallback={null}><VisualBridge/></Suspense>}</ExperienceProvider></QueryClientProvider>;
 }

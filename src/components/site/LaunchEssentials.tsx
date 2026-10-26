@@ -13,14 +13,19 @@ export function LaunchEssentials(){
   const base=document.querySelector('meta[name="sw-origin"]')?.getAttribute('content')||(canonical?new URL(canonical.href).origin:location.origin);
   const roots=['/','/cozumler','/urunler','/scada-yazilimi','/saha-yapilandirici','/paketler','/hakkimizda','/iletisim','/privacy-policy','/gizlilik','/cerez','/kullanim-kosullari'];
   const valid=roots.includes(path)||products.some(p=>path==='/urunler/'+p.slug)||solutions.some(s=>path==='/cozumler/'+s.slug);
-  const preview=new URLSearchParams(location.search).has('cms-preview');
+  const query=new URLSearchParams(location.search);
+  const preview=query.has('cms-preview')||query.has('cms-edit')||document.documentElement.dataset['cmsPreview']==='true'||document.documentElement.dataset['cmsVisual']==='true';
   const robots=document.querySelector<HTMLMetaElement>('meta[name="robots"]');
   if(robots)robots.content=valid&&!preview&&document.querySelector('meta[name="sw-indexable"]')?.getAttribute('content')==='1'?'index,follow':'noindex,nofollow';
   if(!valid&&path!=='/kvkk')document.title=t('Sayfa bulunamadı.')+' | ScadaWatt';
   if(valid){const link=canonical||document.createElement('link');link.rel='canonical';link.href=base+path;if(!canonical)document.head.append(link)}else canonical?.remove();
   const product=products.find(p=>path==='/urunler/'+p.slug);
   const image=document.querySelector<HTMLMetaElement>('meta[property="og:image"]');
-  if(image)image.content=new URL(product?.image||images.wordmark,base).href;
+  const imageUrl=new URL(product?.image||images.wordmark,base).href;
+  if(image)image.content=imageUrl;
+  for(const [key,content] of [['twitter:image',imageUrl],['twitter:image:alt',t(product?.name||'ScadaWatt')]] as const){
+   let node=document.querySelector<HTMLMetaElement>('meta[name="'+key+'"]');if(!node){node=document.createElement('meta');node.name=key;document.head.append(node)}node.content=content;
+  }
   for(const [property,content] of [['og:title',document.title],['og:description',document.querySelector('meta[name="description"]')?.getAttribute('content')||''],['og:url',base+path]] as const){
    let node=document.querySelector<HTMLMetaElement>('meta[property="'+property+'"]');if(!node){node=document.createElement('meta');node.setAttribute('property',property);document.head.append(node)}node.content=content;
   }

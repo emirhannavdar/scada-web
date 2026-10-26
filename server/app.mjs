@@ -554,7 +554,7 @@ export async function createCmsApp({ dataDir = process.env["CMS_DATA_DIR"] || "d
                 return res.end();
             }
             if ((!extname(path) || path === '/index.html') && existsSync(join(dist, 'index.html'))) {
-                const privatePage = path.startsWith('/admin') || url.searchParams.has('cms-preview') || url.searchParams.has('cms-edit');
+                const privatePage = path === '/admin' || path.startsWith('/admin/') || url.searchParams.has('cms-preview') || url.searchParams.has('cms-edit');
                 const rendered = (await renderPage(readFileSync(join(dist, 'index.html'), 'utf8'), path === '/index.html' ? '/' : path, store, privatePage, req));
                 if (rendered.noindex)
                     res.setHeader('X-Robots-Tag', 'noindex, nofollow');

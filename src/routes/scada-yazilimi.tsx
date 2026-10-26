@@ -10,7 +10,7 @@ import { Cta } from "@/components/site/Cta";
 import { images } from "@/content/site";
 import { seo } from "@/lib/seo";
 export const Route = createFileRoute("/scada-yazilimi")({
-    head: () => seo("SCADA Yazılımı", "ScadaWatt SCADA platformu: çok noktadan üretim verisi, limit ve kompanzasyon kontrolü, fatura doğrulama, PTF takibi ve anlık bildirimler."),
+    head: () => seo("SCADA Yazılımı ve Uzaktan İzleme", "ScadaWatt SCADA platformu: çok noktadan üretim verisi, limit ve kompanzasyon kontrolü, fatura doğrulama, PTF takibi ve anlık bildirimler."),
     component: Scada,
 });
 const caps = [

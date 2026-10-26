@@ -77,3 +77,16 @@ html[data-theme="dark"] #root .site-footer{--footer-bg:#101c17;--footer-text:#ef
 @media(max-width:380px){#root .site-footer .footer-layout{grid-template-columns:1fr}#root .site-footer .footer-layout>div:first-child{grid-column:auto}}
 #root .film-header .language-switch{font-size:12px}
 @media(max-width:767px){#root .film-header .language-switch{font-size:11px}#root .site-footer .footer-layout a:not(.footer-logo-link){min-height:44px}}
+
+/* Reading sizes are separate from semantic heading levels. CMS overrides remain available. */
+#main :where(h1,h2,h3,h4,h5,h6){overflow-wrap:break-word}
+#main :is(.company-heading>p:not(.company-kicker),.about-introduction p,.about-pillars p,.software-app-frame>div>p,.mobile-home-description){font-size:1rem;line-height:1.8}
+#main :is(.policy-copy,.company-privacy){font-size:1rem;line-height:1.85}
+#main :is(.technical-table,.technical-table caption,.request-form label,.config-question legend){font-size:.9375rem;line-height:1.65}
+#main :is(.product-detail-hero p.text-sm,.product-detail-hero p.text-xs,.config-form>p){font-size:1rem;line-height:1.75}
+#main :is(.request-form,.config-form) :is(input:not([type=checkbox]):not([type=radio]),textarea,select){font-size:1rem}
+#main :is(.experience-kicker,.mobile-home-eyebrow){font-size:.75rem;line-height:1.6}
+@media(max-width:767px){
+ #main :is(.company-privacy,.policy-copy){font-size:1rem}
+ #main .mobile-home-actions a{font-size:.875rem}
+}

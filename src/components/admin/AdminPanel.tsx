@@ -1,3 +1,6 @@
+import {PreflightPanel} from './PreflightPanel';
+import {prepareImageUpload} from '@/lib/image-upload';
+import {useUnsavedChanges} from '@/lib/unsaved-changes';
 import {GoogleReviewsSettings} from './GoogleReviewsSettings';
 import {CommunityEditor} from './CommunityEditor';
 import {MailSettings} from './MailSettings';
@@ -289,7 +292,7 @@ export function AdminPanel({
     [notice, setNotice] = useState(""),
     [approvalSent, setApprovalSent] = useState(false),
     [view, setView] = useState<
-      "content" | "media" | "history" | "collections" | "users" | "approvals" | "configurator" | "community" | "mail" | "google"
+      "content" | "media" | "history" | "collections" | "users" | "approvals" | "configurator" | "community" | "mail" | "google" | "checks"
     >("content"),
     [media, setMedia] = useState<Media[]>([]),
     [versions, setVersions] = useState<Version[]>([]),
@@ -327,6 +330,7 @@ export function AdminPanel({
       (canonical(values) !== canonical(workspace.published) ||
         JSON.stringify(collections) !== JSON.stringify(workspace.publishedCollections ?? null)),
     );
+  useUnsavedChanges(!visual && (dirty || recordEditing));
   dirtyRef.current = dirty || recordEditing;
   useEffect(() => {
     const fn = (event: BeforeUnloadEvent) => {
@@ -598,7 +602,8 @@ export function AdminPanel({
     } else change(field, { tr: url, en: url });
   }
   async function upload(file: File) {
-    if (file.size > 8 * 1024 * 1024) throw Error("Görsel en fazla 8 MB olmalı.");
+    const optimized = await prepareImageUpload(file);
+    file = optimized.file;
     const item = await request<Media>(
       "media",
       {
@@ -757,7 +762,7 @@ export function AdminPanel({
             Sayfa üzerinde düzenle
           </button>
           <div className="cms-sidebar-label">ÇALIŞMA ALANI</div>
-          <nav aria-label="Yönetim bölümleri"><button className={view==="google"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("google");setSidebar(false)}}>Google yorum entegrasyonu</button><button className={view==="community"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("community");setSidebar(false)}}>SSS ve müşteri yorumları</button><button className={view==="mail"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("mail");setSidebar(false)}}>E-posta gönderimi</button><button className={view==="configurator"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("configurator");setSidebar(false)}}>Saha yapılandırıcısı</button>
+          <nav aria-label="Yönetim bölümleri"><button className={view==="checks"?"is-active":""} disabled={recordEditing} onClick={()=>{setView("checks");setSidebar(false)}}>Yayın kontrolü</button><button className={view==="google"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("google");setSidebar(false)}}>Google yorum entegrasyonu</button><button className={view==="community"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("community");setSidebar(false)}}>SSS ve müşteri yorumları</button><button className={view==="mail"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("mail");setSidebar(false)}}>E-posta gönderimi</button><button className={view==="configurator"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("configurator");setSidebar(false)}}>Saha yapılandırıcısı</button>
             <button
               className={view === "content" ? "is-active" : ""}
               onClick={() => {
@@ -909,7 +914,7 @@ export function AdminPanel({
               <div>
                 <p className="cms-eyebrow">SCADAWATT / EDİTÖR</p>
                 <h1>
-                  {view==="google" ? "Google yorum entegrasyonu." : view === "community" ? "SSS ve müşteri yorumları." : view==="mail" ? "E-posta gönderimi." : view === "configurator" ? "Saha yapılandırıcısı." : view === "media"
+                  {view==="checks" ? "Yayın öncesi kontrol." : view==="google" ? "Google yorum entegrasyonu." : view === "community" ? "SSS ve müşteri yorumları." : view==="mail" ? "E-posta gönderimi." : view === "configurator" ? "Saha yapılandırıcısı." : view === "media"
                     ? "Görselleriniz."
                     : view === "history"
                       ? "Yayın geçmişi."
@@ -940,6 +945,7 @@ export function AdminPanel({
                 <small>{view === "content" ? "yayından farklı alan" : "içerik arşivi"}</small>
               </span>
             </header>
+            {view==="checks"&&workspace&&<PreflightPanel workspace={{...workspace,values,...(collections?{collections}:{}),design}} onClose={()=>setView("content")}/>}
             {view==="configurator"&&workspace&&<ConfiguratorEditor value={String((values[CONFIGURATOR_FIELD]??workspace.catalog.fields.find(f=>f.id===CONFIGURATOR_FIELD)?.default)?.tr??"{}")} onApply={value=>setValues(old=>({...old,[CONFIGURATOR_FIELD]:{tr:value,en:value}}))} onEditingChange={setRecordEditing}/>}
             {view==="community"&&workspace&&auth.csrf&&<CommunityEditor csrf={auth.csrf} value={String((values[COMMUNITY_FIELD]??workspace.catalog.fields.find(f=>f.id===COMMUNITY_FIELD)?.default)?.tr??"{}")} onApply={value=>setValues(old=>({...old,[COMMUNITY_FIELD]:{tr:value,en:value}}))} onEditingChange={setRecordEditing}/>}
             {view==="google"&&auth.role==="root"&&auth.csrf&&<GoogleReviewsSettings csrf={auth.csrf} onEditingChange={setRecordEditing}/>}
