@@ -237,7 +237,7 @@ export async function createCmsApp({ dataDir = process.env["CMS_DATA_DIR"] || "d
                     return send(res, 200, {
                         authenticated: Boolean(s),
                         setupRequired: !(await store.db.prepare("SELECT id FROM cms_users WHERE role='root'").get()),
-                        ...(s ? { csrf: s.csrf, email: s.email, role: s.role } : {}),
+                        ...(s ? await security.status(req,s) : {}),
                     });
                 }
                 if (path === "/api/cms/login" && method === "POST") {

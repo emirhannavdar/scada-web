@@ -448,7 +448,7 @@ return await db.transaction(async()=>{
                 (await db.prepare("INSERT INTO cms_users(email,password,role,created) VALUES(?,?,'root',?)").run(email, hash, new Date().toISOString()));
             (await db.exec("DELETE FROM sessions; DELETE FROM attempts;"));
             await db.prepare("INSERT INTO security_events(created,actor,action,result,ip,agent,detail) VALUES(?,?,'password.reset_cli','success','','server','{}')").run(Date.now(),email);
-            await db.exec('DELETE FROM security_challenges;');
+            await db.exec('DELETE FROM security_challenges; DELETE FROM security_devices;');
         }));
     }
     async function upsertUser(email, password, role = "admin") {
@@ -470,6 +470,8 @@ return await db.transaction(async()=>{
             throw new CmsError(400, "Şifre gereklidir.");
         (await db.prepare("INSERT INTO cms_users(email,password,role,created) VALUES(?,?,?,?) ON CONFLICT(email) DO UPDATE SET password=excluded.password,role=excluded.role").run(email, hash, role, existing?.created || new Date().toISOString()));
         (await db.prepare("DELETE FROM sessions WHERE email=?").run(email));
+        await db.prepare('DELETE FROM security_devices WHERE user_id IN (SELECT id FROM cms_users WHERE email=?)').run(email);
+        await db.prepare('DELETE FROM security_challenges WHERE user_id IN (SELECT id FROM cms_users WHERE email=?)').run(email);
         return (await db.prepare("SELECT id,email,role,created FROM cms_users WHERE email=?").get(email));
     
 });

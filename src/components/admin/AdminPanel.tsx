@@ -1,4 +1,4 @@
-import {AuthPassword,AuthCode} from './AuthFields';
+import {AuthPassword,AuthCode,type FactorType} from './AuthFields';
 import {SessionSecurity} from './SessionSecurity';
 import {SecurityPanel} from './SecurityPanel';
 import {adminFetch,requestSessionProof} from '@/lib/admin-security';
@@ -90,6 +90,7 @@ type Session = {
   authenticated: boolean;
   setupRequired?: boolean;
   mfaRequired?: boolean;
+  mfaEnrollmentRequired?: boolean;
   csrf?: string;
   email?: string;
   role?: "root" | "admin";
@@ -279,7 +280,7 @@ function FieldEditor({
 export function AdminPanel({
   initialMode = "visual",
 }: { initialMode?: "visual" | "classic" } = {}) {
-  const [securityOpen,setSecurityOpen]=useState(false),[mfaPending,setMfaPending]=useState(false),[mfaCode,setMfaCode]=useState("");
+  const [securityOpen,setSecurityOpen]=useState(false),[mfaPending,setMfaPending]=useState(false),[mfaCode,setMfaCode]=useState(""),[factorType,setFactorType]=useState<FactorType>("totp");
   useEffect(()=>{const open=()=>setSecurityOpen(true);window.addEventListener("scadawatt:open-security",open);return()=>window.removeEventListener("scadawatt:open-security",open)},[]);
   const [visualRequested, setVisual] = useState(initialMode === "visual");
   const [visualMounted, setVisualMounted] = useState(initialMode === "visual");
@@ -381,7 +382,7 @@ export function AdminPanel({
         const s = await request<Session>("session");
         if (!active) return;
         setAuth(s);
-        if (s.authenticated) {
+        if (s.authenticated && !s.mfaEnrollmentRequired) {
           const w = await request<Workspace>("workspace?device=desktop");
           if (active) loaded(w);
         }
@@ -595,13 +596,13 @@ export function AdminPanel({
     try { await action(async () => {
       const s = await request<Session>(mfaPending?"security/mfa/login":"login", {
         method: "POST",
-        body: JSON.stringify(mfaPending?{code:mfaCode}:{email,password}),
+        body: JSON.stringify(mfaPending?{code:mfaCode,type:factorType}:{email,password}),
       });
-      if(s.mfaRequired&&!s.authenticated){setMfaPending(true);setMfaCode("");setPassword("");return;}
+      if(s.mfaRequired&&!s.authenticated){setMfaPending(true);setMfaCode("");setFactorType("totp");setPassword("");return;}
       setMfaPending(false);setMfaCode("");
       setAuth(s);
       setPassword("");
-      loaded(await request<Workspace>("workspace?device=desktop"));
+      if(!s.mfaEnrollmentRequired)loaded(await request<Workspace>("workspace?device=desktop"));
     }); } finally { loginLock.current=false; }
   }
   function selectImage(field: Field, url: string) {
@@ -692,7 +693,7 @@ export function AdminPanel({
                 </label>
                 <AuthPassword value={password} onChange={setPassword} disabled={busy}/>
 </>}
-                {mfaPending&&<div data-mfa-pending="true"><AuthCode value={mfaCode} onChange={setMfaCode} busy={busy} label="Doğrulama veya kurtarma kodu"/><button className="auth-mode" type="button" disabled={busy} onClick={()=>{setMfaPending(false);setMfaCode("");setError("")}}>Şifreyle yeniden başla</button></div>}
+                {mfaPending&&<div data-mfa-pending="true"><AuthCode value={mfaCode} onChange={setMfaCode} busy={busy} type={factorType} onTypeChange={setFactorType} label="6 haneli doğrulama kodu"/><button className="auth-mode" type="button" disabled={busy} onClick={()=>{setMfaPending(false);setMfaCode("");setError("")}}>Şifreyle yeniden başla</button></div>}
                 <button className="cms-primary" disabled={busy}>
                   {busy ? <Busy /> : <ArrowUpRight size={18} />}{mfaPending?"Kodu doğrula":"Giriş yap"}
                 </button>
@@ -708,9 +709,10 @@ export function AdminPanel({
         </div>
       </main>
     );
+  if(auth.mfaEnrollmentRequired)return <><SessionSecurity session={auth} onRenew={setAuth}/><SecurityPanel session={auth} enrollment onClose={()=>void action(async()=>{const s=await request<Session>('session');if(s.mfaEnrollmentRequired)return;setAuth(s);loaded(await request<Workspace>('workspace?device=desktop'))})}/></>;
   const visualSurface =
     (visualMounted || auth.role === "admin") && workspace && auth.csrf ? (
-      <div style={{ display: visual ? "block" : "none" }}>
+      <div style={{ display: visual && !securityOpen ? "block" : "none" }}>
         <VisualEditor
           initial={workspace}
           active={visual}
@@ -733,7 +735,7 @@ export function AdminPanel({
       <SessionSecurity session={auth} onRenew={setAuth}/>
       {securityOpen&&<SecurityPanel session={auth} onClose={()=>setSecurityOpen(false)}/>}
       {visualSurface}
-      {auth.role === "root" && <div className="cms-app" style={{ display: visual ? "none" : undefined }}>
+      {auth.role === "root" && <div className="cms-app" style={{ display: visual || securityOpen ? "none" : undefined }}>
         <input
           ref={uploadRef}
           hidden

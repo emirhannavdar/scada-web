@@ -5,7 +5,7 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {randomBytes} from 'node:crypto';
 import {createCmsApp} from './app.mjs';
-import {base32,totp,matchingCounter,encryptSecret,decryptSecret,proxyPolicy,clientIp,recoveryHash} from './security-core.mjs';
+import {hash,base32,totp,matchingCounter,encryptSecret,decryptSecret,proxyPolicy,clientIp,recoveryHash} from './security-core.mjs';
 const password='Test-Root-Password-2026!';
 async function fixture(){
  const dir=mkdtempSync(join(tmpdir(),'scadawatt-security-'));let now=Date.now();
@@ -17,7 +17,7 @@ async function fixture(){
   const data=await response.json();if(data.authenticated&&data.csrf)csrf=data.csrf;return {response,data};
  }
  const login=(email='root@example.test',pw=password,headers={})=>call('/api/cms/login',{method:'POST',body:{email,password:pw},headers});
- async function enroll(){await login();const setup=await call('/api/cms/security/mfa/setup',{method:'POST',body:{}});assert.equal(setup.response.status,200);const confirm=await call('/api/cms/security/mfa/confirm',{method:'POST',body:{code:totp(setup.data.secret,Math.floor(now/30000))}});assert.equal(confirm.response.status,200);return {...setup.data,...confirm.data}}
+ async function enroll(){await login();const setup=await call('/api/cms/security/mfa/setup',{method:'POST',body:{}});assert.equal(setup.response.status,200);const confirm=await call('/api/cms/security/mfa/confirm',{method:'POST',body:{code:totp(setup.data.secret,Math.floor(now/30000))}});assert.equal(confirm.response.status,200);jar.delete('sw_device');return {...setup.data,...confirm.data}}
  return {...app,dir,call,login,enroll,jar,now:()=>now,advance:ms=>{now+=ms},close:async()=>{await new Promise(resolve=>app.server.close(resolve));await app.store.close();rmSync(dir,{recursive:true,force:true})}};
 }
 test('TOTP matches the RFC vector, rejects replay, and authenticated encryption detects changes',()=>{
@@ -55,7 +55,7 @@ test('MFA stays inactive until confirmation, then requires a non-replayed code a
   const confirmed=await f.call('/api/cms/security/mfa/confirm',{method:'POST',body:{code:totp(first.data.secret,Math.floor(f.now()/30000))}});assert.equal(confirmed.response.status,200);assert.equal(confirmed.data.recoveryCodes.length,10);assert.equal((await f.call('/api/cms/security/status',{cookie:previousCookie})).response.status,401);
   assert(existsSync(join(f.dir,'security.key')));assert.equal(readFileSync(join(f.dir,'security.key')).length,32);
   const row=await f.store.db.prepare('SELECT * FROM security_mfa').get();assert(!row.secret.includes(first.data.secret));assert(!row.recovery.includes(confirmed.data.recoveryCodes[0]));
-  const partial=await f.login();assert.equal(partial.data.authenticated,false);assert.equal(partial.data.mfaRequired,true);assert(!f.jar.has('sw_admin'));assert.equal((await f.call('/api/cms/workspace')).response.status,401);
+  f.jar.delete('sw_device');const partial=await f.login();assert.equal(partial.data.authenticated,false);assert.equal(partial.data.mfaRequired,true);assert(!f.jar.has('sw_admin'));assert.equal((await f.call('/api/cms/workspace')).response.status,401);
   assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{code:totp(first.data.secret,Math.floor(f.now()/30000))}})).response.status,400);
   f.advance(30000);const verified=await f.call('/api/cms/security/mfa/login',{method:'POST',body:{code:totp(first.data.secret,Math.floor(f.now()/30000))}});assert.equal(verified.response.status,200);assert.equal(verified.data.authenticated,true);
   assert.equal((await f.call('/api/cms/security/status')).data.mfaEnabled,true);
@@ -63,12 +63,12 @@ test('MFA stays inactive until confirmation, then requires a non-replayed code a
 });
 test('recovery codes are single-use and challenge validation cannot be bypassed',async()=>{
  const f=await fixture();try{
-  const enrolled=await f.enroll();await f.login();assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{code:enrolled.recoveryCodes[0]}})).response.status,200);
+  const enrolled=await f.enroll();await f.login();assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{type:'recovery',code:enrolled.recoveryCodes[0]}})).response.status,200);
   assert.equal((await f.call('/api/cms/security/status')).data.recoveryRemaining,9);
-  await f.login();assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{code:enrolled.recoveryCodes[0]}})).response.status,400);
-  f.advance(300001);assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{code:enrolled.recoveryCodes[1]}})).response.status,401);
+  f.jar.delete('sw_device');await f.login();assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{type:'recovery',code:enrolled.recoveryCodes[0]}})).response.status,400);
+  f.advance(300001);assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{type:'recovery',code:enrolled.recoveryCodes[1]}})).response.status,401);
   const row=await f.store.db.prepare('SELECT recovery FROM security_mfa').get();assert.equal(JSON.parse(row.recovery).includes(recoveryHash(enrolled.recoveryCodes[1])),true);
-  await f.login();await f.store.upsertUser('root@example.test','Changed-Root-Password!','root');assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{code:enrolled.recoveryCodes[1]}})).response.status,401);
+  await f.login();await f.store.upsertUser('root@example.test','Changed-Root-Password!','root');assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{type:'recovery',code:enrolled.recoveryCodes[1]}})).response.status,401);
  }finally{await f.close()}
 });
 test('root inactivity expires sessions; recent authentication is required and rotates the token',async()=>{
@@ -86,7 +86,7 @@ test('admins cannot access root MFA/audit or other users sessions; root can revo
  const f=await fixture();try{
   await f.login();const rootCookie='sw_admin='+f.jar.get('sw_admin');const rootSessions=(await f.call('/api/cms/security/sessions')).data.items;assert.equal(rootSessions.length,1);assert(!('token'in rootSessions[0]));
   await f.store.upsertUser('admin@example.test','Test-Editor-Password!','admin');await f.call('/api/cms/login',{method:'POST',cookie:'',body:{email:'admin@example.test',password:'Test-Editor-Password!'}});
-  for(const path of ['events','mfa/setup'])assert.equal((await f.call('/api/cms/security/'+path,path==='events'?{}:{method:'POST',body:{}})).response.status,403);
+  assert.equal((await f.call('/api/cms/security/events')).response.status,403);assert.equal((await f.call('/api/cms/security/mfa/setup',{method:'POST',body:{}})).response.status,200);
   const sessions=await f.call('/api/cms/security/sessions');assert(sessions.data.items.every(row=>row.email==='admin@example.test'));
   assert.equal((await f.call('/api/cms/security/sessions/revoke',{method:'POST',body:{id:rootSessions[0].id}})).response.status,404);
   await f.call('/api/cms/login',{method:'POST',cookie:'',body:{email:'root@example.test',password}});const all=(await f.call('/api/cms/security/sessions')).data.items;const admin=all.find(row=>row.role==='admin');assert(admin);assert.equal((await f.call('/api/cms/security/sessions/revoke',{method:'POST',body:{id:admin.id}})).response.status,200);
@@ -99,5 +99,32 @@ test('security history records content operations without passwords, OTPs, seeds
   const save=await f.call('/api/cms/draft',{method:'PUT',body:{device:'desktop',revision:w.data.revision,values:w.data.values,collections:w.data.collections,design:w.data.design}});assert.equal(save.response.status,200);
   await new Promise(resolve=>setTimeout(resolve,50));const log=await f.call('/api/cms/security/events');assert.equal(log.response.status,200);assert(log.data.items.some(row=>row.action==='content.draft_saved'));assert(log.data.items.some(row=>row.action==='mfa.enabled'));
   const serialized=JSON.stringify(log.data);for(const secret of [password,enrolled.secret,...enrolled.recoveryCodes,token])assert(!serialized.includes(secret));
+ }finally{await f.close()}
+});
+
+test('factor modes are strict; TOTP is rejected as recovery and recovery is rejected as TOTP',async()=>{
+ const f=await fixture();try{const enrolled=await f.enroll();f.advance(30000);await f.login();const code=totp(enrolled.secret,Math.floor(f.now()/30000));
+ assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{type:'recovery',code}})).response.status,400);
+ assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{type:'totp',code:enrolled.recoveryCodes[0]}})).response.status,400);
+ assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{type:'totp',code}})).response.status,200);
+ }finally{await f.close()}
+});
+test('remembered device requires password, device cookie, matching IP/agent, and expires in ten fixed minutes',async()=>{
+ const f=await fixture();try{const enrolled=await f.enroll();f.advance(30000);await f.login();await f.call('/api/cms/security/mfa/login',{method:'POST',body:{type:'totp',code:totp(enrolled.secret,Math.floor(f.now()/30000))}});const device=f.jar.get('sw_device');assert(device);const row=await f.store.db.prepare('SELECT * FROM security_devices WHERE token=?').get(hash(device));assert.notEqual(row.token,device);assert.equal(row.expires,f.now()+600000);
+ await f.call('/api/cms/logout',{method:'POST',body:{}});assert.equal(f.jar.get('sw_device'),device);assert.equal((await f.login('root@example.test','wrong')).response.status,401);assert.equal((await f.login()).data.authenticated,true);
+ assert.equal((await f.login('root@example.test',password,{'X-Real-IP':'203.0.113.11'})).data.mfaRequired,true);assert.equal((await f.login('root@example.test',password,{'User-Agent':'Other Browser'})).data.mfaRequired,true);
+ f.jar.delete('sw_device');assert.equal((await f.login()).data.mfaRequired,true);f.jar.set('sw_device',device);f.advance(599999);assert.equal((await f.login()).data.authenticated,true);assert.equal((await f.store.db.prepare('SELECT expires FROM security_devices WHERE token=?').get(hash(device))).expires,row.expires);f.advance(2);assert.equal((await f.login()).data.mfaRequired,true);
+ }finally{await f.close()}
+});
+test('admin must enroll its own MFA before editing, then uses the same ten-minute device rule',async()=>{
+ const f=await fixture();try{await f.store.upsertUser('admin@example.test','Test-Editor-Password!','admin');const login=()=>f.login('admin@example.test','Test-Editor-Password!');assert.equal((await login()).data.mfaEnrollmentRequired,true);assert.equal((await f.call('/api/cms/workspace')).response.status,403);assert.equal((await f.call('/api/cms/security/events')).response.status,403);
+ const setup=await f.call('/api/cms/security/mfa/setup',{method:'POST',body:{}});assert.equal(setup.response.status,200);assert.equal((await f.call('/api/cms/security/mfa/confirm',{method:'POST',body:{code:totp(setup.data.secret,Math.floor(f.now()/30000))}})).response.status,200);assert.equal((await f.call('/api/cms/workspace')).response.status,200);
+ await f.call('/api/cms/logout',{method:'POST',body:{}});assert.equal((await login()).data.authenticated,true);await f.call('/api/cms/logout',{method:'POST',body:{}});f.advance(600001);assert.equal((await login()).data.mfaRequired,true);f.advance(30000);assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{type:'totp',code:totp(setup.data.secret,Math.floor(f.now()/30000))}})).response.status,200);await f.call('/api/cms/logout',{method:'POST',body:{}});assert.equal((await login()).data.authenticated,true);assert.equal((await f.call('/api/cms/security/events')).response.status,403);
+ await f.store.upsertUser('admin@example.test','Changed-Editor-Password!','admin');assert.equal((await f.login('admin@example.test','Changed-Editor-Password!')).data.mfaRequired,true);
+ }finally{await f.close()}
+});
+test('event filters combine category, action, result, actor, IP and dates without leaking other records',async()=>{
+ const f=await fixture();try{await f.login();await f.login('root@example.test','wrong');const q=new URLSearchParams({category:'auth',action:'auth.password_failed',result:'failure',actor:'ROOT@example.test',ip:'203.0.113.10',from:String(f.now()-1000),to:String(f.now()+1000)});const filtered=await f.call('/api/cms/security/events?'+q);assert.equal(filtered.response.status,200);assert.equal(filtered.data.items.length,1);assert(filtered.data.items.every(row=>row.action==='auth.password_failed'&&row.result==='failure'));
+ q.set('ip','198.51.100.10');assert.equal((await f.call('/api/cms/security/events?'+q)).data.items.length,0);assert.equal((await f.call('/api/cms/security/events?category=constructor')).response.status,200);
  }finally{await f.close()}
 });
