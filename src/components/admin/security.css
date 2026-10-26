@@ -23,3 +23,28 @@
 .security-proof .security-actions{align-items:center;margin-bottom:0}
 :is(.cms-login-layout,.security-proof) :is(.cms-error,.security-error){font:400 13px/1.7 system-ui,sans-serif;overflow-wrap:anywhere;margin-top:18px}
 @media(max-width:480px){.cms-login-layout form{padding:25px 20px}.auth-field{margin:18px 0}}
+
+/* One accessible input with six numeric cells or five recovery groups. */
+.auth-code-boxes{position:relative;min-width:0}
+.auth-code-cells{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:9px}
+.auth-code-cells>span{display:flex;align-items:center;justify-content:center;height:64px;min-width:0;border:1px solid #b9c8be;border-radius:9px;background:#fff;font:500 28px/1 ui-monospace,SFMono-Regular,Consolas,monospace;color:#20392e;box-shadow:0 1px 2px #20392e08}
+.auth-code-cells>.has-value{background:#f4f8f3;border-color:#8da998}
+.auth-code-boxes.is-focused .auth-code-cells>.is-current{border-color:#285f45;box-shadow:0 0 0 3px #32674e1a}
+.auth-code-boxes.is-recovery .auth-code-cells{grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
+.auth-code-boxes.is-recovery .auth-code-cells>span{font-size:clamp(12px,1.7vw,17px);height:58px;letter-spacing:.015em}
+:is(.cms-login-layout,.security-proof,.security-panel) .auth-code-boxes>input{position:absolute;inset:0;z-index:1;width:100%;height:100%;padding:0;margin:0;opacity:0;cursor:text;font-size:16px;letter-spacing:0}
+.security-page{min-height:100dvh;display:grid;grid-template-columns:250px minmax(0,1fr);background:#f3f5ef;color:#20392e;font:14px/1.6 Inter,system-ui,sans-serif;color-scheme:light}
+.security-page-sidebar{position:sticky;top:0;height:100dvh;display:flex;flex-direction:column;gap:12px;padding:30px 24px;background:#fff;border-right:1px solid #dce3dc;overflow:auto;overflow-wrap:anywhere}
+.security-page-brand{margin-bottom:32px}.security-page-brand img{width:170px;max-width:100%;height:auto}
+.security-page-sidebar>p{font-size:10px;letter-spacing:.12em;color:#7c8b81}.security-page-sidebar>strong{font-size:13px}.security-page-sidebar>span{color:#6b7e71;font-size:12px}
+.security-page-sidebar>button{margin:20px 0 0;background:#eaf1e8;border:1px solid #d1ddd2;border-radius:6px;padding:12px;color:#234b37;text-align:left;font:500 13px/1.5 system-ui;cursor:pointer}.security-page-sidebar>button:disabled{opacity:.5;cursor:not-allowed}.security-page-sidebar>a:last-child{margin-top:auto;padding-top:25px;color:#4c6c57;font-size:13px}
+.security-panel.security-page-main{width:100%;max-width:1280px;max-height:none;margin:0 auto;padding:44px clamp(22px,4vw,64px);border:0;border-radius:0;box-shadow:none;background:transparent;overflow:visible;box-sizing:border-box}
+.security-page-main .security-summary{background:#fff;border:1px solid #dce3dc;border-left:3px solid #285f45;border-radius:8px;padding:24px}.security-page-main .security-tabs{margin:30px 0}.security-page-main .security-section{max-width:1040px}
+.security-filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:25px 0;padding:22px;background:#fff;border:1px solid #dce3dc;border-radius:9px}
+.security-panel .security-filters label{margin:0;gap:6px}.security-filters .security-actions{grid-column:1/-1;margin:4px 0 0}
+.security-panel :is(select,input[type=date],input[type=search]){min-width:0;width:100%;min-height:44px;border:1px solid #adbcaf;border-radius:6px;font:14px/1.5 system-ui;padding:9px 10px;background:#fff;color:#20392e;box-sizing:border-box}
+.security-page-main .security-event-list article{grid-template-columns:minmax(0,1fr) auto;align-items:start;padding:20px;gap:10px 20px}.security-event-list article>div>p{margin:5px 0 0;font-size:13px}.security-event-list .security-event-meta{grid-column:1/-1;display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:#63796b}.security-event-list details{grid-column:1/-1;font-size:12px;color:#63796b}.security-event-list details summary{cursor:pointer;list-style:revert}
+.security-event-list span.security-result{padding:4px 10px;border-radius:20px;font:600 11px/1.6 system-ui;background:#edf5eb;color:#2c633c;white-space:nowrap}.security-event-list span.security-result.is-failure{background:#fff0e8;color:#93442c}.security-event-list span.security-result.is-blocked{background:#fbebeb;color:#943d3d}
+@media(max-width:1000px){.security-page{grid-template-columns:210px minmax(0,1fr)}.security-filters{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.security-page{display:block}.security-page-sidebar{position:static;height:auto;padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:8px}.security-page-brand{margin:0}.security-page-brand img{width:140px}.security-page-sidebar>p,.security-page-sidebar>strong,.security-page-sidebar>span,.security-page-sidebar>a:last-child{display:none}.security-page-sidebar>button{margin:0;font-size:12px}.security-panel.security-page-main{padding:28px 18px}.security-page-main>header{display:block}.security-page-main>header>button{display:none}.security-filters{padding:16px;gap:12px}.security-page-main .security-tabs button{font-size:12px}.auth-code-cells{gap:6px}.auth-code-cells>span{height:56px;font-size:25px}}
+@media(max-width:380px){.security-filters{grid-template-columns:1fr}.auth-code-boxes.is-recovery .auth-code-cells{gap:4px}}

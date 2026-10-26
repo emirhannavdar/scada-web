@@ -5,6 +5,11 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createCmsApp } from './app.mjs';
 import { openStore } from './store.mjs';
+import {totp} from './security-core.mjs';
+async function enrollEditor(base,headers){
+ const setup=await fetch(base+'/api/cms/security/mfa/setup',{method:'POST',headers,body:'{}'});assert.equal(setup.status,200);const {secret}=await setup.json();
+ const confirmed=await fetch(base+'/api/cms/security/mfa/confirm',{method:'POST',headers,body:JSON.stringify({code:totp(secret,Math.floor(Date.now()/30000))})});assert.equal(confirmed.status,200);
+}
 test('theme-scoped styles persist independently and validate mobile limits', async () => {
     const { emptyDesign, designKey, validateDesign } = await import('../shared/design.mjs');
     const design = emptyDesign(), selector = '#main > footer:nth-of-type(1) > p:nth-of-type(1)', key = designKey('/', selector);
@@ -26,6 +31,7 @@ test('root messages target selected admins or all admins and remain private', as
         assert.equal((await f.call('/api/cms/messages', { method: 'POST', data: { message: 'Herkese bilgi.', recipients: 'all' } })).json.sent, 2);
         const login = await fetch(f.base + '/api/cms/login', { method: 'POST', headers: { Origin: f.base, 'Content-Type': 'application/json' }, body: JSON.stringify({ email: a.email, password: 'Editor-Password-4901' }) });
         const session = await login.json(), headers = { Cookie: login.headers.get('set-cookie').split(';')[0], 'X-CSRF-Token': session.csrf, Origin: f.base, 'Content-Type': 'application/json' };
+        await enrollEditor(f.base,headers);
         const own = await (await fetch(f.base + '/api/cms/messages', { headers })).json();
         assert.equal(own.items.length, 2);
         assert.ok(own.items.every(item => item.recipient === a.email));
@@ -40,7 +46,7 @@ test('root messages target selected admins or all admins and remain private', as
         f.cleanup();
     }
 });
-test('admin first login can edit drafts but cannot access root management APIs', async () => {
+test('admin after MFA enrollment can edit drafts but cannot access root management APIs', async () => {
     const f = await fixture();
     try {
         await f.store.createAdmin('root@example.com', 'Root-Test-Password-4901');
@@ -58,7 +64,7 @@ test('admin first login can edit drafts but cannot access root management APIs',
         f.cleanup();
     }
 });
-async function fixture() { const dir = mkdtempSync(join(tmpdir(), 'sw-cms-')), app = (await createCmsApp({ dataDir: dir })); await new Promise(resolve => app.server.listen(0, '127.0.0.1', resolve)); const base = 'http://127.0.0.1:' + app.server.address().port; let cookie = '', csrf = ''; async function call(path, { method = 'GET', data, raw, withAuth = true, withCsrf = true, origin = base, headers = {} } = {}) { const response = await fetch(base + path, { method, headers: { ...(data ? { 'Content-Type': 'application/json' } : {}), ...(method !== 'GET' && origin !== null ? { Origin: origin } : {}), ...(withAuth && cookie ? { Cookie: cookie } : {}), ...(withCsrf && csrf ? { 'X-CSRF-Token': csrf } : {}), ...headers }, ...(data ? { body: JSON.stringify(data) } : raw ? { body: raw } : {}) }); const json = String(response.headers.get('content-type')).includes('application/json') ? await response.json() : null; return { response, json }; } async function login() { const r = await call('/api/cms/login', { method: 'POST', data: { email: 'admin@example.com', password: 'Long-Test-Password-4901' } }); assert.equal(r.response.status, 200); cookie = r.response.headers.get('set-cookie').split(';')[0]; csrf = r.json.csrf; assert.match(r.response.headers.get('set-cookie'), /HttpOnly; SameSite=Strict/); } async function close() { await new Promise(r => app.server.close(r)); (await app.store.close()); } return { ...app, dir, base, call, login, close, cleanup: () => rmSync(dir, { recursive: true, force: true }) }; }
+async function fixture() { const dir = mkdtempSync(join(tmpdir(), 'sw-cms-')), app = (await createCmsApp({ dataDir: dir })); await new Promise(resolve => app.server.listen(0, '127.0.0.1', resolve)); const base = 'http://127.0.0.1:' + app.server.address().port; let cookie = '', csrf = ''; async function call(path, { method = 'GET', data, raw, withAuth = true, withCsrf = true, origin = base, headers = {} } = {}) { const response = await fetch(base + path, { method, headers: { ...(data ? { 'Content-Type': 'application/json' } : {}), ...(method !== 'GET' && origin !== null ? { Origin: origin } : {}), ...(withAuth && cookie ? { Cookie: cookie } : {}), ...(withCsrf && csrf ? { 'X-CSRF-Token': csrf } : {}), ...headers }, ...(data ? { body: JSON.stringify(data) } : raw ? { body: raw } : {}) }); const json = String(response.headers.get('content-type')).includes('application/json') ? await response.json() : null; return { response, json }; } async function login() { const r = await call('/api/cms/login', { method: 'POST', data: { email: 'admin@example.com', password: 'Long-Test-Password-4901' } }); assert.equal(r.response.status, 200); cookie = r.response.headers.get('set-cookie').split(';')[0]; csrf = r.json.csrf;if(r.json.mfaEnrollmentRequired)await enrollEditor(base,{Cookie:cookie,'X-CSRF-Token':csrf,Origin:base,'Content-Type':'application/json'}); assert.match(r.response.headers.get('set-cookie'), /HttpOnly; SameSite=Strict/); } async function close() { await new Promise(r => app.server.close(r)); (await app.store.close()); } return { ...app, dir, base, call, login, close, cleanup: () => rmSync(dir, { recursive: true, force: true }) }; }
 test('authentication, CSRF, persistent publish, preview and rollback stay isolated', async () => {
     const f = await fixture();
     try {
