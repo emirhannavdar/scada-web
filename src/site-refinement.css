@@ -90,3 +90,91 @@ html[data-theme="dark"] #root .site-footer{--footer-bg:#101c17;--footer-text:#ef
  #main :is(.company-privacy,.policy-copy){font-size:1rem}
  #main .mobile-home-actions a{font-size:.875rem}
 }
+
+/* Contact invitation: the type scale now matches the section's visual weight. */
+#main .final-connection{padding-block:56px 28px}
+#main .final-connection .film-label{margin-bottom:22px;font-size:12px}
+#main .final-connection .connection-heading{gap:40px}
+#main .final-connection .connection-heading h2{font-size:clamp(52px,5.9vw,96px);line-height:1.02;letter-spacing:-.055em;font-weight:500;max-width:800px}
+#main .final-connection .contact-orbit{width:148px;height:148px;gap:12px}
+#main .final-connection .contact-orbit svg{width:48px;height:48px}
+#main .final-connection .contact-orbit>span{font-size:11px;line-height:1.5;letter-spacing:.055em;text-align:center;max-width:110px}
+#main .final-connection .connection-bottom{margin-top:32px;gap:60px}
+#main .final-connection .connection-bottom>p{font-size:17px;line-height:1.75;max-width:46ch;color:inherit;opacity:.85}
+#main .final-connection .connection-bottom>div>a{font-size:clamp(20px,1.6vw,26px);line-height:1.5;min-height:48px;padding-bottom:10px}
+#main .final-connection .connection-bottom>div>a+a{margin-top:12px}
+#main .final-connection .film-plan-link{margin-top:32px;padding-top:18px;font-size:13px;line-height:1.7;letter-spacing:.015em;color:inherit}
+#main .final-connection .film-plan-link>a{min-height:44px}
+#main .page-editorial p:not(.sw-kicker){font-size:18px;line-height:1.75;max-width:65ch}
+@media(max-width:767px){
+ #main .final-connection{padding-block:38px 22px}
+ #main .final-connection .connection-heading{gap:20px}
+ #main .final-connection .connection-heading h2{font-size:clamp(38px,7.8vw,56px);line-height:1.06;letter-spacing:-.045em}
+ #main .final-connection .contact-orbit{width:108px;height:108px;gap:8px}
+ #main .final-connection .contact-orbit svg{width:32px;height:32px}
+ #main .final-connection .contact-orbit>span{font-size:10px;max-width:85px;letter-spacing:.015em}
+ #main .final-connection .connection-bottom{margin-top:26px;gap:20px}
+ #main .final-connection .connection-bottom>p{font-size:16px;line-height:1.7}
+ #main .final-connection .connection-bottom>div>a{font-size:20px}
+ #main .final-connection .film-plan-link{margin-top:24px;font-size:13px}
+ #main .page-editorial p:not(.sw-kicker){font-size:16px;line-height:1.75}
+}
+@media(max-width:380px){#main .final-connection .connection-heading{gap:14px}#main .final-connection .connection-heading h2{font-size:35px}#main .final-connection .contact-orbit{width:96px;height:96px}}
+
+/* Cinematic typography is scoped exclusively to the desktop 3D journey. */
+@media(min-width:768px){
+ #main .drone-journey .drone-copy{width:35%;max-width:560px;text-shadow:0 2px 24px #06150eb3}
+ #main .drone-journey .drone-copy .film-label{font-size:12px;font-weight:600;letter-spacing:.16em;line-height:1.6;color:#ffe0bc;gap:13px;margin-bottom:22px}
+ #main .drone-journey .drone-copy .film-label>span{width:30px;height:2px;border-radius:0;background:#ffac71;box-shadow:0 0 16px #ffac7130}
+ #main .drone-journey .drone-copy h1:not(.sr-only){font-size:clamp(64px,6.3vw,108px);font-weight:600;line-height:1.02;letter-spacing:-.055em;color:#fffaf3;margin:20px 0 26px;text-wrap:balance}
+ #main .drone-journey .drone-copy h1 em{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:400;letter-spacing:-.055em;color:#ffc290}
+ #main .drone-journey .drone-copy h2{font-size:clamp(40px,4.1vw,68px);font-weight:600;line-height:1.08;letter-spacing:-.045em;color:#fffaf3;max-width:12ch;margin:20px 0 24px;text-wrap:balance}
+ #main .drone-journey .drone-copy .drone-body{font-size:clamp(16px,1.1vw,18px);line-height:1.75;letter-spacing:.005em;max-width:39ch;color:#eef4ef;margin-top:0}
+ #main .drone-journey .drone-copy .drone-learn{font-size:13px;font-weight:500;letter-spacing:.015em;line-height:1.6;gap:12px;min-height:44px;margin-top:16px;color:#ffe0bc}
+ #main .drone-journey .drone-copy .drone-learn svg{width:18px;height:18px;border:1px solid #ffe0bc70;border-radius:50%;padding:2px;box-sizing:content-box}
+ #main .drone-journey .drone-copy .drone-detail{font-size:15px;line-height:1.75;max-width:42ch;border-left:2px solid #ffb880b3;padding-left:16px;color:#edf3ed}
+}
+@media(min-width:768px) and (max-width:1100px){
+ #main .drone-journey .drone-copy{width:42%;max-width:460px}
+ #main .drone-journey .drone-copy h1:not(.sr-only){font-size:clamp(54px,6.4vw,70px)}
+ #main .drone-journey .drone-copy h2{font-size:42px}
+}
+@media(min-width:768px) and (max-height:740px){
+ #main .drone-journey .drone-copy{top:22%}
+ #main .drone-journey .drone-copy h1:not(.sr-only){font-size:clamp(54px,5.3vw,82px);margin-block:14px 20px}
+ #main .drone-journey .drone-copy h2{font-size:clamp(36px,3.4vw,54px);margin-block:14px 18px}
+ #main .drone-journey .drone-copy .drone-body{font-size:16px;line-height:1.65}
+}
+
+/* Refined scale: keep the scene visible and align the contact actions as one column. */
+@media(min-width:768px){
+ #main .drone-journey .drone-copy h1:not(.sr-only){font-size:clamp(52px,4.5vw,76px);line-height:1.06;letter-spacing:-.045em;margin:18px 0 22px}
+ #main .drone-journey .drone-copy h2{font-size:clamp(34px,3.2vw,52px);line-height:1.1;max-width:15ch}
+ #main .drone-journey .drone-copy .drone-body{font-size:16px;line-height:1.7;max-width:40ch}
+ #main .drone-journey .drone-copy .film-label{font-size:11px;letter-spacing:.11em;margin-bottom:18px}
+ #main .drone-journey .drone-copy{max-width:490px}
+ #main .final-connection>.film-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);column-gap:10%;row-gap:24px;max-width:1280px}
+ #main .final-connection .film-label{grid-column:1/-1;margin:0}
+ #main .final-connection .connection-heading,#main .final-connection .connection-bottom{display:contents}
+ #main .final-connection .connection-heading h2{grid-column:1;grid-row:2;font-size:clamp(42px,4vw,64px);line-height:1.08;letter-spacing:-.04em;max-width:14ch}
+ #main .final-connection .contact-orbit{grid-column:2;grid-row:2;align-self:center;justify-self:start}
+ #main .final-connection .connection-bottom>p{grid-column:1;grid-row:3;font-size:16px;line-height:1.75;max-width:43ch}
+ #main .final-connection .connection-bottom>div{grid-column:2;grid-row:3;align-self:start}
+ #main .final-connection .connection-bottom>div>a{font-size:21px;min-height:44px;padding-bottom:9px}
+ #main .final-connection .film-plan-link{grid-column:1/-1;grid-row:4;margin-top:8px;padding-top:16px}
+}
+#main .final-connection{padding-block:44px 22px}
+#main .final-connection .contact-orbit{width:auto;height:auto;min-height:52px;max-width:100%;padding:13px 20px;display:inline-flex;flex-direction:row-reverse;justify-content:space-between;gap:24px;border-radius:4px;background:transparent;text-decoration:none}
+#main .final-connection .contact-orbit>span{font-size:13px;line-height:1.5;letter-spacing:.02em;max-width:none;text-align:left}
+#main .final-connection .contact-orbit svg{width:24px;height:24px;flex-shrink:0}
+#main .final-connection .contact-orbit:hover{background:#263821;color:#fff8ed}
+#main .final-connection .film-plan-link :is(span,a,cms-run){font-size:13px;line-height:1.65;letter-spacing:.01em}
+@media(max-width:767px){
+ #main .final-connection{padding-block:34px 22px}
+ #main .final-connection .connection-heading{align-items:start;flex-wrap:wrap;gap:20px}
+ #main .final-connection .connection-heading h2{font-size:40px;line-height:1.1}
+ #main .final-connection .contact-orbit{min-height:48px;padding:11px 16px;gap:18px}
+ #main .final-connection .contact-orbit>span{font-size:12px}
+ #main .final-connection .connection-bottom{margin-top:24px}
+}
+@media(min-width:768px) and (max-height:740px){#main .drone-journey .drone-copy h1:not(.sr-only){font-size:clamp(48px,4vw,64px)}#main .drone-journey .drone-copy h2{font-size:40px}}
