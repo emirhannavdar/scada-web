@@ -1,3 +1,4 @@
+import {adminFetch} from '@/lib/admin-security';
 import {prepareImageUpload} from '@/lib/image-upload';
 import {requestId} from '@/lib/request-id';
 import {useEffect,useState} from 'react';
@@ -12,7 +13,7 @@ export function CommunityEditor({value,csrf,onApply,onCancel,onEditingChange}:{v
  useEffect(()=>{onEditingChange?.(dirty||uploading);return()=>onEditingChange?.(false)},[dirty,uploading,onEditingChange]);
  useEffect(()=>{const next=parseCommunity(value);setData(next);setBaseline(JSON.stringify(next));setNotice('')},[value]);
  const change=(fn:(next:Community)=>void)=>{setData(old=>{const next=structuredClone(old);fn(next);return next});setNotice('');setError('')};
- async function request(path:string,options:RequestInit={}){const response=await fetch('/api/cms/'+path,{...options,credentials:'same-origin',headers:{'X-CSRF-Token':csrf,'X-ScadaWatt-Request':'cms',...options.headers}});const payload=await response.json();if(!response.ok)throw Error(payload.error||'İşlem tamamlanamadı.');return payload}
+ async function request(path:string,options:RequestInit={}){const response=await adminFetch('/api/cms/'+path,{...options,credentials:'same-origin',headers:{'X-CSRF-Token':csrf,'X-ScadaWatt-Request':'cms',...options.headers}});const payload=await response.json();if(!response.ok)throw Error(payload.error||'İşlem tamamlanamadı.');return payload}
  async function upload(file:File,index:number){const targetId=data.reviews.items[index]?.id;setUploading(true);setError('');try{file=(await prepareImageUpload(file,1280)).file;const item=await request('media',{method:'POST',headers:{'Content-Type':file.type,'X-File-Name':encodeURIComponent(file.name)},body:file});change(d=>{const target=d.reviews.items.find(i=>i.id===targetId);if(target)target.image=item.url})}catch(e){setError((e as Error).message)}finally{setUploading(false)}}
  const move=(kind:'faq'|'reviews',index:number,offset:number)=>change(d=>{const items=d[kind].items;const target=index+offset;if(target<0||target>=items.length)return;const [item]=items.splice(index,1);(items as unknown[]).splice(target,0,item)});
  const locations=(kind:'faq'|'reviews')=><fieldset><legend>Gösterileceği sayfalar</legend><div className="cfg-admin-controls">{options.map(([path,label])=><label key={path}><input type="checkbox" checked={data[kind].pages.includes(path!)} onChange={e=>change(d=>{d[kind].pages=e.target.checked?[...d[kind].pages,path!]:d[kind].pages.filter(x=>x!==path)})}/>{label}</label>)}</div></fieldset>;

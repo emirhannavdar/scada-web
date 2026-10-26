@@ -1,11 +1,11 @@
 {
   "name": "scadawatt-website",
-  "version": "128.0.0",
+  "version": "129.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "node --use-system-ca --env-file-if-exists=.env scripts/dev-cms.mjs",
-    "build": "node scripts/retire-demo.mjs && node scripts/cms-catalog.mjs && node scripts/build-seo.mjs && tsc --noEmit && vite build && node scripts/compress-web.mjs",
+    "build": "node scripts/preserve-static-assets.mjs && node scripts/retire-demo.mjs && node scripts/cms-catalog.mjs && node scripts/build-seo.mjs && tsc --noEmit && vite build && node scripts/compress-web.mjs",
     "preview": "node --use-system-ca --env-file-if-exists=.env server/index.mjs",
     "test": "vitest run",
     "test:models": "node scripts/check-model-assets.mjs && vitest run src/test/optimized-scene.test.ts src/test/additional-models.test.ts src/test/model-cache.test.ts",
@@ -20,7 +20,9 @@
     "predev": "node scripts/retire-demo.mjs",
     "cms:postgres:setup": "node --env-file-if-exists=.env server/configure-postgres.mjs",
     "cms:migrate-postgres": "node --env-file-if-exists=.env server/migrate-postgres.mjs",
-    "test:postgres": "node --import ./server/postgres-test-env.mjs --test server/postgres.test.mjs"
+    "test:postgres": "node --import ./server/postgres-test-env.mjs --test server/postgres.test.mjs",
+    "cms:reset-2fa": "node --env-file-if-exists=.env server/reset-2fa.mjs",
+    "test:security": "node --import ./server/postgres-test-env.mjs --test --test-concurrency=1 server/security.test.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

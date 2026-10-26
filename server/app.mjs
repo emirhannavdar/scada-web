@@ -1,3 +1,4 @@
+import {createSecurityService} from './security.mjs';
 import { createGoogleReviewsService } from './google-reviews.mjs';
 import { createMailService } from './mail.mjs';
 import { renderPage, sitemap, siteOrigin, sendText, compression, robotsTxt } from './seo.mjs';
@@ -42,11 +43,11 @@ async function bytes(req, max) {
     }
     return Buffer.concat(chunks);
 }
-async function body(req) {
+async function body(req, max = 2 * 1024 * 1024) {
     if (!String(req.headers["content-type"]).startsWith("application/json"))
         fail(415, "JSON isteği gerekli.");
     try {
-        return JSON.parse((await bytes(req, 2 * 1024 * 1024)).toString());
+        return JSON.parse((await bytes(req, max)).toString());
     }
     catch (e) {
         if (e instanceof CmsError)
@@ -127,11 +128,11 @@ function detectImage(b) {
         return { ext: "avif", mime: "image/avif" };
     return null;
 }
-export async function createCmsApp({ dataDir = process.env["CMS_DATA_DIR"] || "data", distDir = "dist", origin = process.env["CMS_ORIGIN"] || "", secureCookies = process.env["CMS_COOKIE_SECURE"] === "1", mailTransportFactory, googleReviewsFetch, } = {}) {
+export async function createCmsApp({ dataDir = process.env["CMS_DATA_DIR"] || "data", distDir = "dist", origin = process.env["CMS_ORIGIN"] || "", secureCookies = process.env["CMS_COOKIE_SECURE"] === "1", securityClock, mailTransportFactory, googleReviewsFetch, } = {}) {
     const store = (await openStore(dataDir)), dist = resolve(distDir);
     let mail,googleReviews;
     try{mail=await createMailService(store,{transportFactory:mailTransportFactory});googleReviews=await createGoogleReviewsService(store,{fetcher:googleReviewsFetch})}catch(error){await store.close();throw error}
-    let hashing = 0;
+    const security = await createSecurityService(store,{secureCookies,checkOrigin,...(securityClock?{clock:securityClock}:{})});
     const cookie = (token, age) => `sw_admin=${token}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${age}${secureCookies ? "; Secure" : ""}`;
     function checkOrigin(req) {
         const policy = originPolicy(req, origin);
@@ -140,21 +141,10 @@ export async function createCmsApp({ dataDir = process.env["CMS_DATA_DIR"] || "d
             fail(403, `İstek kaynağı doğrulanamadı. Paneli ${policy.expected}/admin adresinden açın. Farklı bir adres kullanıyorsanız CMS_ORIGIN ayarını güncelleyin.`);
         }
     }
-    async function auth(req, mutation = false) {
-        const session = (await store.session(req));
-        if (!session)
-            fail(401, "Oturum açmanız gerekiyor.");
-        if (mutation) {
-            checkOrigin(req);
-            if (req.headers["x-csrf-token"] !== session.csrf)
-                fail(403, "Oturum doğrulaması başarısız. Yeniden giriş yapın.");
-        }
-        return session;
-    }
+    async function auth(req, mutation = false) { return security.authorize(req,mutation); }
     async function root(req, mutation = false) {
-        const session = (await auth(req, mutation));
-        if (session.role !== "root")
-            fail(403, "Bu bölüm yalnızca root kullanıcısına açıktır.");
+        const session=await security.authorize(req,mutation,true);
+        if(mutation)security.recent(session);
         return session;
     }
     const server = http.createServer(async (req, res) => {
@@ -170,6 +160,7 @@ export async function createCmsApp({ dataDir = process.env["CMS_DATA_DIR"] || "d
             return;
         }
         const path = url.pathname, method = req.method;
+        res.once('finish',()=>security.observe(req,res));
         try {
         if (url.searchParams.get("cms-edit") === "1" &&
             url.searchParams.get("cms-preview") === "1" && (await store.session(req))) {
@@ -177,6 +168,7 @@ export async function createCmsApp({ dataDir = process.env["CMS_DATA_DIR"] || "d
             res.setHeader("Content-Security-Policy", "frame-ancestors 'self'; base-uri 'self'");
         }
 
+            if(await security.handle(req,res,path,method,request=>body(request,8192),send))return;
             if (path.startsWith("/api/")) {
                 res.setHeader("Cache-Control", "no-store");
                 res.setHeader("X-Robots-Tag", "noindex, nofollow");
@@ -249,52 +241,7 @@ export async function createCmsApp({ dataDir = process.env["CMS_DATA_DIR"] || "d
                     });
                 }
                 if (path === "/api/cms/login" && method === "POST") {
-                    checkOrigin(req);
-                    const { email, password } = await body(req);
-                    if (typeof email !== "string" ||
-                        email.length > 254 ||
-                        typeof password !== "string" ||
-                        password.length > 256)
-                        fail(400, "Geçersiz giriş bilgileri.");
-                    const now = Date.now(), ip = req.socket.remoteAddress || "unknown";
-                    (await store.db.prepare("DELETE FROM attempts WHERE until_at<?").run(now));
-                    (await store.db.prepare("DELETE FROM sessions WHERE expires<?").run(now));
-                    const key = "login:" + ip, attempt = (await store.db.prepare("SELECT * FROM attempts WHERE key=?").get(key)), global = (await store.db.prepare("SELECT * FROM attempts WHERE key=?").get("login:all"));
-                    if ((attempt?.count || 0) >= 8 || (global?.count || 0) >= 40) {
-                        res.setHeader("Retry-After", "900");
-                        fail(429, "Çok fazla giriş denemesi. 15 dakika sonra tekrar deneyin.");
-                    }
-                    if (hashing >= 2)
-                        fail(429, "Giriş işlemi sürüyor. Biraz sonra tekrar deneyin.");
-                    for (const k of [key, "login:all"])
-                        (await store.db
-                            .prepare("INSERT INTO attempts VALUES(?,1,?) ON CONFLICT(key) DO UPDATE SET count=count+1")
-                            .run(k, now + 900000));
-                    const admin = (await store.db
-                        .prepare("SELECT * FROM cms_users WHERE email=?")
-                        .get(email.trim().toLowerCase()));
-                    hashing++;
-                    let valid = false;
-                    try {
-                        valid = await checkPassword(password, admin?.password);
-                    }
-                    finally {
-                        hashing--;
-                    }
-                    if (!admin || !valid)
-                        fail(401, "E-posta veya şifre hatalı.");
-                    (await store.db.prepare("DELETE FROM attempts WHERE key=?").run(key));
-                    const token = randomBytes(32).toString("hex"), csrf = randomBytes(32).toString("hex");
-                    (await store.db
-                        .prepare("INSERT INTO sessions(token,csrf,expires,email,role) VALUES(?,?,?,?,?)")
-                        .run(digest(token), csrf, Date.now() + 8 * 3600000, admin.email, admin.role));
-                    res.setHeader("Set-Cookie", cookie(token, 8 * 3600));
-                    return send(res, 200, {
-                        authenticated: true,
-                        csrf,
-                        email: admin.email,
-                        role: admin.role,
-                    });
+                    return send(res,200,await security.login(req,res,await body(req,8192)));
                 }
                 if (path === "/api/cms/logout" && method === "POST") {
                     const s = (await auth(req, true));
@@ -368,9 +315,10 @@ export async function createCmsApp({ dataDir = process.env["CMS_DATA_DIR"] || "d
                     return send(res, 200, (await store.save(b.revision, b.values, b.collections, b.design, b.device)));
                 }
                 if (path === "/api/cms/publish" && method === "POST") {
-                    const s = (await auth(req, true)), b = await body(req);
+                    const s = (await root(req, true)), b = await body(req);
                     if (s.role !== "root")
                         fail(403, "Admin doğrudan yayınlayamaz. Root onayına gönderin.");
+                    req.securityDetail={device:b.device};
                     return send(res, 200, (await store.publish(b.revision, b.note, s.email, b.device)));
                 }
                 if (path === "/api/cms/approvals" && method === "POST") {
@@ -587,6 +535,7 @@ export async function createCmsApp({ dataDir = process.env["CMS_DATA_DIR"] || "d
                 res.destroy();
                 return;
             }
+            if(error.retryAfter)res.setHeader("Retry-After",String(error.retryAfter));
             send(res, error instanceof CmsError ? error.status : error.status === 400 ? 400 : 500, {
                 error: error instanceof CmsError || error.status === 400
                     ? error.message
@@ -597,5 +546,7 @@ export async function createCmsApp({ dataDir = process.env["CMS_DATA_DIR"] || "d
     server.headersTimeout = 15000;
     server.requestTimeout = 30000;
     server.keepAliveTimeout = 5000;
-    return { server, store };
+    const originalClose=store.close;store.close=async()=>{await security.close();await originalClose();};
+    server.once("close",()=>{void security.close();});
+    return { server, store, security };
 }

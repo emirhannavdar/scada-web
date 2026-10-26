@@ -1,3 +1,4 @@
+import {adminFetch,requestSessionProof} from '@/lib/admin-security';
 import {PreflightPanel} from './PreflightPanel';
 import {prepareImageUpload} from '@/lib/image-upload';
 import {useUnsavedChanges} from '@/lib/unsaved-changes';
@@ -58,7 +59,7 @@ type ApprovalNotice = {
 };
 const canon = (value: unknown) => JSON.stringify(value);
 async function api<T>(path: string, csrf: string, options: RequestInit = {}) {
-  const response = await fetch("/api/cms/" + path, {
+  const response = await adminFetch("/api/cms/" + path, {
     ...options,
     credentials: "same-origin",
     headers: {
@@ -213,7 +214,7 @@ export function VisualEditor({
       if (data.type === "preview-error") {
         setReady(true);
         setError("Taslak sayfa açılamadı. Yönetimden oturumunuzu kontrol edip tekrar deneyin.");
-        if (data.status === 401) onUnauthorized();
+        if (data.status === 401) void requestSessionProof("login").then(ok=>{if(ok)setFrameVersion(version=>version+1)});
       } else if (data.type === "ready") {
         setReady(true);
         configure();
@@ -411,7 +412,7 @@ export function VisualEditor({
     } catch (e) {
       const err = e as Error & { status?: number };
       setError(err.message);
-      if (err.status === 401) onUnauthorized();
+      // Keep the current draft mounted when session renewal is cancelled.
     } finally {
       operation.current = false;
       setBusy(false);
@@ -663,7 +664,7 @@ export function VisualEditor({
           <option value="tr">TR</option>
           <option value="en">EN</option>
         </select>
-        <div className="visual-top-actions"><button disabled={busy||recordEditing} title="Taslağı yayınlamadan kontrol et" onClick={()=>setPreflightOpen(true)}><Check size={16}/><span>Yayın kontrolü</span></button>
+        <div className="visual-top-actions"><button type="button" title="2FA, oturumlar ve güvenlik geçmişi" onClick={()=>window.dispatchEvent(new Event("scadawatt:open-security"))}><Settings2 size={16}/><span>Güvenlik</span></button><button disabled={busy||recordEditing} title="Taslağı yayınlamadan kontrol et" onClick={()=>setPreflightOpen(true)}><Check size={16}/><span>Yayın kontrolü</span></button>
           {role === "root" && (
             <button
               title="Kullanıcılar, görseller ve yayın geçmişi"

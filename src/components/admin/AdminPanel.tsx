@@ -1,3 +1,6 @@
+import {SessionSecurity} from './SessionSecurity';
+import {SecurityPanel} from './SecurityPanel';
+import {adminFetch,requestSessionProof} from '@/lib/admin-security';
 import {PreflightPanel} from './PreflightPanel';
 import {prepareImageUpload} from '@/lib/image-upload';
 import {useUnsavedChanges} from '@/lib/unsaved-changes';
@@ -85,6 +88,7 @@ type Workspace = {
 type Session = {
   authenticated: boolean;
   setupRequired?: boolean;
+  mfaRequired?: boolean;
   csrf?: string;
   email?: string;
   role?: "root" | "admin";
@@ -109,7 +113,7 @@ const same = (a: Value, b: Value) => a.tr === b.tr && a.en === b.en;
 const when = (value: string) =>
   new Date(value).toLocaleString("tr-TR", { dateStyle: "medium", timeStyle: "short" });
 async function request<T>(path: string, options: RequestInit = {}, csrf?: string) {
-  const response = await fetch("/api/cms/" + path, {
+  const response = await adminFetch("/api/cms/" + path, {
     ...options,
     credentials: "same-origin",
     headers: {
@@ -274,6 +278,8 @@ function FieldEditor({
 export function AdminPanel({
   initialMode = "visual",
 }: { initialMode?: "visual" | "classic" } = {}) {
+  const [securityOpen,setSecurityOpen]=useState(false),[mfaPending,setMfaPending]=useState(false),[mfaCode,setMfaCode]=useState("");
+  useEffect(()=>{const open=()=>setSecurityOpen(true);window.addEventListener("scadawatt:open-security",open);return()=>window.removeEventListener("scadawatt:open-security",open)},[]);
   const [visualRequested, setVisual] = useState(initialMode === "visual");
   const [visualMounted, setVisualMounted] = useState(initialMode === "visual");
   const [auth, setAuth] = useState<Session | null>(null),
@@ -331,7 +337,7 @@ export function AdminPanel({
         JSON.stringify(collections) !== JSON.stringify(workspace.publishedCollections ?? null)),
     );
   useUnsavedChanges(!visual && (dirty || recordEditing));
-  dirtyRef.current = dirty || recordEditing;
+  dirtyRef.current = Boolean(auth?.authenticated) && (dirty || recordEditing);
   useEffect(() => {
     const fn = (event: BeforeUnloadEvent) => {
       if (dirtyRef.current) {
@@ -509,10 +515,7 @@ export function AdminPanel({
     } catch (e) {
       const err = e as Error & { status?: number };
       setError(err.message);
-      if (err.status === 401) {
-        setAuth({ authenticated: false });
-        setPassword("");
-      }
+      if (err.status === 401 && !auth?.authenticated) { setAuth({authenticated:false});setPassword(""); }
     } finally {
       operation.current = false;
       setBusy(false);
@@ -586,10 +589,12 @@ export function AdminPanel({
   async function login(event: React.FormEvent) {
     event.preventDefault();
     await action(async () => {
-      const s = await request<Session>("login", {
+      const s = await request<Session>(mfaPending?"security/mfa/login":"login", {
         method: "POST",
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify(mfaPending?{code:mfaCode}:{email,password}),
       });
+      if(s.mfaRequired&&!s.authenticated){setMfaPending(true);setMfaCode("");setPassword("");return;}
+      setMfaPending(false);setMfaCode("");
       setAuth(s);
       setPassword("");
       loaded(await request<Workspace>("workspace?device=desktop"));
@@ -671,7 +676,7 @@ export function AdminPanel({
               </div>
             ) : (
               <>
-                <label>
+                {!mfaPending&&<>                <label>
                   E-posta
                   <input
                     type="email"
@@ -692,8 +697,10 @@ export function AdminPanel({
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </label>
+</>}
+                {mfaPending&&<div data-mfa-pending="true"><p className="security-otp-help">Authenticator uygulamanızdaki 6 haneli kodu veya tek kullanımlık kurtarma kodunu girin. Daha önce kullandığınız kod yerine yeni kodu bekleyin.</p><label>Doğrulama veya kurtarma kodu<input autoComplete="one-time-code" type="text" required maxLength={40} value={mfaCode} onChange={event=>setMfaCode(event.target.value.trim())}/></label><button type="button" onClick={()=>{setMfaPending(false);setMfaCode("");setError("")}}>Şifreyle yeniden başla</button></div>}
                 <button className="cms-primary" disabled={busy}>
-                  {busy ? <Busy /> : <ArrowUpRight size={18} />}Giriş yap
+                  {busy ? <Busy /> : <ArrowUpRight size={18} />}{mfaPending?"Kodu doğrula":"Giriş yap"}
                 </button>
               </>
             )}
@@ -729,6 +736,8 @@ export function AdminPanel({
     ) : null;
   return (
     <>
+      <SessionSecurity session={auth} onRenew={setAuth}/>
+      {securityOpen&&<SecurityPanel session={auth} onClose={()=>setSecurityOpen(false)}/>}
       {visualSurface}
       {auth.role === "root" && <div className="cms-app" style={{ display: visual ? "none" : undefined }}>
         <input
@@ -762,7 +771,7 @@ export function AdminPanel({
             Sayfa üzerinde düzenle
           </button>
           <div className="cms-sidebar-label">ÇALIŞMA ALANI</div>
-          <nav aria-label="Yönetim bölümleri"><button className={view==="checks"?"is-active":""} disabled={recordEditing} onClick={()=>{setView("checks");setSidebar(false)}}>Yayın kontrolü</button><button className={view==="google"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("google");setSidebar(false)}}>Google yorum entegrasyonu</button><button className={view==="community"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("community");setSidebar(false)}}>SSS ve müşteri yorumları</button><button className={view==="mail"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("mail");setSidebar(false)}}>E-posta gönderimi</button><button className={view==="configurator"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("configurator");setSidebar(false)}}>Saha yapılandırıcısı</button>
+          <nav aria-label="Yönetim bölümleri"><button type="button" onClick={()=>setSecurityOpen(true)}>Hesap güvenliği</button><button className={view==="checks"?"is-active":""} disabled={recordEditing} onClick={()=>{setView("checks");setSidebar(false)}}>Yayın kontrolü</button><button className={view==="google"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("google");setSidebar(false)}}>Google yorum entegrasyonu</button><button className={view==="community"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("community");setSidebar(false)}}>SSS ve müşteri yorumları</button><button className={view==="mail"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("mail");setSidebar(false)}}>E-posta gönderimi</button><button className={view==="configurator"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("configurator");setSidebar(false)}}>Saha yapılandırıcısı</button>
             <button
               className={view === "content" ? "is-active" : ""}
               onClick={() => {

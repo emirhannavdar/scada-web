@@ -1,0 +1,65 @@
+/* Mobile-only refinements: desktop layout and the flight scene stay untouched. */
+@media (max-width:767px){
+  html{scroll-padding-top:86px}
+  .film-header-inner{margin-inline:18px;gap:12px;min-height:74px}
+  .film-header .film-brand img{width:132px;height:auto}
+  .film-header-actions{gap:10px}
+  .film-header-contact,.film-menu-trigger>span{display:none}
+  .global-day-toggle{width:40px;height:40px;min-width:40px}
+  .language-switch{gap:5px}
+  .language-switch button{min-height:44px;min-width:25px;font-size:10px}
+  .film-menu-trigger{min-width:42px;min-height:44px}
+  .film-navigation{overflow-y:auto;overscroll-behavior:contain;max-height:100dvh}
+  .film-navigation-grid>nav>a{font-size:clamp(25px,7vw,42px);min-height:56px;gap:12px}
+  .mobile-home-hero{background:var(--site-bg,#f2f1e8);color:var(--site-text,#183d32);padding:112px 22px 30px;min-height:0}
+  .mobile-home-grid{background:radial-gradient(ellipse at 100% 30%,#df94532e,transparent 66%),linear-gradient(#8da68e10 1px,transparent 1px),linear-gradient(90deg,#8da68e10 1px,transparent 1px);background-size:auto,40px 40px,40px 40px}
+  .mobile-home-eyebrow{color:var(--site-muted,#667a6a);font-size:10px;line-height:1.8;margin-bottom:22px}
+  .mobile-home-copy h1{font-size:clamp(39px,10vw,66px);line-height:1.08;text-wrap:balance}
+  .mobile-home-copy h1 em{color:#bb612d}
+  html[data-theme="dark"] .mobile-home-copy h1 em{color:#ffad70}
+  .mobile-home-description{color:var(--site-muted,#617568);font-size:15px;line-height:1.8}
+  .mobile-home-actions{gap:10px;margin-bottom:28px}
+  .mobile-home-actions a{flex:1;min-height:49px;padding:12px 10px;border-radius:8px;font-size:12px;white-space:nowrap}
+  .mobile-home-actions a+a{color:var(--site-text,#183d32);border-color:var(--site-line,#afbfad)}
+  .mobile-platform-card{background:var(--site-surface,#e5e9dd);border-color:var(--site-line,#bfccba);border-radius:18px;padding:16px 14px 0;box-shadow:0 14px 35px #1027190b}
+  .mobile-platform-caption{color:var(--site-muted,#617568);font-size:9px}
+  .mobile-platform-switch{display:flex;background:#122d2510;border-radius:9px;padding:4px;margin:2px 0 16px;gap:4px}
+  .mobile-platform-switch button{flex:1;border:0;border-radius:6px;background:transparent;color:var(--site-text,#183d32);min-height:42px;font-size:12px}
+  .mobile-platform-switch button[aria-pressed="true"]{background:var(--site-bg,#fff);box-shadow:0 2px 7px #0001;font-weight:600}
+  .mobile-platform-screen{border-radius:10px;border:0;background:transparent;min-height:170px;display:flex;align-items:center;justify-content:center}
+  .mobile-platform-screen img{width:100%;height:auto;max-height:360px;object-fit:contain}
+  .mobile-platform-card[data-platform="mobile"] .mobile-platform-screen img{width:auto;max-width:100%;height:330px}
+  .mobile-platform-path{color:var(--site-text,#183d32);padding-block:20px}
+  .mobile-platform-path span{font-size:11px}
+  .mobile-platform-path svg{color:#b66a37}
+  .mobile-home-bottom{color:var(--site-muted,#617568);font-size:11px}
+  .mobile-home-bottom a{color:var(--site-text,#183d32);padding-block:8px}
+  .film-wrap{width:calc(100% - 40px)}
+  .hardware-list{display:flex;gap:8px;overflow-x:auto;overflow-y:hidden;max-height:none;scroll-snap-type:x proximity;padding:5px 0 14px;overscroll-behavior-x:contain}
+  .hardware-row,.hardware-row[aria-pressed="true"]{flex:0 0 142px;display:flex;flex-direction:column;align-items:flex-start;gap:6px;scroll-snap-align:start;border:1px solid var(--site-line,#bdcbb6);border-radius:12px;padding:13px;min-height:170px}
+  .hardware-row>img{align-self:center;width:65px;height:70px}
+  .hardware-row .hardware-number,.hardware-row>svg,.hardware-row-label>span,.hardware-row-label>small{display:none}
+  .hardware-row-label>strong{font-size:21px;line-height:1.3;margin-top:7px}
+  .hardware-preview{display:block;min-height:0}
+  .hardware-preview-top{font-size:9px;line-height:1.6}
+  .hardware-photo{width:65%;max-width:250px;margin:20px auto}
+  .hardware-story{padding:12px 0 25px}
+  .hardware-story h3{font-size:36px}
+  .hardware-role{font-size:10px}
+  .hardware-tagline{font-size:18px}
+  .hardware-summary{font-size:14px;line-height:1.8}
+  .hardware-story dl{font-size:12px}
+  .hardware-story a{font-size:13px;min-height:48px}
+  .company-heading h1,.page-editorial h1{font-size:clamp(34px,9vw,48px);overflow-wrap:anywhere;text-wrap:balance}
+  .company-container{max-width:100%;width:calc(100% - 40px)}
+  .contact-layout,.request-fields{grid-template-columns:minmax(0,1fr)}
+  .request-fields input,.request-fields select,.request-form textarea{font-size:16px;min-height:48px;max-width:100%}
+  .request-form,.contact-location{min-width:0}
+  .contact-location a{overflow-wrap:anywhere}
+  .request-submit{min-height:50px;width:100%}
+  .request-consent{align-items:flex-start;font-size:12px;line-height:1.7}
+  .request-consent input{min-width:20px;min-height:20px}
+  .contact-map iframe{width:100%;max-width:100%;min-height:220px}
+  .film-footer-bottom{font-size:11px;line-height:1.7}
+  .cinematic-home :is(a,button):focus-visible{outline:2px solid #c87942;outline-offset:4px}
+}

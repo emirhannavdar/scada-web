@@ -1,0 +1,10 @@
+import {it,expect,vi,afterEach} from 'vitest';
+import {render,screen,cleanup,act,waitFor} from '@testing-library/react';
+import {motionValue} from 'motion/react';
+const state=vi.hoisted(()=>({ready:null as null|(()=>void),mounts:0,dispose:vi.fn(),pause:vi.fn()}));
+vi.mock('@/lib/flight/render',()=>({mountFlight:(_c:unknown,_h:unknown,ready:()=>void)=>{state.mounts++;state.ready=ready;return {setProgress(){},setDayNight(){},setPaused:state.pause,setEffectsPaused(){},setScreen(){},resize(){},dispose:state.dispose}}}));
+vi.mock('@/components/site/ExperienceContext',()=>({useExperience:()=>({menuOpen:false})}));
+import {FlightCanvas} from '@/components/site/FlightCanvas';
+import {disposeFlightSession,hasPreparedFlight} from '@/lib/flight/session';
+afterEach(()=>{cleanup();disposeFlightSession();vi.unstubAllGlobals();state.mounts=0;state.ready=null;state.dispose.mockClear();state.pause.mockClear()});
+it('reuses the exact prepared canvas and renderer after leaving and returning home without loading gate',async()=>{vi.stubGlobal('WebGL2RenderingContext',class{});const first=render(<FlightCanvas progress={motionValue(0)}/>);expect(screen.getByRole('status')).toBeInTheDocument();await waitFor(()=>expect(state.mounts).toBe(1));act(()=>state.ready?.());expect(hasPreparedFlight()).toBe(true);const canvas=first.container.querySelector('canvas');expect(canvas).not.toBeNull();first.unmount();expect(state.dispose).not.toHaveBeenCalled();expect(state.pause).toHaveBeenLastCalledWith(true);const second=render(<FlightCanvas progress={motionValue(0)}/>);expect(screen.queryByRole('status')).toBeNull();await act(async()=>{});expect(second.container.querySelector('canvas')).toBe(canvas);expect(state.mounts).toBe(1);expect(state.pause).toHaveBeenLastCalledWith(false);second.unmount();disposeFlightSession();expect(state.dispose).toHaveBeenCalledTimes(1)});

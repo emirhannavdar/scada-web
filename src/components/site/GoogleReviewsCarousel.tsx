@@ -1,0 +1,27 @@
+import {ReviewCarousel} from './ReviewCarousel';
+import {useEffect,useRef,useState} from 'react';
+import {useReducedMotion} from 'motion/react';
+import {translate as t,useLocale} from '@/lib/i18n';
+type Review={id:string;name:string;authorUrl:string;photo:string;rating:number|null;text:string;originalText:string;translated:boolean;date:string;publishTime:string;url:string;reportUrl:string;visitDate?:{month:number;year:number}|null};
+type Result={enabled:boolean;businessName?:string;url?:string;reviews:Review[];attributions?:{name:string;url:string}[]};
+export function GoogleReviewsCarousel(){
+ const language=useLocale(),reduced=useReducedMotion(),root=useRef<HTMLDivElement>(null),track=useRef<HTMLDivElement>(null),[visible,setVisible]=useState(false),[result,setResult]=useState<Result|null>(null),[loading,setLoading]=useState(false),[unavailable,setUnavailable]=useState(false),[paused,setPaused]=useState(false),[hover,setHover]=useState(false),[focused,setFocused]=useState(false),[expanded,setExpanded]=useState<string[]>([]);
+ const forced=new URLSearchParams(location.search).get('cms-device'),device=forced==='mobile'||forced!=='desktop'&&window.matchMedia('(max-width:760px)').matches?'mobile':'desktop';
+ const preview=document.documentElement.dataset['cmsPreview']==='true';
+ useEffect(()=>{const element=root.current;if(!element)return;if(typeof IntersectionObserver==='undefined'){setVisible(true);return}const observer=new IntersectionObserver(entries=>setVisible(Boolean(entries[0]?.isIntersecting)),{threshold:0.05});observer.observe(element);return()=>observer.disconnect()},[]);
+ const started=useRef('');
+ useEffect(()=>{
+  const signature=language+':'+device;if(!visible||started.current===signature||preview)return;
+  started.current=signature;const controller=new AbortController();let settled=false;setResult(null);setLoading(true);setUnavailable(false);
+  fetch('/api/google-reviews?device='+device+'&lang='+language,{credentials:'same-origin',cache:'no-store',signal:controller.signal}).then(async response=>{if(!response.ok)throw Error('Unavailable');return response.json() as Promise<Result>}).then(data=>{settled=true;setResult(data);setLoading(false)}).catch(()=>{if(!controller.signal.aborted){settled=true;setLoading(false);setUnavailable(true)}});
+  return()=>{if(!settled){controller.abort();started.current=''}};
+ },[visible,language,device,preview]);
+ const count=result?.reviews.length||0;
+ return <div ref={root} className="google-reviews-live" aria-label={t('Google müşteri yorumları')}>
+ {preview?<p className="request-help">{t('Gerçek Google yorumları ziyaretçi görünümünde yüklenir. Bağlantıyı root yönetimindeki Google yorum entegrasyonu bölümünden test edin.')}</p>:loading?<p role="status">{t('Google yorumları yükleniyor…')}</p>:unavailable?<p className="request-help">{t('Google yorumlarına şu anda ulaşılamıyor. Google bağlantısından yorumları inceleyebilirsiniz.')}</p>:null}
+ {result?.enabled&&count>0&&<><header className="google-reviews-toolbar"><div className="google-source"><img className="google-attribution-light" src="/assets/google-maps-attribution-light.svg" alt="Google Maps" height="18"/><img className="google-attribution-dark" src="/assets/google-maps-attribution-dark.svg" alt="Google Maps" height="18"/></div></header>
+ <ReviewCarousel>
+ {result.reviews.map(review=>{const open=expanded.includes(review.id);return <article className="google-review-card" key={review.id}><header><div className="google-review-author">{review.photo?<img src={review.photo} alt="" width="48" height="48" loading="lazy" referrerPolicy="no-referrer" onError={event=>{event.currentTarget.style.display='none'}}/>:<span className="community-avatar" aria-hidden="true">{review.name.slice(0,1)}</span>}<div>{review.authorUrl?<a href={review.authorUrl} target="_blank" rel="noopener noreferrer">{review.name}</a>:<strong>{review.name}</strong>}<p>{review.date||review.publishTime.slice(0,10)}</p>{review.visitDate&&<p>{review.visitDate.month}/{review.visitDate.year}</p>}</div></div>{review.rating!==null&&<span className="google-review-stars" aria-label={review.rating+' / 5'}>{'★'.repeat(Math.round(review.rating))}<span aria-hidden="true">{'☆'.repeat(5-Math.round(review.rating))}</span></span>}</header><blockquote><p className={open||review.text.length<=160?'':'is-clamped'}>{review.text||t('Bu yorum yalnızca puan içeriyor.')}</p></blockquote>{review.text.length>160&&<button className="google-read-more" type="button" onClick={()=>setExpanded(old=>open?old.filter(id=>id!==review.id):[...old,review.id])} aria-expanded={open}>{t(open?'Daha az göster':'Yorumun devamı')}</button>}{review.translated&&<small>{t('Google çevirisi')}</small>}<footer>{review.url&&<a href={review.url} target="_blank" rel="noopener noreferrer">{t('Yorumu Google’da aç')} ↗</a>}{review.reportUrl&&<a href={review.reportUrl} target="_blank" rel="noopener noreferrer">{t('Bildir')}</a>}</footer></article>})}
+ </ReviewCarousel><footer className="google-reviews-notice"><p>{t('Google’ın alaka sırasıyla sunduğu en fazla 5 yorum gösterilir; puana göre filtreleme yapılmaz.')}</p>{result.attributions?.map((a,i)=>a.url?<a key={i} href={a.url} target="_blank" rel="noopener noreferrer">{a.name}</a>:<span key={i}>{a.name}</span>)}<a href="https://support.google.com/contributionpolicy/answer/7400114" target="_blank" rel="noopener noreferrer">{t('Google yorum politikası')}</a>{result.url&&<a href={result.url} target="_blank" rel="noopener noreferrer">{t('Google’da tüm yorumları gör')} ↗</a>}</footer></>}
+ </div>
+}

@@ -1,3 +1,4 @@
+import {initializeSecuritySchema} from './security-schema.mjs';
 import { COMMUNITY_FIELD, validateCommunity, defaultCommunity } from '../shared/community.mjs';
 import { CONFIGURATOR_FIELD, validateConfigurator } from '../shared/configurator.mjs';
 import { reviseTextValues, reviseCollectionTexts } from './text-revision.mjs';
@@ -71,6 +72,7 @@ export async function openStore(directory, catalogPath = new URL("./catalog.json
     const legacy = (await db.prepare("SELECT email,password FROM admin WHERE id=1").get());
     if (legacy && !(await db.prepare("SELECT id FROM cms_users WHERE role='root'").get()))
         (await db.prepare("INSERT OR IGNORE INTO cms_users(email,password,role,created) VALUES(?,?,'root',?)").run(legacy.email, legacy.password, new Date().toISOString()));
+    await initializeSecuritySchema(db);
     let mediaIds = new Set();
     async function refreshMedia() { mediaIds = new Set((await db.prepare("SELECT id FROM media").all()).map(row => row.id)); }
     const imageAllowed = value => typeof value === 'string' && (assets.has(value) || (/^\/uploads\/[a-f0-9-]+\.(webp|png|jpg|avif)$/.test(value) && mediaIds.has(value.split('/').at(-1))));
@@ -445,6 +447,8 @@ return await db.transaction(async()=>{
             else
                 (await db.prepare("INSERT INTO cms_users(email,password,role,created) VALUES(?,?,'root',?)").run(email, hash, new Date().toISOString()));
             (await db.exec("DELETE FROM sessions; DELETE FROM attempts;"));
+            await db.prepare("INSERT INTO security_events(created,actor,action,result,ip,agent,detail) VALUES(?,?,'password.reset_cli','success','','server','{}')").run(Date.now(),email);
+            await db.exec('DELETE FROM security_challenges;');
         }));
     }
     async function upsertUser(email, password, role = "admin") {
