@@ -1,3 +1,4 @@
+import {AuthPassword,AuthCode} from './AuthFields';
 import {SessionSecurity} from './SessionSecurity';
 import {SecurityPanel} from './SecurityPanel';
 import {adminFetch,requestSessionProof} from '@/lib/admin-security';
@@ -586,9 +587,12 @@ export function AdminPanel({
     });
     setNotice("");
   }
+  const loginLock=useRef(false);
   async function login(event: React.FormEvent) {
     event.preventDefault();
-    await action(async () => {
+    if(loginLock.current)return;
+    loginLock.current=true;
+    try { await action(async () => {
       const s = await request<Session>(mfaPending?"security/mfa/login":"login", {
         method: "POST",
         body: JSON.stringify(mfaPending?{code:mfaCode}:{email,password}),
@@ -598,7 +602,7 @@ export function AdminPanel({
       setAuth(s);
       setPassword("");
       loaded(await request<Workspace>("workspace?device=desktop"));
-    });
+    }); } finally { loginLock.current=false; }
   }
   function selectImage(field: Field, url: string) {
     if (collectionPick.current) {
@@ -663,8 +667,8 @@ export function AdminPanel({
           </section>
           <form onSubmit={login}>
             <ShieldCheck size={28} />
-            <h2>Yönetici girişi</h2>
-            <p>İçerik yönetimine devam etmek için giriş yapın.</p>
+            <h2>{mfaPending?"İki aşamalı doğrulama":"Yönetici girişi"}</h2>
+            <p>{mfaPending?"Hesabınızı doğrulayarak güvenle devam edin.":"İçerik yönetimine devam etmek için giriş yapın."}</p>
             {auth?.setupRequired ? (
               <div className="cms-setup">
                 <strong>İlk yönetici hesabı henüz oluşturulmadı.</strong>
@@ -686,19 +690,9 @@ export function AdminPanel({
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </label>
-                <label>
-                  Şifre
-                  <input
-                    type="password"
-                    autoComplete="current-password"
-                    required
-                    maxLength={256}
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </label>
+                <AuthPassword value={password} onChange={setPassword} disabled={busy}/>
 </>}
-                {mfaPending&&<div data-mfa-pending="true"><p className="security-otp-help">Authenticator uygulamanızdaki 6 haneli kodu veya tek kullanımlık kurtarma kodunu girin. Daha önce kullandığınız kod yerine yeni kodu bekleyin.</p><label>Doğrulama veya kurtarma kodu<input autoComplete="one-time-code" type="text" required maxLength={40} value={mfaCode} onChange={event=>setMfaCode(event.target.value.trim())}/></label><button type="button" onClick={()=>{setMfaPending(false);setMfaCode("");setError("")}}>Şifreyle yeniden başla</button></div>}
+                {mfaPending&&<div data-mfa-pending="true"><AuthCode value={mfaCode} onChange={setMfaCode} busy={busy} label="Doğrulama veya kurtarma kodu"/><button className="auth-mode" type="button" disabled={busy} onClick={()=>{setMfaPending(false);setMfaCode("");setError("")}}>Şifreyle yeniden başla</button></div>}
                 <button className="cms-primary" disabled={busy}>
                   {busy ? <Busy /> : <ArrowUpRight size={18} />}{mfaPending?"Kodu doğrula":"Giriş yap"}
                 </button>
