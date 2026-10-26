@@ -17,6 +17,6 @@ it('switches editing devices with isolated drafts and sends the device on save',
 
 it('offers publish checks to an admin without exposing root management or direct publication',async()=>{
  vi.stubGlobal('fetch',vi.fn().mockResolvedValue({ok:true,json:async()=>({items:[]})}));render(<VisualEditor initial={structuredClone(baseline)} role="admin" csrf="csrf" onClassic={vi.fn()} onUnauthorized={vi.fn()}/>);
- expect(screen.queryByRole('button',{name:'Yönetim'})).toBeNull();expect(screen.queryByRole('button',{name:'Yayınla'})).toBeNull();expect(screen.getByRole('button',{name:'Root onayına gönder'})).toBeInTheDocument();
- fireEvent.click(screen.getByRole('button',{name:'Yayın kontrolü'}));expect(await screen.findByRole('dialog',{name:'Yayın kontrolü'})).toBeInTheDocument();
+ expect(screen.queryByRole('button',{name:'Güvenlik'})).toBeNull();expect(screen.queryByRole('button',{name:'Yönetim'})).toBeNull();expect(screen.queryByRole('button',{name:'Yayınla'})).toBeNull();expect(screen.getByRole('button',{name:'Root onayına gönder'})).toBeInTheDocument();
+ fireEvent.click(screen.getByRole('button',{name:'Yayın kontrolü'}));expect(await screen.findByRole('region',{name:'Yayın kontrolü'})).toBeInTheDocument();
 });

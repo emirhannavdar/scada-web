@@ -1,4 +1,5 @@
 import {adminFetch,requestSessionProof} from '@/lib/admin-security';
+import {type CheckIssue,highlightIssue} from '@/lib/preflight';
 import {PreflightPanel} from './PreflightPanel';
 import {prepareImageUpload} from '@/lib/image-upload';
 import {useUnsavedChanges} from '@/lib/unsaved-changes';
@@ -76,12 +77,14 @@ async function api<T>(path: string, csrf: string, options: RequestInit = {}) {
 }
 export function VisualEditor({
   initial,
+  locateIssue,
   active = true,
   csrf,
   role = "admin",
   onClassic,
   onUnauthorized,
 }: {
+  locateIssue?:CheckIssue|null;
   active?: boolean;
   initial: VisualWorkspace;
   csrf: string;
@@ -465,6 +468,9 @@ export function VisualEditor({
         " düzenleme açık. Değişiklikler yalnız bu görünüme uygulanır.",
     );
   }
+  const locateGeneration=useRef(0);
+  async function locate(issue:CheckIssue){setPreflightOpen(false);const sequence=++locateGeneration.current;try{await navigate(issue.path||path);if(issue.stage!==undefined){setScene(String(issue.stage));send({type:'scene',stage:issue.stage})}if(issue.fieldId){setSelection([issue.fieldId]);setSelectedId(issue.fieldId)}let remaining=30;const find=()=>{if(sequence!==locateGeneration.current)return;const doc=iframe.current?.contentDocument;if(doc&&highlightIssue(doc,issue)){setNotice('Sorunlu alan renkli çerçeveyle işaretlendi.');return}if(--remaining>0)setTimeout(find,150);else setNotice('Konum: '+(issue.location||issue.fieldId||issue.path||'Açık sayfa')+'. İlgili alanı düzenleyicide seçin.')};setTimeout(find,150)}catch(e){setError((e as Error).message)}}
+  useEffect(()=>{if(locateIssue&&active)void locate(locateIssue);return()=>{locateGeneration.current++}},[locateIssue,active]);
   async function navigate(next: string) {
     if (recordEditing) throw Error("Önce açık düzenlemeyi taslağa uygulayın.");
     if (dirty) await saveDraft();
@@ -664,7 +670,7 @@ export function VisualEditor({
           <option value="tr">TR</option>
           <option value="en">EN</option>
         </select>
-        <div className="visual-top-actions"><button type="button" title="2FA, oturumlar ve güvenlik geçmişi" onClick={()=>window.dispatchEvent(new Event("scadawatt:open-security"))}><Settings2 size={16}/><span>Güvenlik</span></button><button disabled={busy||recordEditing} title="Taslağı yayınlamadan kontrol et" onClick={()=>setPreflightOpen(true)}><Check size={16}/><span>Yayın kontrolü</span></button>
+        <div className="visual-top-actions">{role==='root'&&<button type="button" title="2FA, oturumlar ve güvenlik geçmişi" disabled={busy||recordEditing} onClick={()=>void run(async()=>{onClassic(dirty?await saveDraft():saved);window.dispatchEvent(new Event("scadawatt:open-security"))})}><Settings2 size={16}/><span>Güvenlik</span></button>}<button disabled={busy||recordEditing} title="Taslağı yayınlamadan kontrol et" onClick={()=>{if(role==='root')void run(async()=>{onClassic(dirty?await saveDraft():saved);window.dispatchEvent(new Event('scadawatt:open-checks'))});else setPreflightOpen(true)}}><Check size={16}/><span>Yayın kontrolü</span></button>
           {role === "root" && (
             <button
               title="Kullanıcılar, görseller ve yayın geçmişi"
@@ -877,8 +883,8 @@ export function VisualEditor({
           </button>
         </div>
       )}
-      {preflightOpen&&<PreflightPanel workspace={draft} path={path} getDocument={()=>iframe.current?.contentDocument} onClose={()=>setPreflightOpen(false)} onNavigate={next=>{setPreflightOpen(false);void run(()=>navigate(next))}} onMobile={()=>{setPreflightOpen(false);void run(()=>switchDevice(true))}}/>}
-      <div className={`visual-stage ${mobile ? "is-mobile" : ""}`} ref={stageRef}>
+      {preflightOpen&&<PreflightPanel inline onLocate={issue=>void locate(issue)} workspace={draft} path={path} getDocument={()=>iframe.current?.contentDocument} onClose={()=>setPreflightOpen(false)} onNavigate={next=>{setPreflightOpen(false);void run(()=>navigate(next))}} onMobile={()=>{setPreflightOpen(false);void run(()=>switchDevice(true))}}/>}
+      <div className={`visual-stage ${mobile ? "is-mobile" : ""}`} ref={stageRef} style={preflightOpen?{display:"none"}:undefined}>
         <iframe
           style={{
             width: previewWidth,

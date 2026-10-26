@@ -245,8 +245,7 @@ export async function createCmsApp({ dataDir = process.env["CMS_DATA_DIR"] || "d
                 }
                 if (path === "/api/cms/logout" && method === "POST") {
                     const s = (await auth(req, true));
-                    (await store.db.prepare("DELETE FROM sessions WHERE token=?").run(digest(s.token)));
-                    res.setHeader("Set-Cookie", cookie("", 0));
+                    await security.logout(req,res,s);
                     return send(res, 200, { ok: true });
                 }
                 if (path === "/api/cms/messages" && method === "GET") {

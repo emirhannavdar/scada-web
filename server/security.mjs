@@ -11,7 +11,7 @@ export async function createSecurityService(store,{secureCookies=false,checkOrig
  let hashing=0,lastPurge=0;const auditNotices=new Map(),pendingAudits=new Set();
  const identity=req=>({ip:clientIp(req,trusted),agent:String(req.headers['user-agent']||'').replace(/[\x00-\x1f]/g,'').slice(0,240)});
  const sessionCookie=(token,seconds)=>`sw_admin=${token}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${seconds}${secureCookies?'; Secure':''}`;
- const deviceCookie=(token,seconds)=>`sw_device=${token}; Path=/api/cms; HttpOnly; SameSite=Strict; Max-Age=${seconds}${secureCookies?'; Secure':''}`;
+ const deviceCookie=(token,seconds,userId)=>`sw_device_v2_${userId}=${token}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${seconds}${secureCookies?'; Secure':''}`;
  const challengeCookie=(token,seconds)=>`sw_mfa=${token}; Path=/api/cms; HttpOnly; SameSite=Strict; Max-Age=${seconds}${secureCookies?'; Secure':''}`;
  async function audit(req,action,result='success',actor='',detail={}){
   const info=identity(req),clean={};for(const key of ['target','device','version','decision','id','path'])if(['string','number'].includes(typeof detail[key]))clean[key]=String(detail[key]).slice(0,160);
@@ -25,10 +25,20 @@ export async function createSecurityService(store,{secureCookies=false,checkOrig
  async function clearRate(req,email,purpose){for(const {key} of rateKeys(req,email,purpose))await db.prepare('DELETE FROM security_attempts WHERE key=?').run(key)}
  function key(create=false){const file=join(store.dir,'security.key');if(!existsSync(file)&&create){try{writeFileSync(file,randomBytes(32),{mode:0o600,flag:'wx'})}catch(error){if(error.code!=='EEXIST')throw error}}try{const bytes=readFileSync(file);if(bytes.length!==32)throw Error();return bytes}catch{fail(503,'2FA şifreleme anahtarı okunamadı. Sunucudaki security.key yedeğini kontrol edin.')}}
  async function mfa(userId){return await db.prepare('SELECT * FROM security_mfa WHERE user_id=?').get(userId)}
+ async function trustedDevice(req,user,state){
+  const tokens=[...String(req.headers.cookie||'').matchAll(new RegExp('(?:^|;\\s*)(?:sw_device_v2_'+user.id+'|sw_device_v2|sw_device)=([a-f0-9]{64})(?=;|$)','g'))].map(match=>match[1]).slice(0,8),info=identity(req);
+  let best=null;for(const token of tokens){const row=await db.prepare('SELECT * FROM security_devices WHERE token=? AND user_id=?').get(hash(token),user.id);if(row&&row.expires>clock()&&row.ip===info.ip&&constantEqual(row.agent,hash(info.agent))&&constantEqual(row.password_hash,hash(user.password))&&state?.enabled&&constantEqual(row.factor_hash,hash(state.secret))&&(!best||row.expires>best.expires))best={...row,rawToken:token}}
+  return best;
+ }
+ async function logout(req,res,s){
+  const user=await db.prepare('SELECT * FROM cms_users WHERE email=?').get(s.email),device=user&&await trustedDevice(req,user,await mfa(user.id));
+  await db.prepare('DELETE FROM sessions WHERE token=?').run(hash(s.token));
+  res.setHeader('Set-Cookie',[sessionCookie('',0),challengeCookie('',0),...(device?[deviceCookie(device.rawToken,Math.max(1,Math.floor((device.expires-clock())/1000)),user.id)]:[])]);
+ }
  async function rememberDevice(req,res,user,factorHash){
   const token=randomBytes(32).toString('hex'),info=identity(req);
   await db.transaction(async()=>{const current=await db.prepare('SELECT password FROM cms_users WHERE id=?').get(user.id),state=await mfa(user.id);if(!current||!constantEqual(current.password,user.password)||!state?.enabled||!constantEqual(hash(state.secret),factorHash))fail(401,'Hesap bilgileri değişti. Yeniden giriş yapın.');await db.prepare('INSERT INTO security_devices(token,user_id,password_hash,factor_hash,ip,agent,expires) VALUES(?,?,?,?,?,?,?)').run(hash(token),user.id,hash(user.password),factorHash,info.ip,hash(info.agent),clock()+600000);await db.prepare('DELETE FROM security_devices WHERE user_id=? AND token NOT IN (SELECT token FROM security_devices WHERE user_id=? ORDER BY expires DESC LIMIT 20)').run(user.id,user.id)});
-  const previous=res.getHeader('Set-Cookie');res.setHeader('Set-Cookie',[...(Array.isArray(previous)?previous:previous?[previous]:[]),deviceCookie(token,600)]);
+  const previous=res.getHeader('Set-Cookie');res.setHeader('Set-Cookie',[...(Array.isArray(previous)?previous:previous?[previous]:[]),deviceCookie(token,600,user.id)]);
  }
  async function verifyFactor(user,code,type='totp'){
   const state=await mfa(user.id);if(!state?.enabled)return false;
@@ -64,7 +74,7 @@ export async function createSecurityService(store,{secureCookies=false,checkOrig
    await db.prepare('INSERT INTO sessions(token,csrf,expires,email,role,created_at,last_seen,reauth_at,mfa_verified,ip,agent) VALUES(?,?,?,?,?,?,?,?,?,?,?)').run(hash(token),csrf,expires,user.email,user.role,created,lastSeen,clock(),verified?1:0,info.ip,info.agent);
    if(deviceToken){await db.prepare('INSERT INTO security_devices(token,user_id,password_hash,factor_hash,ip,agent,expires) VALUES(?,?,?,?,?,?,?)').run(hash(deviceToken),user.id,hash(user.password),factorHash,info.ip,hash(info.agent),clock()+600000);await db.prepare('DELETE FROM security_devices WHERE user_id=? AND token NOT IN (SELECT token FROM security_devices WHERE user_id=? ORDER BY expires DESC LIMIT 20)').run(user.id,user.id)}
   });
-  res.setHeader('Set-Cookie',[sessionCookie(token,Math.max(0,Math.floor((expires-clock())/1000))),challengeCookie('',0),...(deviceToken?[deviceCookie(deviceToken,600)]:[])]);
+  res.setHeader('Set-Cookie',[sessionCookie(token,Math.max(0,Math.floor((expires-clock())/1000))),challengeCookie('',0),...(deviceToken?[deviceCookie(deviceToken,600,user.id)]:[])]);
   return {authenticated:true,csrf,email:user.email,role:user.role,mfaEnrollmentRequired:user.role==='admin'&&!(await mfa(user.id))?.enabled};
  }
  async function login(req,res,{email,password}={}){
@@ -76,8 +86,8 @@ export async function createSecurityService(store,{secureCookies=false,checkOrig
   const old=await rawSession(req);if(old)await db.prepare('DELETE FROM sessions WHERE token=?').run(hash(old.token));
   const state=await mfa(user.id);
   if(state?.enabled){
-   const deviceToken=/\bsw_device=([a-f0-9]{64})\b/.exec(req.headers.cookie||'')?.[1],info=identity(req),device=deviceToken&&await db.prepare('SELECT * FROM security_devices WHERE token=? AND user_id=?').get(hash(deviceToken),user.id);
-   if(device&&device.expires>clock()&&device.ip===info.ip&&constantEqual(device.agent,hash(info.agent))&&constantEqual(device.password_hash,hash(user.password))&&constantEqual(device.factor_hash,hash(state.secret))){const result=await issueSession(req,res,user,{verified:true,factorHash:hash(state.secret)});await audit(req,'auth.device_login','success',email);return result}
+   const device=await trustedDevice(req,user,state),info=identity(req);
+   if(device){const result=await issueSession(req,res,user,{verified:true,factorHash:hash(state.secret)});res.setHeader('Set-Cookie',[...res.getHeader('Set-Cookie'),deviceCookie(device.rawToken,Math.max(1,Math.floor((device.expires-clock())/1000)),user.id)]);await audit(req,'auth.device_login','success',email);return result}
    const token=randomBytes(32).toString('hex');await db.transaction(async()=>{await db.prepare('DELETE FROM security_challenges WHERE user_id=?').run(user.id);await db.prepare('INSERT INTO security_challenges(token,user_id,password_hash,expires,ip,agent,tries) VALUES(?,?,?,?,?,?,0)').run(hash(token),user.id,hash(user.password),clock()+300000,info.ip,hash(info.agent))});res.setHeader('Set-Cookie',[challengeCookie(token,300),sessionCookie('',0)]);await audit(req,'auth.mfa_challenge','success',email);return {authenticated:false,mfaRequired:true}}
   const result=await issueSession(req,res,user);await audit(req,'auth.login','success',email);return result;
  }
@@ -111,6 +121,17 @@ export async function createSecurityService(store,{secureCookies=false,checkOrig
   if(path==='/api/cms/security/status'&&method==='GET'){send(res,200,await status(req,s));return true}
   if(path==='/api/cms/security/activity'&&method==='POST'){await db.prepare('UPDATE sessions SET last_seen=? WHERE token=?').run(clock(),hash(s.token));s.last_seen=clock();send(res,200,await status(req,s));return true}
   if(path==='/api/cms/security/reauth'&&method==='POST'){send(res,200,await reauthenticate(req,res,s,await readBody(req)));return true}
+  const ownMfa=await mfa(user.id),enrolling=s.role==='admin'&&!ownMfa?.enabled;
+  if(s.role==='admin'&&!(enrolling&&['/api/cms/security/mfa/setup','/api/cms/security/mfa/confirm'].includes(path))){await audit(req,'authorization.denied','blocked',s.email,{path});fail(403,'Güvenlik ayarlarınızı root kullanıcısı yönetir.');}
+  if(path==='/api/cms/security/users'&&method==='GET'){
+   const rows=await db.prepare("SELECT u.id,u.email,m.enabled,m.recovery FROM cms_users u LEFT JOIN security_mfa m ON m.user_id=u.id WHERE u.role='admin' ORDER BY u.email").all();send(res,200,{items:rows.map(row=>({id:row.id,email:row.email,mfaEnabled:Boolean(row.enabled),recoveryRemaining:JSON.parse(row.recovery||'[]').length}))});return true;
+  }
+  const userAction=/^\/api\/cms\/security\/users\/(\d+)\/(reset|revoke)$/.exec(path);
+  if(userAction&&method==='POST'){
+   recent(s);const target=await db.prepare("SELECT id,email FROM cms_users WHERE id=? AND role='admin'").get(Number(userAction[1]));if(!target)fail(404,'Admin hesabı bulunamadı.');const b=await readBody(req);if(b.email!==target.email)fail(400,'Hesap doğrulanamadı.');
+   await db.transaction(async()=>{if(userAction[2]==='reset')await db.prepare("UPDATE security_mfa SET enabled=0,secret=NULL,pending_secret=NULL,pending_until=0,recovery='[]',last_counter=-1 WHERE user_id=?").run(target.id);await db.prepare('DELETE FROM security_devices WHERE user_id=?').run(target.id);await db.prepare('DELETE FROM security_challenges WHERE user_id=?').run(target.id);await db.prepare('DELETE FROM sessions WHERE email=?').run(target.email)});
+   await audit(req,userAction[2]==='reset'?'mfa.admin_reset':'session.admin_revoked','success',s.email,{target:target.email});send(res,200,{ok:true});return true;
+  }
   if(path==='/api/cms/security/sessions'&&method==='GET'){
    const rows=s.role==='root'?await db.prepare('SELECT token,email,role,created_at,last_seen,expires,ip,agent FROM sessions WHERE expires>? ORDER BY last_seen DESC LIMIT 200').all(clock()):await db.prepare('SELECT token,email,role,created_at,last_seen,expires,ip,agent FROM sessions WHERE expires>? AND email=? ORDER BY last_seen DESC LIMIT 200').all(clock(),s.email);
    send(res,200,{items:rows.filter(row=>row.last_seen+(row.role==='root'?rootIdle:adminIdle)>clock()).map(row=>({...row,id:row.token,token:undefined,current:constantEqual(row.token,hash(s.token))}))});return true;
@@ -160,5 +181,5 @@ export async function createSecurityService(store,{secureCookies=false,checkOrig
  }
  const purgeTimer=setInterval(()=>void purge().catch(()=>console.error('Güvenlik kayıtları temizlenemedi.')),3600000);purgeTimer.unref();
  const observe=(req,res)=>{const work=auditRequest(req,res).catch(()=>console.error('Güvenlik işlem kaydı yazılamadı.'));pendingAudits.add(work);void work.finally(()=>pendingAudits.delete(work));};
- return {login,session,authorize,touch,recent,handle,status,audit,auditRequest,observe,identity,purge,close:async()=>{clearInterval(purgeTimer);await Promise.allSettled([...pendingAudits])}};
+ return {login,logout,session,authorize,touch,recent,handle,status,audit,auditRequest,observe,identity,purge,close:async()=>{clearInterval(purgeTimer);await Promise.allSettled([...pendingAudits])}};
 }

@@ -1,6 +1,6 @@
 import {afterEach,expect,it,vi} from 'vitest';
 import {cleanup,fireEvent,render,screen} from '@testing-library/react';
-import {auditDraft,auditPage,checkImages,draftRoutes} from '@/lib/preflight';
+import {auditDraft,auditPage,checkImages,draftRoutes,highlightIssue} from '@/lib/preflight';
 import {PreflightPanel} from '@/components/admin/PreflightPanel';
 import type {VisualWorkspace} from '@/lib/cms-visual-model';
 const workspace:VisualWorkspace={device:'mobile',revision:1,version:1,updated:'',values:{},published:{},collections:{products:[{slug:'meter',name:'Sayaç',code:'M1',image:'/assets/meter.webp',summary:'Ölçüm cihazı',en:{}}],solutions:[],plans:[]},catalog:{fields:[{id:'copy.title',target:'copy',kind:'text',group:'Sayfa',label:'Başlık',page:'/',default:{tr:'Başlık',en:'Title'}}]}};
@@ -20,4 +20,11 @@ it('probes same-origin assets using HEAD with a maximum of four simultaneous req
 });
 it('opens a control panel without publishing or mutating draft data',async()=>{
  const fetch=vi.fn().mockResolvedValue({ok:true,status:200});vi.stubGlobal('fetch',fetch);const close=vi.fn();render(<PreflightPanel workspace={workspace} onClose={close}/>);expect(screen.getByRole('dialog')).toHaveTextContent('MOBİL');fireEvent.click(screen.getByRole('button',{name:'Kontrolü başlat'}));await screen.findByText('Kontrol edilen alanlarda sorun bulunamadı.');expect(fetch.mock.calls.every(call=>call[1].method==='HEAD')).toBe(true);fireEvent.keyDown(document,{key:'Escape'});expect(close).toHaveBeenCalledOnce();
+});
+
+it('reports precise field location and marks the selected preview element without changing its text',async()=>{
+ const draft=structuredClone(workspace);draft.values['copy.title']={tr:'',en:'Title'};draft.catalog.fields[0]!.location='Ana sayfa › Açılış başlığı';
+ const issue=auditDraft(draft).issues.find(issue=>issue.fieldId==='copy.title')!;expect(issue.language).toBe('TR');expect(issue.path).toBe('/');expect(issue.location).toContain('Açılış');
+ const doc=document.implementation.createHTMLDocument('Önizleme');doc.body.innerHTML='<main id="main"><h1 data-cms-field="copy.title">Başlık</h1></main>';expect(highlightIssue(doc,issue)).toBe(true);expect(doc.querySelector('h1')?.getAttribute('data-cms-preflight-issue')).toBe('warning');expect(doc.querySelector('h1')?.textContent).toBe('Başlık');
+ vi.stubGlobal('fetch',vi.fn().mockResolvedValue({ok:true,status:200}));const locate=vi.fn();render(<PreflightPanel inline workspace={draft} onClose={vi.fn()} onLocate={locate}/>);expect(screen.queryByRole('dialog')).toBeNull();fireEvent.click(screen.getByRole('button',{name:'Kontrolü başlat'}));await screen.findByText('Ana sayfa › Açılış başlığı');expect(screen.getByText('Mobil · TR')).toBeInTheDocument();fireEvent.click(screen.getByRole('button',{name:'Önizlemede işaretle'}));expect(locate).toHaveBeenCalledWith(expect.objectContaining({fieldId:'copy.title',language:'TR'}));
 });

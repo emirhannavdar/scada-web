@@ -280,8 +280,8 @@ function FieldEditor({
 export function AdminPanel({
   initialMode = "visual",
 }: { initialMode?: "visual" | "classic" } = {}) {
-  const [securityOpen,setSecurityOpen]=useState(false),[mfaPending,setMfaPending]=useState(false),[mfaCode,setMfaCode]=useState(""),[factorType,setFactorType]=useState<FactorType>("totp");
-  useEffect(()=>{const open=()=>setSecurityOpen(true);window.addEventListener("scadawatt:open-security",open);return()=>window.removeEventListener("scadawatt:open-security",open)},[]);
+  const [locateIssue,setLocateIssue]=useState<import('@/lib/preflight').CheckIssue|null>(null),[mfaPending,setMfaPending]=useState(false),[mfaCode,setMfaCode]=useState(""),[factorType,setFactorType]=useState<FactorType>("totp");
+
   const [visualRequested, setVisual] = useState(initialMode === "visual");
   const [visualMounted, setVisualMounted] = useState(initialMode === "visual");
   const [auth, setAuth] = useState<Session | null>(null),
@@ -300,7 +300,7 @@ export function AdminPanel({
     [notice, setNotice] = useState(""),
     [approvalSent, setApprovalSent] = useState(false),
     [view, setView] = useState<
-      "content" | "media" | "history" | "collections" | "users" | "approvals" | "configurator" | "community" | "mail" | "google" | "checks"
+      "content" | "media" | "history" | "collections" | "users" | "approvals" | "configurator" | "community" | "mail" | "google" | "checks" | "security"
     >("content"),
     [media, setMedia] = useState<Media[]>([]),
     [versions, setVersions] = useState<Version[]>([]),
@@ -309,6 +309,7 @@ export function AdminPanel({
     [note, setNote] = useState(""),
     [previewPath, setPreviewPath] = useState("/"),
     [sidebar, setSidebar] = useState(false);
+  useEffect(()=>{const openSecurity=()=>{if(auth?.role!=='root')return;setView('security');setVisual(false)},openChecks=()=>{if(auth?.role!=='root')return;setView('checks');setVisual(false)};window.addEventListener('scadawatt:open-security',openSecurity);window.addEventListener('scadawatt:open-checks',openChecks);return()=>{window.removeEventListener('scadawatt:open-security',openSecurity);window.removeEventListener('scadawatt:open-checks',openChecks)}},[auth?.role]);
   const [users, setUsers] = useState<CmsUser[]>([]),
     [approvals, setApprovals] = useState<Approval[]>([]),
     [newUserEmail, setNewUserEmail] = useState(""),
@@ -712,8 +713,9 @@ export function AdminPanel({
   if(auth.mfaEnrollmentRequired)return <><SessionSecurity session={auth} onRenew={setAuth}/><SecurityPanel session={auth} enrollment onClose={()=>void action(async()=>{const s=await request<Session>('session');if(s.mfaEnrollmentRequired)return;setAuth(s);loaded(await request<Workspace>('workspace?device=desktop'))})}/></>;
   const visualSurface =
     (visualMounted || auth.role === "admin") && workspace && auth.csrf ? (
-      <div style={{ display: visual && !securityOpen ? "block" : "none" }}>
+      <div style={{ display: visual ? "block" : "none" }}>
         <VisualEditor
+          locateIssue={locateIssue}
           initial={workspace}
           active={visual}
           csrf={auth.csrf}
@@ -733,9 +735,8 @@ export function AdminPanel({
   return (
     <>
       <SessionSecurity session={auth} onRenew={setAuth}/>
-      {securityOpen&&<SecurityPanel session={auth} onClose={()=>setSecurityOpen(false)}/>}
       {visualSurface}
-      {auth.role === "root" && <div className="cms-app" style={{ display: visual || securityOpen ? "none" : undefined }}>
+      {auth.role === "root" && <div className="cms-app" style={{ display: visual ? "none" : undefined }}>
         <input
           ref={uploadRef}
           hidden
@@ -767,7 +768,7 @@ export function AdminPanel({
             Sayfa üzerinde düzenle
           </button>
           <div className="cms-sidebar-label">ÇALIŞMA ALANI</div>
-          <nav aria-label="Yönetim bölümleri"><button type="button" onClick={()=>setSecurityOpen(true)}>Hesap güvenliği</button><button className={view==="checks"?"is-active":""} disabled={recordEditing} onClick={()=>{setView("checks");setSidebar(false)}}>Yayın kontrolü</button><button className={view==="google"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("google");setSidebar(false)}}>Google yorum entegrasyonu</button><button className={view==="community"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("community");setSidebar(false)}}>SSS ve müşteri yorumları</button><button className={view==="mail"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("mail");setSidebar(false)}}>E-posta gönderimi</button><button className={view==="configurator"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("configurator");setSidebar(false)}}>Saha yapılandırıcısı</button>
+          <nav aria-label="Yönetim bölümleri"><button type="button" className={view==='security'?'is-active':''} onClick={()=>{setView("security");setSidebar(false)}}>Hesap güvenliği</button><button className={view==="checks"?"is-active":""} disabled={recordEditing} onClick={()=>{setView("checks");setSidebar(false)}}>Yayın kontrolü</button><button className={view==="google"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("google");setSidebar(false)}}>Google yorum entegrasyonu</button><button className={view==="community"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("community");setSidebar(false)}}>SSS ve müşteri yorumları</button><button className={view==="mail"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("mail");setSidebar(false)}}>E-posta gönderimi</button><button className={view==="configurator"?"is-active":""} onClick={()=>{if(recordEditing&&!confirm("Açık düzenleme iptal edilsin mi?"))return;setView("configurator");setSidebar(false)}}>Saha yapılandırıcısı</button>
             <button
               className={view === "content" ? "is-active" : ""}
               onClick={() => {
@@ -919,7 +920,7 @@ export function AdminPanel({
               <div>
                 <p className="cms-eyebrow">SCADAWATT / EDİTÖR</p>
                 <h1>
-                  {view==="checks" ? "Yayın öncesi kontrol." : view==="google" ? "Google yorum entegrasyonu." : view === "community" ? "SSS ve müşteri yorumları." : view==="mail" ? "E-posta gönderimi." : view === "configurator" ? "Saha yapılandırıcısı." : view === "media"
+                  {view==="security" ? "Hesap güvenliği." : view==="checks" ? "Yayın öncesi kontrol." : view==="google" ? "Google yorum entegrasyonu." : view === "community" ? "SSS ve müşteri yorumları." : view==="mail" ? "E-posta gönderimi." : view === "configurator" ? "Saha yapılandırıcısı." : view === "media"
                     ? "Görselleriniz."
                     : view === "history"
                       ? "Yayın geçmişi."
@@ -932,7 +933,7 @@ export function AdminPanel({
                             : "İçeriği siz yönetin."}
                 </h1>
                 <p>
-                  {view==="google" ? "Google yorumlarını otomatik çekmek için API bağlantısını yönetin." : view==="community" ? "Soruları, gerçek müşteri yorumlarını ve Google bağlantısını yönetin." : view==="mail" ? "Form alıcısı ve güvenli SMTP bağlantısını yapılandırın." : view === "configurator" ? "Soruları, cevapları ve sonuç kurallarını taslak ve onay akışıyla yönetin." : view === "content"
+                  {view==="security" ? "İki aşamalı doğrulamayı, admin güvenliğini ve oturumları yönetin." : view==="checks" ? "Yayın sorunlarını konumlarıyla inceleyin ve ilgili alanı açın." : view==="google" ? "Google yorumlarını otomatik çekmek için API bağlantısını yönetin." : view==="community" ? "Soruları, gerçek müşteri yorumlarını ve Google bağlantısını yönetin." : view==="mail" ? "Form alıcısı ve güvenli SMTP bağlantısını yapılandırın." : view === "configurator" ? "Soruları, cevapları ve sonuç kurallarını taslak ve onay akışıyla yönetin." : view === "content"
                     ? "Önce sayfayı veya sahneyi seçin. Sonra ekranda gördüğünüz metni düzenleyin."
                     : view === "media"
                       ? "Bir kez yükleyin, içerik alanlarında kullanın."
@@ -950,7 +951,8 @@ export function AdminPanel({
                 <small>{view === "content" ? "yayından farklı alan" : "içerik arşivi"}</small>
               </span>
             </header>
-            {view==="checks"&&workspace&&<PreflightPanel workspace={{...workspace,values,...(collections?{collections}:{}),design}} onClose={()=>setView("content")}/>}
+            {view==="security"&&auth.role==="root"&&<SecurityPanel embedded session={auth} onClose={()=>setView("content")}/>}
+            {view==="checks"&&workspace&&<PreflightPanel inline onLocate={issue=>void action(async()=>{await save();setLocateIssue({...issue});setVisualMounted(true);setVisual(true)})} workspace={{...workspace,values,...(collections?{collections}:{}),design}} onClose={()=>setView("content")}/>}
             {view==="configurator"&&workspace&&<ConfiguratorEditor value={String((values[CONFIGURATOR_FIELD]??workspace.catalog.fields.find(f=>f.id===CONFIGURATOR_FIELD)?.default)?.tr??"{}")} onApply={value=>setValues(old=>({...old,[CONFIGURATOR_FIELD]:{tr:value,en:value}}))} onEditingChange={setRecordEditing}/>}
             {view==="community"&&workspace&&auth.csrf&&<CommunityEditor csrf={auth.csrf} value={String((values[COMMUNITY_FIELD]??workspace.catalog.fields.find(f=>f.id===COMMUNITY_FIELD)?.default)?.tr??"{}")} onApply={value=>setValues(old=>({...old,[COMMUNITY_FIELD]:{tr:value,en:value}}))} onEditingChange={setRecordEditing}/>}
             {view==="google"&&auth.role==="root"&&auth.csrf&&<GoogleReviewsSettings csrf={auth.csrf} onEditingChange={setRecordEditing}/>}
