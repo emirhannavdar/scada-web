@@ -30,7 +30,7 @@ export const STYLE_ENUMS = {
   fontStyle: ["normal", "italic"],
   textDecoration: ["none", "underline", "line-through"],
   textTransform: ["none", "uppercase", "lowercase", "capitalize"],
-  fontFamily: ["inherit", "Inter, sans-serif", "Georgia, serif", "monospace"],
+  fontFamily: ["inherit", "Inter, sans-serif", "Journey Sora, sans-serif", "Journey Manrope, sans-serif", "Verdana, sans-serif", "Trebuchet MS, sans-serif", "Georgia, serif", "Palatino Linotype, serif", "Courier New, monospace", "monospace"],
   textShadow: ["none", "soft", "strong"],
   display: ["none"],
 };

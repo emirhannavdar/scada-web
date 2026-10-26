@@ -176,6 +176,7 @@ function rules(style: StyleRule) {
           ? "px"
           : "";
     out.push(name + ":" + value + unit + "!important");
+    if(key === "fontFamily") out.push("--journey-heading-font:" + value);
   }
   if (style.textShadow !== undefined)
     out.push(

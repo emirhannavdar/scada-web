@@ -31,6 +31,12 @@ const optionNames: Record<string, string> = {
   inherit: "Sitenin yazı tipi",
   "Inter, sans-serif": "Inter / Modern",
   "Georgia, serif": "Georgia / Klasik",
+  "Journey Sora, sans-serif": "Sora / Geometrik",
+  "Journey Manrope, sans-serif": "Manrope / Çağdaş",
+  "Verdana, sans-serif": "Verdana / Okunaklı",
+  "Trebuchet MS, sans-serif": "Trebuchet / Dinamik",
+  "Palatino Linotype, serif": "Palatino / Editoryal",
+  "Courier New, monospace": "Courier / Kod",
   monospace: "Mono / Teknik",
   soft: "Yumuşak",
   strong: "Belirgin",
@@ -131,6 +137,16 @@ export function DesignEditor({
     if (!["desktop","mobile","desktopLight","desktopDark","mobileLight","mobileDark"].some(p => Object.keys((item as unknown as Record<string,object>)[p] ?? {}).length))
       delete next.elements[target.key];
     else next.elements[target.key] = item;
+    }
+    onChange(next);
+  }
+  function applyTypePreset(font: string, weight: number, spacing: number) {
+    if(!selected) return;
+    const next=structuredClone(design);
+    for(const target of selections?.length ? selections : [selected]) {
+      const item=next.elements[target.key] ?? {page:target.page,selector:target.selector,label:target.label,kind:target.kind,...(target.fragment?{fragment:target.fragment}:{}),desktop:{},mobile:{}};
+      item[profile]={...item[profile],fontFamily:font,fontWeight:weight,letterSpacing:spacing,lineHeight:1.3};
+      next.elements[target.key]=item;
     }
     onChange(next);
   }
@@ -334,9 +350,15 @@ export function DesignEditor({
             </p>
             {selected.kind === "text" && (
               <fieldset>
-                <legend>Yazı</legend>
+                <legend>Yazı · Tipografi stilleri</legend>
+                <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:8}}>
+                  <button type="button" onClick={()=>applyTypePreset('Journey Sora, sans-serif',600,-0.6)} style={{fontFamily:'Journey Sora',padding:12}}>Sora · Güçlü başlık</button>
+                  <button type="button" onClick={()=>applyTypePreset('Journey Manrope, sans-serif',500,0)} style={{fontFamily:'Journey Manrope',padding:12}}>Manrope · Zarif</button>
+                  <button type="button" onClick={()=>applyTypePreset('Georgia, serif',400,0)} style={{fontFamily:'Georgia',padding:12}}>Editoryal</button>
+                  <button type="button" onClick={()=>applyTypePreset('monospace',500,0.4)} style={{fontFamily:'monospace',padding:12}}>Teknik</button>
+                </div>
                 {numeric("fontSize", 16)}
-                {select("fontFamily")}
+                <p className="visual-help">Tipografi · Sora, Manrope ve klasik yazı tipleri</p>{select("fontFamily")}
                 {!selected.fragment && select("textAlign")}
                 {select("fontStyle")}
                 {select("textDecoration")}

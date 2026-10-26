@@ -178,3 +178,19 @@ html[data-theme="dark"] #root .site-footer{--footer-bg:#101c17;--footer-text:#ef
  #main .final-connection .connection-bottom{margin-top:24px}
 }
 @media(min-width:768px) and (max-height:740px){#main .drone-journey .drone-copy h1:not(.sr-only){font-size:clamp(48px,4vw,64px)}#main .drone-journey .drone-copy h2{font-size:40px}}
+
+/* Consistent, compact typography across every journey stage. */
+@media(min-width:768px){
+ #main .drone-journey .drone-copy{width:32%;max-width:430px;font-family:var(--font-sans),Arial,sans-serif}
+ #main .drone-journey .drone-copy :is(h1:not(.sr-only),h2){font-family:var(--font-sans),Arial,sans-serif;font-size:clamp(32px,2.65vw,46px);line-height:1.16;letter-spacing:-.032em;font-weight:550;max-width:17ch;margin:16px 0 20px;text-wrap:balance}
+ #main .drone-journey .drone-copy h1 em{font-family:inherit;font-style:normal;font-size:inherit;font-weight:inherit;letter-spacing:inherit;color:#ffc290}
+ #main .drone-journey .drone-copy .film-label{font-family:inherit;font-size:11px;font-weight:600;line-height:1.6;letter-spacing:.09em;margin-bottom:16px;gap:10px}
+ #main .drone-journey .drone-copy .film-label>span{width:20px;box-shadow:none}
+ #main .drone-journey .drone-copy .drone-body{font-family:inherit;font-size:clamp(15px,.95vw,16px);font-weight:400;line-height:1.75;letter-spacing:0;max-width:38ch;color:#edf2ee}
+ #main .drone-journey .drone-copy .drone-learn{font-family:inherit;font-size:12px;font-weight:500;line-height:1.6;letter-spacing:0;margin-top:12px;min-height:40px;gap:9px}
+ #main .drone-journey .drone-copy .drone-learn svg{width:14px;height:14px}
+ #main .drone-journey .drone-copy .drone-detail{font-family:inherit;font-size:14px;font-weight:400;line-height:1.75;letter-spacing:0;max-width:40ch;padding-left:13px}
+ #main .drone-journey .drone-kicker{font-family:var(--font-sans),Arial,sans-serif;font-size:11px;line-height:1.5;letter-spacing:.07em}
+}
+@media(min-width:768px) and (max-width:1100px){#main .drone-journey .drone-copy{width:38%;max-width:380px}#main .drone-journey .drone-copy :is(h1:not(.sr-only),h2){font-size:34px}}
+@media(min-width:768px) and (max-height:740px){#main .drone-journey .drone-copy :is(h1:not(.sr-only),h2){font-size:clamp(30px,2.5vw,40px);margin-block:12px 16px}#main .drone-journey .drone-copy .drone-body{font-size:15px;line-height:1.65}}

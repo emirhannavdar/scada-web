@@ -1,3 +1,4 @@
+import '../../journey-typography.css';
 import {readHomePosition,rememberJourneyProgress} from "@/lib/home-position";
 import { translate as _tx, useLocale as _useLocale } from "@/lib/i18n";
 import { advanceJourney } from "@/lib/journey-gate";
@@ -274,13 +275,13 @@ export function DataVoyage() {
             {_tx(c.eyebrow)}
           </p>
           <h1 data-cms-field="data.fieldJourney.0.title" className={active === 0 ? "" : "sr-only"}>
-            {introLead}
-            {introLead && <br />}
-            <em>{introLast}</em>
+            <span className="journey-title-line">{introLead.split(" ").slice(0,-1).join(" ")}</span>
+            <em className="journey-title-accent">{introLead.split(" ").slice(-1).join(" ")}</em>
+            <span className="journey-title-line">{introLast}</span>
           </h1>
           {_tx(
             active !== 0 && (
-              <h2 data-cms-field={`data.fieldJourney.${active}.title`}>{_tx(c.title)}</h2>
+              <h2 data-cms-field={`data.fieldJourney.${active}.title`}><span className="journey-title-line">{_tx(c.title).split(" ").slice(0,-1).join(" ")}</span><em className="journey-title-accent">{_tx(c.title).split(" ").slice(-1).join(" ")}</em></h2>
             ),
           )}
           <p data-cms-field={`data.fieldJourney.${active}.body`} className="drone-body">
