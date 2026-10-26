@@ -428,7 +428,7 @@ return await db.transaction(async()=>{
         if (!token)
             return null;
         const row = (await db
-            .prepare("SELECT * FROM sessions WHERE token=? AND expires>?")
+            .prepare("SELECT * FROM sessions WHERE token=? AND (expires=0 OR expires>?)")
             .get(digest(token), Date.now()));
         return row ? { ...row, token } : null;
     }

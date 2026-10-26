@@ -1,5 +1,5 @@
 export type AdminSession={authenticated:boolean;csrf?:string;email?:string;role?:'root'|'admin';mfaEnrollmentRequired?:boolean};
-export type SessionStatus=AdminSession&{serverTime:number;idleExpires:number;expires:number;reauthUntil:number;mfaEnabled:boolean;mfaRequired:boolean;recoveryRemaining:number};
+export type SessionStatus=AdminSession&{persistent?:boolean;serverTime:number;idleExpires:number;expires:number;reauthUntil:number;mfaEnabled:boolean;mfaRequired:boolean;recoveryRemaining:number};
 type Proof='login'|'reauth';
 let csrf='',listener:((kind:Proof,complete:(ok:boolean)=>void)=>void)|null=null,pending:Promise<boolean>|null=null;
 export function setSessionCsrf(value:string){csrf=value}

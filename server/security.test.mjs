@@ -17,7 +17,7 @@ async function fixture(){
   const data=await response.json();if(data.authenticated&&data.csrf)csrf=data.csrf;return {response,data};
  }
  const login=(email='root@example.test',pw=password,headers={})=>call('/api/cms/login',{method:'POST',body:{email,password:pw},headers});
- async function enroll(){await login();const setup=await call('/api/cms/security/mfa/setup',{method:'POST',body:{}});assert.equal(setup.response.status,200);const confirm=await call('/api/cms/security/mfa/confirm',{method:'POST',body:{code:totp(setup.data.secret,Math.floor(now/30000))}});assert.equal(confirm.response.status,200);jar.delete('sw_device_v2_1');return {...setup.data,...confirm.data}}
+ async function enroll(){await login();const setup=await call('/api/cms/security/mfa/setup',{method:'POST',body:{}});assert.equal(setup.response.status,200);const confirm=await call('/api/cms/security/mfa/confirm',{method:'POST',body:{code:totp(setup.data.secret,Math.floor(now/30000))}});assert.equal(confirm.response.status,200);jar.delete('sw_logout_v3_1');return {...setup.data,...confirm.data}}
  return {...app,dir,call,login,enroll,jar,now:()=>now,advance:ms=>{now+=ms},close:async()=>{await new Promise(resolve=>app.server.close(resolve));await app.store.close();rmSync(dir,{recursive:true,force:true})}};
 }
 test('TOTP matches the RFC vector, rejects replay, and authenticated encryption detects changes',()=>{
@@ -55,7 +55,7 @@ test('MFA stays inactive until confirmation, then requires a non-replayed code a
   const confirmed=await f.call('/api/cms/security/mfa/confirm',{method:'POST',body:{code:totp(first.data.secret,Math.floor(f.now()/30000))}});assert.equal(confirmed.response.status,200);assert.equal(confirmed.data.recoveryCodes.length,10);assert.equal((await f.call('/api/cms/security/status',{cookie:previousCookie})).response.status,401);
   assert(existsSync(join(f.dir,'security.key')));assert.equal(readFileSync(join(f.dir,'security.key')).length,32);
   const row=await f.store.db.prepare('SELECT * FROM security_mfa').get();assert(!row.secret.includes(first.data.secret));assert(!row.recovery.includes(confirmed.data.recoveryCodes[0]));
-  f.jar.delete('sw_device_v2_1');const partial=await f.login();assert.equal(partial.data.authenticated,false);assert.equal(partial.data.mfaRequired,true);assert(!f.jar.has('sw_admin'));assert.equal((await f.call('/api/cms/workspace')).response.status,401);
+  f.jar.delete('sw_logout_v3_1');const partial=await f.login();assert.equal(partial.data.authenticated,false);assert.equal(partial.data.mfaRequired,true);assert(!f.jar.has('sw_admin'));assert.equal((await f.call('/api/cms/workspace')).response.status,401);
   assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{code:totp(first.data.secret,Math.floor(f.now()/30000))}})).response.status,400);
   f.advance(30000);const verified=await f.call('/api/cms/security/mfa/login',{method:'POST',body:{code:totp(first.data.secret,Math.floor(f.now()/30000))}});assert.equal(verified.response.status,200);assert.equal(verified.data.authenticated,true);
   assert.equal((await f.call('/api/cms/security/status')).data.mfaEnabled,true);
@@ -65,13 +65,13 @@ test('recovery codes are single-use and challenge validation cannot be bypassed'
  const f=await fixture();try{
   const enrolled=await f.enroll();await f.login();assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{type:'recovery',code:enrolled.recoveryCodes[0]}})).response.status,200);
   assert.equal((await f.call('/api/cms/security/status')).data.recoveryRemaining,9);
-  f.jar.delete('sw_device_v2_1');await f.login();assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{type:'recovery',code:enrolled.recoveryCodes[0]}})).response.status,400);
+  f.jar.delete('sw_logout_v3_1');await f.login();assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{type:'recovery',code:enrolled.recoveryCodes[0]}})).response.status,400);
   f.advance(300001);assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{type:'recovery',code:enrolled.recoveryCodes[1]}})).response.status,401);
   const row=await f.store.db.prepare('SELECT recovery FROM security_mfa').get();assert.equal(JSON.parse(row.recovery).includes(recoveryHash(enrolled.recoveryCodes[1])),true);
   await f.login();await f.store.upsertUser('root@example.test','Changed-Root-Password!','root');assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{type:'recovery',code:enrolled.recoveryCodes[1]}})).response.status,401);
  }finally{await f.close()}
 });
-test('root inactivity expires sessions; recent authentication is required and rotates the token',async()=>{
+test('root session stays open without idle or absolute expiry; recent proof still rotates tokens',async()=>{
  const f=await fixture();try{
   await f.login();const old='sw_admin='+f.jar.get('sw_admin');f.advance(300001);
   assert.equal((await f.call('/api/cms/security/mfa/setup',{method:'POST',body:{}})).response.status,428);
@@ -79,7 +79,7 @@ test('root inactivity expires sessions; recent authentication is required and ro
   assert.equal((await f.call('/api/cms/security/status',{cookie:old})).response.status,401);
   f.advance(14*60000);assert.equal((await f.call('/api/cms/security/status')).response.status,200);
   await f.call('/api/cms/security/activity',{method:'POST',body:{}});f.advance(14*60000);assert.equal((await f.call('/api/cms/security/status')).response.status,200);
-  f.advance(60001);assert.equal((await f.call('/api/cms/security/status')).response.status,401);
+  f.advance(60001);assert.equal((await f.call('/api/cms/security/status')).response.status,200);f.advance(30*86400000);const persistent=await f.call('/api/cms/security/status');assert.equal(persistent.data.persistent,true);assert.equal(persistent.data.expires,0);assert.equal((await f.call('/api/cms/security/sessions')).data.items.length,1);
  }finally{await f.close()}
 });
 test('admins cannot access root MFA/audit or other users sessions; root can revoke sessions',async()=>{
@@ -109,11 +109,13 @@ test('factor modes are strict; TOTP is rejected as recovery and recovery is reje
  assert.equal((await f.call('/api/cms/security/mfa/login',{method:'POST',body:{type:'totp',code}})).response.status,200);
  }finally{await f.close()}
 });
-test('remembered device requires password, device cookie, matching IP/agent, and expires in ten fixed minutes',async()=>{
- const f=await fixture();try{const enrolled=await f.enroll();f.advance(30000);await f.login();await f.call('/api/cms/security/mfa/login',{method:'POST',body:{type:'totp',code:totp(enrolled.secret,Math.floor(f.now()/30000))}});const device=f.jar.get('sw_device_v2_1');assert(device);const row=await f.store.db.prepare('SELECT * FROM security_devices WHERE token=?').get(hash(device));assert.notEqual(row.token,device);assert.equal(row.expires,f.now()+600000);
- await f.call('/api/cms/logout',{method:'POST',body:{}});assert.equal(f.jar.get('sw_device_v2_1'),device);assert.equal((await f.login('root@example.test','wrong')).response.status,401);assert.equal((await f.login()).data.authenticated,true);
- assert.equal((await f.login('root@example.test',password,{'X-Real-IP':'203.0.113.11'})).data.mfaRequired,true);assert.equal((await f.login('root@example.test',password,{'User-Agent':'Other Browser'})).data.mfaRequired,true);
- f.jar.delete('sw_device_v2_1');assert.equal((await f.login()).data.mfaRequired,true);f.jar.set('sw_device_v2_1',device);f.advance(599999);assert.equal((await f.login()).data.authenticated,true);assert.equal((await f.store.db.prepare('SELECT expires FROM security_devices WHERE token=?').get(hash(device))).expires,row.expires);f.advance(2);assert.equal((await f.login()).data.mfaRequired,true);
+test('ten-minute window starts on logout even after a long session, and each subsequent logout starts a new window',async()=>{
+ const f=await fixture();try{const enrolled=await f.enroll();f.advance(30000);await f.login();await f.call('/api/cms/security/mfa/login',{method:'POST',body:{type:'totp',code:totp(enrolled.secret,Math.floor(f.now()/30000))}});assert(!f.jar.has('sw_logout_v3_1'));assert.equal((await f.store.db.prepare('SELECT count(*) AS n FROM security_devices').get()).n,0);
+ f.advance(10*86400000);assert.equal((await f.call('/api/cms/security/status')).data.persistent,true);const start=f.now();const out=await f.call('/api/cms/logout',{method:'POST',body:{}});const first=f.jar.get('sw_logout_v3_1');assert(first);assert.match(out.response.headers.getSetCookie().find(value=>value.startsWith('sw_logout_v3_1=')),/Path=\/; HttpOnly; SameSite=Strict; Max-Age=600/);assert.equal((await f.store.db.prepare('SELECT expires FROM security_devices WHERE token=?').get(hash(first))).expires,start+600000);
+ assert.equal((await f.login('root@example.test','wrong')).response.status,401);assert.equal((await f.login('root@example.test',password,{'X-Real-IP':'203.0.113.11'})).data.mfaRequired,true);assert.equal((await f.login('root@example.test',password,{'User-Agent':'Other Browser'})).data.mfaRequired,true);f.jar.delete('sw_logout_v3_1');assert.equal((await f.login()).data.mfaRequired,true);f.jar.set('sw_logout_v3_1',first);
+ f.advance(599999);assert.equal((await f.login()).data.authenticated,true);assert(!f.jar.has('sw_logout_v3_1'));assert.equal((await f.store.db.prepare('SELECT count(*) AS n FROM security_devices WHERE token=?').get(hash(first))).n,0);
+ f.advance(86400000);const nextStart=f.now();await f.call('/api/cms/logout',{method:'POST',body:{}});const second=f.jar.get('sw_logout_v3_1');assert(second);assert.notEqual(second,first);assert.equal((await f.store.db.prepare('SELECT expires FROM security_devices WHERE token=?').get(hash(second))).expires,nextStart+600000);
+ f.advance(600001);assert.equal((await f.login()).data.mfaRequired,true);
  }finally{await f.close()}
 });
 test('admin must enroll its own MFA before editing, then uses the same ten-minute device rule',async()=>{
@@ -139,17 +141,13 @@ test('only root can manage an enrolled admin; resetting MFA revokes sessions and
  }finally{await f.close()}
 });
 
-test('legacy and current device cookies coexist without shortening the ten-minute window; logout preserves the cookie',async()=>{
- const f=await fixture();try{await f.login();const setup=await f.call('/api/cms/security/mfa/setup',{method:'POST',body:{}});await f.call('/api/cms/security/mfa/confirm',{method:'POST',body:{code:totp(setup.data.secret,Math.floor(f.now()/30000))}});const older=f.jar.get('sw_device_v2_1');f.advance(30000);f.jar.delete('sw_device_v2_1');await f.login();const confirmed=await f.call('/api/cms/security/mfa/login',{method:'POST',body:{type:'totp',code:totp(setup.data.secret,Math.floor(f.now()/30000))}});const newest=f.jar.get('sw_device_v2_1');assert.notEqual(older,newest);
- const header=confirmed.response.headers.getSetCookie().find(value=>value.startsWith('sw_device_v2_1='));assert.match(header,/Path=\/;/);assert.match(header,/HttpOnly; SameSite=Strict; Max-Age=600/);
- const again=await f.call('/api/cms/login',{method:'POST',cookie:'sw_device='+older+'; sw_device_v2='+newest,body:{email:'root@example.test',password}});assert.equal(again.data.authenticated,true);assert.equal(f.jar.get('sw_device_v2_1'),newest);
- f.advance(60000);const loggedOut=await f.call('/api/cms/logout',{method:'POST',body:{}});assert.match(loggedOut.response.headers.getSetCookie().find(value=>value.startsWith('sw_device_v2_1=')),/Max-Age=540(?:;|$)/);assert.equal((await f.login()).data.authenticated,true);
+test('verification-based grants from old versions cannot bypass the logout-only rule',async()=>{
+ const f=await fixture();try{await f.enroll();const user=await f.store.db.prepare('SELECT * FROM cms_users').get(),state=await f.store.db.prepare('SELECT * FROM security_mfa').get(),token=randomBytes(32).toString('hex');await f.store.db.prepare('INSERT INTO security_devices(token,user_id,password_hash,factor_hash,ip,agent,expires) VALUES(?,?,?,?,?,?,?)').run(hash(token),user.id,hash(user.password),hash(state.secret),'203.0.113.10',hash('Security Test'),f.now()+600000);f.jar.set('sw_logout_v3_1',token);assert.equal((await f.login()).data.mfaRequired,true);
  }finally{await f.close()}
 });
-
 test('root and admin remembered devices do not overwrite each other in the same browser',async()=>{
- const f=await fixture();try{const root=await f.enroll();f.advance(30000);await f.login();await f.call('/api/cms/security/mfa/login',{method:'POST',body:{code:totp(root.secret,Math.floor(f.now()/30000)),type:'totp'}});const rememberedRoot=f.jar.get('sw_device_v2_1');assert(rememberedRoot);
- await f.call('/api/cms/logout',{method:'POST',body:{}});await f.store.upsertUser('editor@example.test','Test-Editor-Password!','admin');await f.login('editor@example.test','Test-Editor-Password!');const setup=await f.call('/api/cms/security/mfa/setup',{method:'POST',body:{}});assert.equal((await f.call('/api/cms/security/mfa/confirm',{method:'POST',body:{code:totp(setup.data.secret,Math.floor(f.now()/30000))}})).response.status,200);assert.equal(f.jar.get('sw_device_v2_1'),rememberedRoot);assert(f.jar.has('sw_device_v2_2'));
- await f.call('/api/cms/logout',{method:'POST',body:{}});assert.equal((await f.login()).data.authenticated,true);await f.call('/api/cms/logout',{method:'POST',body:{}});assert.equal((await f.login('editor@example.test','Test-Editor-Password!')).data.authenticated,true);
+ const f=await fixture();try{const root=await f.enroll();f.advance(30000);await f.login();await f.call('/api/cms/security/mfa/login',{method:'POST',body:{code:totp(root.secret,Math.floor(f.now()/30000)),type:'totp'}});assert(!f.jar.has('sw_logout_v3_1'));await f.call('/api/cms/logout',{method:'POST',body:{}});const rememberedRoot=f.jar.get('sw_logout_v3_1');assert(rememberedRoot);
+ await f.store.upsertUser('editor@example.test','Test-Editor-Password!','admin');await f.login('editor@example.test','Test-Editor-Password!');const setup=await f.call('/api/cms/security/mfa/setup',{method:'POST',body:{}});assert.equal((await f.call('/api/cms/security/mfa/confirm',{method:'POST',body:{code:totp(setup.data.secret,Math.floor(f.now()/30000))}})).response.status,200);assert.equal(f.jar.get('sw_logout_v3_1'),rememberedRoot);assert(!f.jar.has('sw_logout_v3_2'));
+ await f.call('/api/cms/logout',{method:'POST',body:{}});assert(f.jar.has('sw_logout_v3_2'));assert.equal((await f.login()).data.authenticated,true);await f.call('/api/cms/logout',{method:'POST',body:{}});assert.equal((await f.login('editor@example.test','Test-Editor-Password!')).data.authenticated,true);
  }finally{await f.close()}
 });

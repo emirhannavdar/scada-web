@@ -6,19 +6,18 @@ import {hash,constantEqual,base32,newRecoveryCodes,recoveryHash,matchingCounter,
 const fail=(status,message)=>{throw new CmsError(status,message)};
 export async function createSecurityService(store,{secureCookies=false,checkOrigin,clock=()=>Date.now()}={}){
  const db=store.db,trusted=proxyPolicy(process.env.CMS_TRUSTED_PROXIES??'127.0.0.1,::1');
- const rootIdle=integerSetting(process.env.CMS_ROOT_IDLE_MINUTES,15,5,120)*60000,adminIdle=integerSetting(process.env.CMS_ADMIN_IDLE_MINUTES,30,5,240)*60000;
- const lifetime=8*3600000,proofLifetime=5*60000,retention=integerSetting(process.env.CMS_AUDIT_DAYS,90,7,365)*86400000;
+ const cookieLifetime=400*86400,proofLifetime=5*60000,retention=integerSetting(process.env.CMS_AUDIT_DAYS,90,7,365)*86400000;
  let hashing=0,lastPurge=0;const auditNotices=new Map(),pendingAudits=new Set();
  const identity=req=>({ip:clientIp(req,trusted),agent:String(req.headers['user-agent']||'').replace(/[\x00-\x1f]/g,'').slice(0,240)});
  const sessionCookie=(token,seconds)=>`sw_admin=${token}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${seconds}${secureCookies?'; Secure':''}`;
- const deviceCookie=(token,seconds,userId)=>`sw_device_v2_${userId}=${token}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${seconds}${secureCookies?'; Secure':''}`;
+ const deviceCookie=(token,seconds,userId)=>`sw_logout_v3_${userId}=${token}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${seconds}${secureCookies?'; Secure':''}`;
  const challengeCookie=(token,seconds)=>`sw_mfa=${token}; Path=/api/cms; HttpOnly; SameSite=Strict; Max-Age=${seconds}${secureCookies?'; Secure':''}`;
  async function audit(req,action,result='success',actor='',detail={}){
   const info=identity(req),clean={};for(const key of ['target','device','version','decision','id','path'])if(['string','number'].includes(typeof detail[key]))clean[key]=String(detail[key]).slice(0,160);
   await db.prepare('INSERT INTO security_events(created,actor,action,result,ip,agent,detail) VALUES(?,?,?,?,?,?,?)').run(clock(),String(actor).slice(0,254),action.slice(0,60),result.slice(0,16),info.ip,info.agent,JSON.stringify(clean));
   if(clock()-lastPurge>3600000){lastPurge=clock();await purge()}
  }
- async function purge(){const now=clock();await db.prepare('DELETE FROM security_events WHERE created<?').run(now-retention);await db.exec('DELETE FROM security_events WHERE id NOT IN (SELECT id FROM security_events ORDER BY id DESC LIMIT 20000)');await db.prepare('DELETE FROM security_challenges WHERE expires<?').run(now);await db.prepare('DELETE FROM security_devices WHERE expires<?').run(now);await db.prepare('DELETE FROM security_attempts WHERE until_at<?').run(now);await db.prepare('DELETE FROM sessions WHERE expires<?').run(now)}
+ async function purge(){const now=clock();await db.prepare('DELETE FROM security_events WHERE created<?').run(now-retention);await db.exec('DELETE FROM security_events WHERE id NOT IN (SELECT id FROM security_events ORDER BY id DESC LIMIT 20000)');await db.prepare('DELETE FROM security_challenges WHERE expires<?').run(now);await db.prepare('DELETE FROM security_devices WHERE expires<?').run(now);await db.prepare('DELETE FROM security_attempts WHERE until_at<?').run(now);await db.prepare('DELETE FROM sessions WHERE expires>0 AND expires<?').run(now)}
  function rateKeys(req,email,purpose){return [{key:purpose+':ip:'+identity(req).ip,limit:20},{key:purpose+':account:'+hash(email),limit:10}]}
  async function checkRate(req,email,purpose){for(const {key,limit} of rateKeys(req,email,purpose)){const row=await db.prepare('SELECT count,until_at FROM security_attempts WHERE key=?').get(key);if(row&&row.until_at>clock()&&row.count>=limit){const note=purpose+':'+identity(req).ip;if((auditNotices.get(note)||0)<clock()-60000){if(auditNotices.size>2000)auditNotices.clear();auditNotices.set(note,clock());await audit(req,'auth.throttled','blocked',email)}fail(429,'Çok fazla başarısız deneme. 15 dakika sonra tekrar deneyin.')}}}
  async function failedAttempt(req,email,purpose){await db.transaction(async()=>{for(const {key} of rateKeys(req,email,purpose)){const now=clock(),row=await db.prepare('SELECT count,until_at FROM security_attempts WHERE key=?').get(key);if(!row||row.until_at<=now)await db.prepare('INSERT INTO security_attempts(key,count,until_at) VALUES(?,1,?) ON CONFLICT(key) DO UPDATE SET count=1,until_at=excluded.until_at').run(key,now+900000);else await db.prepare('UPDATE security_attempts SET count=count+1 WHERE key=?').run(key)}})}
@@ -26,19 +25,23 @@ export async function createSecurityService(store,{secureCookies=false,checkOrig
  function key(create=false){const file=join(store.dir,'security.key');if(!existsSync(file)&&create){try{writeFileSync(file,randomBytes(32),{mode:0o600,flag:'wx'})}catch(error){if(error.code!=='EEXIST')throw error}}try{const bytes=readFileSync(file);if(bytes.length!==32)throw Error();return bytes}catch{fail(503,'2FA şifreleme anahtarı okunamadı. Sunucudaki security.key yedeğini kontrol edin.')}}
  async function mfa(userId){return await db.prepare('SELECT * FROM security_mfa WHERE user_id=?').get(userId)}
  async function trustedDevice(req,user,state){
-  const tokens=[...String(req.headers.cookie||'').matchAll(new RegExp('(?:^|;\\s*)(?:sw_device_v2_'+user.id+'|sw_device_v2|sw_device)=([a-f0-9]{64})(?=;|$)','g'))].map(match=>match[1]).slice(0,8),info=identity(req);
-  let best=null;for(const token of tokens){const row=await db.prepare('SELECT * FROM security_devices WHERE token=? AND user_id=?').get(hash(token),user.id);if(row&&row.expires>clock()&&row.ip===info.ip&&constantEqual(row.agent,hash(info.agent))&&constantEqual(row.password_hash,hash(user.password))&&state?.enabled&&constantEqual(row.factor_hash,hash(state.secret))&&(!best||row.expires>best.expires))best={...row,rawToken:token}}
-  return best;
+  const token=new RegExp('(?:^|;\\s*)sw_logout_v3_'+user.id+'=([a-f0-9]{64})(?=;|$)').exec(req.headers.cookie||'')?.[1],info=identity(req);if(!token)return null;
+  const row=await db.prepare('SELECT * FROM security_devices WHERE token=? AND user_id=? AND logout_grant=1').get(hash(token),user.id);
+  return row&&row.expires>clock()&&row.ip===info.ip&&constantEqual(row.agent,hash(info.agent))&&constantEqual(row.password_hash,hash(user.password))&&state?.enabled&&constantEqual(row.factor_hash,hash(state.secret))?{...row,rawToken:token}:null;
  }
  async function logout(req,res,s){
-  const user=await db.prepare('SELECT * FROM cms_users WHERE email=?').get(s.email),device=user&&await trustedDevice(req,user,await mfa(user.id));
-  await db.prepare('DELETE FROM sessions WHERE token=?').run(hash(s.token));
-  res.setHeader('Set-Cookie',[sessionCookie('',0),challengeCookie('',0),...(device?[deviceCookie(device.rawToken,Math.max(1,Math.floor((device.expires-clock())/1000)),user.id)]:[])]);
- }
- async function rememberDevice(req,res,user,factorHash){
-  const token=randomBytes(32).toString('hex'),info=identity(req);
-  await db.transaction(async()=>{const current=await db.prepare('SELECT password FROM cms_users WHERE id=?').get(user.id),state=await mfa(user.id);if(!current||!constantEqual(current.password,user.password)||!state?.enabled||!constantEqual(hash(state.secret),factorHash))fail(401,'Hesap bilgileri değişti. Yeniden giriş yapın.');await db.prepare('INSERT INTO security_devices(token,user_id,password_hash,factor_hash,ip,agent,expires) VALUES(?,?,?,?,?,?,?)').run(hash(token),user.id,hash(user.password),factorHash,info.ip,hash(info.agent),clock()+600000);await db.prepare('DELETE FROM security_devices WHERE user_id=? AND token NOT IN (SELECT token FROM security_devices WHERE user_id=? ORDER BY expires DESC LIMIT 20)').run(user.id,user.id)});
-  const previous=res.getHeader('Set-Cookie');res.setHeader('Set-Cookie',[...(Array.isArray(previous)?previous:previous?[previous]:[]),deviceCookie(token,600,user.id)]);
+  let remembered=null;
+  await db.transaction(async()=>{
+   const current=await db.prepare('SELECT * FROM sessions WHERE token=?').get(hash(s.token));if(!current)fail(401,'Oturum kapalı.');
+   const user=await db.prepare('SELECT * FROM cms_users WHERE email=?').get(s.email),state=user&&await mfa(user.id),info=identity(req);
+   if(user&&state?.enabled&&current.mfa_verified&&constantEqual(current.mfa_fingerprint,hash(state.secret))){
+    const token=randomBytes(32).toString('hex');
+    await db.prepare('INSERT INTO security_devices(token,user_id,password_hash,factor_hash,ip,agent,expires,logout_grant) VALUES(?,?,?,?,?,?,?,1)').run(hash(token),user.id,hash(user.password),hash(state.secret),info.ip,hash(info.agent),clock()+600000);
+    await db.prepare('DELETE FROM security_devices WHERE user_id=? AND token NOT IN (SELECT token FROM security_devices WHERE user_id=? ORDER BY expires DESC LIMIT 20)').run(user.id,user.id);remembered={token,userId:user.id};
+   }
+   await db.prepare('DELETE FROM sessions WHERE token=?').run(hash(s.token));
+  });
+  res.setHeader('Set-Cookie',[sessionCookie('',0),challengeCookie('',0),...(remembered?[deviceCookie(remembered.token,600,remembered.userId)]:[])]);
  }
  async function verifyFactor(user,code,type='totp'){
   const state=await mfa(user.id);if(!state?.enabled)return false;
@@ -51,13 +54,9 @@ export async function createSecurityService(store,{secureCookies=false,checkOrig
  const rawSession=store.session;
  async function session(req){
   const row=await rawSession(req);if(!row)return null;
-  const idle=row.role==='root'?rootIdle:adminIdle;
-  if(row.last_seen+idle<=clock()){
-   await db.prepare('DELETE FROM sessions WHERE token=?').run(hash(row.token));await audit(req,'session.idle_expired','success',row.email);return null;
-  }
   if(row.role==='root'||row.role==='admin'){
    const user=await db.prepare('SELECT id FROM cms_users WHERE email=?').get(row.email),state=user&&await mfa(user.id);
-   if(!user||state?.enabled&&!row.mfa_verified){await db.prepare('DELETE FROM sessions WHERE token=?').run(hash(row.token));return null}
+   if(!user||state?.enabled&&(!row.mfa_verified||!constantEqual(row.mfa_fingerprint,hash(state.secret)))){await db.prepare('DELETE FROM sessions WHERE token=?').run(hash(row.token));return null}
   }
   return row;
  }
@@ -65,16 +64,16 @@ export async function createSecurityService(store,{secureCookies=false,checkOrig
  async function touch(s){if(clock()-s.last_seen>=15000){await db.prepare('UPDATE sessions SET last_seen=? WHERE token=?').run(clock(),hash(s.token));s.last_seen=clock()}}
  function recent(s){if(s.reauth_at+proofLifetime<=clock())fail(428,'Bu işlem için kimliğinizi yeniden doğrulayın.')}
  async function authorize(req,mutation=false,rootOnly=false){const s=await session(req);if(!s)fail(401,'Oturum açmanız gerekiyor.');req.securitySession=s;const user=await db.prepare('SELECT id FROM cms_users WHERE email=?').get(s.email);if(s.role==='admin'&&!(await mfa(user?.id))?.enabled&&!new URL(req.url,'http://localhost').pathname.startsWith('/api/cms/security/')&&new URL(req.url,'http://localhost').pathname!=='/api/cms/logout')fail(403,'Devam etmeden önce hesabınız için 2FA kurulumunu tamamlayın.');if(rootOnly&&s.role!=='root')fail(403,'Bu bölüm yalnızca root kullanıcısına açıktır.');if(mutation){checkOrigin(req);if(!constantEqual(req.headers['x-csrf-token']||'',s.csrf))fail(403,'Oturum doğrulaması başarısız. Yeniden giriş yapın.');await touch(s)}return s}
- async function issueSession(req,res,user,{verified=false,factorHash='',created=clock(),lastSeen=clock(),remember=false}={}){
-  const token=randomBytes(32).toString('hex'),csrf=randomBytes(32).toString('hex'),info=identity(req),expires=created+lifetime,deviceToken=remember?randomBytes(32).toString('hex'):null;
+ async function issueSession(req,res,user,{verified=false,factorHash='',created=clock(),lastSeen=clock()}={}){
+  const token=randomBytes(32).toString('hex'),csrf=randomBytes(32).toString('hex'),info=identity(req),expires=0;
   await db.transaction(async()=>{
    const current=await db.prepare('SELECT * FROM cms_users WHERE id=?').get(user.id);
-   if(!current||current.email!==user.email||current.role!==user.role||!constantEqual(current.password,user.password)||expires<=clock())fail(401,'Hesap bilgileri değişti. Yeniden giriş yapın.');
+   if(!current||current.email!==user.email||current.role!==user.role||!constantEqual(current.password,user.password))fail(401,'Hesap bilgileri değişti. Yeniden giriş yapın.');
    const state=await mfa(user.id);if(state?.enabled&&(!verified||!factorHash||!constantEqual(hash(state.secret),factorHash)))fail(401,'2FA ayarları değişti. Yeniden giriş yapın.');
-   await db.prepare('INSERT INTO sessions(token,csrf,expires,email,role,created_at,last_seen,reauth_at,mfa_verified,ip,agent) VALUES(?,?,?,?,?,?,?,?,?,?,?)').run(hash(token),csrf,expires,user.email,user.role,created,lastSeen,clock(),verified?1:0,info.ip,info.agent);
-   if(deviceToken){await db.prepare('INSERT INTO security_devices(token,user_id,password_hash,factor_hash,ip,agent,expires) VALUES(?,?,?,?,?,?,?)').run(hash(deviceToken),user.id,hash(user.password),factorHash,info.ip,hash(info.agent),clock()+600000);await db.prepare('DELETE FROM security_devices WHERE user_id=? AND token NOT IN (SELECT token FROM security_devices WHERE user_id=? ORDER BY expires DESC LIMIT 20)').run(user.id,user.id)}
+   await db.prepare('INSERT INTO sessions(token,csrf,expires,email,role,created_at,last_seen,reauth_at,mfa_verified,mfa_fingerprint,ip,agent) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)').run(hash(token),csrf,expires,user.email,user.role,created,lastSeen,clock(),verified?1:0,factorHash,info.ip,info.agent);
+
   });
-  res.setHeader('Set-Cookie',[sessionCookie(token,Math.max(0,Math.floor((expires-clock())/1000))),challengeCookie('',0),...(deviceToken?[deviceCookie(deviceToken,600,user.id)]:[])]);
+  res.setHeader('Set-Cookie',[sessionCookie(token,cookieLifetime),challengeCookie('',0)]);
   return {authenticated:true,csrf,email:user.email,role:user.role,mfaEnrollmentRequired:user.role==='admin'&&!(await mfa(user.id))?.enabled};
  }
  async function login(req,res,{email,password}={}){
@@ -86,8 +85,9 @@ export async function createSecurityService(store,{secureCookies=false,checkOrig
   const old=await rawSession(req);if(old)await db.prepare('DELETE FROM sessions WHERE token=?').run(hash(old.token));
   const state=await mfa(user.id);
   if(state?.enabled){
-   const device=await trustedDevice(req,user,state),info=identity(req);
-   if(device){const result=await issueSession(req,res,user,{verified:true,factorHash:hash(state.secret)});res.setHeader('Set-Cookie',[...res.getHeader('Set-Cookie'),deviceCookie(device.rawToken,Math.max(1,Math.floor((device.expires-clock())/1000)),user.id)]);await audit(req,'auth.device_login','success',email);return result}
+   const remembered=await db.transaction(async()=>{const device=await trustedDevice(req,user,state);if(!device)return null;const result=await issueSession(req,res,user,{verified:true,factorHash:hash(state.secret)});await db.prepare('DELETE FROM security_devices WHERE token=?').run(device.token);res.setHeader('Set-Cookie',[...res.getHeader('Set-Cookie'),deviceCookie('',0,user.id)]);return result});
+   if(remembered){await audit(req,'auth.device_login','success',email);return remembered}
+   const info=identity(req);
    const token=randomBytes(32).toString('hex');await db.transaction(async()=>{await db.prepare('DELETE FROM security_challenges WHERE user_id=?').run(user.id);await db.prepare('INSERT INTO security_challenges(token,user_id,password_hash,expires,ip,agent,tries) VALUES(?,?,?,?,?,?,0)').run(hash(token),user.id,hash(user.password),clock()+300000,info.ip,hash(info.agent))});res.setHeader('Set-Cookie',[challengeCookie(token,300),sessionCookie('',0)]);await audit(req,'auth.mfa_challenge','success',email);return {authenticated:false,mfaRequired:true}}
   const result=await issueSession(req,res,user);await audit(req,'auth.login','success',email);return result;
  }
@@ -102,7 +102,7 @@ export async function createSecurityService(store,{secureCookies=false,checkOrig
    await db.prepare('DELETE FROM security_challenges WHERE token=?').run(hash(token));await clearRate(req,user.email,'mfa');return {user,method:verified,factorHash:hash((await mfa(user.id)).secret)};
   });
   if(result.expired)fail(401,'Doğrulama süresi doldu. Şifrenizle yeniden giriş yapın.');if(result.wrong)fail(400,'Doğrulama kodu geçersiz veya daha önce kullanılmış.');
-  const auth=await issueSession(req,res,result.user,{verified:true,factorHash:result.factorHash,remember:true});await audit(req,result.method==='recovery'?'auth.recovery_login':'auth.login','success',result.user.email);return auth;
+  const auth=await issueSession(req,res,result.user,{verified:true,factorHash:result.factorHash});await audit(req,result.method==='recovery'?'auth.recovery_login':'auth.login','success',result.user.email);return auth;
  }
  async function reauthenticate(req,res,s,{password,code,type='totp'}){
   const user=await db.prepare('SELECT * FROM cms_users WHERE email=?').get(s.email);await checkRate(req,s.email,'reauth');
@@ -111,15 +111,15 @@ export async function createSecurityService(store,{secureCookies=false,checkOrig
   let verified=false,usedMfa=false,factorHash='';
   if(valid&&user){await db.transaction(async()=>{const state=await mfa(user.id);usedMfa=Boolean(state?.enabled);verified=usedMfa?await verifyFactor(user,code,type):true;if(usedMfa&&verified)factorHash=hash(state.secret)})}
   if(!valid||!verified){await failedAttempt(req,s.email,'reauth');await audit(req,'auth.reauth_failed','failure',s.email);fail(400,'Kimlik doğrulanamadı. Şifrenizi ve gerekiyorsa doğrulama kodunuzu kontrol edin.')}
-  await db.prepare('DELETE FROM sessions WHERE token=?').run(hash(s.token));await clearRate(req,s.email,'reauth');const result=await issueSession(req,res,user,{verified:usedMfa,remember:usedMfa,factorHash,created:s.created_at,lastSeen:clock()});await audit(req,'auth.reauthenticated','success',s.email);return result;
+  await db.prepare('DELETE FROM sessions WHERE token=?').run(hash(s.token));await clearRate(req,s.email,'reauth');const result=await issueSession(req,res,user,{verified:usedMfa,factorHash,created:s.created_at,lastSeen:clock()});await audit(req,'auth.reauthenticated','success',s.email);return result;
  }
- async function status(req,s){const user=await db.prepare('SELECT id FROM cms_users WHERE email=?').get(s.email),state=user&&await mfa(user.id);return {authenticated:true,csrf:s.csrf,email:s.email,role:s.role,serverTime:clock(),idleExpires:s.last_seen+(s.role==='root'?rootIdle:adminIdle),expires:s.expires,reauthUntil:s.reauth_at+proofLifetime,mfaEnabled:Boolean(state?.enabled),mfaRequired:true,mfaEnrollmentRequired:s.role==='admin'&&!state?.enabled,recoveryRemaining:state?JSON.parse(state.recovery).length:0}}
+ async function status(req,s,res){if(res)res.setHeader('Set-Cookie',sessionCookie(s.token,cookieLifetime));const user=await db.prepare('SELECT id FROM cms_users WHERE email=?').get(s.email),state=user&&await mfa(user.id);return {authenticated:true,csrf:s.csrf,email:s.email,role:s.role,serverTime:clock(),idleExpires:0,expires:0,persistent:true,reauthUntil:s.reauth_at+proofLifetime,mfaEnabled:Boolean(state?.enabled),mfaRequired:true,mfaEnrollmentRequired:s.role==='admin'&&!state?.enabled,recoveryRemaining:state?JSON.parse(state.recovery).length:0}}
  async function handle(req,res,path,method,readBody,send){
   if(!path.startsWith('/api/cms/security/'))return false;
   if(path==='/api/cms/security/mfa/login'&&method==='POST'){const b=await readBody(req);send(res,200,await finishLogin(req,res,b.code,b.type));return true}
   const mutation=!['GET','HEAD'].includes(method),s=await authorize(req,mutation),user=await db.prepare('SELECT * FROM cms_users WHERE email=?').get(s.email);
-  if(path==='/api/cms/security/status'&&method==='GET'){send(res,200,await status(req,s));return true}
-  if(path==='/api/cms/security/activity'&&method==='POST'){await db.prepare('UPDATE sessions SET last_seen=? WHERE token=?').run(clock(),hash(s.token));s.last_seen=clock();send(res,200,await status(req,s));return true}
+  if(path==='/api/cms/security/status'&&method==='GET'){send(res,200,await status(req,s,res));return true}
+  if(path==='/api/cms/security/activity'&&method==='POST'){await db.prepare('UPDATE sessions SET last_seen=? WHERE token=?').run(clock(),hash(s.token));s.last_seen=clock();send(res,200,await status(req,s,res));return true}
   if(path==='/api/cms/security/reauth'&&method==='POST'){send(res,200,await reauthenticate(req,res,s,await readBody(req)));return true}
   const ownMfa=await mfa(user.id),enrolling=s.role==='admin'&&!ownMfa?.enabled;
   if(s.role==='admin'&&!(enrolling&&['/api/cms/security/mfa/setup','/api/cms/security/mfa/confirm'].includes(path))){await audit(req,'authorization.denied','blocked',s.email,{path});fail(403,'Güvenlik ayarlarınızı root kullanıcısı yönetir.');}
@@ -133,8 +133,8 @@ export async function createSecurityService(store,{secureCookies=false,checkOrig
    await audit(req,userAction[2]==='reset'?'mfa.admin_reset':'session.admin_revoked','success',s.email,{target:target.email});send(res,200,{ok:true});return true;
   }
   if(path==='/api/cms/security/sessions'&&method==='GET'){
-   const rows=s.role==='root'?await db.prepare('SELECT token,email,role,created_at,last_seen,expires,ip,agent FROM sessions WHERE expires>? ORDER BY last_seen DESC LIMIT 200').all(clock()):await db.prepare('SELECT token,email,role,created_at,last_seen,expires,ip,agent FROM sessions WHERE expires>? AND email=? ORDER BY last_seen DESC LIMIT 200').all(clock(),s.email);
-   send(res,200,{items:rows.filter(row=>row.last_seen+(row.role==='root'?rootIdle:adminIdle)>clock()).map(row=>({...row,id:row.token,token:undefined,current:constantEqual(row.token,hash(s.token))}))});return true;
+   const rows=s.role==='root'?await db.prepare('SELECT token,email,role,created_at,last_seen,expires,ip,agent FROM sessions WHERE (expires=0 OR expires>?) ORDER BY last_seen DESC LIMIT 200').all(clock()):await db.prepare('SELECT token,email,role,created_at,last_seen,expires,ip,agent FROM sessions WHERE (expires=0 OR expires>?) AND email=? ORDER BY last_seen DESC LIMIT 200').all(clock(),s.email);
+   send(res,200,{items:rows.map(row=>({...row,id:row.token,token:undefined,current:constantEqual(row.token,hash(s.token))}))});return true;
   }
   if(path==='/api/cms/security/sessions/revoke'&&method==='POST'){
    recent(s);const b=await readBody(req);let count=0;
@@ -162,9 +162,9 @@ export async function createSecurityService(store,{secureCookies=false,checkOrig
   }
   if(path==='/api/cms/security/mfa/confirm'&&method==='POST'){
    recent(s);const b=await readBody(req);await checkRate(req,s.email,'setup');const codes=newRecoveryCodes();
-   const valid=await db.transaction(async()=>{const state=await mfa(user.id);if(!state?.pending_secret||state.pending_until<=clock())return false;const secret=decryptSecret(state.pending_secret,key()),counter=matchingCounter(secret,b.code,clock());if(counter===null){await failedAttempt(req,s.email,'setup');return false}await db.prepare("UPDATE security_mfa SET enabled=1,secret=pending_secret,pending_secret=NULL,pending_until=0,recovery=?,last_counter=? WHERE user_id=?").run(JSON.stringify(codes.map(recoveryHash)),counter,user.id);await db.prepare('DELETE FROM sessions WHERE email=? AND token<>?').run(s.email,hash(s.token));await db.prepare('DELETE FROM security_devices WHERE user_id=?').run(user.id);await db.prepare('UPDATE sessions SET mfa_verified=1 WHERE token=?').run(hash(s.token));await db.prepare('DELETE FROM security_challenges WHERE user_id=?').run(user.id);return hash(state.pending_secret)});
+   const valid=await db.transaction(async()=>{const state=await mfa(user.id);if(!state?.pending_secret||state.pending_until<=clock())return false;const secret=decryptSecret(state.pending_secret,key()),counter=matchingCounter(secret,b.code,clock());if(counter===null){await failedAttempt(req,s.email,'setup');return false}await db.prepare("UPDATE security_mfa SET enabled=1,secret=pending_secret,pending_secret=NULL,pending_until=0,recovery=?,last_counter=? WHERE user_id=?").run(JSON.stringify(codes.map(recoveryHash)),counter,user.id);await db.prepare('DELETE FROM sessions WHERE email=? AND token<>?').run(s.email,hash(s.token));await db.prepare('DELETE FROM security_devices WHERE user_id=?').run(user.id);await db.prepare('UPDATE sessions SET mfa_verified=1,mfa_fingerprint=? WHERE token=?').run(hash(state.pending_secret),hash(s.token));await db.prepare('DELETE FROM security_challenges WHERE user_id=?').run(user.id);return hash(state.pending_secret)});
    if(!valid){await audit(req,'mfa.setup_failed','failure',s.email);fail(400,'Kod geçersiz veya kurulum süresi dolmuş. Yeni kodla tekrar deneyin.')}
-   await rememberDevice(req,res,user,valid);await clearRate(req,s.email,'setup');await audit(req,'mfa.enabled','success',s.email);send(res,200,{enabled:true,recoveryCodes:codes});return true;
+   await clearRate(req,s.email,'setup');await audit(req,'mfa.enabled','success',s.email);send(res,200,{enabled:true,recoveryCodes:codes});return true;
   }
   if(path==='/api/cms/security/mfa/recovery'&&method==='POST'){
    recent(s);if(!(await mfa(user.id))?.enabled)fail(400,'Önce 2FA kurulumunu tamamlayın.');const codes=newRecoveryCodes();await db.prepare('DELETE FROM security_devices WHERE user_id=?').run(user.id);await db.prepare('UPDATE security_mfa SET recovery=? WHERE user_id=?').run(JSON.stringify(codes.map(recoveryHash)),user.id);await audit(req,'mfa.recovery_regenerated','success',s.email);send(res,200,{recoveryCodes:codes});return true;

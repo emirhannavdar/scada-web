@@ -24,3 +24,6 @@ it('does not retry or discard the draft when renewed authentication is cancelled
 it('does not expose root settings or audit history to an admin',async()=>{
  vi.stubGlobal('fetch',vi.fn(async(path:string)=>({ok:true,status:200,json:async()=>path.endsWith('/sessions')?{items:[]}:{...status(),role:'admin'}})));render(<SecurityPanel session={{...original,role:'admin'}} onClose={vi.fn()}/>);await waitFor(()=>expect(screen.queryByText('İşlem sürüyor…')).toBeNull());expect(screen.getByRole('button',{name:'İki aşamalı doğrulama'})).toBeInTheDocument();expect(screen.queryByRole('button',{name:'Güvenlik geçmişi'})).toBeNull();expect(screen.queryByRole('button',{name:'Aktif oturumlar'})).toBeNull();
 });
+it('does not show an expiry countdown for a session that stays open until logout',async()=>{
+ vi.stubGlobal('fetch',vi.fn(async()=>({ok:true,status:200,json:async()=>({...status(),persistent:true,idleExpires:0,expires:0})})));render(<Harness/>);await act(async()=>{await new Promise(resolve=>setTimeout(resolve,0))});expect(screen.queryByText('Oturumunuz kapanmak üzere.')).toBeNull();expect(screen.queryByText('Oturumunuzun süresi doldu.')).toBeNull();expect(screen.queryByRole('dialog')).toBeNull();
+});
