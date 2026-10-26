@@ -1,1 +1,0 @@
-Çalışan sunucuyu Ctrl+C ile durdurun. ZIP içeriğini mevcut proje klasörünün içine çıkarıp dosyaları değiştirin. Ardından npm.cmd start çalıştırın. Build veya npm ci gerekmez. Veritabanı, .env ve yüklediğiniz görseller değiştirilmez. Masaüstü 3B sahnesi korunur. Mobil tasarım ve yükleme ekranı güncellenmiştir. Tarayıcı eski görünümü gösterirse Ctrl+F5 kullanın.

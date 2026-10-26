@@ -1,5 +1,0 @@
-Gizlilik metni: https://scadawatt.com/privacy-policy
-Kaynağın bu sayfada yüklediği resmi uygulama dosyası: /assets/index-tH9mZDWG.js
-Alınma tarihi: 2026-10-23
-Kaynak SHA-256: cd6dc72feb0715ac6124d9e5a7c0a5afa09e6a9089f79344e9bdd3b1f655cb7a
-Türkçe metnin 33 bloğu korunmuştur. İngilizce metin resmi kaynaktan alınmıştır; İngilizcede bulunmayan bir bölüm başlığı çevrilerek tamamlanmıştır.

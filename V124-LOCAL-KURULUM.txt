@@ -1,7 +1,0 @@
-1. Çalışan siteyi terminalde Ctrl+C ile durdurun.
-2. Bu ZIP’in İÇİNDEKİ dosyaları package.json bulunan mevcut proje klasörüne çıkarın. Dosyaları değiştirme sorusuna Evet deyin.
-3. Proje klasöründe npm.cmd start çalıştırın. Yeniden build gerekmez, dist hazırdır.
-4. http://localhost:5188 adresinde Ctrl+F5 yapın.
-5. package.json sürümü 124.0.0 olmalı. Menü geniş ekranda (1440px ve üzeri) tam görünür; küçük ekranda mobil menü korunur.
-6. /privacy-policy adresini ve footer’daki büyük SCADAWATT yazısının kaldırılmasını kontrol edin.
-Veritabanı, .env ve yüklenen görseller pakette yoktur. Mevcut dosyalarınız korunur.
